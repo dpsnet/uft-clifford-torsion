@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🩰 Dance Clipper - 舞蹈视频智能剪辑</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            opacity: 0.9;
+        }
+        
+        .gpu-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .upload-area {
+            border: 3px dashed #ddd;
+            border-radius: 12px;
+            padding: 60px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .upload-area:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+        
+        .upload-area.dragover {
+            border-color: #667eea;
+            background: #f0f2ff;
+        }
+        
+        .upload-area i {
+            font-size: 48px;
+            color: #999;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        select, input[type="range"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        select:focus, input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .range-value {
+            text-align: center;
+            margin-top: 5px;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .preset-info {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .preset-info h4 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .preset-info p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 600;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s;
+            width: 0%;
+        }
+        
+        .status-message {
+            text-align: center;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        /* 预览区域 */
+        .preview-section {
+            display: none;
+        }
+        
+        .preview-section.active {
+            display: block;
+        }
+        
+        .timeline {
+            background: #f5f5f5;
+            height: 60px;
+            border-radius: 8px;
+            position: relative;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .timeline-segments {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .timeline-segment {
+            position: absolute;
+            top: 5px;
+            bottom: 5px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 4px;
+            opacity: 0.8;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        
+        .timeline-segment:hover {
+            opacity: 1;
+        }
+        
+        .timeline-beats {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .timeline-beat {
+            position: absolute;
+            top: 35px;
+            width: 2px;
+            height: 20px;
+            background: #ccc;
+        }
+        
+        .timeline-beat.downbeat {
+            background: #ff6b6b;
+            height: 25px;
+        }
+        
+        .segment-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .info-card {
+            flex: 1;
+            min-width: 150px;
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .info-card .value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .info-card .label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .segment-list {
+            margin-top: 20px;
+        }
+        
+        .segment-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9ff;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .segment-time {
+            font-family: monospace;
+            font-size: 14px;
+            color: #667eea;
+            min-width: 120px;
+        }
+        
+        .segment-duration {
+            margin-left: auto;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .segment-score {
+            margin-left: 20px;
+            padding: 5px 12px;
+            background: white;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        
+        .download-section {
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .download-section h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .video-info {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🩰 Dance Clipper</h1>
+            <p>智能舞蹈视频剪辑系统 - 保持音乐结构，保证动作连贯</p>
+            {% if gpu_available %}
+            <span class="gpu-badge">⚡ GPU 加速可用</span>
+            {% endif %}
+        </header>
+        
+        <!-- 上传区域 -->
+        <div class="card" id="upload-card">
+            <h2>1. 上传视频</h2>
+            <div class="upload-area" id="upload-area">
+                <span style="font-size: 48px;">📹</span>
+                <p>点击或拖拽上传舞蹈视频</p>
+                <p style="color: #999; font-size: 0.9em; margin-top: 10px;">支持 MP4, MOV, AVI 格式，最大 2GB</p>
+            </div>
+            <input type="file" class="file-input" id="file-input" accept="video/*">
+            <div id="file-info" class="hidden" style="margin-top: 15px; color: #667eea;"></div>
+        </div>
+        
+        <!-- 配置区域 -->
+        <div class="card hidden" id="config-card">
+            <h2>2. 选择配置</h2>
+            
+            <div class="form-group">
+                <label>舞蹈类型</label>
+                <select id="preset-select">
+                    {% for name, desc in presets.items() %}
+                    <option value="{{ name }}">{{ desc }}</option>
+                    {% endfor %}
+                </select>
+                <div id="preset-detail" class="preset-info"></div>
+            </div>
+            
+            <div class="form-group">
+                <label>目标时长: <span id="duration-value">30</span> 秒</label>
+                <input type="range" id="duration-slider" min="5" max="180" value="30" step="5">
+                <div class="range-value">
+                    <span id="platform-suggestion"></span>
+                </div>
+            </div>
+            
+            {% if gpu_available %}
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="use-gpu" checked> 使用 GPU 加速
+                </label>
+            </div>
+            {% endif %}
+            
+            <div class="btn-group">
+                <button class="btn btn-secondary" id="preview-btn">👁️ 预览剪辑点</button>
+                <button class="btn" id="clip-btn">✂️ 开始剪辑</button>
+            </div>
+        </div>
+        
+        <!-- 预览区域 -->
+        <div class="card preview-section" id="preview-card">
+            <h2>📊 剪辑预览</h2>
+            
+            <div class="segment-info">
+                <div class="info-card">
+                    <div class="value" id="preview-duration">-</div>
+                    <div class="label">原视频时长</div>
+                </div>
+                <div class="info-card">
+                    <div class="value" id="preview-bpm">-</div>
+                    <div class="label">检测到 BPM</div>
+                </div>
+                <div class="info-card">
+                    <div class="value" id="preview-type">-</div>
+                    <div class="label">推荐舞蹈类型</div>
+                </div>
+            </div>
+            
+            <h4>时间轴预览</h4>
+            <div class="timeline" id="timeline">
+                <div class="timeline-beats" id="timeline-beats"></div>
+                <div class="timeline-segments" id="timeline-segments"></div>
+            </div>
+            
+            <h4>推荐片段</h4>
+            <div class="segment-list" id="segment-list"></div>
+        </div>
+        
+        <!-- 进度区域 -->
+        <div class="card hidden" id="progress-card">
+            <h2>⏳ 处理中...</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="status-message" id="status-message">正在初始化...</div>
+        </div>
+        
+        <!-- 下载区域 -->
+        <div class="card hidden" id="download-card">
+            <div class="download-section">
+                <h3>🎉 剪辑完成！</h3>
+                <div class="video-info" id="result-info"></div>
+                <a class="btn" id="download-btn" href="#">⬇️ 下载剪辑结果</a>
+                <button class="btn btn-secondary" onclick="location.reload()" style="margin-top: 10px;">🔄 处理新视频</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 全局变量
+        let currentTaskId = null;
+        let previewData = null;
+        
+        // 预设详情
+        const presetDetails = {
+            ballet: { name: '芭蕾', bpm: '60-120', ideal: '16秒', note: '重视动作连贯性，避免在跳跃/旋转中间切断' },
+            hip_hop: { name: '街舞', bpm: '80-150', ideal: '8秒', note: '节奏感强，适合展示炸点动作' },
+            folk: { name: '民族舞', bpm: '60-140', ideal: '12秒', note: '节奏多变，重视文化内涵' },
+            modern: { name: '现代舞', bpm: '40-120', ideal: '20秒', note: '情感表达优先，需要较长片段' },
+            latin: { name: '拉丁舞', bpm: '100-180', ideal: '10秒', note: '热情奔放，适合展示旋转/造型' },
+            jazz: { name: '爵士舞', bpm: '90-160', ideal: '8秒', note: '节奏感强，注重身体线条' }
+        };
+        
+        // 平台建议
+        const platformSuggestions = {
+            15: '适合抖音/快手',
+            30: '适合小红书/Instagram',
+            60: '适合B站/YouTube Shorts',
+            90: '适合舞蹈教学',
+            120: '适合完整舞段展示'
+        };
+        
+        // DOM 元素
+        const uploadArea = document.getElementById('upload-area');
+        const fileInput = document.getElementById('file-input');
+        const presetSelect = document.getElementById('preset-select');
+        const durationSlider = document.getElementById('duration-slider');
+        const durationValue = document.getElementById('duration-value');
+        const previewBtn = document.getElementById('preview-btn');
+        const clipBtn = document.getElementById('clip-btn');
+        
+        // 上传处理
+        uploadArea.addEventListener('click', () => fileInput.click());
+        
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) handleFile(files[0]);
+        });
+        
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) handleFile(e.target.files[0]);
+        });
+        
+        function handleFile(file) {
+            const formData = new FormData();
+            formData.append('video', file);
+            
+            document.getElementById('file-info').textContent = `已选择: ${file.name} (${(file.size/1024/1024).toFixed(1)} MB)`;
+            document.getElementById('file-info').classList.remove('hidden');
+            
+            fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.error) {
+                    alert('上传失败: ' + data.error);
+                    return;
+                }
+                currentTaskId = data.task_id;
+                document.getElementById('config-card').classList.remove('hidden');
+            })
+            .catch(err => alert('上传错误: ' + err));
+        }
+        
+        // 预设详情更新
+        function updatePresetDetail() {
+            const preset = presetSelect.value;
+            const detail = presetDetails[preset];
+            document.getElementById('preset-detail').innerHTML = `
+                <h4>${detail.name} (${detail.bpm} BPM)</h4>
+                <p>建议片段时长: ${detail.ideal} | ${detail.note}</p>
+            `;
+        }
+        
+        presetSelect.addEventListener('change', updatePresetDetail);
+        updatePresetDetail();
+        
+        // 时长滑块
+        durationSlider.addEventListener('input', (e) => {
+            const value = e.target.value;
+            durationValue.textContent = value;
+            
+            // 平台建议
+            let suggestion = '';
+            if (value <= 20) suggestion = platformSuggestions[15];
+            else if (value <= 45) suggestion = platformSuggestions[30];
+            else if (value <= 75) suggestion = platformSuggestions[60];
+            else if (value <= 105) suggestion = platformSuggestions[90];
+            else suggestion = platformSuggestions[120];
+            
+            document.getElementById('platform-suggestion').textContent = suggestion;
+        });
+        
+        // 预览剪辑点
+        previewBtn.addEventListener('click', () => {
+            if (!currentTaskId) return;
+            
+            previewBtn.disabled = true;
+            previewBtn.textContent = '分析中...';
+            
+            fetch('/api/preview', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    task_id: currentTaskId,
+                    preset: presetSelect.value,
+                    target_duration: parseInt(durationSlider.value)
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                previewBtn.disabled = false;
+                previewBtn.textContent = '👁️ 预览剪辑点';
+                
+                if (data.error) {
+                    alert('预览失败: ' + data.error);
+                    return;
+                }
+                
+                previewData = data.preview;
+                showPreview(previewData);
+            })
+            .catch(err => {
+                previewBtn.disabled = false;
+                previewBtn.textContent = '👁️ 预览剪辑点';
+                alert('预览错误: ' + err);
+            });
+        });
+        
+        function showPreview(data) {
+            document.getElementById('preview-card').classList.add('active');
+            
+            // 基本信息
+            document.getElementById('preview-duration').textContent = data.duration.toFixed(1) + 's';
+            document.getElementById('preview-bpm').textContent = Math.round(data.bpm);
+            document.getElementById('preview-type').textContent = data.detected_dance_type;
+            
+            // 时间轴
+            const timeline = document.getElementById('timeline');
+            const timelineBeats = document.getElementById('timeline-beats');
+            const timelineSegments = document.getElementById('timeline-segments');
+            
+            timelineBeats.innerHTML = '';
+            timelineSegments.innerHTML = '';
+            
+            // 节拍标记
+            data.timeline.forEach(beat => {
+                const beatEl = document.createElement('div');
+                beatEl.className = 'timeline-beat' + (beat.is_downbeat ? ' downbeat' : '');
+                beatEl.style.left = (beat.time / data.duration * 100) + '%';
+                timelineBeats.appendChild(beatEl);
+            });
+            
+            // 推荐片段
+            data.segments.forEach((seg, idx) => {
+                const segEl = document.createElement('div');
+                segEl.className = 'timeline-segment';
+                segEl.style.left = (seg.start / data.duration * 100) + '%';
+                segEl.style.width = ((seg.end - seg.start) / data.duration * 100) + '%';
+                segEl.title = `片段 ${idx + 1}: ${seg.start.toFixed(1)}s - ${seg.end.toFixed(1)}s`;
+                timelineSegments.appendChild(segEl);
+            });
+            
+            // 片段列表
+            const segmentList = document.getElementById('segment-list');
+            segmentList.innerHTML = data.segments.map((seg, idx) => `
+                <div class="segment-item">
+                    <div class="segment-time">${seg.start.toFixed(1)}s - ${seg.end.toFixed(1)}s</div>
+                    <div class="segment-score">音乐: ${(seg.music_score * 100).toFixed(0)}%</div>
+                    <div class="segment-score">动作: ${(seg.motion_score * 100).toFixed(0)}%</div>
+                    <div class="segment-duration">${seg.duration.toFixed(1)}s</div>
+                </div>
+            `).join('');
+            
+            // 滚动到预览区域
+            document.getElementById('preview-card').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // 开始剪辑
+        clipBtn.addEventListener('click', () => {
+            if (!currentTaskId) return;
+            
+            document.getElementById('config-card').classList.add('hidden');
+            document.getElementById('preview-card').classList.remove('active');
+            document.getElementById('progress-card').classList.remove('hidden');
+            
+            const useGpu = document.getElementById('use-gpu')?.checked ?? false;
+            
+            fetch('/api/clip', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    task_id: currentTaskId,
+                    preset: presetSelect.value,
+                    target_duration: parseInt(durationSlider.value),
+                    use_gpu: useGpu
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.error) {
+                    alert('剪辑失败: ' + data.error);
+                    return;
+                }
+                pollStatus();
+            })
+            .catch(err => {
+                alert('剪辑错误: ' + err);
+            });
+        });
+        
+        // 轮询状态
+        function pollStatus() {
+            if (!currentTaskId) return;
+            
+            fetch(`/api/status/${currentTaskId}`)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('progress-fill').style.width = data.progress + '%';
+                document.getElementById('status-message').textContent = data.message;
+                
+                if (data.status === 'completed') {
+                    showResult(data);
+                } else if (data.status === 'failed') {
+                    alert('剪辑失败: ' + data.message);
+                } else {
+                    setTimeout(pollStatus, 1000);
+                }
+            });
+        }
+        
+        function showResult(data) {
+            document.getElementById('progress-card').classList.add('hidden');
+            document.getElementById('download-card').classList.remove('hidden');
+            
+            const report = data.report;
+            document.getElementById('result-info').innerHTML = `
+                <p><strong>原视频:</strong> ${report.original_duration.toFixed(1)} 秒</p>
+                <p><strong>输出:</strong> ${report.output_duration.toFixed(1)} 秒</p>
+                <p><strong>压缩比:</strong> ${report.compression_ratio}</p>
+                <p><strong>使用片段:</strong> ${report.segments.length} 个</p>
+            `;
+            
+            document.getElementById('download-btn').href = `/api/download/${currentTaskId}`;
+        }
+    </script>
+</body>
+</html>
