@@ -53,3 +53,7 @@ Thumbs.db
 tmp/
 temp/
 *.tmp
+
+# Video clipper (unrelated project)
+dance_clipper/
+dance_clipper*.tar.gz
