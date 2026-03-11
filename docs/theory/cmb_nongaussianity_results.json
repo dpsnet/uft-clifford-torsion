@@ -1,0 +1,10 @@
+{
+  "f_NL_theory": -4.9000000000000155,
+  "f_NL_planck_obs": -0.9,
+  "f_NL_planck_err": 5.1,
+  "snr_planck": 0.9607843137254933,
+  "snr_cmb_s4": 4.9000000000000155,
+  "consistent_with_planck": true,
+  "cmb_s4_detection_forecast": "4.9-sigma",
+  "conclusion": "Theory consistent with Planck, CMB-S4 will provide definitive test"
+}

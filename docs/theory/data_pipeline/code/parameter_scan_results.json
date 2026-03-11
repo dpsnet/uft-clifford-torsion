@@ -1,0 +1,8 @@
+[
+  {
+    "tau_0": 0.0001,
+    "score": 1.0,
+    "n_s_pred": 0.964998,
+    "r_pred": 0.01000004,
+    "cs_shift_Hz": 1.0000000000000003e-05,
+    "constraints_passed": 

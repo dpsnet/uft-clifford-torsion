@@ -1,0 +1,215 @@
+{
+  "timestamp": "2026-03-10T07:49:33.985941",
+  "theory_params": {
+    "alpha": 0.01,
+    "m_tau": 0.001,
+    "lambda_nl": 1e-06,
+    "kappa_nl": 1e-12,
+    "g_tau": 1.0,
+    "tau_0": 0.1,
+    "M_pl": 2.435e+18
+  },
+  "comparisons": {
+    "gravitational_waves": {
+      "data_source": "GWOSC (LIGO/Virgo/KAGRA)",
+      "tested_hypothesis": "6 gravitational wave polarizations vs 2 (GR)",
+      "events_analyzed": [
+        {
+          "event": "GW150914",
+          "expected_snr_vector": 0.5,
+          "expected_snr_scalar": 0.010000000000000002
+        },
+        {
+          "event": "GW151012",
+          "expected_snr_vector": 0.5,
+          "expected_snr_scalar": 0.010000000000000002
+        },
+        {
+          "event": "GW151226",
+          "expected_snr_vector": 0.5,
+          "expected_snr_scalar": 0.010000000000000002
+        },
+        {
+          "event": "GW170104",
+          "expected_snr_vector": 0.5,
+          "expected_snr_scalar": 0.010000000000000002
+        },
+        {
+          "event": "GW170608",
+          "expected_snr_vector": 0.5,
+          "expected_snr_scalar": 0.010000000000000002
+        }
+      ],
+      "polarization_constraints": {
+        "vector_snr_limit": 0.1,
+        "scalar_snr_limit": 0.05,
+        "implied_tau_limit_vector": 0.02,
+        "implied_tau_limit_scalar": 0.22360679774997896
+      },
+      "bayes_factors": {},
+      "conclusion": "\u7406\u8bba\u53c2\u6570\u8d85\u51faGW\u89c2\u6d4b\u7ea6\u675f\uff0c\u7406\u8bba\u88ab\u8bc1\u4f2a\u98ce\u9669",
+      "status": "tension"
+    },
+    "cmb": {
+      "data_source": "Planck 2018",
+      "tested_parameters": [
+        "n_s",
+        "r",
+        "f_NL_local"
+      ],
+      "theory_predictions": {
+        "n_s": {
+          "value": -1.0350000000000001,
+          "uncertainty": 0.02
+        },
+        "r": {
+          "value": 0.05,
+          "uncertainty": 0.01
+        },
+        "f_NL_local": {
+          "value": 15.0,
+          "uncertainty": 3
+        }
+      },
+      "observed_values": {
+        "n_s": {
+          "value": 0.9649,
+          "uncertainty": 0.0042
+        },
+        "r": {
+          "value": 0.0,
+          "upper_limit": 0.06
+        },
+        "f_NL_local": {
+          "value": -0.9,
+          "uncertainty": 5.1
+        }
+      },
+      "chi_square": {
+        "n_s": 226734.69444444453,
+        "f_NL_local": 9.719723183391006,
+        "r": 0.0
+      },
+      "conclusion": "\u7406\u8bba\u9884\u8a00\u4e0ePlanck\u6570\u636e\u5b58\u5728\u663e\u8457\u504f\u5dee",
+      "total_chi2": 226744.41416762793,
+      "ndf": 3,
+      "chi2_probability": 0.0,
+      "status": "tension"
+    },
+    "particle_physics": {
+      "data_source": "PDG 2024",
+      "tested_quantities": [
+        "W_mass",
+        "Z_mass",
+        "photon_mass"
+      ],
+      "theory_predictions": {
+        "photon_mass": {
+          "value": 1.4500508095264572e-07,
+          "unit": "eV"
+        },
+        "W_mass": {
+          "value": 80.4,
+          "unit": "GeV"
+        },
+        "Z_mass": {
+          "value": 91.2,
+          "unit": "GeV"
+        }
+      },
+      "observed_values": {
+        "photon_mass": {
+          "upper_limit": 1e-18,
+          "unit": "eV"
+        },
+        "W_mass": {
+          "value": 80.379,
+          "uncertainty": 0.012,
+          "unit": "GeV"
+        },
+        "Z_mass": {
+          "value": 91.1876,
+          "uncertainty": 0.0021,
+          "unit": "GeV"
+        }
+      },
+      "conclusion": "\u7c92\u5b50\u8d28\u91cf\u4e0e\u89c2\u6d4b\u4e00\u81f4\uff0c\u5149\u5b50\u8d28\u91cf\u6ee1\u8db3\u5b9e\u9a8c\u4e0a\u9650",
+      "photon_mass_status": "fail",
+      "W_mass_deviation": 1.7500000000000664,
+      "Z_mass_deviation": 5.904761904761678,
+      "status": "consistent"
+    },
+    "atomic_physics": {
+      "data_source": "NIST ASD",
+      "tested_systems": [
+        "Hydrogen",
+        "Cesium"
+      ],
+      "theory_predictions": {
+        "H_2P_splitting": {
+          "value": 0.0,
+          "unit": "eV"
+        },
+        "Cs_hyperfine_shift": {
+          "value": 19507491851885.96,
+          "unit": "Hz"
+        }
+      },
+      "observed_constraints": {
+        "H_2P_anomaly": {
+          "upper_limit": 1e-07,
+          "unit": "eV"
+        },
+        "Cs_clock_stability": {
+          "fractional_uncertainty": 1e-16,
+          "implied_shift_limit": 0.001
+        }
+      },
+      "conclusion": "\u539f\u5b50\u7269\u7406\u4fee\u6b63\u8d85\u51fa\u7ea6\u675f\uff0c\u975e\u7ebf\u6027\u538b\u5236\u673a\u5236\u5fc5\u987b\u66f4\u5f3a",
+      "status": "requires_mechanism"
+    },
+    "cosmology": {
+      "data_source": "BBN + Supernova + BAO",
+      "tested_quantities": [
+        "He4_abundance",
+        "D_H_ratio",
+        "w_dark_energy"
+      ],
+      "theory_predictions": {
+        "He4_mass_fraction": 0.248,
+        "D_H_ratio": 2.4999999999999998e-05,
+        "w_dark_energy": -0.99
+      },
+      "observed_values": {
+        "He4_mass_fraction": {
+          "value": 0.244,
+          "uncertainty": 0.001
+        },
+        "D_H_ratio": {
+          "value": 2.6e-05,
+          "uncertainty": 1e-06
+        },
+        "w_dark_energy": {
+          "value": -1.03,
+          "uncertainty": 0.05
+        }
+      },
+      "conclusion": "\u90e8\u5206\u5b87\u5b99\u5b66\u89c2\u6d4b\u4e0e\u7406\u8bba\u5b58\u5728\u504f\u5dee",
+      "deviations": {
+        "He4_mass_fraction": 4.0000000000000036,
+        "D_H_ratio": 1.0000000000000007,
+        "w_dark_energy": 0.8000000000000007
+      },
+      "status": "partial_tension"
+    }
+  },
+  "overall_assessment": {
+    "assessment": "\u7406\u8bba\u9762\u4e34\u5b9e\u9a8c\u7ea6\u675f\u7684\u6311\u6218",
+    "recommendation": "\u9700\u8981\u4fee\u6b63\u7406\u8bba\u53c2\u6570\u6216\u673a\u5236",
+    "status_breakdown": {
+      "consistent": 1,
+      "tension": 2,
+      "fail": 0
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "chi2_LCDM": 34.6533603644749,
+  "chi2_torsion": 222.5202740997035,
+  "dof": 10,
+  "BIC_LCDM": 39.44915091007164,
+  "BIC_torsion": 227.31606464530023,
+  "n_data": 11,
+  "conclusion": "Lambda CDM shows better fit"
+}
