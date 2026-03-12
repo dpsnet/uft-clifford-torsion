@@ -159,6 +159,13 @@ Deep theoretical physics research on "Fixed 4D Topology-Dynamic Spectral Dimensi
   - Elephant parable for complementary perspectives
   - Paper expanded: 72 pages → 86 pages, LaTeX ~4,200 → ~6,000 lines
   - **Theory now includes complete flavor physics phenomenology**
+- **NEW (2026-03-13): Add Section 5.6 - Effective CKM Model**
+  - Simplified 3-parameter model as low-energy effective theory
+  - Pedagogical bridge between phenomenology and full theory
+  - Explicit limitations honestly discussed (theta_23 discrepancy)
+  - Clear hierarchical relationship: V^(eff) = V^(full)|_{E<<Ec}
+  - Both models complementary with usage guidance table
+  - Paper expanded: 86 pages → 90 pages
 
 
 **Current Phase**: Phase 4 (Complete Theory Construction) - COMPLETED ✅ + **Phase 5 Extension (Transdimensional Dynamics)** - ACTIVE  
