@@ -176,6 +176,20 @@ Deep theoretical physics research on "Fixed 4D Topology-Dynamic Spectral Dimensi
   - Key insight: "Esperanto of quantum gravity" - common language for all approaches
   - Paper expanded: 99 pages → 107 pages
   - **Theory now provides systematic criteria for integrating entire quantum gravity landscape**
+- **NEW (2026-03-13): Add Appendix G - Classical Applications of Fractal-Torsion Duality**
+  - Comprehensive classical physics applications (~14,500 words)
+  - Turbulence: torsion-modified Navier-Stokes, LES enhancement
+  - Fracture mechanics: modified Griffith criterion with fractal corrections
+  - Electromagnetism: Maxwell equations in fractal media, metamaterials
+  - Geophysics: fault mechanics, Gutenberg-Richter law, seismic hazard
+  - Biophysics: allometric scaling (Kleiber's law), respiratory mechanics
+  - Materials: composites, granular materials
+  - Acoustics: wave propagation in fractal media
+  - Coverage: 10^-6 m to 10^6 m (12 orders of magnitude)
+  - Key insight: Classical fractal phenomena = coarse-grained torsion structures
+  - Classical applications as experimental testbeds (measurable today vs 2034+ for quantum gravity)
+  - Paper expanded: 107 pages → 117 pages
+  - **Framework now spans quantum gravity to classical engineering**
 
 
 **Current Phase**: Phase 4 (Complete Theory Construction) - COMPLETED ✅ + **Phase 5 Extension (Transdimensional Dynamics)** - ACTIVE  
