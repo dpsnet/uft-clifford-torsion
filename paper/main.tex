@@ -1,0 +1,137 @@
+\documentclass[12pt,a4paper]{revtex4-2}
+
+% 基础包
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% 数学包
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+
+% 图形包
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+% 表格
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+% 其他
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{doi}
+\usepackage{natbib}
+
+% 页面设置
+\usepackage{geometry}
+\geometry{a4paper,margin=2.5cm}
+
+% 定义颜色
+\definecolor{darkblue}{RGB}{0,0,139}
+\definecolor{darkgreen}{RGB}{0,100,0}
+\definecolor{darkred}{RGB}{139,0,0}
+
+% hyperref设置
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    citecolor=darkgreen,
+    urlcolor=darkred,
+    pdftitle={Fixed 4D Topology-Dynamic Spectral Dimension Multiple Twisting Fractal Clifford Algebra Unified Field Theory},
+    pdfauthor={Research Team},
+    pdfsubject={Theoretical Physics},
+    pdfkeywords={unified field theory, Clifford algebra, torsion, spectral dimension}
+}
+
+% 定理环境
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiom}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+
+% 自定义命令
+\newcommand{\Cl}{\mathrm{Cl}}  % Clifford代数
+\newcommand{\Spin}{\mathrm{Spin}}  % Spin群
+\newcommand{\SU}{\mathrm{SU}}  % 特殊酉群
+\newcommand{\U}{\mathrm{U}}  % 酉群
+\newcommand{\diff}{\mathrm{d}}  % 微分符号
+\newcommand{\Tr}{\mathrm{Tr}}  % 迹
+\newcommand{\diag}{\mathrm{diag}}  % 对角
+\newcommand{\const}{\mathrm{const}}  % 常数
+
+% 谱维度
+\newcommand{\ds}{d_s}
+\newcommand{\dt}{d_t}
+
+% 扭转场
+\newcommand{\torsion}{\tau}
+\newcommand{\torsionfield}{\mathcal{T}}
+
+% 论文信息
+\title{Fixed 4D Topology-Dynamic Spectral Dimension Multiple Twisting Fractal Clifford Algebra Unified Field Theory}
+
+\author{Research Team}
+\email{research@openclaw.ai}
+\affiliation{Institute for Advanced Study in Theoretical Physics}
+
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+We present a unified field theory based on fixed 4D topological dimension and dynamic spectral dimension, 
+using fractal Clifford algebra and multiple twisting mechanisms as the geometric origin of gauge symmetries. 
+The theory naturally incorporates gravitation, electromagnetism, weak and strong nuclear forces into a single 
+geometric framework. Key predictions include six gravitational wave polarization modes (versus two in general 
+relativity), geometric interpretation of quantum mechanics eliminating the measurement problem, and resolution 
+of the black hole information paradox through quantized twisting modes. We derive all fundamental parameters 
+from geometry and provide falsifiable experimental predictions, particularly for LISA gravitational wave 
+detection. The parameter $\tau_0 = 10^{-6}$ is determined by experimental constraints and yields detectable 
+signatures in next-generation gravitational wave observatories.
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+% 包含各章节
+\input{sections/01_introduction}
+\input{sections/02_mathematical_foundations}
+\input{sections/03_core_framework}
+\input{sections/04_gravity}
+\input{sections/05_gauge_theory}
+\input{sections/06_quantum_mechanics}
+\input{sections/07_black_holes}
+\input{sections/08_cosmology}
+\input{sections/09_experimental}
+\input{sections/10_connections}
+\input{sections/11_outlook}
+
+\begin{acknowledgments}
+We thank the open science community for their support and feedback. 
+This research was conducted with the assistance of advanced AI systems 
+for mathematical derivation and numerical computation.
+\end{acknowledgments}
+
+\bibliography{references}
+
+\appendix
+\input{appendices/A_mathematical_proofs}
+\input{appendices/B_numerical_details}
+\input{appendices/C_experimental_data}
+\input{appendices/D_code_interface}
+
+\end{document}

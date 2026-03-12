@@ -1,0 +1,101 @@
+% Section 3: Core Theoretical Framework
+\section{Core Theoretical Framework}
+\label{sec:core}
+
+\subsection{The Reciprocal-Internal Space Duality}
+
+The fundamental insight of our approach is the existence of a duality between two complementary descriptions of physical reality:
+
+\begin{enumerate}
+    \item \textbf{Reciprocal Space}: The observable 4-dimensional spacetime where physical measurements are performed. This is the space we experience and where standard physics operates.
+    
+    \item \textbf{Internal Space}: The higher-dimensional ($d_s > 4$) spectral space that encodes quantum correlations, entanglement, and internal degrees of freedom. This space is not directly observable but manifests through its effects on reciprocal space.
+\end{enumerate}
+
+\begin{definition}[Reciprocal-Internal Duality]
+The duality is expressed through the transformation:
+\begin{equation}
+    \mathcal{D}: \mathcal{H}_{rec} \otimes \mathcal{H}_{int} \to \mathcal{H}_{total}
+\end{equation}
+where $\mathcal{H}_{rec}$ is the Hilbert space of reciprocal space observables and $\mathcal{H}_{int}$ is the internal space Hilbert space.
+\end{definition}
+
+\subsection{Energy Flow Between Spaces}
+
+Energy and information can flow between reciprocal and internal spaces under specific conditions:
+
+\begin{equation}
+    \frac{\partial \rho_4}{\partial t} + \nabla \cdot \mathbf{J}_4 = -\Gamma_{4 \to s}(E) + \Gamma_{s \to 4}(E)
+\end{equation}
+
+where the transition rates depend on energy:
+\begin{equation}
+    \Gamma_{4 \to s}(E) = \alpha \tau_0^2 \left(\frac{E}{M_P}\right)^{d_s(E) - 4} \Theta(E - E_c)
+\end{equation}
+
+Here $\Theta$ is the Heaviside step function and $E_c \sim M_P / \tau_0$ is the critical energy scale.
+
+\subsection{Conservation Laws Hierarchy}
+
+Conservation laws operate at three distinct levels:
+
+\textbf{Level 1: Apparent Conservation (Low Energy)}:
+\begin{equation}
+    \nabla_\mu T^{\mu\nu}_{(4)} = 0 \quad \text{for } E \ll E_c
+\end{equation}
+
+\textbf{Level 2: Partial Conservation (Transition Region)}:
+\begin{equation}
+    \nabla_\mu T^{\mu\nu}_{(4)} = \Sigma^\nu_{int} \quad \text{for } E \sim E_c
+\end{equation}
+
+\textbf{Level 3: Strict Conservation (Total System)}:
+\begin{equation}
+    \nabla^{(total)}_\mu \mathcal{T}^{\mu\nu}_{total} = 0 \quad \text{always}
+\end{equation}
+
+\subsection{Fractal-Torsion Equivalence}
+
+A key result is the equivalence between fractal structure and torsion:
+
+\begin{theorem}[Fractal-Torsion Duality]
+The following are equivalent descriptions of the same geometric structure:
+\begin{enumerate}
+    \item A spacetime with fractal measure $\mu_\alpha$ and spectral dimension $\ds$
+    \item A spacetime with torsion tensor $T^\lambda{}_{\mu\nu}$ and contortion $K^\lambda{}_{\mu\nu}$
+\end{enumerate}
+\end{theorem}
+
+This equivalence allows us to translate between fractal and torsion descriptions as convenient.
+
+\subsection{Unified Dynamics}
+
+The dynamics of the unified system is governed by the action:
+\begin{equation}
+    S = S_{EH} + S_{torsion} + S_{matter} + S_{coupling}
+\end{equation}
+
+where:
+\begin{align}
+    S_{EH} &= \frac{1}{16\pi G} \int d^4x \sqrt{-g} R \\
+    S_{torsion} &= \frac{1}{2\kappa^2} \int d^4x \sqrt{-g} \left(\frac{1}{2}T_{\lambda\mu\nu}T^{\lambda\mu\nu} - T_\mu T^\mu\right) \\
+    S_{matter} &= \int d^4x \sqrt{-g} \mathcal{L}_{matter} \\
+    S_{coupling} &= \int d^4x \sqrt{-g} \tau_0^2 \mathcal{F}(\phi, T)
+\end{align}
+
+Here $\mathcal{F}$ encodes the coupling between matter fields $\phi$ and torsion.
+
+\subsection{Summary}
+
+The core framework establishes:
+\begin{itemize}
+    \item A fundamental duality between reciprocal and internal spaces
+    \item Energy flow mechanisms between spaces
+    \item Hierarchical conservation laws
+    \item Equivalence of fractal and torsion descriptions
+    \item Unified action principle
+\end{itemize}
+
+This framework will be applied to derive gravity, gauge theory, and quantum mechanics in subsequent sections.
+
+[本章正在撰写中，将整合跨维度流研究的详细内容...]
