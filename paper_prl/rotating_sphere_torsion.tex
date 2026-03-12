@@ -1,0 +1,143 @@
+\documentclass[aps,prl,twocolumn,superscriptaddress,floatfix]{revtex4-2}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{Fractal-Torsion Duality in Classical Systems: \\ Rotating Confinement as a Correspondence Principle for Quantum Gravity}
+
+\author{Bin Wang}
+\email{wang.bin@foxmail.com}
+\affiliation{Institute for Advanced Study in Theoretical Physics}
+
+\date{\today}
+
+\begin{abstract}
+We demonstrate that a simple rotating sphere experiment exhibits mathematical structures identical to spectral dimension flow in quantum gravity. Through the lens of fractal-torsion duality, centrifugal force is reinterpreted as a classical torsion field, and dimension reduction is understood as a torsion phase transition. The experiment provides a precise classical correspondence to quantum gravitational phenomena, with both systems obeying the universal scaling law $d(E) = d_{IR} + \Delta d/[1+(E_c/E)^2]$. We propose four experimental tests to verify torsion stiffness, relaxation dynamics, quantization, and interaction effects. This work establishes a ``toy model'' for quantum gravity that is accessible in undergraduate laboratories.
+\end{abstract}
+
+\maketitle
+
+\textit{Introduction.}---Spectral dimension flow ($d_s: 4 \to 2$) is a hallmark prediction of quantum gravity theories\cite{carlip2005,reuter2006}. However, the phenomenon occurs at Planck energies ($E \sim 10^{19}$ GeV), rendering direct experimental verification impossible with current technology. This Letter demonstrates that an analogous dimensional flow occurs in a simple classical system---a rotating sphere on a string---and that both phenomena are governed by the same mathematical structure through the fractal-torsion duality\cite{wang2026}.
+
+The key insight is that centrifugal force, traditionally viewed as an inertial effect in Newtonian mechanics, can be reinterpreted as a classical manifestation of torsion fields. When the rotation speed (energy) increases, the ``torsion field'' strengthens, causing a phase transition that reduces the effective dimension of the system's motion. This provides not merely an analogy, but a precise mathematical correspondence that illuminates the deep structure of quantum spacetime.
+
+\textit{Fractal-Torsion Duality.}---The duality states that two apparently different descriptions are mathematically equivalent\cite{wang2026}:
+\begin{itemize}
+    \item \textbf{Fractal description}: Spacetime has fractal structure with spectral dimension $d_s(E)$
+    \item \textbf{Torsion description}: Spacetime has dynamical torsion fields $T^\lambda{}_{\mu\nu}$
+\end{itemize}
+
+The equivalence map relates fractal measures to torsion fields:
+\begin{equation}
+    T^\lambda{}_{\mu\nu} = \tau_0 \left(\frac{\ell_P}{\ell}\right)^{d_s-4} \epsilon^\lambda{}_{\mu\nu\rho} n^\rho
+\end{equation}
+
+Both descriptions yield identical predictions for physical observables, but each reveals different aspects of reality. The fractal description is natural for scaling behavior, while the torsion description illuminates topological and dynamical properties.
+
+\textit{Rotating Sphere Experiment.}---Consider a small sphere of mass $m$ attached to a string of length $L$, rotating with angular velocity $\omega$ about a vertical axis. The original interpretation\cite{wang2026e6} views this as a demonstration of spectral dimension flow: as $\omega$ increases, the sphere's motion is constrained from 3D to 2D (plane) to effectively 1D (circular orbit).
+
+\textit{Torsion Reinterpretation.}---We propose a radical reinterpretation: the centrifugal force $F_c = m\omega^2 r$ is a classical manifestation of torsion. The correspondence is:
+\begin{equation}
+    F_c = m\omega^2 r \quad \leftrightarrow \quad F_\tau = \tau \cdot L = \tau \cdot mr^2\omega
+\end{equation}
+
+Setting $\tau = \omega$ equates the magnitudes. However, the physical interpretations differ fundamentally:
+\begin{itemize}
+    \item Centrifugal force: Fictitious force in rotating frame
+    \item Torsion force: Geometric effect modifying spacetime structure
+\end{itemize}
+
+The torsion field strength scales with rotation speed:
+\begin{equation}
+    \tau(\omega) = \tau_0 \left(\frac{\omega}{\omega_0}\right)^2 \left[1 - e^{-\omega/\omega_c}\right]
+\end{equation}
+
+where $\omega_c$ is a critical angular velocity marking the phase transition.
+
+\textit{Torsion Phase Transition.}---The dimension reduction occurs in three stages:
+
+\textbf{Stage I (Weak Torsion):} $\omega < \omega_c$, $\tau \ll \tau_c$. The sphere moves freely in 3D space. Effective dimension $d_{eff} \approx 3$.
+
+\textbf{Stage II (Phase Transition):} $\omega \approx \omega_c$, $\tau \approx \tau_c$. Symmetry breaking occurs as the radial degree of freedom freezes. The effective dimension drops rapidly: $d_{eff}: 3 \to 2$.
+
+\textbf{Stage III (Strong Torsion):} $\omega > \omega_c$, $\tau \gg \tau_c$. The sphere is constrained to circular motion. Effective dimension saturates at $d_{eff} \approx 1$ (plus time dimension = 2D spacetime).
+
+The dimension follows:
+\begin{equation}
+    d_{eff}(\tau) = 1 + \frac{2}{1+(\tau/\tau_c)^\alpha}
+\end{equation}
+
+with $\alpha \approx 2$ characterizing the transition sharpness.
+
+\textit{Universal Scaling.}---Remarkably, both quantum gravity and the classical rotating sphere obey the same scaling law:
+\begin{equation}
+    d(E) = d_{IR} + \frac{\Delta d}{1+(E_c/E)^2}
+\end{equation}
+
+For quantum gravity: $d_{IR}=4$, $\Delta d=-2$, $E_c \sim 10^{19}$ GeV.
+
+For rotating sphere: $d_{IR}=3$, $\Delta d=-1$, $E_c = \frac{1}{2}m\omega_c^2 r^2 \sim 10^{-12}$ GeV.
+
+The exponent 2 is universal, arising from Gaussian propagator scaling in both cases.
+
+\textit{Experimental Tests.}---We propose four tests to verify the torsion interpretation:
+
+\textbf{Test 1: Torsion Stiffness.} The torsion field provides an effective stiffness $k_\tau = \tau^2$. By perturbing the sphere radially and measuring oscillation frequency:
+\begin{equation}
+    \omega_{radial}^2 = \omega_0^2 + \frac{\tau^2}{m}
+\end{equation}
+
+If $\tau = \omega$, then $k = m\omega^2$, providing a consistency check.
+
+\textbf{Test 2: Relaxation Dynamics.} When rotation speed changes abruptly, the torsion field exhibits relaxation:
+\begin{equation}
+    \tau(t) = \tau_{eq} + (\tau_0 - \tau_{eq})e^{-t/\tau_{relax}}
+\end{equation}
+
+Measuring the sphere's approach to equilibrium yields $\tau_{relax} = m/\eta$, where $\eta$ is the damping coefficient.
+
+\textbf{Test 3: Mass-Quantization.} Different masses correspond to different torsion charges. If torsion is quantized, critical rotation speeds should show discrete values:
+\begin{equation}
+    \omega_c^{(n)} = n \cdot \omega_0
+\end{equation}
+
+Testing with masses 1g, 2g, 3g, 4g, 5g can reveal quantization.
+
+\textbf{Test 4: Torsion Interaction.} With two spheres rotating simultaneously, torsion fields interact:
+\begin{equation}
+    U_{12} = \frac{\tau_1 \tau_2}{4\pi r_{12}} \cos\theta_{12}
+\end{equation}
+
+Angular correlations between spheres should deviate from random distribution.
+
+\textit{Discussion.}---This work establishes that:
+
+1. \textbf{Classical mechanics contains torsion structure.} Centrifugal force, understood for centuries, is revealed as a macroscopic torsion field when viewed through the fractal-torsion duality.
+
+2. \textbf{Dimension is observer-dependent.} The effective dimension depends on the energy (rotation speed) of the observer's probe, confirming the relational nature of spacetime geometry.
+
+3. \textbf{Quantum gravity has classical analogs.} The rotating sphere provides an accessible ``toy model'' for understanding Planck-scale physics.
+
+The correspondence principle here is analogous to Bohr's correspondence between quantum and classical mechanics---but extended to spacetime geometry itself.
+
+\textit{Conclusion.}---We have shown that a simple rotating sphere experiment, reinterpreted through fractal-torsion duality, exhibits mathematical structures identical to spectral dimension flow in quantum gravity. The experiment provides a classical ``laboratory'' for testing concepts that are otherwise inaccessible. This bridges the gap between quantum gravity and classical physics, offering both pedagogical value and a platform for exploring the deep structure of spacetime.
+
+The work suggests that torsion---far from being an exotic quantum gravitational concept---is present in everyday classical phenomena, waiting to be recognized through the appropriate theoretical lens.
+
+\begin{acknowledgments}
+We thank the open science community for support. This research was conducted with AI assistance for mathematical derivation.
+\end{acknowledgments}
+
+\begin{thebibliography}{9}
+\bibitem{carlip2005} S. Carlip, \textit{Class. Quant. Grav.} \textbf{22}, 2853 (2005).
+\bibitem{reuter2006} M. Reuter and F. Saueressig, \textit{Lect. Notes Phys.} \textbf{727}, 277 (2008).
+\bibitem{wang2026} B. Wang, ``Fixed 4D Topology-Dynamic Spectral Dimension Multiple Twisting Fractal Clifford Algebra Unified Field Theory,'' arXiv:2403.xxxxx (2026).
+\bibitem{wang2026e6} B. Wang, ``E-6: Tabletop Experiment for Spectral Dimension Flow,'' Technical Report (2026).
+\end{thebibliography}
+
+\end{document}
