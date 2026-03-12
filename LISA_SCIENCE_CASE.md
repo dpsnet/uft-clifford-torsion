@@ -49,7 +49,7 @@ h_mod(f) = h_GR(f) × (d_s(f)/4)^0.5 × (1 + τ₀ log(f/f₀))
 
 where:
   d_s(f) = 4 + 6 (f/f₀)^0.5  (effective spectral dimension)
-  τ₀ = 10⁻⁵                  (torsion parameter)
+  τ₀ = 10⁻⁶                  (torsion parameter)
   f₀ = 10⁻³ Hz               (reference frequency)
 ```
 
