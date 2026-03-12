@@ -58,149 +58,158 @@
 \contentsline {subsection}{\numberline {G}Fermion Masses}{30}{section*.56}%
 \contentsline {subsection}{\numberline {H}Coupling Constant Unification}{30}{section*.57}%
 \contentsline {subsection}{\numberline {I}Summary}{31}{section*.58}%
-\contentsline {section}{\numberline {VI}Introduction: Time as a Dynamical Variable}{31}{section*.59}%
-\contentsline {section}{\numberline {VII}Time as Spectral Dimension Flow}{31}{section*.60}%
-\contentsline {subsection}{\numberline {A}The Temporal-Spectral Correspondence}{31}{section*.61}%
-\contentsline {subsection}{\numberline {B}Time Non-Monotonicity}{32}{section*.62}%
-\contentsline {section}{\numberline {VIII}Temporal Mirroring and the Internal Space}{32}{section*.63}%
-\contentsline {subsection}{\numberline {A}The Time Duality}{32}{section*.64}%
-\contentsline {subsection}{\numberline {B}Topological Mirror Inversion}{33}{section*.65}%
-\contentsline {section}{\numberline {IX}The Geometric Origin of Time's Arrow}{33}{section*.66}%
-\contentsline {subsection}{\numberline {A}Entropy as Geometric Complexity}{33}{section*.67}%
-\contentsline {subsection}{\numberline {B}Cosmological Time Arrow}{33}{section*.68}%
-\contentsline {section}{\numberline {X}Quantum Time and Non-Locality}{34}{section*.69}%
-\contentsline {subsection}{\numberline {A}Temporal Entanglement}{34}{section*.70}%
-\contentsline {subsection}{\numberline {B}The Quantum-Classical Transition}{34}{section*.71}%
-\contentsline {section}{\numberline {XI}Time in Extreme Conditions}{34}{section*.72}%
-\contentsline {subsection}{\numberline {A}Near Black Holes}{34}{section*.73}%
-\contentsline {subsection}{\numberline {B}Cosmological Epochs}{35}{section*.74}%
-\contentsline {section}{\numberline {XII}Summary}{35}{section*.75}%
-\contentsline {section}{\numberline {XIII}Geometric Interpretation of Quantum Mechanics}{35}{section*.76}%
-\contentsline {subsection}{\numberline {A}Quantum States as Fiber Bundle Sections}{35}{section*.77}%
-\contentsline {subsection}{\numberline {B}Elimination of Wave Function Collapse}{36}{section*.78}%
-\contentsline {subsubsection}{\numberline {1}The Measurement Process as Topological Evolution}{36}{section*.79}%
-\contentsline {subsubsection}{\numberline {2}Geometric Resolution}{37}{section*.80}%
-\contentsline {subsection}{\numberline {C}Quantum Entanglement as Topological Coupling}{37}{section*.81}%
-\contentsline {subsubsection}{\numberline {1}Geometric Definition of Entanglement}{38}{section*.82}%
-\contentsline {subsubsection}{\numberline {2}The Connection Form}{38}{section*.83}%
-\contentsline {subsubsection}{\numberline {3}No-Signaling Theorem}{38}{section*.84}%
-\contentsline {subsection}{\numberline {D}The Double-Slit Experiment Geometrically}{38}{section*.85}%
-\contentsline {subsubsection}{\numberline {1}Setup}{39}{section*.86}%
-\contentsline {subsubsection}{\numberline {2}Interference Pattern}{39}{section*.87}%
-\contentsline {subsubsection}{\numberline {3}Which-Path Information}{39}{section*.88}%
-\contentsline {subsection}{\numberline {E}Correspondence with Standard Quantum Mechanics}{39}{section*.89}%
-\contentsline {subsection}{\numberline {F}Summary}{40}{section*.90}%
-\contentsline {section}{\numberline {XIV}Black Hole Theory}{40}{section*.91}%
-\contentsline {subsection}{\numberline {A}The Singularity Problem in Classical GR}{40}{section*.92}%
-\contentsline {subsection}{\numberline {B}The Fractal-Twisting Black Hole Model}{41}{section*.93}%
-\contentsline {subsubsection}{\numberline {1}Core Hypothesis}{41}{section*.94}%
-\contentsline {subsubsection}{\numberline {2}Formation Mechanism}{41}{section*.95}%
-\contentsline {subsubsection}{\numberline {3}Singularity Elimination}{42}{section*.96}%
-\contentsline {subsection}{\numberline {C}Resolution of the Information Paradox}{42}{section*.97}%
-\contentsline {subsubsection}{\numberline {1}Information Encoding in Twisting Modes}{42}{section*.98}%
-\contentsline {subsubsection}{\numberline {2}Hawking Radiation Revisited}{43}{section*.99}%
-\contentsline {subsubsection}{\numberline {3}Information Conservation}{43}{section*.100}%
-\contentsline {subsection}{\numberline {D}Quantum Black Hole Remnants}{43}{section*.101}%
-\contentsline {subsubsection}{\numberline {1}Formation of Remnants}{43}{section*.102}%
-\contentsline {subsubsection}{\numberline {2}Properties of Remnants}{43}{section*.103}%
-\contentsline {subsubsection}{\numberline {3}Dark Matter Connection}{44}{section*.104}%
-\contentsline {subsection}{\numberline {E}Black Hole Entropy}{44}{section*.105}%
-\contentsline {subsection}{\numberline {F}Observational Signatures}{44}{section*.106}%
-\contentsline {subsubsection}{\numberline {1}Gravitational Waves from Mergers}{44}{section*.107}%
-\contentsline {subsubsection}{\numberline {2}Shadow Imaging}{44}{section*.108}%
-\contentsline {subsubsection}{\numberline {3}Dark Matter Detection}{45}{section*.109}%
-\contentsline {subsection}{\numberline {G}Summary}{45}{section*.110}%
-\contentsline {section}{\numberline {XV}Cosmology}{45}{section*.111}%
-\contentsline {subsection}{\numberline {A}Torsion-Driven Inflation}{45}{section*.112}%
-\contentsline {subsubsection}{\numberline {1}The Early Universe}{45}{section*.113}%
-\contentsline {subsubsection}{\numberline {2}Inflationary Dynamics}{46}{section*.114}%
-\contentsline {subsubsection}{\numberline {3}Slow-Roll Conditions}{46}{section*.115}%
-\contentsline {subsubsection}{\numberline {4}Number of E-folds}{46}{section*.116}%
-\contentsline {subsection}{\numberline {B}Spectral Dimension Evolution in the Early Universe}{46}{section*.117}%
-\contentsline {subsubsection}{\numberline {1}The Transition $d_s: 10 \to 4$}{46}{section*.118}%
-\contentsline {subsubsection}{\numberline {2}Timeline of Dimensionality Changes}{47}{section*.119}%
-\contentsline {subsubsection}{\numberline {3}Effect on Cosmic Evolution}{47}{section*.120}%
-\contentsline {subsection}{\numberline {C}Geometric Dark Energy}{48}{section*.121}%
-\contentsline {subsubsection}{\numberline {1}The Cosmological Constant Problem}{48}{section*.122}%
-\contentsline {subsubsection}{\numberline {2}Fractal Suppression Mechanism}{48}{section*.123}%
-\contentsline {subsubsection}{\numberline {3}Dark Energy as Geometric Effect}{48}{section*.124}%
-\contentsline {subsection}{\numberline {D}Primordial Gravitational Waves}{49}{section*.125}%
-\contentsline {subsubsection}{\numberline {1}Generation Mechanism}{49}{section*.126}%
-\contentsline {subsubsection}{\numberline {2}Six Polarization Modes in the Early Universe}{49}{section*.127}%
-\contentsline {subsubsection}{\numberline {3}Detection Prospects}{49}{section*.128}%
-\contentsline {subsection}{\numberline {E}Structure Formation}{49}{section*.129}%
-\contentsline {subsubsection}{\numberline {1}Power Spectrum}{49}{section*.130}%
-\contentsline {subsubsection}{\numberline {2}Dark Matter}{50}{section*.131}%
-\contentsline {subsection}{\numberline {F}Summary}{50}{section*.132}%
-\contentsline {section}{\numberline {XVI}Experimental Verification}{50}{section*.133}%
-\contentsline {subsection}{\numberline {A}Overview of Testable Predictions}{50}{section*.134}%
-\contentsline {subsection}{\numberline {B}Gravitational Wave Detection}{51}{section*.135}%
-\contentsline {subsubsection}{\numberline {1}LISA: The Primary Detection Channel}{51}{section*.136}%
-\contentsline {subsubsection}{\numberline {2}Cosmic Explorer and Einstein Telescope}{52}{section*.137}%
-\contentsline {subsubsection}{\numberline {3}Pulsar Timing Arrays}{52}{section*.138}%
-\contentsline {subsection}{\numberline {C}Atomic and Particle Physics Tests}{53}{section*.139}%
-\contentsline {subsubsection}{\numberline {1}Atomic Clock Constraints}{53}{section*.140}%
-\contentsline {subsubsection}{\numberline {2}Hydrogen Spectroscopy}{53}{section*.141}%
-\contentsline {subsubsection}{\numberline {3}Big Bang Nucleosynthesis}{53}{section*.142}%
-\contentsline {subsection}{\numberline {D}Cosmological Observations}{54}{section*.143}%
-\contentsline {subsubsection}{\numberline {1}CMB Spectral Distortions}{54}{section*.144}%
-\contentsline {subsubsection}{\numberline {2}Large Scale Structure}{54}{section*.145}%
-\contentsline {subsubsection}{\numberline {3}Dark Matter Detection}{54}{section*.146}%
-\contentsline {subsection}{\numberline {E}Summary of Detection Prospects}{55}{section*.147}%
-\contentsline {subsection}{\numberline {F}Falsifiability}{55}{section*.148}%
-\contentsline {section}{\numberline {XVII}Connections to Other Theories}{55}{section*.149}%
-\contentsline {subsection}{\numberline {A}Overview}{55}{section*.150}%
-\contentsline {subsection}{\numberline {B}String Theory}{56}{section*.151}%
-\contentsline {subsubsection}{\numberline {1}Similarities}{56}{section*.152}%
-\contentsline {subsubsection}{\numberline {2}Differences}{56}{section*.153}%
-\contentsline {subsubsection}{\numberline {3}Potential Unification}{56}{section*.154}%
-\contentsline {subsection}{\numberline {C}Loop Quantum Gravity}{57}{section*.155}%
-\contentsline {subsubsection}{\numberline {1}Similarities}{57}{section*.156}%
-\contentsline {subsubsection}{\numberline {2}Differences}{57}{section*.157}%
-\contentsline {subsubsection}{\numberline {3}Complementary Insights}{57}{section*.158}%
-\contentsline {subsection}{\numberline {D}Non-Commutative Geometry}{58}{section*.159}%
-\contentsline {subsubsection}{\numberline {1}Connection via Spectral Triples}{58}{section*.160}%
-\contentsline {subsubsection}{\numberline {2}Unification of Approaches}{58}{section*.161}%
-\contentsline {subsection}{\numberline {E}Causal Set Theory}{58}{section*.162}%
-\contentsline {subsubsection}{\numberline {1}Discrete Spacetime}{58}{section*.163}%
-\contentsline {subsection}{\numberline {F}Emergent Gravity}{58}{section*.164}%
-\contentsline {subsubsection}{\numberline {1}Thermodynamic Interpretation}{58}{section*.165}%
-\contentsline {subsection}{\numberline {G}The Unique Position of Our Theory}{59}{section*.166}%
-\contentsline {subsection}{\numberline {H}Summary}{59}{section*.167}%
-\contentsline {section}{\numberline {XVIII}Discussion and Outlook}{60}{section*.168}%
-\contentsline {subsection}{\numberline {A}Summary of Contributions}{60}{section*.169}%
-\contentsline {subsection}{\numberline {B}The Single Free Parameter}{60}{section*.170}%
-\contentsline {subsection}{\numberline {C}Open Questions and Future Directions}{61}{section*.171}%
-\contentsline {subsubsection}{\numberline {1}Mathematical Rigor}{61}{section*.172}%
-\contentsline {subsubsection}{\numberline {2}Computational Challenges}{61}{section*.173}%
-\contentsline {subsubsection}{\numberline {3}Phenomenological Extensions}{61}{section*.174}%
-\contentsline {subsection}{\numberline {D}Experimental Program}{62}{section*.175}%
-\contentsline {subsection}{\numberline {E}Philosophical Implications}{62}{section*.176}%
-\contentsline {subsection}{\numberline {F}Conclusion}{63}{section*.177}%
-\contentsline {section}{\numberline {}Acknowledgments}{63}{section*.178}%
-\contentsline {section}{\numberline {}References}{63}{section*.179}%
+\contentsline {subsection}{\numberline {J}CKM Matrix from Fractal-Torsion Duality}{31}{section*.59}%
+\contentsline {subsubsection}{\numberline {1}The Duality as a Computational Tool}{31}{section*.60}%
+\contentsline {subsubsection}{\numberline {2}Step 1: Quark Mass Hierarchy from Fractal Scaling}{32}{section*.61}%
+\contentsline {subsubsection}{\numberline {3}Step 2: Mixing Angles from Torsion Mode Coupling}{33}{section*.62}%
+\contentsline {subsubsection}{\numberline {4}Step 3: CP Violation from Vacuum Topology}{34}{section*.63}%
+\contentsline {subsubsection}{\numberline {5}The Complete CKM Matrix}{34}{section*.64}%
+\contentsline {subsubsection}{\numberline {6}Why the Duality Matters: Computational Efficiency}{35}{section*.65}%
+\contentsline {subsubsection}{\numberline {7}Extension to PMNS Matrix}{35}{section*.66}%
+\contentsline {subsubsection}{\numberline {8}Summary}{36}{section*.67}%
+\contentsline {section}{\numberline {VI}Introduction: Time as a Dynamical Variable}{36}{section*.68}%
+\contentsline {section}{\numberline {VII}Time as Spectral Dimension Flow}{37}{section*.69}%
+\contentsline {subsection}{\numberline {A}The Temporal-Spectral Correspondence}{37}{section*.70}%
+\contentsline {subsection}{\numberline {B}Time Non-Monotonicity}{37}{section*.71}%
+\contentsline {section}{\numberline {VIII}Temporal Mirroring and the Internal Space}{37}{section*.72}%
+\contentsline {subsection}{\numberline {A}The Time Duality}{37}{section*.73}%
+\contentsline {subsection}{\numberline {B}Topological Mirror Inversion}{38}{section*.74}%
+\contentsline {section}{\numberline {IX}The Geometric Origin of Time's Arrow}{38}{section*.75}%
+\contentsline {subsection}{\numberline {A}Entropy as Geometric Complexity}{38}{section*.76}%
+\contentsline {subsection}{\numberline {B}Cosmological Time Arrow}{38}{section*.77}%
+\contentsline {section}{\numberline {X}Quantum Time and Non-Locality}{39}{section*.78}%
+\contentsline {subsection}{\numberline {A}Temporal Entanglement}{39}{section*.79}%
+\contentsline {subsection}{\numberline {B}The Quantum-Classical Transition}{39}{section*.80}%
+\contentsline {section}{\numberline {XI}Time in Extreme Conditions}{39}{section*.81}%
+\contentsline {subsection}{\numberline {A}Near Black Holes}{39}{section*.82}%
+\contentsline {subsection}{\numberline {B}Cosmological Epochs}{40}{section*.83}%
+\contentsline {section}{\numberline {XII}Summary}{40}{section*.84}%
+\contentsline {section}{\numberline {XIII}Geometric Interpretation of Quantum Mechanics}{40}{section*.85}%
+\contentsline {subsection}{\numberline {A}Quantum States as Fiber Bundle Sections}{40}{section*.86}%
+\contentsline {subsection}{\numberline {B}Elimination of Wave Function Collapse}{41}{section*.87}%
+\contentsline {subsubsection}{\numberline {1}The Measurement Process as Topological Evolution}{41}{section*.88}%
+\contentsline {subsubsection}{\numberline {2}Geometric Resolution}{42}{section*.89}%
+\contentsline {subsection}{\numberline {C}Quantum Entanglement as Topological Coupling}{42}{section*.90}%
+\contentsline {subsubsection}{\numberline {1}Geometric Definition of Entanglement}{43}{section*.91}%
+\contentsline {subsubsection}{\numberline {2}The Connection Form}{43}{section*.92}%
+\contentsline {subsubsection}{\numberline {3}No-Signaling Theorem}{43}{section*.93}%
+\contentsline {subsection}{\numberline {D}The Double-Slit Experiment Geometrically}{43}{section*.94}%
+\contentsline {subsubsection}{\numberline {1}Setup}{44}{section*.95}%
+\contentsline {subsubsection}{\numberline {2}Interference Pattern}{44}{section*.96}%
+\contentsline {subsubsection}{\numberline {3}Which-Path Information}{44}{section*.97}%
+\contentsline {subsection}{\numberline {E}Correspondence with Standard Quantum Mechanics}{44}{section*.98}%
+\contentsline {subsection}{\numberline {F}Summary}{45}{section*.99}%
+\contentsline {section}{\numberline {XIV}Black Hole Theory}{45}{section*.100}%
+\contentsline {subsection}{\numberline {A}The Singularity Problem in Classical GR}{45}{section*.101}%
+\contentsline {subsection}{\numberline {B}The Fractal-Twisting Black Hole Model}{46}{section*.102}%
+\contentsline {subsubsection}{\numberline {1}Core Hypothesis}{46}{section*.103}%
+\contentsline {subsubsection}{\numberline {2}Formation Mechanism}{46}{section*.104}%
+\contentsline {subsubsection}{\numberline {3}Singularity Elimination}{47}{section*.105}%
+\contentsline {subsection}{\numberline {C}Resolution of the Information Paradox}{47}{section*.106}%
+\contentsline {subsubsection}{\numberline {1}Information Encoding in Twisting Modes}{47}{section*.107}%
+\contentsline {subsubsection}{\numberline {2}Hawking Radiation Revisited}{48}{section*.108}%
+\contentsline {subsubsection}{\numberline {3}Information Conservation}{48}{section*.109}%
+\contentsline {subsection}{\numberline {D}Quantum Black Hole Remnants}{48}{section*.110}%
+\contentsline {subsubsection}{\numberline {1}Formation of Remnants}{48}{section*.111}%
+\contentsline {subsubsection}{\numberline {2}Properties of Remnants}{48}{section*.112}%
+\contentsline {subsubsection}{\numberline {3}Dark Matter Connection}{49}{section*.113}%
+\contentsline {subsection}{\numberline {E}Black Hole Entropy}{49}{section*.114}%
+\contentsline {subsection}{\numberline {F}Observational Signatures}{49}{section*.115}%
+\contentsline {subsubsection}{\numberline {1}Gravitational Waves from Mergers}{49}{section*.116}%
+\contentsline {subsubsection}{\numberline {2}Shadow Imaging}{49}{section*.117}%
+\contentsline {subsubsection}{\numberline {3}Dark Matter Detection}{50}{section*.118}%
+\contentsline {subsection}{\numberline {G}Summary}{50}{section*.119}%
+\contentsline {section}{\numberline {XV}Cosmology}{50}{section*.120}%
+\contentsline {subsection}{\numberline {A}Torsion-Driven Inflation}{50}{section*.121}%
+\contentsline {subsubsection}{\numberline {1}The Early Universe}{50}{section*.122}%
+\contentsline {subsubsection}{\numberline {2}Inflationary Dynamics}{51}{section*.123}%
+\contentsline {subsubsection}{\numberline {3}Slow-Roll Conditions}{51}{section*.124}%
+\contentsline {subsubsection}{\numberline {4}Number of E-folds}{51}{section*.125}%
+\contentsline {subsection}{\numberline {B}Spectral Dimension Evolution in the Early Universe}{51}{section*.126}%
+\contentsline {subsubsection}{\numberline {1}The Transition $d_s: 10 \to 4$}{51}{section*.127}%
+\contentsline {subsubsection}{\numberline {2}Timeline of Dimensionality Changes}{52}{section*.128}%
+\contentsline {subsubsection}{\numberline {3}Effect on Cosmic Evolution}{52}{section*.129}%
+\contentsline {subsection}{\numberline {C}Geometric Dark Energy}{53}{section*.130}%
+\contentsline {subsubsection}{\numberline {1}The Cosmological Constant Problem}{53}{section*.131}%
+\contentsline {subsubsection}{\numberline {2}Fractal Suppression Mechanism}{53}{section*.132}%
+\contentsline {subsubsection}{\numberline {3}Dark Energy as Geometric Effect}{53}{section*.133}%
+\contentsline {subsection}{\numberline {D}Primordial Gravitational Waves}{54}{section*.134}%
+\contentsline {subsubsection}{\numberline {1}Generation Mechanism}{54}{section*.135}%
+\contentsline {subsubsection}{\numberline {2}Six Polarization Modes in the Early Universe}{54}{section*.136}%
+\contentsline {subsubsection}{\numberline {3}Detection Prospects}{54}{section*.137}%
+\contentsline {subsection}{\numberline {E}Structure Formation}{54}{section*.138}%
+\contentsline {subsubsection}{\numberline {1}Power Spectrum}{54}{section*.139}%
+\contentsline {subsubsection}{\numberline {2}Dark Matter}{55}{section*.140}%
+\contentsline {subsection}{\numberline {F}Summary}{55}{section*.141}%
+\contentsline {section}{\numberline {XVI}Experimental Verification}{55}{section*.142}%
+\contentsline {subsection}{\numberline {A}Overview of Testable Predictions}{55}{section*.143}%
+\contentsline {subsection}{\numberline {B}Gravitational Wave Detection}{56}{section*.144}%
+\contentsline {subsubsection}{\numberline {1}LISA: The Primary Detection Channel}{56}{section*.145}%
+\contentsline {subsubsection}{\numberline {2}Cosmic Explorer and Einstein Telescope}{57}{section*.146}%
+\contentsline {subsubsection}{\numberline {3}Pulsar Timing Arrays}{57}{section*.147}%
+\contentsline {subsection}{\numberline {C}Atomic and Particle Physics Tests}{58}{section*.148}%
+\contentsline {subsubsection}{\numberline {1}Atomic Clock Constraints}{58}{section*.149}%
+\contentsline {subsubsection}{\numberline {2}Hydrogen Spectroscopy}{58}{section*.150}%
+\contentsline {subsubsection}{\numberline {3}Big Bang Nucleosynthesis}{58}{section*.151}%
+\contentsline {subsection}{\numberline {D}Cosmological Observations}{59}{section*.152}%
+\contentsline {subsubsection}{\numberline {1}CMB Spectral Distortions}{59}{section*.153}%
+\contentsline {subsubsection}{\numberline {2}Large Scale Structure}{59}{section*.154}%
+\contentsline {subsubsection}{\numberline {3}Dark Matter Detection}{59}{section*.155}%
+\contentsline {subsection}{\numberline {E}Summary of Detection Prospects}{60}{section*.156}%
+\contentsline {subsection}{\numberline {F}Falsifiability}{60}{section*.157}%
+\contentsline {section}{\numberline {XVII}Connections to Other Theories}{60}{section*.158}%
+\contentsline {subsection}{\numberline {A}Overview}{60}{section*.159}%
+\contentsline {subsection}{\numberline {B}String Theory}{61}{section*.160}%
+\contentsline {subsubsection}{\numberline {1}Similarities}{61}{section*.161}%
+\contentsline {subsubsection}{\numberline {2}Differences}{61}{section*.162}%
+\contentsline {subsubsection}{\numberline {3}Potential Unification}{61}{section*.163}%
+\contentsline {subsection}{\numberline {C}Loop Quantum Gravity}{62}{section*.164}%
+\contentsline {subsubsection}{\numberline {1}Similarities}{62}{section*.165}%
+\contentsline {subsubsection}{\numberline {2}Differences}{62}{section*.166}%
+\contentsline {subsubsection}{\numberline {3}Complementary Insights}{62}{section*.167}%
+\contentsline {subsection}{\numberline {D}Non-Commutative Geometry}{63}{section*.168}%
+\contentsline {subsubsection}{\numberline {1}Connection via Spectral Triples}{63}{section*.169}%
+\contentsline {subsubsection}{\numberline {2}Unification of Approaches}{63}{section*.170}%
+\contentsline {subsection}{\numberline {E}Causal Set Theory}{63}{section*.171}%
+\contentsline {subsubsection}{\numberline {1}Discrete Spacetime}{63}{section*.172}%
+\contentsline {subsection}{\numberline {F}Emergent Gravity}{63}{section*.173}%
+\contentsline {subsubsection}{\numberline {1}Thermodynamic Interpretation}{63}{section*.174}%
+\contentsline {subsection}{\numberline {G}The Unique Position of Our Theory}{64}{section*.175}%
+\contentsline {subsection}{\numberline {H}Summary}{64}{section*.176}%
+\contentsline {section}{\numberline {XVIII}Discussion and Outlook}{65}{section*.177}%
+\contentsline {subsection}{\numberline {A}Summary of Contributions}{65}{section*.178}%
+\contentsline {subsection}{\numberline {B}The Single Free Parameter}{65}{section*.179}%
+\contentsline {subsection}{\numberline {C}Open Questions and Future Directions}{66}{section*.180}%
+\contentsline {subsubsection}{\numberline {1}Mathematical Rigor}{66}{section*.181}%
+\contentsline {subsubsection}{\numberline {2}Computational Challenges}{66}{section*.182}%
+\contentsline {subsubsection}{\numberline {3}Phenomenological Extensions}{66}{section*.183}%
+\contentsline {subsection}{\numberline {D}Experimental Program}{67}{section*.184}%
+\contentsline {subsection}{\numberline {E}Philosophical Implications}{67}{section*.185}%
+\contentsline {subsection}{\numberline {F}Conclusion}{68}{section*.186}%
+\contentsline {section}{\numberline {}Acknowledgments}{68}{section*.187}%
+\contentsline {section}{\numberline {}References}{68}{section*.188}%
 \appendix 
-\contentsline {section}{\numberline {A}Proof of Kernel Decomposition Theorem}{63}{section*.180}%
-\contentsline {section}{\numberline {B}Proof of Spectral Dimension Formula}{64}{section*.181}%
-\contentsline {section}{\numberline {C}Proof of Torsion-Vacuum Energy Cancellation}{64}{section*.182}%
-\contentsline {section}{\numberline {D}Numerical Simulation Parameters}{65}{section*.183}%
-\contentsline {section}{\numberline {E}Spectral Dimension Evolution}{65}{section*.184}%
-\contentsline {section}{\numberline {F}Gravitational Waveform Templates}{66}{section*.185}%
-\contentsline {section}{\numberline {G}Black Hole Evolution Code}{66}{section*.186}%
-\contentsline {section}{\numberline {H}Cosmological Evolution}{66}{section*.187}%
-\contentsline {section}{\numberline {I}Data Availability}{66}{section*.188}%
-\contentsline {section}{\numberline {J}LISA Data Analysis Pipeline}{67}{section*.189}%
-\contentsline {subsection}{\numberline {1}Polarization Mode Separation}{67}{section*.190}%
-\contentsline {subsection}{\numberline {2}Signal-to-Noise Ratio Calculation}{67}{section*.191}%
-\contentsline {subsection}{\numberline {3}Expected Detection Rates}{68}{section*.192}%
-\contentsline {section}{\numberline {K}Atomic Clock Constraints}{68}{section*.193}%
-\contentsline {section}{\numberline {L}Pulsar Timing Array Sensitivity}{68}{section*.194}%
-\contentsline {section}{\numberline {M}Parameter Estimation}{68}{section*.195}%
-\contentsline {section}{\numberline {N}Data Release Policy}{69}{section*.196}%
-\contentsline {section}{\numberline {O}Software Repository Structure}{69}{section*.197}%
-\contentsline {section}{\numberline {P}Python API}{69}{section*.198}%
-\contentsline {subsection}{\numberline {1}Spectral Dimension Evolution}{69}{section*.199}%
-\contentsline {subsection}{\numberline {2}Gravitational Waveform Generation}{70}{section*.200}%
-\contentsline {subsection}{\numberline {3}Black Hole Evolution}{71}{section*.201}%
-\contentsline {section}{\numberline {Q}Installation}{71}{section*.202}%
-\contentsline {section}{\numberline {R}Citation}{72}{section*.203}%
+\contentsline {section}{\numberline {A}Proof of Kernel Decomposition Theorem}{68}{section*.189}%
+\contentsline {section}{\numberline {B}Proof of Spectral Dimension Formula}{69}{section*.190}%
+\contentsline {section}{\numberline {C}Proof of Torsion-Vacuum Energy Cancellation}{69}{section*.191}%
+\contentsline {section}{\numberline {D}Numerical Simulation Parameters}{70}{section*.192}%
+\contentsline {section}{\numberline {E}Spectral Dimension Evolution}{70}{section*.193}%
+\contentsline {section}{\numberline {F}Gravitational Waveform Templates}{71}{section*.194}%
+\contentsline {section}{\numberline {G}Black Hole Evolution Code}{71}{section*.195}%
+\contentsline {section}{\numberline {H}Cosmological Evolution}{71}{section*.196}%
+\contentsline {section}{\numberline {I}Data Availability}{71}{section*.197}%
+\contentsline {section}{\numberline {J}LISA Data Analysis Pipeline}{72}{section*.198}%
+\contentsline {subsection}{\numberline {1}Polarization Mode Separation}{72}{section*.199}%
+\contentsline {subsection}{\numberline {2}Signal-to-Noise Ratio Calculation}{72}{section*.200}%
+\contentsline {subsection}{\numberline {3}Expected Detection Rates}{73}{section*.201}%
+\contentsline {section}{\numberline {K}Atomic Clock Constraints}{73}{section*.202}%
+\contentsline {section}{\numberline {L}Pulsar Timing Array Sensitivity}{73}{section*.203}%
+\contentsline {section}{\numberline {M}Parameter Estimation}{73}{section*.204}%
+\contentsline {section}{\numberline {N}Data Release Policy}{74}{section*.205}%
+\contentsline {section}{\numberline {O}Software Repository Structure}{74}{section*.206}%
+\contentsline {section}{\numberline {P}Python API}{74}{section*.207}%
+\contentsline {subsection}{\numberline {1}Spectral Dimension Evolution}{74}{section*.208}%
+\contentsline {subsection}{\numberline {2}Gravitational Waveform Generation}{75}{section*.209}%
+\contentsline {subsection}{\numberline {3}Black Hole Evolution}{76}{section*.210}%
+\contentsline {section}{\numberline {Q}Installation}{76}{section*.211}%
+\contentsline {section}{\numberline {R}Citation}{77}{section*.212}%
