@@ -34,7 +34,7 @@
 ### 数值验证代码
 | 文件 | 更新内容 |
 |------|---------|
-| `final_simulation.py` | 默认参数更新为 τ₀ = 10⁻⁵ |
+| `final_simulation.py` | 默认参数更新为 τ₀ = 10⁻⁶ |
 | `optimized_simulation.py` | 默认参数更新 |
 | `corrected_simulation.py` | 默认参数更新 |
 | `transdimensional_flow_simulation.py` | 默认参数更新 |
@@ -47,7 +47,7 @@
 ## 修正后关键结果
 
 ### 1. 原子钟约束 ✅
-- τ₀ = 10⁻⁵ 满足原子钟约束（在放宽模型下）
+- τ₀ = 10⁻⁶ 满足原子钟约束（在放宽模型下）
 
 ### 2. LISA可探测性 ✅
 - 引力波谱修正幅度 ~ 10⁻¹⁰

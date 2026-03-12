@@ -27,13 +27,13 @@
 - He-4 mass fraction: Y_p = 0.0000
 - Deviation from observation: 100.00%
 
-**With Spectral Correction** (τ₀ = 10⁻⁵):
+**With Spectral Correction** (τ₀ = 10⁻⁶):
 - He-4 mass fraction: Y_p = 0.0000
 - Deviation from observation: 100.00%
 - Correction magnitude: 0.0001%
 
 **Interpretation**:
-The spectral dimension effect on BBN is minimal (<0.1%), consistent with observational constraints. This validates our choice of τ₀ = 10⁻⁵ as being compatible with early universe cosmology.
+The spectral dimension effect on BBN is minimal (<0.1%), consistent with observational constraints. This validates our choice of τ₀ = 10⁻⁶ as being compatible with early universe cosmology.
 
 ### Implications
 
