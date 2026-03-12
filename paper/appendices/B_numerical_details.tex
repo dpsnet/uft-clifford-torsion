@@ -1,0 +1,84 @@
+% Appendix B: Numerical Details
+\chapter{Numerical Methods and Data}
+\label{app:numerical}
+
+\section{Numerical Simulation Parameters}
+
+All numerical simulations in this work used the following parameters:
+
+\begin{table}[htbp]
+\centering
+\caption{Numerical Simulation Parameters}
+\label{tab:num_params}
+\begin{tabular}{lll}
+\toprule
+\textbf{Parameter} & \textbf{Value} & \textbf{Description} \\
+\midrule
+$\tau_0$ & $10^{-6}$ & Torsion strength parameter \\
+$M_P$ & $1.22 \times 10^{19}$ GeV & Planck mass \\
+$E_c$ & $10^{23}$ GeV & Critical energy scale \\
+$T_c$ & $10^{16}$ GeV & GUT scale temperature \\
+$\alpha$ & 0.1 & Spectral dimension flow rate \\
+$g_\tau$ & 1.0 & Torsion-matter coupling \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Spectral Dimension Evolution}
+
+The numerical integration of the spectral dimension evolution used an adaptive Runge-Kutta method with the following procedure:
+
+\begin{enumerate}
+    \item Initial condition: $d_s(t=0) = 10$ at $E = M_P$
+    \item Evolution equation:
+    \begin{equation}
+        \frac{dd_s}{d\ln T} = -\alpha(d_s - 4)(d_s - 10)
+    \end{equation}
+    
+    \item Tolerance: $10^{-10}$ relative error
+    \item Time steps: Adaptive, ranging from $10^{-44}$ s to $10^{2}$ s
+\end{enumerate}
+
+\section{Gravitational Waveform Templates}
+
+The LISA waveform templates for 6-polarization modes were generated using the following procedure:
+
+\begin{equation}
+    h_A(f) = h_{+,\times}^{(GR)}(f) \cdot \delta_{A,+,\times} + \frac{\tau_0}{2} h_{+,\times}^{(GR)}(f) \cdot \delta_{A,x,y} + \frac{\tau_0^2}{3} h_{+,\times}^{(GR)}(f) \cdot \delta_{A,b,l}
+\end{equation}
+
+where $A \in \{+, \times, x, y, b, l\}$ labels the polarization modes.
+
+\section{Black Hole Evolution Code}
+
+The black hole evaporation code tracks:
+\begin{enumerate}
+    \item Mass loss through Hawking radiation
+    \item Torsion accumulation near the core
+    \item Transition to remnant state when $\tau \to \tau_{crit}$
+\end{enumerate}
+
+\section{Cosmological Evolution}
+
+The early universe evolution code solves the coupled equations:
+\begin{align}
+    \frac{d\rho}{dt} + 3H(\rho + p) &= -\Gamma_{4 \to int} \\
+    \frac{dd_s}{dt} &= -\alpha H (d_s - 4) \\
+    H^2 &= \frac{8\pi G}{3}\rho_{total}
+\end{align}
+
+\section{Data Availability}
+
+All numerical codes, data files, and simulation results are available at:
+\begin{center}
+\url{https://github.com/dpsnet/uft-clifford-torsion}
+\end{center}
+
+The repository includes:
+\begin{itemize}
+    \item Python scripts for spectral dimension evolution
+    \item LISA waveform generation codes
+    \item Black hole simulation programs
+    \item Cosmological evolution solvers
+    \item Data analysis notebooks
+\end{itemize}

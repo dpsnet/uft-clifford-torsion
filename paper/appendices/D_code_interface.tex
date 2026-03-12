@@ -1,0 +1,122 @@
+% Appendix D: Code and Software Interface
+\chapter{Code and Software Interface}
+\label{app:code}
+
+\section{Software Repository Structure}
+
+The complete software package is organized as follows:
+
+\begin{verbatim}
+uft-clifford-torsion/
+├── src/
+│   ├── spectral_dimension/     # Spectral dimension evolution
+│   ├── waveform_generator/     # LISA waveform templates
+│   ├── black_hole/            # Black hole evolution
+│   └── cosmology/             # Cosmological simulations
+├── data/
+│   ├── lisa_sensitivity/      # LISA noise curves
+│   ├── gw_waveforms/          # Gravitational wave templates
+│   └── numerical_results/     # Simulation outputs
+├── tests/
+│   └── unit_tests/            # Validation tests
+└── docs/
+    └── api_documentation/     # Code documentation
+\end{verbatim}
+
+\section{Python API}
+
+\subsection{Spectral Dimension Evolution}
+
+\begin{verbatim}
+from uft.spectral_dimension import SpectralDimension
+
+# Initialize with parameters
+sd = SpectralDimension(
+    tau_0=1e-6,
+    T_GUT=1e16,  # GeV
+    alpha=0.1
+)
+
+# Calculate d_s at given temperature
+d_s = sd.calculate(T=1e10)  # Returns dimension
+
+# Full evolution
+times, d_s_values = sd.evolve(
+    T_start=1e19,  # Planck scale
+    T_end=1e-4,    # BBN scale
+    n_points=1000
+)
+\end{verbatim}
+
+\subsection{Gravitational Waveform Generation}
+
+\begin{verbatim}
+from uft.waveform import WaveformGenerator
+
+# Generate 6-polarization waveform
+gen = WaveformGenerator(
+    m1=1e5,  # solar masses
+    m2=1e5,
+    distance=1e3,  # Mpc
+    tau_0=1e-6
+)
+
+# Get waveform in frequency domain
+f, h_plus, h_cross, h_x, h_y, h_b, h_l = \
+    gen.generate_frequency_domain(
+        f_min=1e-4,
+        f_max=1.0
+    )
+\end{verbatim}
+
+\subsection{Black Hole Evolution}
+
+\begin{verbatim}
+from uft.black_hole import BlackHoleEvolution
+
+# Initialize black hole
+bh = BlackHoleEvolution(
+    M_initial=10,  # solar masses
+    tau_0=1e-6
+)
+
+# Evolve until remnant formation
+times, masses, torsions = bh.evolve(
+    t_max=1e67,  # years
+    dt=1e60
+)
+
+# Check if remnant formed
+if bh.has_remnant():
+    M_rem = bh.remnant_mass()
+\end{verbatim}
+
+\section{Installation}
+
+\begin{verbatim}
+# Clone repository
+git clone https://github.com/dpsnet/uft-clifford-torsion.git
+cd uft-clifford-torsion
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Install package
+pip install -e .
+
+# Run tests
+pytest tests/
+\end{verbatim}
+
+\section{Citation}
+
+If using this code in your research, please cite:
+
+\begin{verbatim}
+@software{UFT_Code_2024,
+  author = {Research Team},
+  title = {UFT-Clifford-Torsion: Numerical codes for unified field theory},
+  url = {https://github.com/dpsnet/uft-clifford-torsion},
+  year = {2024}
+}
+\end{verbatim}
