@@ -54,22 +54,29 @@
 \contentsline {subsection}{\numberline {6.1}Mathematical Isomorphism}{16}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Universal Scaling}{16}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}Physical Mechanisms}{17}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Philosophical Implications}{18}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Observer-Dependent Dimension}{18}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}The Nature of Physical Reality}{18}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Pedagogical Value}{18}{subsection.7.3}%
-\contentsline {section}{\numberline {8}Conclusion and Future Directions}{18}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Key Results}{19}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Future Directions}{19}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Final Remarks}{19}{subsection.8.3}%
-\contentsline {section}{\numberline {A}Numerical Simulations}{19}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Simulation Parameters}{19}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Dimension Calculation}{20}{subsection.A.2}%
-\contentsline {subsection}{\numberline {A.3}Results}{20}{subsection.A.3}%
-\contentsline {section}{\numberline {B}Detailed Derivations}{20}{appendix.B}%
-\contentsline {subsection}{\numberline {B.1}Torsion Field Equations}{20}{subsection.B.1}%
-\contentsline {subsection}{\numberline {B.2}Geodesic Equation with Torsion}{20}{subsection.B.2}%
-\contentsline {section}{\numberline {C}Experimental Protocol Details}{20}{appendix.C}%
-\contentsline {subsection}{\numberline {C.1}Equipment List}{20}{subsection.C.1}%
-\contentsline {subsection}{\numberline {C.2}Calibration Procedures}{20}{subsection.C.2}%
-\contentsline {subsection}{\numberline {C.3}Data Analysis Code}{21}{subsection.C.3}%
+\contentsline {subsection}{\numberline {6.4}Partition Function Unification: A Deeper Perspective}{18}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}The Universal Formula}{18}{subsubsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.2}Quantum Gravity: Quantum Trace}{18}{subsubsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.3}Rotating Sphere: Classical Integral}{19}{subsubsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.4}Why the Same Exponent? $\alpha = 2$}{19}{subsubsection.6.4.4}%
+\contentsline {subsubsection}{\numberline {6.4.5}Different Directions, Same Structure}{20}{subsubsection.6.4.5}%
+\contentsline {subsubsection}{\numberline {6.4.6}Physical Interpretation of the Correspondence}{20}{subsubsection.6.4.6}%
+\contentsline {section}{\numberline {7}Philosophical Implications}{21}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Observer-Dependent Dimension}{21}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}The Nature of Physical Reality}{21}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Pedagogical Value}{21}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Conclusion and Future Directions}{21}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Key Results}{22}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Future Directions}{22}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Final Remarks}{22}{subsection.8.3}%
+\contentsline {section}{\numberline {A}Numerical Simulations}{22}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Simulation Parameters}{22}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Dimension Calculation}{23}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Results}{23}{subsection.A.3}%
+\contentsline {section}{\numberline {B}Detailed Derivations}{23}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}Torsion Field Equations}{23}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}Geodesic Equation with Torsion}{23}{subsection.B.2}%
+\contentsline {section}{\numberline {C}Experimental Protocol Details}{23}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}Equipment List}{23}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.2}Calibration Procedures}{23}{subsection.C.2}%
+\contentsline {subsection}{\numberline {C.3}Data Analysis Code}{24}{subsection.C.3}%
