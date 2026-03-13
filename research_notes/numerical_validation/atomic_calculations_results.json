@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "date": "2026-03-14",
+    "version": "1.0",
+    "theory": "Unified Field Theory with Torsion"
+  },
+  "hydrogen": {
+    "tau_0": 1e-06,
+    "tau_eff": 1.8511564610595645e-36,
+    "levels": [
+      {
+        "n": 1,
+        "l": 0,
+        "j": 0.5,
+        "E_dirac": -13.60517771175364,
+        "E_fine_structure": -13.605693122994,
+        "delta_E_mass": 1.55412401301952e-71,
+        "delta_E_spin": -0.0,
+        "delta_E_orbital": -3.496771842016499e-77,
+        "delta_E_total_torsion": 1.554120516247678e-71,
+        "E_total": -13.60517771175364,
+        "tau_eff": 1.8511564610595645e-36
+      },
+      {
+        "n": 2,
+        "l": 0,
+        "j": 0.5,
+        "E_dirac": -3.4014415913261473,
+        "E_fine_structure": -3.4014232807485,
+        "delta_E_mass": 3.8853100325488e-72,
+        "delta_E_spin": -0.0,
+        "delta_E_orbital": -8.741929605041248e-78,
+        "delta_E_total_torsion": 3.885301290619195e-72,
+        "E_total": -3.4014415913261473,
+        "tau_eff": 1.8511564610595645e-36
+      },
+      {
+        "n": 2,
+        "l": 1,
+        "j": 0.5,
+        "E_dirac": -3.4014415913261473,
+        "E_fine_structure": -3.4013666776157465,
+        "delta_E_mass": 3.8853100325488e-72,
+        "delta_E_spin": 6.5279723038839175e-65,
+        "delta_E_orbital": -1.4569882675068747e-77,
+        "delta_E_total_torsion": 6.5279726924134634e-65,
+        "E_total": -3.4014415913261473,
+        "tau_eff": 1.8511564610595645e-36
+      },
+      {
+        "n": 2,
+        "l": 1,
+        "j": 1.5,
+        "E_dirac": -3.4013963083270937,
+        "E_fine_structure": -3.401411960121949,
+        "delta_E_mass": 3.8853100325488e-72,
+        "delta_E_spin": -3.2639861519419588e-65,
+        "delta_E_orbital": -1.4569882675068747e-77,
+        "delta_E_total_torsion": -3.2639857634124124e-65,
+        "E_total": -3.4013963083270937,
+        "tau_eff": 1.8511564610595645e-36
+      }
+    ],
+    "lamb_shift": 0.0,
+    "fine_structure": 4.528299905359745e-05,
+    "torsion_contribution_to_fs": -9.791958455825877e-65
+  },
+  "highly_charged_ions": {
+    "Z26": {
+      "Z": 26,
+      "ion": "26+",
+      "tau_eff": 8.459340749491557e-31,
+      "fine_structure_eV": 20.7915623242734,
+      "fine_structure_GHz": 5027377.403746174,
+      "torsion_contribution_eV": -1.3823023359674555e-50,
+      "torsion_contribution_MHz": -3.34239217842481e-42,
+      "relative_torsion_effect": 6.6483812731747786e-52
+    },
+    "Z54": {
+      "Z": 54,
+      "ion": "54+",
+      "tau_eff": 1.5740487053151295e-29,
+      "fine_structure_eV": 394.50722671148833,
+      "fine_structure_GHz": 95391423.03262277,
+      "torsion_contribution_eV": -2.064463269779211e-47,
+      "torsion_contribution_MHz": -4.9918499781207055e-39,
+      "relative_torsion_effect": 5.23301762299274e-50
+    },
+    "Z79": {
+      "Z": 79,
+      "ion": "79+",
+      "tau_eff": 7.21026941019434e-29,
+      "fine_structure_eV": 1884.6948102736496,
+      "fine_structure_GHz": 455717177.6872979,
+      "torsion_contribution_eV": -9.271296604937186e-46,
+      "torsion_contribution_MHz": -2.241789545592443e-37,
+      "relative_torsion_effect": 4.9192561864119705e-49
+    },
+    "Z82": {
+      "Z": 82,
+      "ion": "82+",
+      "tau_eff": 8.36948117209622e-29,
+      "fine_structure_eV": 2204.5876031056396,
+      "fine_structure_GHz": 533066910.873402,
+      "torsion_contribution_eV": -1.3458854126767794e-45,
+      "torsion_contribution_MHz": -3.254336449658453e-37,
+      "relative_torsion_effect": 6.1049305129939406e-49
+    },
+    "Z92": {
+      "Z": 92,
+      "ion": "92+",
+      "tau_eff": 1.3261554565615862e-28,
+      "fine_structure_eV": 3606.225400822819,
+      "fine_structure_GHz": 871981422.5670851,
+      "torsion_contribution_eV": -4.2535136974482255e-45,
+      "torsion_contribution_MHz": -1.0284950363788187e-36,
+      "relative_torsion_effect": 1.1794919132003554e-48
+    }
+  }
+}
