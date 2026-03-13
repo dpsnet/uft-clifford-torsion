@@ -93,3 +93,15 @@
 \contentsline {subsection}{\numberline {C.1}Equipment List}{32}{subsection.C.1}%
 \contentsline {subsection}{\numberline {C.2}Calibration Procedures}{32}{subsection.C.2}%
 \contentsline {subsection}{\numberline {C.3}Data Analysis Code}{32}{subsection.C.3}%
+\contentsline {section}{\numberline {D}Geometric-Energy Conversion and Constraint Hierarchy}{32}{appendix.D}%
+\contentsline {subsection}{\numberline {D.1}Fundamental Principle: Constraint as Energy}{32}{subsection.D.1}%
+\contentsline {subsection}{\numberline {D.2}Mathematical Formulation}{32}{subsection.D.2}%
+\contentsline {subsection}{\numberline {D.3}Conversion Examples}{33}{subsection.D.3}%
+\contentsline {section}{\numberline {E}Bidirectional Spectral Dimension Flow}{33}{appendix.E}%
+\contentsline {subsection}{\numberline {E.1}Unified Formula}{33}{subsection.E.1}%
+\contentsline {subsection}{\numberline {E.2}Physical Interpretation}{33}{subsection.E.2}%
+\contentsline {subsection}{\numberline {E.3}Critical Behavior}{34}{subsection.E.3}%
+\contentsline {section}{\numberline {F}Applications to Physical Systems}{34}{appendix.F}%
+\contentsline {subsection}{\numberline {F.1}Black Holes: Event Horizon as Geometric Constraint}{34}{subsection.F.1}%
+\contentsline {subsection}{\numberline {F.2}Atomic Physics: Coulomb Potential as Geometric Constraint}{34}{subsection.F.2}%
+\contentsline {subsection}{\numberline {F.3}Energy Cycle: Internal $\leftrightarrow $ Reciprocal Space}{35}{subsection.F.3}%

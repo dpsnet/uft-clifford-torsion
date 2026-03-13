@@ -26,7 +26,11 @@
 \maketitle
 
 \begin{abstract}
-This paper presents a comprehensive analysis of fractal-torsion duality through a classical tabletop experiment involving a rotating sphere. We demonstrate that centrifugal force, traditionally understood as an inertial effect in Newtonian mechanics, can be rigorously reinterpreted as a manifestation of torsion fields. The effective dimension reduction observed as rotation speed increases is shown to be mathematically isomorphic to spectral dimension flow in quantum gravity, with both phenomena obeying the universal scaling law $d(E) = d_{IR} + \Delta d/[1+(E_c/E)^2]$. We develop the theoretical framework connecting classical mechanics to quantum gravity through this duality, propose detailed experimental verification protocols, and discuss the philosophical implications of dimension as an constraint-dependent quantity. This work establishes a precise classical correspondence to quantum gravitational phenomena, providing both a pedagogical tool and a testbed for theoretical concepts.
+This paper presents a comprehensive analysis of fractal-torsion duality through a classical tabletop experiment involving a rotating sphere. We demonstrate that centrifugal force, traditionally understood as an inertial effect in Newtonian mechanics, can be rigorously reinterpreted as a manifestation of torsion fields. The effective spectral dimension reduction observed as rotation speed increases is shown to be mathematically isomorphic to spectral dimension flow in the UFT-Clifford-Torsion framework, with both phenomena obeying the universal scaling law $d_s(E, \mathcal{C}) = d_{IR} + \Delta d/[1+(E_c/E)^2] - \Delta d'/(1+(\mathcal{C}_c/\mathcal{C})^2)$.
+
+We establish the crucial distinction: \textbf{topological dimension} (fixed at 4D) versus \textbf{spectral dimension} (dynamic, flowing between 4 and 10). We introduce the hierarchy of constraints---geometric constraints converting to static energy constraints through interactions---and demonstrate that all constraints are fundamentally forms of energy. We develop a unified framework of \textbf{bidirectional spectral dimension flow}: upward flow ($4 \to 10$) through internal space opening, and downward flow ($4 \to 2$) through constraint-induced confinement.
+
+We apply this framework to concrete systems: black holes (event horizon as geometric constraint), atomic physics (Coulomb potential as geometric constraint), and the rotating sphere (string length as geometric constraint). We propose detailed experimental verification protocols and discuss the philosophical implications of spectral dimension as a constraint-dependent quantity. This work establishes a precise classical correspondence to quantum gravitational phenomena, providing both a pedagogical tool and a testbed for theoretical concepts.
 \end{abstract}
 
 \tableofcontents
@@ -1018,6 +1022,113 @@ Step-by-step calibration procedures for all measurement devices.
 \subsection{Data Analysis Code}
 
 Sample Python code for analyzing experimental data and extracting dimension.
+
+\section{Geometric-Energy Conversion and Constraint Hierarchy}
+\label{app:geometric_energy}
+
+\subsection{Fundamental Principle: Constraint as Energy}
+
+In the UFT-Clifford-Torsion framework, all constraints are fundamentally forms of energy. We establish the hierarchy:
+\begin{enumerate}
+    \item \textbf{Geometric constraints} $\mathcal{C}_{geom}$: Spatial topology, boundary conditions, dimensional restrictions
+    \item \textbf{Interaction conversion}: $\mathcal{C}_{geom} \xrightarrow{g} \mathcal{E}_{static}$ through coupling strength $g$
+    \item \textbf{Static energy constraints} $\mathcal{E}_{static}$: The ``frozen'' form of geometric constraints
+\end{enumerate}
+
+\subsection{Mathematical Formulation}
+
+For a general geometric constraint $C(g_{\mu\nu}) = 0$, the energy-momentum tensor is:
+\begin{equation}
+    T_{\mu\nu}^{(geom)} = -2\lambda \frac{\partial C}{\partial g^{\mu\nu}}
+\end{equation}
+where $\lambda$ is the Lagrange multiplier enforcing the constraint.
+
+\subsection{Conversion Examples}
+
+\textbf{Rotating Sphere:}
+\begin{itemize}
+    \item Geometric: String length $L$ constrains motion to sphere $r^2 + z^2 = L^2$
+    \item Interaction: Tension-centrifugal force balance
+    \item Static energy: $V_{eff} = -\frac{1}{2}m\omega^2 r^2 + \frac{1}{2}k_{eff}r^2$
+\end{itemize}
+
+\textbf{Atomic System:}
+\begin{itemize}
+    \item Geometric: Coulomb potential $V(r) = -e^2/4\pi\epsilon_0 r$
+    \item Interaction: Electron-nucleus electromagnetic coupling
+    \item Static energy: Quantized energy levels $E_n = -13.6 \text{ eV}/n^2$
+\end{itemize}
+
+\textbf{Black Hole Horizon:}
+\begin{itemize}
+    \item Geometric: Event horizon $r = r_s = 2GM/c^2$
+    \item Interaction: Tidal forces, Hawking radiation
+    \item Static energy: Horizon energy $E_H = Mc^2$
+\end{itemize}
+
+\section{Bidirectional Spectral Dimension Flow}
+\label{app:bidirectional}
+
+\subsection{Unified Formula}
+
+The complete spectral dimension including both upward and downward flow:
+\begin{equation}
+    d_s(E, \mathcal{C}) = 4 + \underbrace{\frac{6}{1+(E/E_c)^2}}_{\text{upward: } 4 \to 10} - \underbrace{\frac{2}{1+(\mathcal{C}_c/\mathcal{C})^2}}_{\text{downward: } 4 \to 2}
+\end{equation}
+
+\subsection{Physical Interpretation}
+
+\textbf{Upward flow} ($4 \to 10$): Energy opens internal space, increasing accessible dimensions.
+
+\textbf{Downward flow} ($4 \to 2$): Constraints confine system to subspace, decreasing effective spectral dimension.
+
+\subsection{Critical Behavior}
+
+At intermediate energies where both effects compete:
+\begin{equation}
+    d_s^{eff} = 4 + 6\alpha - 2\beta
+\end{equation}
+where $\alpha, \beta \in [0,1]$ depend on energy and constraint strength.
+
+\section{Applications to Physical Systems}
+\label{app:applications}
+
+\subsection{Black Holes: Event Horizon as Geometric Constraint}
+
+The event horizon acts as a geometric constraint that converts to static energy:
+\begin{equation}
+    T_{\mu\nu}^{(horizon)} = \lambda_{horizon} \delta(r-r_s) \, g_{\mu\nu}^{(induced)}
+\end{equation}
+
+Spectral dimension profile:
+\begin{itemize}
+    \item Far from horizon ($r \gg r_s$): $d_s = 4$
+    \item Near horizon ($r \sim r_s$): $d_s$ increases
+    \item Inside horizon: $d_s \to 10$ (singularity avoided by fractal-torsion core)
+\end{itemize}
+
+\subsection{Atomic Physics: Coulomb Potential as Geometric Constraint}
+
+The Coulomb potential creates an effective geometric constraint:
+\begin{equation}
+    d_s(n) = 3 + \frac{3}{1+(n/n_c)^2}, \quad n_c \sim 1/\tau_0
+\end{equation}
+
+For large $n$ (Rydberg states), $d_s \to 6$, indicating partial opening of internal space.
+
+\textbf{Observable effects:}
+\begin{itemize}
+    \item Lamb shift modification: $\Delta E_{torsion} = \alpha \tau_0^2 m_e c^2/(Z\alpha)^4$
+    \item Hyperfine structure: $\Delta E_{hfs}^{(UFT)} = \Delta E_{hfs}^{(std)}(1 + \beta \tau_0^2 Z^2)$
+\end{itemize}
+
+\subsection{Energy Cycle: Internal $\leftrightarrow$ Reciprocal Space}
+
+The energy flow between spaces follows:
+\begin{equation}
+    \frac{\partial \rho_{int}}{\partial t} = -\Gamma_{out}\rho_{int} + \Gamma_{in}\rho_{rec} \cdot \Theta(\rho_{rec} - \rho_c)
+\end{equation}
+where $\Theta$ is the Heaviside step function implementing the threshold condition.
 
 \begin{acknowledgments}
 We thank the open science community for support and feedback. This research was conducted with AI assistance for mathematical derivation and numerical computation.
