@@ -53,11 +53,17 @@ Recently, a new framework called the \textbf{Fixed 4D Topology-Dynamic Spectral 
 
 The spectral dimension in this framework flows according to:
 \begin{equation}
-    d_s(E) = 4 + \frac{6}{1+(E/E_c)^2}
+    d_s(E) = 4 + \frac{6}{1+(E_c/E)^2}
 \end{equation}
 where $E_c \sim 10^{23}$ GeV is the critical energy scale determined by the torsion parameter $\tau_0$.
 
 Unlike conventional quantum gravity where the dimension flow is attributed to quantum fluctuations of the metric, in this framework the flow arises from the \textbf{fractal-torsion duality}: spacetime can be described either as having fractal structure or as having dynamical torsion fields, with both descriptions mathematically equivalent.
+
+\textbf{Key behavior}:
+\begin{itemize}
+    \item Low energy ($E \ll E_c$): $d_s \to 4$ (internal space closed)
+    \item High energy ($E \gg E_c$): $d_s \to 10$ (internal space opens)
+\end{itemize}
 
 However, even in this framework, direct experimental verification at Planck energies remains challenging. This has motivated the search for \textit{classical analogs} that might illuminate the underlying physics of spectral dimension flow.
 
@@ -592,7 +598,7 @@ The rotating sphere system and the UFT-Clifford-Torsion framework exhibit a prof
 Topological dimension & 4D (fixed) & 4D spacetime (fixed) \\
 Control parameter & Energy $E$ & Rotation speed $\omega$ \\
 Order parameter & Spectral dimension $d_s$ & Effective dimension $d_{eff}$ \\
-Spectral formula & $d_s = 4 + \frac{6}{1+(E/E_c)^2}$ & $d_{eff} = 2 + \frac{2}{1+(\omega/\omega_c)^2}$ \\
+Spectral formula & $d_s = 4 + \frac{6}{1+(E_c/E)^2}$ & $d_{eff} = 2 + \frac{2}{1+(\omega_c/\omega)^2}$ \\
 Low-energy limit & $d_s = 4$ & $d_{eff} = 4$ (3 space + 1 time) \\
 High-energy limit & $d_s \to 10$ (opens up) & $d_{eff} \to 2$ (constrains down) \\
 Flow direction & $4 \to 10$ (upward) & $4 \to 2$ (downward) \\
@@ -1073,7 +1079,7 @@ where $\lambda$ is the Lagrange multiplier enforcing the constraint.
 
 The complete spectral dimension including both upward and downward flow:
 \begin{equation}
-    d_s(E, \mathcal{C}) = 4 + \underbrace{\frac{6}{1+(E/E_c)^2}}_{\text{upward: } 4 \to 10} - \underbrace{\frac{2}{1+(\mathcal{C}_c/\mathcal{C})^2}}_{\text{downward: } 4 \to 2}
+    d_s(E, \mathcal{C}) = 4 + \underbrace{\frac{6}{1+(E_c/E)^2}}_{\text{upward: } 4 \to 10} - \underbrace{\frac{2}{1+(\mathcal{C}_c/\mathcal{C})^2}}_{\text{downward: } 4 \to 2}
 \end{equation}
 
 \subsection{Physical Interpretation}
