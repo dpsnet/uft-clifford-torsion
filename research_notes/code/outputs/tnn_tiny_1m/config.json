@@ -1,0 +1,39 @@
+{
+  "model": {
+    "vocab_size": 154,
+    "max_position_embeddings": 512,
+    "hidden_size": 128,
+    "num_hidden_layers": 4,
+    "num_attention_heads": 4,
+    "intermediate_size": 512,
+    "internal_dim": 32,
+    "torsion_order": 2,
+    "spectral_dim_min": 2.0,
+    "spectral_dim_max": 8.0,
+    "adaptation_rate": 0.02
+  },
+  "training": {
+    "max_steps": 10000,
+    "warmup_steps": 500,
+    "eval_steps": 100,
+    "save_steps": 1000,
+    "logging_steps": 50,
+    "gradient_accumulation_steps": 4,
+    "optimizer": {
+      "learning_rate": 0.0005,
+      "weight_decay": 0.01,
+      "beta1": 0.9,
+      "beta2": 0.95
+    },
+    "lr_scheduler": {
+      "min_lr_ratio": 0.1
+    }
+  },
+  "data": {
+    "batch_size": 8
+  },
+  "output": {
+    "output_dir": "./outputs/tnn_tiny_1m",
+    "checkpoint_dir": "./checkpoints/tnn_tiny_1m"
+  }
+}
