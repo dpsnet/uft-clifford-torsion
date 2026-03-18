@@ -33,6 +33,70 @@ from torch.utils.data import DataLoader, Dataset
 # 添加代码目录到路径
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+# =============================================================================
+# CPU使用率控制模块
+# =============================================================================
+
+class CPUUsageController:
+    """CPU使用率控制器 - 确保CPU占用率不超过阈值"""
+    
+    def __init__(self, max_cpu_percent: float = 60.0, check_interval: int = 10):
+        """
+        Args:
+            max_cpu_percent: 最大CPU使用率阈值（默认60%）
+            check_interval: 检查间隔（每N个step检查一次）
+        """
+        self.max_cpu_percent = max_cpu_percent
+        self.check_interval = check_interval
+        self.step_count = 0
+        
+        # 尝试导入psutil
+        try:
+            import psutil
+            self.psutil = psutil
+            self.available = True
+            print(f"✓ CPU使用率控制已启用（阈值: {max_cpu_percent}%）")
+        except ImportError:
+            print("⚠ 警告: 未安装psutil，CPU使用率控制不可用")
+            print("  安装命令: pip install psutil")
+            self.available = False
+    
+    def check_and_throttle(self, step: int):
+        """检查CPU使用率并在必要时限流"""
+        if not self.available:
+            return
+        
+        self.step_count += 1
+        
+        # 每隔check_interval个step检查一次
+        if self.step_count % self.check_interval != 0:
+            return
+        
+        # 获取当前CPU使用率
+        cpu_percent = self.psutil.cpu_percent(interval=0.1)
+        
+        if cpu_percent > self.max_cpu_percent:
+            # 计算需要延迟的时间（动态调整）
+            excess_ratio = (cpu_percent - self.max_cpu_percent) / self.max_cpu_percent
+            sleep_time = min(0.5, 0.1 + excess_ratio * 0.3)  # 最大延迟0.5秒
+            
+            if step % 50 == 0:  # 每50步打印一次警告
+                print(f"  [CPU控制] 使用率{cpu_percent:.1f}% > {self.max_cpu_percent}%，延迟{sleep_time*1000:.0f}ms")
+            
+            time.sleep(sleep_time)
+    
+    def get_cpu_info(self) -> dict:
+        """获取CPU信息"""
+        if not self.available:
+            return {'available': False}
+        
+        return {
+            'available': True,
+            'cpu_count': self.psutil.cpu_count(),
+            'cpu_percent': self.psutil.cpu_percent(interval=0.1),
+            'max_threshold': self.max_cpu_percent,
+        }
+
 from tnn_transformer_tiny import TNNTransformerTinyLM, TNNTransformerTinyConfig, create_tiny_tnn_transformer
 from prepare_tiny_data import prepare_data, load_prepared_data, SimpleBPETokenizer
 
@@ -402,6 +466,9 @@ def train(
     # 训练统计
     stats = TrainingStats()
     
+    # 创建CPU使用率控制器
+    cpu_controller = CPUUsageController(max_cpu_percent=60.0, check_interval=10)
+    
     # 训练循环
     print("\n" + "="*60)
     print("开始训练")
@@ -455,6 +522,9 @@ def train(
                 current_lr = scheduler.get_lr()
                 
                 stats.add_step(step, avg_loss, avg_spectral_dim, avg_torsion_energy, current_lr)
+                
+                # CPU使用率控制
+                cpu_controller.check_and_throttle(step)
                 
                 # 打印日志
                 if step % logging_steps == 0:
@@ -654,6 +724,26 @@ def main():
     # 设备
     device = 'cpu'
     print(f"使用设备: {device}")
+    
+    # 打印CPU控制信息
+    print("\n" + "="*60)
+    print("系统配置")
+    print("="*60)
+    
+    # 检查并提示安装psutil
+    try:
+        import psutil
+        cpu_count = psutil.cpu_count()
+        cpu_freq = psutil.cpu_freq()
+        print(f"CPU核心数: {cpu_count}")
+        if cpu_freq:
+            print(f"CPU频率: {cpu_freq.current:.0f} MHz")
+        print(f"CPU使用率控制: 已启用（阈值60%）")
+    except ImportError:
+        print("⚠ 提示: 安装psutil可启用CPU使用率控制")
+        print("   pip install psutil")
+    
+    print("="*60)
     
     # 加载配置
     if args.config:
