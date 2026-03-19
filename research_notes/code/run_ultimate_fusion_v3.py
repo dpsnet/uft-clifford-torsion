@@ -89,7 +89,15 @@ class FusionBlockV3(nn.Module):
         # 跨路径信号整合
         if pathway_signal is not None:
             fusion_weight = torch.sigmoid(self.torsion_gate)
-            h2 = h2 + pathway_signal * fusion_weight.unsqueeze(1)
+            # 确保pathway_signal与h2维度匹配
+            if pathway_signal.dim() == 2:
+                pathway_signal = pathway_signal.unsqueeze(1)
+            if pathway_signal.size(1) == 1 and h2.size(1) > 1:
+                # 广播pathway_signal到seq_len
+                pathway_signal = pathway_signal.expand(-1, h2.size(1), -1)
+            # fusion_weight: [dim] -> [1, 1, dim] 用于广播
+            fusion_weight_expanded = fusion_weight.view(1, 1, -1)
+            h2 = h2 + pathway_signal * fusion_weight_expanded
         
         out = h + h2 * 0.5
         
@@ -178,7 +186,7 @@ class FusionLayerV3:
             self.cortical_blocks[i] = FusionBlockV3(i, self.dim, 'cortical')
             self.brainstem_blocks[i] = FusionBlockV3(i, self.dim, 'brainstem')
     
-    def forward(self, cortical_input, brainstem_input, torsion_field, fusion_strength=0.3):
+    def __call__(self, cortical_input, brainstem_input, torsion_field, fusion_strength=0.3):
         """
         完整双路径前向（细粒度块选择）
         """
@@ -222,6 +230,15 @@ class FusionLayerV3:
             self.brainstem_blocks[idx].record_success(True)
         
         # === 丘脑融合 ===
+        # 确保两个路径的输出可以拼接（处理序列长度不匹配）
+        if cortical_h.size(1) != brainstem_h.size(1):
+            # 将脑干输出扩展到皮层输出的序列长度
+            if brainstem_h.size(1) == 1:
+                brainstem_h = brainstem_h.expand(-1, cortical_h.size(1), -1)
+            else:
+                # 或者使用平均池化
+                brainstem_h = brainstem_h.mean(dim=1, keepdim=True).expand(-1, cortical_h.size(1), -1)
+        
         combined = torch.cat([cortical_h, brainstem_h], dim=-1)
         fused = self.cross_pathway_attn(combined)
         
@@ -389,10 +406,12 @@ class UltimateFusionV3(nn.Module):
     
     def _estimate_params(self):
         """估算参数"""
-        base = sum(p.numel() for p in [
-            self.symbol_embedding, self.language_head,
-            self.sensory_encoder, self.action_head
-        ])
+        base = (
+            self.symbol_embedding.weight.numel() +
+            sum(p.numel() for p in self.language_head.parameters()) +
+            sum(p.numel() for p in self.sensory_encoder.parameters()) +
+            sum(p.numel() for p in self.action_head.parameters())
+        )
         # 每层: 双路径块 + 选择器 + 融合
         layer_params = (
             self.num_blocks * 2 * (self.dim * self.dim * 4) +  # 块
@@ -554,7 +573,7 @@ class UltimateFusionV3(nn.Module):
         ) if outputs['symbol_logits'] is not None else 0
         
         action_loss = F.mse_loss(
-            outputs['action_logits'], action_target
+            outputs['action_logits'].mean(dim=1), action_target
         ) if outputs['action_logits'] is not None else 0
         
         # 融合对齐损失
