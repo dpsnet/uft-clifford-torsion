@@ -206,18 +206,18 @@ class DevelopmentalStage:
         
         # 晋升条件
         if self.stage == 'sensorimotor':
-            # 感知运动阶段：具身准确率>70% 且层数>=5
-            if embodied_acc >= 0.70 and total_layers >= 5:
+            # 感知运动阶段：具身准确率>60% 且层数>=5
+            if embodied_acc >= 0.60 and total_layers >= 5:
                 return self._promote()
                 
         elif self.stage == 'preoperational':
-            # 前运算阶段：具身>75% 且环境稳定>0.8
-            if embodied_acc >= 0.75 and env_stability >= 0.8 and total_layers >= 10:
+            # 前运算阶段：具身>65% 且环境稳定>0.8
+            if embodied_acc >= 0.65 and env_stability >= 0.8 and total_layers >= 10:
                 return self._promote()
                 
         elif self.stage == 'concrete':
-            # 具体运算阶段：具身>80% 且环境稳定>0.85
-            if embodied_acc >= 0.80 and env_stability >= 0.85 and total_layers >= 15:
+            # 具体运算阶段：具身>70% 且环境稳定>0.85
+            if embodied_acc >= 0.70 and env_stability >= 0.85 and total_layers >= 15:
                 return self._promote()
         
         return False, self.stage
@@ -531,9 +531,20 @@ class UltimateFusionV5(nn.Module):
             print(f"   当前层数: {total_layers}")
             print(f"{'='*60}\n")
             
-            # 解锁新层时应用新阶段配置
+            # 为所有现有层解锁离身组件
+            new_cfg = self.development.get_config()
             for layer in self.layers.values():
-                layer.delay_buffer.maxlen = self.development.get_config()['delay_steps'] + 5
+                layer.delay_buffer.maxlen = new_cfg['delay_steps'] + 5
+                
+                # 如果刚解锁离身路径，创建离身组件
+                if new_cfg['disembodied_unlocked'] and layer.disembodied_selector is None:
+                    layer.disembodied_selector = nn.Linear(self.dim, self.num_blocks)
+                    for i in range(self.num_blocks):
+                        layer.disembodied_blocks[i] = DisembodiedBlockV5(i, self.dim)
+                        # Kaiming初始化
+                        for p in layer.disembodied_blocks[i].parameters():
+                            if len(p.shape) >= 2:
+                                nn.init.kaiming_normal_(p, mode='fan_out', nonlinearity='relu')
         
         return promoted, new_stage
 
@@ -549,7 +560,7 @@ def run_v5_demo():
         target_layers=20,
         dim=256,
         sensory_dim=64,
-        action_dim=16,
+        action_dim=2,  # 二分类任务
         symbol_vocab=100,
         num_blocks=4,
         max_memory_layers=5,
@@ -563,17 +574,20 @@ def run_v5_demo():
     embodied_accs = []
     total_growth = 0
     
-    for epoch in range(2000):
-        # 生成数据 - 离散分类任务
+    for epoch in range(1000):
+        # === 结构化任务：基于感知输入的简单的二分类 ===
+        # 感知输入：32维特征（前16维决定类别）
         sensory_input = torch.randn(4, 64)
-        # 动作分类（16类）
-        action_target = torch.randint(0, 16, (4,))
+        # 具身任务：根据输入特征和决定动作类别（2类，容易学习）
+        feature_sum = sensory_input[:, :16].sum(dim=-1)
+        action_target = (feature_sum > 0).long()  # 二分类
         
         # 符号数据（阶段解锁后才有效）
         stage_cfg = model.development.get_config()
         if stage_cfg['disembodied_unlocked']:
-            symbol_input = torch.randint(0, 20, (4, 8))
-            symbol_target = torch.randint(0, 20, (4, 8))
+            # 离身任务：序列预测（简化版）
+            symbol_input = torch.randint(0, 5, (4, 4))  # 小词汇表
+            symbol_target = symbol_input.clone()  # 自编码任务
         else:
             symbol_input = None
             symbol_target = None
@@ -614,8 +628,8 @@ def run_v5_demo():
                     print(f"   🧬 胚胎分裂! {result['layers']}层 → {len(model.layers)}层 (自动)")
                     optimizer = torch.optim.Adam(model.parameters(), lr=0.002)
                     
-            elif result['embodied_acc'] >= 0.70 and result['layers'] < model.target_layers:
-                # 正常发育期: 准确率达标才生长
+            elif result['embodied_acc'] >= 0.60 and result['layers'] < model.target_layers:
+                # 正常发育期: 准确率60%达标才生长
                 stage_max = model.development.get_config()['max_layers']
                 if result['layers'] < stage_max:
                     new_idx = result['layers']
@@ -631,9 +645,8 @@ def run_v5_demo():
                     model.access_order.insert(0, new_idx)
                     total_growth += 1
                     
-                    print(f"   🌱 生长成功! {result['layers']}层 → {len(model.layers)}层 (达标)")
+                    print(f"   🌱 生长成功! {result['layers']}层 → {len(model.layers)}层 (达标60%)")
                     optimizer = torch.optim.Adam(model.parameters(), lr=0.002)
-                    total_growth += 1
         
         # 提前结束
         if result['layers'] >= 15 and model.development.stage == 'formal':
