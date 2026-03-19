@@ -276,7 +276,7 @@ class DevelopmentalLayerV5:
             if stage_config['disembodied_unlocked']:
                 self.disembodied_blocks[i] = DisembodiedBlockV5(i, self.dim)
     
-    def forward(self, embodied_input, disembodied_input, torsion_field, 
+    def __call__(self, embodied_input, disembodied_input, torsion_field, 
                 max_active_blocks=2, stage_config=None):
         """前向 - 阶段依赖处理"""
         
@@ -455,10 +455,14 @@ class UltimateFusionV5(nn.Module):
         
         outputs = self.forward(sensory_input, symbol_input, return_stats=True)
         
-        # 具身损失（总是计算）
-        embodied_loss = F.mse_loss(
-            outputs['action_logits'], action_target
-        ) if outputs['action_logits'] is not None else torch.tensor(0.0)
+        # 具身损失（分类任务）
+        if outputs['action_logits'] is not None:
+            # 动作分类（假设action_target是类别索引）
+            embodied_loss = F.cross_entropy(outputs['action_logits'], action_target)
+            embodied_acc = (outputs['action_logits'].argmax(dim=-1) == action_target).float().mean().item()
+        else:
+            embodied_loss = torch.tensor(0.0)
+            embodied_acc = 0.0
         
         # 离身损失（解锁后计算）
         if stage_cfg['disembodied_unlocked'] and outputs['symbol_logits'] is not None:
@@ -482,9 +486,8 @@ class UltimateFusionV5(nn.Module):
         torch.nn.utils.clip_grad_norm_(self.parameters(), 1.0)
         optimizer.step()
         
-        # 统计
+        # 统计 - 离身准确率
         with torch.no_grad():
-            embodied_acc = 1.0 - embodied_loss.item() if embodied_loss.item() < 1.0 else 0.0
             if stage_cfg['disembodied_unlocked'] and outputs['symbol_logits'] is not None:
                 disembodied_acc = (outputs['symbol_logits'].argmax(dim=-1) == symbol_target).float().mean().item()
             else:
@@ -542,11 +545,11 @@ def run_v5_demo():
     print("="*70 + "\n")
     
     model = UltimateFusionV5(
-        initial_layers=2,
+        initial_layers=4,  # 增加到4层初始层
         target_layers=20,
         dim=256,
         sensory_dim=64,
-        action_dim=32,
+        action_dim=16,  # 16个动作类别
         symbol_vocab=100,
         num_blocks=4,
         max_memory_layers=5,
@@ -561,9 +564,10 @@ def run_v5_demo():
     total_growth = 0
     
     for epoch in range(1000):
-        # 生成数据
+        # 生成数据 - 离散分类任务
         sensory_input = torch.randn(4, 64)
-        action_target = torch.randn(4, 32)
+        # 动作分类（16类）
+        action_target = torch.randint(0, 16, (4,))
         
         # 符号数据（阶段解锁后才有效）
         stage_cfg = model.development.get_config()
@@ -587,12 +591,31 @@ def run_v5_demo():
                 print(f"   离身损失: {result['disembodied_loss']:.4f} | 准确率: {result['disembodied_acc']:.1%}")
             print(f"   层数: {result['layers']}/20")
             
-            # 生长决策
-            if result['embodied_acc'] >= 0.70 and result['layers'] < model.target_layers:
-                # 简单生长逻辑
-                if len(model.layers) < model.development.get_config()['max_layers']:
-                    print(f"   🌱 触发生长!")
-                    # 这里简化处理，实际应该调用grow方法
+            # 生长决策 - 胚胎期(<5层)快速生长，只需50%准确率
+            embryo_threshold = 0.50 if result['layers'] < 5 else 0.70
+            if result['embodied_acc'] >= embryo_threshold and result['layers'] < model.target_layers:
+                # 检查是否低于阶段最大层数
+                stage_max = model.development.get_config()['max_layers']
+                if result['layers'] < stage_max:
+                    # 实际添加新层
+                    new_idx = result['layers']
+                    stage_cfg = model.development.get_config()
+                    new_layer = DevelopmentalLayerV5(new_idx, model.dim, model.num_blocks, model.offload_dir, stage_cfg)
+                    
+                    # Kaiming初始化
+                    for i in range(model.num_blocks):
+                        for p in new_layer.embodied_blocks[i].parameters():
+                            if len(p.shape) >= 2:
+                                nn.init.kaiming_normal_(p, mode='fan_out', nonlinearity='relu')
+                    
+                    model.layers[new_idx] = new_layer
+                    model.access_order.insert(0, new_idx)
+                    total_growth += 1
+                    
+                    print(f"   🌱 生长成功! {result['layers']}层 → {len(model.layers)}层")
+                    
+                    # 重置优化器以包含新参数
+                    optimizer = torch.optim.Adam(model.parameters(), lr=0.002)
                     total_growth += 1
         
         # 提前结束
