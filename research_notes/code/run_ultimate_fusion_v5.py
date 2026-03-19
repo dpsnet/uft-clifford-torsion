@@ -574,7 +574,7 @@ def run_v5_demo():
     embodied_accs = []
     total_growth = 0
     
-    for epoch in range(1000):
+    for epoch in range(3000):
         # === 结构化任务：基于感知输入的简单的二分类 ===
         # 感知输入：32维特征（前16维决定类别）
         sensory_input = torch.randn(4, 64)
@@ -649,7 +649,7 @@ def run_v5_demo():
                     optimizer = torch.optim.Adam(model.parameters(), lr=0.002)
         
         # 提前结束
-        if result['layers'] >= 15 and model.development.stage == 'formal':
+        if result['layers'] >= 20 and model.development.stage == 'formal':
             print(f"\n✅ 完全发育! {result['layers']}层, 阶段: {result['stage']}")
             break
     
