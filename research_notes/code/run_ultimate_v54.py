@@ -274,13 +274,12 @@ class UltimateV54(nn.Module):
 
 def run_v54():
     print("\n" + "="*60)
-    print("🚀 V5.4 - 完全整合版")
+    print("🚀 V5.4B - 延长训练版")
     print("="*60)
-    print("整合要素:")
-    print("  • 网络生长: 1层 → 15层")
-    print("  • 阶段解锁: 离身智能在适当时机激活")
-    print("  • 离身课程: copy→pattern→classify→predict")
-    print("  • 动态权重: 具身→离身逐步转移")
+    print("改进:")
+    print("  • 总轮数: 1200 → 2000")
+    print("  • 每阶段200轮评估（原为100轮）")
+    print("  • predict阶段延长训练")
     print("="*60 + "\n")
     
     model = UltimateV54(initial_layers=1, target_layers=15, dim=256)
@@ -288,7 +287,7 @@ def run_v54():
     
     stats = {'action': [], 'symbol': [], 'promotions': []}
     
-    for epoch in range(1200):
+    for epoch in range(2000):
         result = model.training_step(optimizer)
         stats['action'].append(result['acc_action'])
         stats['symbol'].append(result['acc_symbol'])
@@ -301,8 +300,8 @@ def run_v54():
                 stats['promotions'].append((epoch, new_stage))
                 print(f"\n🎓 离身晋升! 进入 {new_stage} 阶段\n")
         
-        # 每100轮报告
-        if (epoch + 1) % 100 == 0:
+        # 每200轮报告（延长训练）
+        if (epoch + 1) % 200 == 0:
             avg_action = sum(stats['action'][-100:]) / 100
             avg_symbol = sum(stats['symbol'][-100:]) / 100 if model.disembodied_unlocked else 0
             
@@ -312,8 +311,8 @@ def run_v54():
             
             # === 发育决策 ===
             
-            # 1. 胚胎期: 每50轮自动生长（1→4层）
-            if result['layers'] < 4 and model.epochs_since_growth >= 50:
+            # 1. 胚胎期: 每100轮自动生长（1→4层）
+            if result['layers'] < 4 and model.epochs_since_growth >= 100:
                 model.add_layer()
                 optimizer = torch.optim.Adam(model.parameters(), lr=0.002)
             
@@ -324,11 +323,11 @@ def run_v54():
                       f"离身={avg_symbol:.1%}, 层数={result['layers']}, "
                       f"阶段={result['stage']}")
             
-            # 3. 正常生长期: 双路径都达标（降低离身要求）
+            # 3. 正常生长期: 双路径都达标（延长到100轮）
             elif (model.disembodied_unlocked and 
                   avg_action >= 0.75 and 
                   avg_symbol >= 0.50 and  # 降低离身要求到50%
-                  model.epochs_since_growth >= 50 and
+                  model.epochs_since_growth >= 100 and
                   result['layers'] < model.target_layers):
                 model.add_layer()
                 optimizer = torch.optim.Adam(model.parameters(), lr=0.002)

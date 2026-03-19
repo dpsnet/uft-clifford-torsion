@@ -138,7 +138,7 @@ class DisembodiedBlockV5(nn.Module):
         return out
     
     def record_success(self, success):
-        alpha = 0.05  # 离身学习更慢
+        alpha = 0.1  # 提高离身学习率（原为0.05）
         self.success_rate = (1 - alpha) * self.success_rate + alpha * (1.0 if success else 0.0)
         if not success:
             self.excitement = max(0.1, self.excitement - 0.02)
@@ -178,7 +178,7 @@ class DevelopmentalStage:
         'formal': {  # 形式运算阶段 (12岁+)
             'min_layers': 15,
             'max_layers': 30,
-            'embodied_ratio': 0.5,  # 50%具身
+            'embodied_ratio': 0.3,  # 30%具身（原为50%）
             'disembodied_unlocked': True,
             'delay_steps': 10,
         },
@@ -585,9 +585,13 @@ def run_v5_demo():
         # 符号数据（阶段解锁后才有效）
         stage_cfg = model.development.get_config()
         if stage_cfg['disembodied_unlocked']:
-            # 离身任务：序列预测（简化版）
-            symbol_input = torch.randint(0, 5, (4, 4))  # 小词汇表
-            symbol_target = symbol_input.clone()  # 自编码任务
+            # 离身任务：预测下一个token（更有意义的任务）
+            symbol_input = torch.randint(0, 10, (4, 8))  # 词汇表10，序列长度8
+            # 目标：预测下一个token（移位）
+            symbol_target = torch.cat([
+                symbol_input[:, 1:], 
+                torch.randint(0, 10, (4, 1))
+            ], dim=1)
         else:
             symbol_input = None
             symbol_target = None
