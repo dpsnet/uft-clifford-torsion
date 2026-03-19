@@ -545,11 +545,11 @@ def run_v5_demo():
     print("="*70 + "\n")
     
     model = UltimateFusionV5(
-        initial_layers=4,  # 增加到4层初始层
+        initial_layers=1,  # 单细胞起始
         target_layers=20,
         dim=256,
         sensory_dim=64,
-        action_dim=16,  # 16个动作类别
+        action_dim=16,
         symbol_vocab=100,
         num_blocks=4,
         max_memory_layers=5,
@@ -591,13 +591,12 @@ def run_v5_demo():
                 print(f"   离身损失: {result['disembodied_loss']:.4f} | 准确率: {result['disembodied_acc']:.1%}")
             print(f"   层数: {result['layers']}/20")
             
-            # 生长决策 - 胚胎期(<5层)快速生长，只需50%准确率
-            embryo_threshold = 0.50 if result['layers'] < 5 else 0.70
-            if result['embodied_acc'] >= embryo_threshold and result['layers'] < model.target_layers:
-                # 检查是否低于阶段最大层数
-                stage_max = model.development.get_config()['max_layers']
-                if result['layers'] < stage_max:
-                    # 实际添加新层
+            # 生长决策
+            # 胚胎快速分裂期(<4层): 每50轮自动+1层，不依赖准确率
+            # 正常发育期(>=4层): 需要准确率达标
+            if result['layers'] < 4:
+                # 胚胎期: 每50轮自动生长
+                if (epoch + 1) % 50 == 0 and result['layers'] < model.target_layers:
                     new_idx = result['layers']
                     stage_cfg = model.development.get_config()
                     new_layer = DevelopmentalLayerV5(new_idx, model.dim, model.num_blocks, model.offload_dir, stage_cfg)
@@ -612,9 +611,27 @@ def run_v5_demo():
                     model.access_order.insert(0, new_idx)
                     total_growth += 1
                     
-                    print(f"   🌱 生长成功! {result['layers']}层 → {len(model.layers)}层")
+                    print(f"   🧬 胚胎分裂! {result['layers']}层 → {len(model.layers)}层 (自动)")
+                    optimizer = torch.optim.Adam(model.parameters(), lr=0.002)
                     
-                    # 重置优化器以包含新参数
+            elif result['embodied_acc'] >= 0.70 and result['layers'] < model.target_layers:
+                # 正常发育期: 准确率达标才生长
+                stage_max = model.development.get_config()['max_layers']
+                if result['layers'] < stage_max:
+                    new_idx = result['layers']
+                    stage_cfg = model.development.get_config()
+                    new_layer = DevelopmentalLayerV5(new_idx, model.dim, model.num_blocks, model.offload_dir, stage_cfg)
+                    
+                    for i in range(model.num_blocks):
+                        for p in new_layer.embodied_blocks[i].parameters():
+                            if len(p.shape) >= 2:
+                                nn.init.kaiming_normal_(p, mode='fan_out', nonlinearity='relu')
+                    
+                    model.layers[new_idx] = new_layer
+                    model.access_order.insert(0, new_idx)
+                    total_growth += 1
+                    
+                    print(f"   🌱 生长成功! {result['layers']}层 → {len(model.layers)}层 (达标)")
                     optimizer = torch.optim.Adam(model.parameters(), lr=0.002)
                     total_growth += 1
         
