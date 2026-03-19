@@ -1,0 +1,113 @@
+{
+  "gap": 16,
+  "final_acc": 0.12,
+  "final_layers": 2,
+  "growth_log": [],
+  "history": [
+    {
+      "step": 0,
+      "loss": 3.2879629135131836,
+      "acc": 0.125,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 200,
+      "loss": 2.3260703086853027,
+      "acc": 0.075,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 400,
+      "loss": 2.301381826400757,
+      "acc": 0.125,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 600,
+      "loss": 2.303644895553589,
+      "acc": 0.05,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 800,
+      "loss": 2.309699296951294,
+      "acc": 0.05,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 1000,
+      "loss": 2.303966760635376,
+      "acc": 0.125,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 1200,
+      "loss": 2.308333158493042,
+      "acc": 0.125,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 1400,
+      "loss": 2.303086757659912,
+      "acc": 0.05,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 1600,
+      "loss": 2.3026320934295654,
+      "acc": 0.1,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 1800,
+      "loss": 2.327678680419922,
+      "acc": 0.125,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 2000,
+      "loss": 2.3276941776275635,
+      "acc": 0.15,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 2200,
+      "loss": 2.3118226528167725,
+      "acc": 0.05,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 2400,
+      "loss": 2.3044726848602295,
+      "acc": 0.075,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 2600,
+      "loss": 2.309148073196411,
+      "acc": 0.075,
+      "layers": 2,
+      "stage": "2-layer"
+    },
+    {
+      "step": 2800,
+      "loss": 2.3078670501708984,
+      "acc": 0.075,
+      "layers": 2,
+      "stage": "2-layer"
+    }
+  ]
+}
