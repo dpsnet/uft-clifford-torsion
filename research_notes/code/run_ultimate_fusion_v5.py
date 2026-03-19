@@ -563,7 +563,7 @@ def run_v5_demo():
     embodied_accs = []
     total_growth = 0
     
-    for epoch in range(1000):
+    for epoch in range(2000):
         # 生成数据 - 离散分类任务
         sensory_input = torch.randn(4, 64)
         # 动作分类（16类）

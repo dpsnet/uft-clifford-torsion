@@ -362,7 +362,7 @@ class UltimateFusionV3(nn.Module):
         self.access_order: List[int] = []
         
         # === 保守生长策略（UltimateTNN）===
-        self.growth_threshold_accuracy = 0.80
+        self.growth_threshold_accuracy = 0.60  # 60%阈值（原为80%）
         self.growth_threshold_loss = 0.5
         self.deep_layer_threshold = 0.82
         self.min_cycles_before_growth = 25
