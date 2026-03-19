@@ -1,0 +1,19 @@
+{
+  "stage": "embryo",
+  "final_accuracy": 0.488,
+  "learning_steps": 50,
+  "params": 657,
+  "unlock_ready": false,
+  "history": [
+    {
+      "epoch": 20,
+      "loss": 0.13629993165289125,
+      "accuracy": 0.486
+    },
+    {
+      "epoch": 40,
+      "loss": 0.1339232883086245,
+      "accuracy": 0.506
+    }
+  ]
+}
