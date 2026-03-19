@@ -1,0 +1,146 @@
+[
+  {
+    "step": 0,
+    "loss": 5.9497904777526855,
+    "accuracy": 0.0390625,
+    "stage": "embryo",
+    "spectral_dim": 2.5,
+    "parameters": 40278
+  },
+  {
+    "step": 500,
+    "loss": 0.0024036604445427656,
+    "accuracy": 1.0,
+    "stage": "embryo",
+    "spectral_dim": 2.5,
+    "parameters": 40278
+  },
+  {
+    "step": 999,
+    "loss": 0.00071900081820786,
+    "accuracy": 1.0,
+    "stage": "infant",
+    "spectral_dim": 2.5,
+    "parameters": 50351
+  },
+  {
+    "step": 1000,
+    "loss": 0.0006122234626673162,
+    "accuracy": 1.0,
+    "stage": "infant",
+    "spectral_dim": 2.5,
+    "parameters": 50351
+  },
+  {
+    "step": 1500,
+    "loss": 2.3972483177203685e-05,
+    "accuracy": 1.0,
+    "stage": "infant",
+    "spectral_dim": 2.78,
+    "parameters": 50351
+  },
+  {
+    "step": 2000,
+    "loss": 1.7951908375835046e-05,
+    "accuracy": 1.0,
+    "stage": "infant",
+    "spectral_dim": 2.79,
+    "parameters": 50351
+  },
+  {
+    "step": 2500,
+    "loss": 1.536556737846695e-05,
+    "accuracy": 1.0,
+    "stage": "infant",
+    "spectral_dim": 2.85,
+    "parameters": 50351
+  },
+  {
+    "step": 3000,
+    "loss": 1.200553379021585e-05,
+    "accuracy": 1.0,
+    "stage": "infant",
+    "spectral_dim": 2.86,
+    "parameters": 50351
+  },
+  {
+    "step": 3500,
+    "loss": 8.94620916369604e-06,
+    "accuracy": 1.0,
+    "stage": "infant",
+    "spectral_dim": 2.89,
+    "parameters": 50351
+  },
+  {
+    "step": 4000,
+    "loss": 6.552744707732927e-06,
+    "accuracy": 1.0,
+    "stage": "infant",
+    "spectral_dim": 2.91,
+    "parameters": 50351
+  },
+  {
+    "step": 4500,
+    "loss": 4.73668433187413e-06,
+    "accuracy": 1.0,
+    "stage": "infant",
+    "spectral_dim": 2.96,
+    "parameters": 50351
+  },
+  {
+    "step": 4999,
+    "loss": 5.058914666733472e-06,
+    "accuracy": 1.0,
+    "stage": "child",
+    "spectral_dim": 3.0,
+    "parameters": 70352
+  },
+  {
+    "step": 5000,
+    "loss": 6.976994882279541e-06,
+    "accuracy": 1.0,
+    "stage": "adolescent",
+    "spectral_dim": 3.0,
+    "parameters": 93618
+  },
+  {
+    "step": 5500,
+    "loss": 5.660501301463228e-06,
+    "accuracy": 1.0,
+    "stage": "adolescent",
+    "spectral_dim": 2.99,
+    "parameters": 93618
+  },
+  {
+    "step": 6000,
+    "loss": 2.336670604563551e-06,
+    "accuracy": 1.0,
+    "stage": "adolescent",
+    "spectral_dim": 3.01,
+    "parameters": 93618
+  },
+  {
+    "step": 6500,
+    "loss": 1.2582131603267044e-06,
+    "accuracy": 1.0,
+    "stage": "adolescent",
+    "spectral_dim": 3.04,
+    "parameters": 93618
+  },
+  {
+    "step": 7000,
+    "loss": 1.1473860013211379e-06,
+    "accuracy": 1.0,
+    "stage": "adolescent",
+    "spectral_dim": 3.07,
+    "parameters": 93618
+  },
+  {
+    "step": 7500,
+    "loss": 1.0412168194307014e-06,
+    "accuracy": 1.0,
+    "stage": "adolescent",
+    "spectral_dim": 3.04,
+    "parameters": 93618
+  }
+]
