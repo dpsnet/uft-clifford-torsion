@@ -57,3 +57,4 @@ temp/
 # Video clipper (unrelated project)
 dance_clipper/
 dance_clipper*.tar.gz
+*.pt
