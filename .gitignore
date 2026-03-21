@@ -35,15 +35,39 @@ venv/
 *.swp
 *.swo
 
-# Data
-data/observational/*.fits
-data/observational/*.hdf5
+# Data files (large, should not be in git)
+data/
+*.fits
+*.hdf5
+*.h5
 *.pkl
 *.npy
+*.npz
+*.parquet
+*.csv
+*.tsv
+
+# Research notes data (large files)
+research_notes/data/
+research_notes/code/**/*.pt
+research_notes/code/**/*.pth
+research_notes/code/**/checkpoints/
+research_notes/code/**/outputs/
+research_notes/code/**/results/
+research_notes/numerical_validation/**/*.npy
+research_notes/numerical_validation/**/*.h5
+
+# Model weights
+*.pt
+*.pth
+*.ckpt
+*.safetensors
 
 # Logs
 *.log
 nohup.out
+logs/
+log/
 
 # OS
 .DS_Store
@@ -57,4 +81,3 @@ temp/
 # Video clipper (unrelated project)
 dance_clipper/
 dance_clipper*.tar.gz
-*.pt
