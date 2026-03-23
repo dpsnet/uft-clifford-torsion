@@ -39,6 +39,11 @@
 \usepackage{geometry}
 \geometry{a4paper,margin=2.5cm}
 
+% 目录格式修复
+\usepackage{titletoc}
+\titlecontents{section}[0pt]{\vspace{0.5em}\bfseries}{\thesection\hspace{1em}}{}{\titlerule*[0.5pc]{.}\contentspage}
+\titlecontents{subsection}[2em]{\vspace{0.3em}}{\thesubsection\hspace{0.8em}}{}{\titlerule*[0.5pc]{.}\contentspage}
+
 % 定义颜色
 \definecolor{darkblue}{RGB}{0,0,139}
 \definecolor{darkgreen}{RGB}{0,100,0}
@@ -90,8 +95,9 @@
 \newcommand{\torsionfield}{\mathcal{T}}
 
 % 论文信息
-\title{固定4维拓扑—动态谱维—多扭转分形克利福德代数统一场论}\\[0.5em]
-\large Fixed 4D Topology-Dynamic Spectral Dimension Multiple Twisting Fractal Clifford Algebra Unified Field Theory (UFT)
+\title{固定4维拓扑—动态谱维—多扭转分形克利福德代数统一场论\\[0.3em]
+\normalsize Fixed 4D Topology-Dynamic Spectral Dimension Multiple Twisting\\
+Fractal Clifford Algebra Unified Field Theory (UFT)}
 
 \author{研究团队}
 \email{research@uft-theory.org}
