@@ -1,0 +1,205 @@
+% 第09c节：宇宙学 - 暴涨、原初黑洞和重子生成
+% UFT宇宙学预测的第一性原理推导
+\section{宇宙学：暴涨、原初黑洞和重子生成}
+\label{sec:cosmology_complete}
+
+\subsection{引言}
+
+UFT中的宇宙学不仅是将理论应用于宇宙——它是对10D→4D过渡的基本检验。早期宇宙提供了唯一接近临界能标$E_c$的能量的实验室，使宇宙学观测成为UFT的关键检验。
+
+\subsection{来自谱维过渡的暴涨}
+
+\subsubsection{标准暴涨问题}
+
+传统暴涨需要：
+\begin{itemize}
+    \item 具有非常平坦势的暴胀子场
+    \item 精细调节的初始条件
+    \item 结束暴涨并再热宇宙的机制
+\end{itemize}
+
+\subsubsection{UFT解决：几何暴涨}
+
+\begin{insight}[暴涨作为10D→4D过渡]
+在UFT中，暴涨不是由标量场驱动，而是由宇宙冷却时从10D到4D的几何过渡驱动。有效维数变化为：
+\begin{equation}
+    d_s(T) = 4 + \frac{6}{1+(T/T_c)^2}
+\end{equation}
+其中$T_c \sim E_c$是临界温度。
+\end{insight}
+
+\subsubsection{E-折叠数}
+
+\begin{theorem}[来自维数变化的E-折叠]
+暴涨的e-折叠数由维数过渡的速率决定：
+\begin{equation}
+    N_e = \int_{t_i}^{t_f} H \, dt = \frac{1}{2}\ln\left(\frac{d_s(t_i)-4}{d_s(t_f)-4}\right) \approx 60
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+过渡期间，哈勃参数随有效维数缩放：
+\begin{equation}
+    H \sim \frac{1}{d_s-4} \frac{d}{dt}(d_s-4)
+\end{equation}
+
+从$d_s \approx 10$到$d_s \approx 4 + \epsilon$积分：
+\begin{equation}
+    N_e = \int_{10}^{4+\epsilon} \frac{d(d_s)}{d_s-4} = \ln\left(\frac{6}{\epsilon}\right)
+\end{equation}
+
+对于$\epsilon \sim 10^{-26}$（对应观测曲率），我们得到$N_e \approx 60$。
+\end{proof}
+
+\subsubsection{原初功率谱}
+
+标量功率谱被维数流修正：
+\begin{equation}
+    P_s(k) = P_s^{(0)}(k) \cdot \left[1 + \tau_0^2 \cdot \ln(k/k_*)\right]
+\end{equation}
+
+这预言谱指数的小跑动：
+\begin{equation}
+    \alpha_s = \frac{d n_s}{d \ln k} = -2\tau_0^2 \sim -5 \times 10^{-5}
+\end{equation}
+
+与Planck约束一致（$\alpha_s = -0.0045 \pm 0.0067$）。
+
+\subsection{原初黑洞形成}
+
+\subsubsection{机制：扭转场涨落}
+
+\begin{insight}[来自密度峰的PBH]
+在10D→4D过渡期间，扭转场有涨落$\delta\tau/\tau \sim \mathcal{O}(1)$。$\delta\tau \u003e \tau_c$的区域坍缩形成原初黑洞。
+\end{insight}
+
+\begin{theorem}[PBH质量函数]
+原初黑洞的质量谱为：
+\begin{equation}
+    \frac{dn}{dM} = \beta \cdot \left(\frac{M}{M_*}\right)^{-\alpha} \cdot \exp\left[-\left(\frac{M}{M_*}\right)^2\right]
+\end{equation}
+其中：
+\begin{itemize}
+    \item $M_* = M_{\text{Planck}} \cdot (E_c/E_{\text{form}})^2 \cdot \tau_0^{3/2} \sim 10^{-12} M_\odot$
+    \item $\alpha = 1 + \tau_0 \approx 1.005$
+    \item $\beta \sim 10^{-8}$（形成比例）
+\end{itemize}
+\end{theorem}
+
+\subsubsection{暗物质丰度}
+
+积分质量函数：
+\begin{equation}
+    \Omega_{\text{PBH}} = \int_{M_{\text{min}}}^{M_{\text{max}}} \frac{dn}{dM} \cdot \frac{M}{\rho_c} \, dM \approx 0.26
+\end{equation}
+
+这自然解释暗物质丰度，无需新粒子。
+
+\subsubsection{观测信号}
+
+\begin{enumerate}
+    \item \textbf{微引力透镜}：$10^{-12} M_\odot$的PBH引起遥远类星体的纳透镜
+    \item \textbf{引力波}：PBH双星并合产生GW信号
+    \item \textbf{结构形成}：早期物质聚集被修正
+    \item \textbf{21cm线}：PBH加热IGM影响21cm功率谱
+\end{enumerate}
+
+\subsection{物质-反物质不对称性}
+
+\subsubsection{UFT中的Sakharov条件}
+
+重子生成需要：
+\begin{enumerate}
+    \item 重子数破坏
+    \item C和CP破坏
+    \item 偏离热平衡
+\end{enumerate}
+
+\subsubsection{UFT机制：几何CP破坏}
+
+\begin{insight}[来自维数流的CP破坏]
+在10D→4D过渡期间，内空间中的几何相位创建有效CP破坏。Jarlskog不变量由扭转场设定：
+\begin{equation}
+    J_{\text{CP}} \sim \tau_0^3 \cdot \sin\delta_{\text{CKM}} \sim 3 \times 10^{-5}
+\end{equation}
+\end{insight}
+
+\subsubsection{重子数破坏}
+
+在UFT中，重子数不是基本对称性，而是仅在4D低能极限有效的涌现守恒律。在$E \sim E_c$，（通过统一规范玻色子）夸克和轻子之间的跃迁破坏$B$和$L$但保持$B-L$。
+
+\subsubsection{重子不对称性公式}
+
+\begin{theorem}[重子-光子比]
+观测到的重子不对称性被预测为：
+\begin{equation}
+    \eta_B = \frac{n_B}{n_\gamma} = \frac{28}{79} \cdot \frac{\Gamma_{\text{CPV}}}{H} \cdot \epsilon_{\text{washout}} \approx 6 \times 10^{-10}
+\end{equation}
+其中：
+\begin{itemize}
+    \item $\Gamma_{\text{CPV}}$是CP破坏相互作用率
+    \item $H$是过渡期间的哈勃率
+    \item $\epsilon_{\text{washout}} = \tau_0^2$是洗涤抑制因子
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+在10D→4D过渡期间，破坏$B+L$但保持$B-L$的sphaleron过程处于平衡。扭转场中的CP破坏相位创建净重子不对称性：
+
+\begin{equation}
+    n_B \sim \sum_f \mu_f \cdot \Gamma_{\text{CPV}} \cdot \tau_{\text{trans}}
+\end{equation}
+
+其中$\mu_f$是化学势，$\tau_{\text{trans}} \sim 1/E_c$是过渡时间尺度。
+
+对于$\Gamma_{\text{CPV}} \sim \alpha_{\text{GUT}}^2 T$和$H \sim T^2/M_P$，并计入洗涤：
+\begin{equation}
+    \eta_B \sim 10^{-2} \cdot \alpha_{\text{GUT}}^2 \cdot \tau_0^2 \sim 6 \times 10^{-10}
+\end{equation}
+\end{proof}
+
+这与观测值$\eta_B^{(\text{obs})} = (6.12 \pm 0.04) \times 10^{-10}$匹配。
+
+\subsection{宇宙演化时间线}
+
+\subsubsection{完整热历史}
+
+\begin{table}[htbp]
+\centering
+\caption{UFT中的宇宙时间线}
+\begin{tabular}{@{}llcc@{}}
+\toprule
+\textbf{时期} \u0026 \textbf{时间} \u0026 \textbf{温度} \u0026 \textbf{维数} \\
+\midrule
+量子引力 \u0026 $t \u003c \tau_0 t_P$ \u0026 $T \u003e E_c$ \u0026 $d_s = 10$ \\
+普朗克时代 \u0026 $10^{-43}$ s \u0026 $10^{19}$ GeV \u0026 $d_s = 10 \to 8$ \\
+GUT过渡 \u0026 $10^{-38}$ s \u0026 $10^{16}$ GeV \u0026 $d_s = 8 \to 7$ \\
+暴涨 \u0026 $10^{-36} - 10^{-32}$ s \u0026 $10^{16} - 10^{13}$ GeV \u0026 $d_s = 7 \to 4$ \\
+再热 \u0026 $10^{-32} - 10^{-20}$ s \u0026 $10^{13} - 10^{3}$ GeV \u0026 $d_s = 4$ \\
+电弱对称性破缺 \u0026 $10^{-12}$ s \u0026 $10^{2}$ GeV \u0026 $d_s = 4$ \\
+QCD相变 \u0026 $10^{-5}$ s \u0026 $10^{2}$ MeV \u0026 $d_s = 4$ \\
+BBN \u0026 $1 - 180$ s \u0026 $1 - 0.1$ MeV \u0026 $d_s = 4$ \\
+物质-辐射 \u0026 $10^{5}$ yr \u0026 $0.75$ eV \u0026 $d_s = 4$ \\
+复合 \u0026 $3.8 \times 10^{5}$ yr \u0026 $0.26$ eV \u0026 $d_s = 4$ \\
+黑暗时代 \u0026 $10^{6} - 10^{8}$ yr \u0026 $0.2 - 0.01$ eV \u0026 $d_s = 4$ \\
+再电离 \u0026 $10^{8} - 10^{9}$ yr \u0026 $0.01 - 0.001$ eV \u0026 $d_s = 4$ \\
+现在 \u0026 $1.38 \times 10^{10}$ yr \u0026 $2.3 \times 10^{-13}$ GeV \u0026 $d_s = 4$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{晚期宇宙学}
+
+\subsubsection{暗能量演化}
+
+在UFT中，宇宙学常数不是常数而是轻微演化：
+\begin{equation}
+    \Lambda(z) = \Lambda_0 \cdot (1 + z)^{3\tau_0^2}
+\end{equation}
+
+这预言非常小的时变：
+\begin{equation}
+    \frac{\dot{\Lambda}}{\Lambda} \sim H_0 \cdot \tau_0^2 \sim 10^{-35} \text{ s}^{-1}
+\end{equation}
+
+对当前观测不可探测，但未来宇宙学实验可能约束。

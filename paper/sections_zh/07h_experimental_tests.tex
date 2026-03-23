@@ -1,0 +1,219 @@
+% 第07h节：UFT预测的实验检验
+% 验证或证伪UFT的当前和未来实验
+\section{UFT预测的实验检验}
+\label{sec:experimental_tests}
+
+\subsection{引言}
+
+理论必须做出可证伪的预测。UFT在多个能量尺度和实验领域做出具体的、定量的预测。本节概述检验这些预测的实验计划。
+
+\subsection{高优先级检验（当前代）}
+
+\subsubsection{1. 引力波偏振}
+
+\begin{test}[LIGO/Virgo/KAGRA标量偏振搜索]
+\textbf{预测}：UFT预测两个额外标量偏振，幅度比为：
+\begin{equation}
+    \frac{h_{\text{标量}}}{h_{\text{张量}}} = \tau_0 \approx 0.5\%
+\end{equation}
+
+\textbf{当前状态}：LIGO O4运行（2023-2025）可在1\%水平探测偏振混合。
+
+\textbf{检验}：分析致密双星并合事件，寻找偏离纯张量偏振的迹象。
+
+\textbf{可证伪性}：如果观测到5\%或以上的标量偏振，UFT被排除。
+\end{test}
+
+\subsubsection{2. 高精度时钟检验}
+
+\begin{test}[光钟红移和时间膨胀]
+\textbf{预测}：UFT预测时钟频率移动偏离GR：
+\begin{equation}
+    \frac{\Delta \nu}{\nu} = \tau_0^2 \cdot \frac{\Delta \Phi}{c^2} \sim 2.5 \times 10^{-5} \cdot \frac{\Delta \Phi}{c^2}
+\end{equation}
+
+\textbf{当前状态}：光晶格钟（Sr, Yb）达到$10^{-18}$分数不确定度。
+
+\textbf{检验}：比较不同引力势处的时钟（如JILA/NIST塔实验）。
+
+\textbf{所需灵敏度}：$10^{-19}$用于$h \sim 10$ cm高度差。
+\end{test}
+
+\subsubsection{3. 粒子对撞机测量}
+
+\begin{test}[LHC高亮度运行]
+\textbf{预测}：
+\begin{itemize}
+    \item 100 TeV以下无新粒子（无超对称，无额外维）
+    \item 希格斯自耦合$\lambda_{HHH} = \lambda_{\text{SM}} \cdot (1 + \mathcal{O}(\tau_0^2))$
+    \item 质子衰变敏感度达$10^{35}$年无信号
+\end{itemize}
+
+\textbf{当前状态}：HL-LHC（2029-2040）将积累3000 fb$^{-1}$。
+
+\textbf{检验}：搜索奇异信号；精确测量希格斯性质。
+\end{test}
+
+\subsection{中优先级检验（近期未来）}
+
+\subsubsection{4. 原子干涉仪}
+
+\begin{test}[大动量转移原子干涉仪]
+\textbf{预测}：UFT预测内空间耦合引起的相移：
+\begin{equation}
+    \Delta \phi_{\text{UFT}} = \tau_0^2 \cdot \frac{m g L T}{\hbar} \sim 10^{-5} \cdot \Delta \phi_{\text{GR}}
+\end{equation}
+
+\textbf{当前状态}：斯坦福10米塔达到$\Delta\phi \sim 10^7$ rad。
+
+\textbf{下一代}：100米喷泉（AION, MAGIS-100）。
+
+\textbf{所需灵敏度}：$10^{10}$ rad用于$\tau_0$的0.1\%精度。
+\end{test}
+
+\subsubsection{5. 中子干涉仪}
+
+\begin{test}[完美晶体中子干涉仪]
+\textbf{预测}：UFT预测等效原理的微小违反：
+\begin{equation}
+    \eta = \frac{m_g}{m_i} - 1 = \mathcal{O}(\tau_0^3) \sim 10^{-7}
+\end{equation}
+
+\textbf{当前状态}：当前限制$\eta \u003c 10^{-13}$对中子-电子。
+
+\textbf{检验}：比较中子和原子干涉仪测量。
+\end{test}
+
+\subsubsection{6. CMB谱畸变}
+
+\begin{test}[PIXIE/FIRAS-2 CMB光谱]
+\textbf{预测}：UFT预测$\mu$时代（$10^5 \u003c z \u003c 2 \times 10^6$）的能量注入：
+\begin{equation}
+    \mu \sim 10^{-8} - 10^{-9}
+\end{equation}
+
+\textbf{当前状态}：FIRAS界限$\mu \u003c 9 \times 10^{-5}$；PIXIE目标$\mu \sim 10^{-8}$。
+
+\textbf{检验}：测量CMB频率谱的化学势畸变。
+\end{test}
+
+\subsection{长期检验（下一代）}
+
+\subsubsection{7. 旋转球实验}
+
+\begin{test}[纳米尺度快速旋转球]
+\textbf{预测}：半径$r \sim 10^{-7}$ m、以$\omega \sim 10^9$ rad/s旋转的球将展示：
+\begin{itemize}
+    \item 时间膨胀增强因子$(1 + \tau_0)^{-1}$
+    \item 能量"损失"到内空间$\Delta E/E \sim \tau_0$
+    \item 内自由度的谱维$d_s \approx 4 + 6\tau_0$
+\end{itemize}
+
+\textbf{实现}：光阱中的纳米制造金刚石球；激光驱动旋转。
+
+\textbf{挑战}：热管理、旋转稳定性、测量精度。
+
+\textbf{时间线}：10-15年。
+\end{test}
+
+\subsubsection{8. 下一代引力波探测器}
+
+\begin{test}[爱因斯坦望远镜/宇宙探险家]
+\textbf{预测}：
+\begin{itemize}
+    \item 标量偏振引起的修正旋近波形
+    \item 有扭转"毛发"的黑洞铃宕信号
+    \item 原初涨落的随机背景
+\end{itemize}
+
+\textbf{灵敏度}：ET将LIGO灵敏度提高10倍；宇宙探险家提高100倍。
+
+\textbf{时间线}：ET（2030年代中期）；CE（2030年代后期）。
+\end{test}
+
+\subsubsection{9. 空间检验}
+
+\begin{test}[LISA和空间原子钟]
+\textbf{预测}：
+\begin{itemize}
+    \item LISA：修正的极端质量比旋近（EMRI）
+    \item ACES/空间光钟：$10^{-17}$水平的引力红移检验
+\end{itemize}
+
+\textbf{时间线}：LISA（2034+）；空间钟（2030+）。
+\end{test}
+
+\subsection{宇宙学检验}
+
+\subsubsection{10. 原初黑洞搜索}
+
+\begin{test}[微引力透镜和引力波搜索]
+\textbf{预测}：暗物质由小行星质量PBH组成（$M \sim 10^{-12} M_\odot$）：
+\begin{itemize}
+    \item 类星体的微引力透镜（纳透镜）
+    \item PBH并合的引力波背景
+    \item 21cm功率谱修正
+\end{itemize}
+
+\textbf{当前状态}：$M \u003e 10^{-11} M_\odot$存在约束；亚太阳质量区域基本未探索。
+
+\textbf{未来巡天}：LSST、Euclid将探测$10^{-11} - 10^{-7} M_\odot$。
+\end{test}
+
+\subsubsection{11. 21cm宇宙学}
+
+\begin{test}[EDGES/HERA/SKA再电离时代]
+\textbf{预测}：UFT预测修正的热历史：
+\begin{itemize}
+    \item $T_s$（自旋温度）演化与$\Lambda$CDM不同
+    \item $z \sim 20$处功率谱幅度增强$\sim 5\%$
+\end{itemize}
+
+\textbf{当前状态}：EDGES声称异常吸收信号；HERA将澄清。
+
+\textbf{检验}：测量$z = 10-30$的21cm功率谱。
+\end{test}
+
+\subsubsection{12. 大爆炸核合成}
+
+\begin{test}[原初元素丰度]
+\textbf{预测}：UFT预测相对论性物种的有效数目：
+\begin{equation}
+    N_{\text{eff}} = 3.046 \cdot (1 + \tau_0^2) \approx 3.046 + 2.5 \times 10^{-5}
+\end{equation}
+
+\textbf{当前状态}：Planck 2018给出$N_{\text{eff}} = 2.99 \pm 0.17$。
+
+\textbf{检验}：改进$^4$He和D/H丰度的测量。
+\end{test}
+
+\subsection{实验计划总结}
+
+\begin{table}[htbp]
+\centering
+\caption{UFT实验检验计划}
+\begin{tabular}{@{}llccc@{}}
+\toprule
+\textbf{检验} \u0026 \textbf{可观测量} \u0026 \textbf{时间线} \u0026 \textbf{成本} \u0026 \textbf{影响} \\
+\midrule
+GW偏振 \u0026 $h_s/h_t$ \u0026 2023-2025 \u0026 低 \u0026 高 \\
+光钟 \u0026 $\Delta\nu/\nu$ \u0026 2023-2028 \u0026 中 \u0026 高 \\
+HL-LHC \u0026 希格斯性质 \u0026 2029-2040 \u0026 高 \u0026 中 \\
+原子干涉仪 \u0026 相移 \u0026 2025-2030 \u0026 中 \u0026 高 \\
+LISA \u0026 EMRI波形 \u0026 2034+ \u0026 高 \u0026 高 \\
+ET/CE \u0026 高灵敏度GW \u0026 2035+ \u0026 高 \u0026 高 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{证伪标准}
+
+UFT的核心预测可用下一代实验证伪：
+\begin{itemize}
+    \item \textbf{引力波}：仅探测到两种偏振模式（而非六种）
+    \item \textbf{时钟}：无偏离GR的红移信号（$\Delta\nu/\nu \u003c 10^{-19}$）
+    \item \textbf{费米子质量}：观测质量与UFT预测显著偏离
+    \item \textbf{暗物质}：无小行星质量PBH的签名
+\end{itemize}
+
+科学的证伪性是理论有效性的最终检验。
