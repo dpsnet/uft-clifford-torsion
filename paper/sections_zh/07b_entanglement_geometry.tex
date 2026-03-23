@@ -1,0 +1,99 @@
+% 节：量子纠缠的几何解释
+\section{量子纠缠的几何解释}
+\label{sec:entanglement_geometry}
+
+\subsection{纠缠的奥秘}
+
+量子纠缠——"幽灵般的超距作用"——自EPR悖论以来一直是一个基础性谜题。标准量子力学通过态矢量代数描述纠缠，但对关联如何在任意距离上瞬时发生没有提供几何图景。
+
+\begin{insight}[纠缠作为共享内时间]
+在UFT中，纠缠粒子共享相同的\textbf{内部时间坐标} $t_{int}$，同时保持不同的外部（互反）时间坐标 $t_{rec}$。这解释了瞬时关联而不违反因果性。
+\end{insight}
+
+\subsection{几何框架}
+
+\subsubsection{双粒子纠缠态}
+
+考虑贝尔态中的两个粒子 $A$ 和 $B$：
+\begin{equation}
+    |\psi_{AB}\rangle = \frac{1}{\sqrt{2}}(|0_A 1_B\rangle - |1_A 0_B\rangle)
+\end{equation}
+
+在UFT中，这对应于：
+
+\begin{equation}
+    t_{int}^A = t_{int}^B = t_{int}^{(shared)}
+    \quad \text{而} \quad
+    t_{rec}^A \neq t_{rec}^B
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    particle/.style={circle, draw, thick, minimum size=1cm},
+    label/.style={font=\small}
+]
+
+% 粒子A
+\node[particle, fill=blue!20] (A) at (-3,0) {$A$};
+\node[label, below=0.3cm of A] {$t_{rec}^A$};
+\node[label, above=0.3cm of A] {$t_{int}^{shared}$};
+
+% 粒子B
+\node[particle, fill=red!20] (B) at (3,0) {$B$};
+\node[label, below=0.3cm of B] {$t_{rec}^B$};
+\node[label, above=0.3cm of B] {$t_{int}^{shared}$};
+
+% 内空间连接
+\draw[thick, dashed, <->] (A) -- (B) node[midway, above] {内空间} node[midway, below] {$t_{int}$ 共享};
+
+% 外部时间标签
+\node at (-3,-1.5) {外部时间：$t_{rec}^A$};
+\node at (3,-1.5) {外部时间：$t_{rec}^B$};
+
+% 距离
+\draw[<->] (-3,-2) -- (3,-2) node[midway, below] {空间分离 $d$};
+
+\end{tikzpicture}
+\caption{纠缠的几何解释。两个粒子共享相同的内部时间坐标，同时具有不同的外部时间和空间位置。}
+\label{fig:entanglement_geometry}
+\end{figure}
+
+\subsubsection{为什么没有信号传输？}
+
+无信号定理被自然解释：
+
+\begin{enumerate}
+    \item \textbf{内时间关联}：瞬时的（相同 $t_{int}$）
+    \item \textbf{外时间演化}：局域且因果的（不同 $t_{rec}$）
+    \item \textbf{测量}：将共享的 $t_{int}$ 投影到局域 $t_{rec}$
+\end{enumerate}
+
+关联存在于内空间（非局域）但任何测量必须在互反空间（局域）中发生，防止超光速通信。
+
+\subsection{纠缠熵作为几何体积}
+
+\subsubsection{纠缠熵公式}
+
+在标准量子力学中，纠缠熵为：
+\begin{equation}
+    S_A = -\Tr(\rho_A \ln \rho_A)
+\end{equation}
+
+在UFT中，这成为几何测度：
+
+\begin{theorem}[纠缠熵几何公式]
+区域 $A$ 和 $B$ 之间的纠缠熵等于它们共享内空间的体积：
+\begin{equation}
+    S_{AB} = k_B \cdot \frac{\text{Vol}(\mathcal{I}_{AB})}{\text{Vol}(\mathcal{I}_{unit})} \cdot \ln d_{int}
+\end{equation}
+其中 $\mathcal{I}_{AB}$ 是共享内区域，$d_{int}$ 是内部希尔伯特空间维数。
+\end{theorem}
+
+\subsubsection{面积律涌现}
+
+对于空间的双分，共享内部体积随边界面积标度：
+
+\begin{equation}
+    S_{AB} \propto \frac{\text{Area}(\partial A)}{\ell_P^{d_s-2}}
+\end{equation}
