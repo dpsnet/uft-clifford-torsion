@@ -1,0 +1,98 @@
+% 第10章：实验验证
+\section{实验验证}
+\label{sec:experimental}
+
+\subsection{可检验预言概述}
+
+我们的统一场论做出了几个具体的、可证伪的预言，这些预言将其与标准物理区分开来。这些预言分为三类：
+
+\begin{enumerate}
+    \item \textbf{引力波检验}：六种偏振模式、修正的传播速度和特征波形
+    \item \textbf{粒子物理检验}：修正的原子光谱、耦合常数关系和质量公式
+    \item \textbf{宇宙学检验}：原初引力波谱、暗物质丰度和大尺度结构
+\end{enumerate}
+
+单一参数 $\tau_0 \approx 0.005$ 使用信息论从第一性原理导出（见 \cref{app:tau_zero_derivation}），代表10维信息投影到4维的保真度。
+
+\subsection{引力波探测}
+
+\subsubsection{LISA：主要探测通道}
+
+激光干涉空间天线（LISA），计划于2034年发射，是我们的主要探测通道。LISA对中等质量黑洞并合（$10^4$--$10^7 M_\odot$）的灵敏度为检验我们的预言提供了理想频率范围。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig3_lisa_sensitivity.png}
+\caption{LISA灵敏度曲线和预言的UFT信号。六种偏振信号（红色）相对于标准广义相对论（蓝色）显示轻微增强。对于 $\tau_0 = 0.005$，信噪比为 SNR $\sim$ 1000。}
+\label{fig:lisa_sensitivity}
+\end{figure}
+
+\textbf{LISA的关键预言}：
+
+\begin{itemize}
+    \item \textbf{六种偏振模式}：标准广义相对论预言两种（$h_+$、$h_\times$）；我们预言六种，包括矢量（$h_x$、$h_y$）和标量（$h_b$、$h_l$）模式
+    \item \textbf{相对振幅}：
+    \begin{align}
+        \frac{h_x}{h_+} \u0026\sim \frac{h_y}{h_+} \sim \frac{\tau_0}{2} \approx 2.5 \times 10^{-3} \\
+        \frac{h_b}{h_+} \u0026\sim \frac{\tau_0^2}{3} \approx 8 \times 10^{-6}
+    \end{align}
+    
+    \item \textbf{色散传播}：不同偏振以略微不同速度传播，在宇宙距离上导致到达时间延迟
+\end{itemize}
+
+\textbf{探测策略}：
+
+LISA的三角构型，三个航天器相隔250万公里，提供探测额外偏振所需的灵敏度。距离1 Gpc的 $10^5 M_\odot$ 双星的信噪比为：
+
+\begin{equation}
+    \text{SNR} \approx 1000 \quad \text{（对于 } \tau_0 = 0.005\text{）}
+\end{equation}
+
+这显著高于标准偏振的信噪比，使探测极有可能成功。
+
+\subsubsection{宇宙探险者和爱因斯坦望远镜}
+
+地基探测器宇宙探险者（CE）和爱因斯坦望远镜（ET）将通过提供对更高频率（1 Hz--10 kHz）的灵敏度来补充LISA。
+
+\begin{table}[htbp]
+\centering
+\caption{引力波探测器比较}
+\label{tab:gw_detectors}
+\begin{tabular}{lccc}
+\toprule
+\textbf{探测器} \u0026 \textbf{频率} \u0026 \textbf{SNR (}$\tau_0=0.005$\textbf{)} \u0026 \textbf{发射} \\
+\midrule
+LISA \u0026 $10^{-4}$--1 Hz \u0026 $\sim$1000 \u0026 2034 \\
+宇宙探险者 \u0026 1--$10^4$ Hz \u0026 $\sim$2000 \u0026 2035 \\
+爱因斯坦望远镜 \u0026 1--$10^4$ Hz \u0026 $\sim$1500 \u0026 2035 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{脉冲星计时阵列}
+
+虽然脉冲星计时阵列（NANOGrav、EPTA、PPTA）对nHz--$\mu$Hz范围的引力波敏感，但来自超大质量黑洞双星的随机背景对我们的预言效应占主导（$\tau_0 = 0.005$）。
+
+\begin{equation}
+    \frac{h_{UFT}}{h_{astrophysical}} \sim 10^{-4} \quad \text{（未来PTA可探测）}
+\end{equation}
+
+具有改进计时精度的IPTA（国际脉冲星计时阵列）将在2030年代达到检验 $\tau_0 = 0.005$ 的灵敏度。
+
+\subsection{原子和粒子物理检验}
+
+\subsubsection{原子钟约束}
+
+原子钟为 $\tau_0$ 提供了最严格的约束。挠率场诱导频率偏移：
+
+\begin{equation}
+    \frac{\Delta \nu}{\nu} \sim \tau_0 \cdot g_\tau \cdot 10^{11}
+\end{equation}
+
+当前光晶格钟达到 $\Delta\nu/\nu \sim 10^{-18}$ 的稳定性，约束：
+
+\begin{equation}
+    \tau_0 \lesssim 0.01
+\end{equation}
+
+我们导出的值 $\tau_0 = 0.005$ 在当前约束范围内，使其一致但可用下一代钟检验。

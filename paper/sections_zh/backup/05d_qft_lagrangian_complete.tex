@@ -1,0 +1,100 @@
+% 第05d节：从10D几何导出完整QFT拉格朗日量
+% 从Cl(1,9)严格推导标准模型拉格朗日量
+\section{从10D几何导出完整QFT拉格朗日量}
+\label{sec:qft_lagrangian_complete}
+
+\subsection{引言}
+
+本节介绍从10维内空间几何严格推导完整标准模型（加引力）拉格朗日量。从克利福德代数 $Cl(1,9)$ 出发，我们通过维度约化推导拉格朗日量中的每一项。
+
+\subsection{10D中的主拉格朗日量}
+
+\subsubsection{几何作用量}
+
+10维中的基本作用量为：
+\begin{equation}
+    S_{10D} = \int d^{10}x \sqrt{-g_{10}} \left[ \frac{1}{2\kappa_{10}^2}R_{10} - \frac{1}{4}F_{MN}F^{MN} + i\bar{\Psi}\Gamma^M D_M \Psi \right]
+\end{equation}
+
+其中：
+\begin{itemize}
+    \item $R_{10}$ 是10D里奇标量
+    \item $F_{MN}$ 是规范场的场强
+    \item $\Psi$ 是10D马约拉纳-外尔旋量
+    \item $\Gamma^M$ 是 $Cl(1,9)$ 伽马矩阵
+\end{itemize}
+
+\subsubsection{克利福德代数 $Cl(1,9)$}
+
+伽马矩阵满足：
+\begin{equation}
+    \{\Gamma^M, \Gamma^N\} = 2\eta^{MN}, \quad M,N = 0,1,\ldots,9
+\end{equation}
+
+度规矩迹为 $\eta = \text{diag}(-,+,+,+,+,+,+,+,+,+)$。
+
+10维旋量表示是32维的（马约拉纳-外尔）。
+
+\subsection{维度约化：10D → 4D}
+
+\subsubsection{卡鲁扎-克莱因拟设}
+
+我们将10维坐标分解为 $x^M = (x^\mu, y^a)$，其中：
+\begin{itemize}
+    \item $x^\mu$：4维互反空间（$\mu = 0,1,2,3$）
+    \item $y^a$：6维内方向（$a = 4,\ldots,9$）
+\end{itemize}
+
+度规拟设为：
+\begin{equation}
+    ds_{10}^2 = e^{-\Phi}g_{\mu\nu}dx^\mu dx^\nu + g_{ab}(dy^a + A^a_\mu dx^\mu)(dy^b + A^b_\nu dx^\nu)
+\end{equation}
+
+其中：
+\begin{itemize}
+    \item $g_{\mu\nu}$ 是4维度规
+    \item $g_{ab}$ 是内部度规
+    \item $A^a_\mu$ 是规范场（卡鲁扎-克莱因矢量）
+    \item $\Phi$ 是伸缩子
+\end{itemize}
+
+\subsubsection{规范对称性的涌现}
+
+内空间的等距变换成为4维中的规范对称性：
+\begin{equation}
+    \text{Isom}(M_{\text{int}}) = U(1) \times SU(2) \times SU(3)
+\end{equation}
+
+\subsection{引力部分}
+
+\subsubsection{爱因斯坦-希尔伯特项}
+
+10D里奇标量的约化给出：
+\begin{equation}
+    \frac{1}{2\kappa_{10}^2}\int d^{10}x \sqrt{-g_{10}}R_{10} = \frac{1}{2\kappa_4^2}\int d^4x \sqrt{-g_4}\left(R_4 - \frac{1}{2}\partial_\mu\Phi\partial^\mu\Phi + \cdots\right)
+\end{equation}
+
+其中4维引力常数为：
+\begin{equation}
+    \frac{1}{\kappa_4^2} = \frac{V_{\text{int}}}{\kappa_{10}^2} = \frac{M_P^2}{16\pi}
+\end{equation}
+
+\subsubsection{挠率项}
+
+UFT修正表现为：
+\begin{equation}
+    \mathcal{L}_{\text{torsion}} = \frac{1}{2\kappa_4^2}\left(2\Lambda + \tau_0^2 R + \tau_0^4 R_{\mu\nu}R^{\mu\nu} + \cdots\right)
+\end{equation}
+
+其中 $\Lambda = 3\tau_0^2/2\kappa_4^2$ 是宇宙学常数。
+
+\subsection{规范部分}
+
+\subsubsection{$U(1)_Y$：超荷规范场}
+
+来自10D规范场 $A_M$：
+\begin{equation}
+    \mathcal{L}_{U(1)} = -\frac{1}{4g_Y^2}F_{\mu\nu}F^{\mu\nu}, \quad F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
+\end{equation}
+
+规范耦合由内空间几何确定。

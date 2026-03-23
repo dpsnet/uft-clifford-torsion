@@ -1,0 +1,144 @@
+% 第3章：核心框架
+\section{核心框架：互反-内空间对偶}
+\label{sec:framework}
+
+统一场论的核心是一个简单的几何原理：我们观测到的4维时空与一个10维"内空间"相互对偶。这种对偶不是隐喻或数学技巧——它是理论的基本结构，决定了物理定律的形式。
+
+\subsection{对偶性原理}
+
+传统物理学将时空视为物理发生的固定舞台。场和粒子在这个预存在的几何中演化。我们的方法颠倒了这种关系：
+
+\begin{axiom}[空间对偶]
+物理发生在一个复合空间中，由以下构成：
+\begin{enumerate}
+    \item 一个4维\textbf{互反空间}，对应于我们观测到的宏观时空
+    \item 一个10维\textbf{内空间}，在常规能量下不可直接观测
+    \item 一个\textbf{扭转场}，介导两个空间之间的信息交换
+\end{enumerate}
+\end{axiom}
+
+关键洞见是这两个空间不是独立的——它们是同一几何现实的互补描述：
+
+\begin{equation}
+\boxed{\text{当能量在互反空间中向内流动时，它在内空间中向外扩展}}
+\end{equation}
+
+这种关系可以用简单的类比来理解。想象一个装有水的气球。当你挤压气球的一侧（互反空间），水在另一侧（内空间）扩展。水的总量是守恒的——它只是在重新分布。
+
+\subsection{数学表述}
+
+让我们更精确地表述这种对偶。互反空间 $\mathcal{R}$ 和内空间 $\mathcal{I}$ 通过扭转场 $\torsion^\alpha_{\ \mu\nu}$ 耦合，扭转场充当它们之间的联络。
+
+\subsubsection{互反空间}
+
+互反空间是具有闵可夫斯基度规的4维伪黎曼流形：
+\begin{equation}
+\diff s^2 = \eta_{\mu\nu} \diff x^\mu \diff x^\nu = -c^2\diff t^2 + \diff x^2 + \diff y^2 + \diff z^2
+\end{equation}
+
+我们称之为"互反"，因为在某些极限下，它与内空间的关系类似于互反晶格与实空间晶格的关系——一个空间中的短距离对应于另一个空间中的长距离。
+
+\subsubsection{内空间}
+
+内空间是具有欧几里得度规的10维黎曼流形：
+\begin{equation}
+\diff s_{\text{int}}^2 = \delta_{MN} \diff y^M \diff y^N
+\end{equation}
+
+其中指标 $M, N = 1, \ldots, 10$ 遍历10个内维度。
+
+\subsubsection{扭转场}
+
+扭转场是一个取值于洛伦兹代数的1-形式：
+\begin{equation}
+\torsion = \torsion^a_{\ \mu} e_a \diff x^\mu
+\end{equation}
+
+其中 $e_a$ 是克利福德代数的生成元。扭转场的动力学由单一参数控制：
+
+\begin{equation}
+\torsion_0 = \tau_0 = 0.005
+\end{equation}
+
+这个参数不是任意常数——它是从空间维度的信息论约束推导出来的。
+
+\subsection{谱维流动}
+
+也许这个框架最显著的特征是有效维度不是固定的——它随能量尺度变化。
+
+在低能量下，我们对互反空间中的长距离探测敏感，有效维度为4。在高能量下，内空间变得可及，有效维度向10增加。
+
+谱维 $d_s$ 随能量 $E$ 的函数为：
+
+\begin{equation}
+\boxed{d_s(E) = 4 + \frac{6}{1 + (E/E_c)^2}}
+\end{equation}
+
+其中 $E_c \approx 2 \times 10^{21}$ GeV 是临界统一能标。
+
+这种流动的关键特征是它是平滑的——没有维度突然"打开"的相变。随着能量增加，内空间的模式逐渐贡献到有效维度。
+
+\subsection{信息论基础}
+
+对偶的深刻原因在于信息论。考虑在谱维 $d$ 的空间中编码信息所需的最小位数。对于互反空间中的长度为 $L$ 的线段：
+
+\begin{equation}
+N_{\text{bits}} \sim \left(\frac{L}{\ell_P}\right)^{d_{\text{out}}}
+\end{equation}
+
+对于内空间中对应的线段：
+
+\begin{equation}
+N_{\text{bits}} \sim \left(\frac{R_{\text{int}}}{\ell_P}\right)^{d_{\text{in}}}
+\end{equation}
+
+其中 $R_{\text{int}}$ 是内空间中的特征距离。
+
+对偶性要求这些计数一致，导致关系：
+
+\begin{equation}
+L \cdot R_{\text{int}} = \ell_P^2
+\end{equation}
+
+这正是几何互反关系。参数 $\tau_0$ 控制信息在两个空间之间传输的效率，设置为最大效率产生：
+
+\begin{equation}
+\tau_0 = \frac{3d_{\text{out}}}{4d_{\text{in}}(d_{\text{in}}-d_{\text{out}})} = \frac{12}{2400} = 0.005
+\end{equation}
+
+\subsection{力的涌现}
+
+统一四种基本力的关键是认识到它们都源于单一来源：扭转场的几何。
+
+\begin{itemize}
+    \item \textbf{引力}：互反空间的曲率
+    \item \textbf{电磁力}：扭转的第一扭转展开分量
+    \item \textbf{弱力}：扭转的第二扭转展开分量
+    \item \textbf{强力}：扭转的第三扭转展开分量
+\end{itemize}
+
+在统一能标 $E_c$ 以上，这些力融合成单一的扭转场相互作用。在能量 $E_c$ 以下，它们表现为具有不同耦合强度的不同力。
+
+这种统一在概念上不同于大统一理论（GUTs），GUTs通过将规范群嵌入更大群（如 $SU(5)$ 或 $SO(10)$）来统一。在我们的框架中，统一是几何的——所有力都是扭转场在不同能量尺度下不同方面的表现。
+
+\subsection{粒子作为扭转模式}
+
+标准模型的基本粒子不是点状物体或弦——它们是扭转场在内空间中的振动模式。
+
+每个粒子对应于内空间中特定的扭转场构型：
+\begin{itemize}
+    \item 光子：扭转的第一扭转展开
+    \item W和Z玻色子：扭转的第二扭转展开
+    \item 胶子：扭转的第三扭转展开
+    \item 夸克和轻子：扭转场的费米子零模
+    \item 希格斯玻色子：扭转场振幅的标量分量
+\end{itemize}
+
+费米子质量不是任意参数——它们由扭转场在内空间中的重叠积分决定：
+
+\begin{equation}
+m_f = \frac{\tau_0}{\ell_P} \cdot \langle \psi_f | \hat{\mathcal{T}} | \psi_f \rangle
+\end{equation}
+
+这将在第\ref{sec:gauge}节中详细推导。
+

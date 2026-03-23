@@ -2,11 +2,13 @@
 \section{数学基础}
 \label{sec:math}
 
-\subsection{克利福德代数 $\Cl(3,1)$}
+\subsection{克利福德代数 $\Cl(3,1)$ 与 $Cl(1,9)$ 的对偶}
 
-我们方法的基础在于克利福德代数 $\Cl(3,1)$，它为描述旋量和时空几何提供了自然的代数框架。
+我们方法的基础在于克利福德代数，它为描述旋量和时空几何提供了自然的代数框架。
 
-\begin{definition}[克利福德代数]
+\subsubsection{四维时空代数 $\Cl(3,1)$}
+
+\begin{definition}[克利福德代数 $\Cl(3,1)$]
 克利福德代数 $\Cl(3,1)$ 是由 $\{\gamma^0, \gamma^1, \gamma^2, \gamma^3\}$ 生成的在 $\mathbb{R}$ 上的结合代数，关系为：
 \begin{equation}
     \{\gamma^\mu, \gamma^\nu\} = 2\eta^{\mu\nu} \mathbf{1}
@@ -28,6 +30,29 @@
     \&\{\gamma^{0123} = \gamma_5\} \u0026\u0026 \text{（1个伪标量）}
 \end{align}
 
+\subsubsection{十维内空间代数 $Cl(1,9)$}
+
+\begin{definition}[克利福德代数 $Cl(1,9)$]
+克利福德代数 $Cl(1,9)$ 由 $\{\Gamma^0, \Gamma^1, ..., \Gamma^9\}$ 生成，关系为：
+\begin{equation}
+    \{\Gamma^A, \Gamma^B\} = 2\eta^{AB} \mathbf{1}
+\end{equation}
+其中 $\eta^{AB} = \diag(-1, 1, 1, 1, 1, 1, 1, 1, 1, 1)$。
+\end{definition}
+
+$Cl(1,9)$ 的维度为 $2^{10} = 1024$，包含32×32矩阵表示。
+
+\subsubsection{两种代数的对偶关系}
+
+\begin{insight}[$\Cl(3,1)$ 与 $Cl(1,9)$ 的界面]
+第\ref{sec:four_forces_unified}章将详细讨论，两种代数通过4维时空与10维内空间的\textbf{界面}形成对偶：
+\begin{itemize}
+    \item $\Cl(3,1)$ 描述可观测的4维互反空间
+    \item $Cl(1,9)$ 描述高维内空间的几何结构
+    \item 扭转场 $\torsion^\alpha_{\ \mu\nu}$ 作为界面场连接两者
+\end{itemize}
+\end{insight}
+
 \subsection{自旋群与覆盖映射}
 
 自旋群 $\Spin(3,1)$ 是真时向洛伦兹群 $SO^+(3,1)$ 的二重覆盖：
@@ -41,6 +66,8 @@
 映射 $\rho$ 是万有覆盖同态，使 $\Spin(3,1)$ 成为 $SO^+(3,1)$ 的万有覆盖群。
 \end{theorem}
 
+类似地，$\Spin(1,9)$ 是 $SO^+(1,9)$ 的二重覆盖。
+
 \subsection{谱维}
 
 谱维提供了一个有效的维度概念，可以随能量尺度变化。
@@ -52,26 +79,27 @@
 \end{equation}
 其中 $\Delta$ 是拉普拉斯-贝尔特拉米算子。在尺度 $\ell = \sqrt{t}$ 的谱维为：
 \begin{equation}
-    \ds(\ell) = -2 \frac{d \ln Z(t)}{d \ln t}
+    d_s(\ell) = -2 \frac{d \ln Z(t)}{d \ln t}
 \end{equation}
 \end{definition}
 
-在我们的框架中，谱维从普朗克尺度的 $\ds = 10$ 跑到宏观尺度的 $\ds = 4$：
+在我们的框架中，谱维从普朗克尺度的 $d_s = 10$ 跑到宏观尺度的 $d_s = 4$：
 \begin{equation}
-    \ds(T) = 4 + \frac{6}{1 + (T/T_c)^2}
+    d_s(T) = 4 + \frac{6}{1 + (T/T_c)^2}
 \end{equation}
+
 其中 $T_c \sim 10^{16}$ GeV 是GUT能标。
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/fig1_spectral_dimension.png}
-\caption{动态谱维演化。在高能（$E \gg E_{GUT}$），谱维接近10，而在低能它冻结为4。}
+\caption{动态谱维演化。在高能（$T \gg T_c$），谱维接近10，而在低能它冻结为4。}
 \label{fig:spectral_dimension}
 \end{figure}
 
 \subsection{分形测度}
 
-豪斯多夫维度 $d_H$ 和谱维 $\ds$ 表征了小尺度时空的分形结构。
+豪斯多夫维度 $d_H$ 和谱维 $d_s$ 表征了小尺度时空的分形结构。
 
 \begin{definition}[分形测度]
 集合 $S$ 上的分形测度定义为：
@@ -83,7 +111,7 @@
 
 对于具有动态谱维的时空，我们推广：
 \begin{equation}
-    d_{eff}(\ell) = \ds(\ell)
+    d_{eff}(\ell) = d_s(\ell)
 \end{equation}
 
 \subsection{扭转克利福德代数}
@@ -98,79 +126,26 @@
 其中 $SO^\tau(3,1)$ 是带扭转的洛伦兹群。
 \end{definition}
 
-\begin{theorem}[核分解]
-扭转覆盖映射的核分解为：
-\begin{equation}
-    \ker(\rho^\tau) \cong Z_2^5
-\end{equation}
-\end{theorem}
-
-这个五重 $Z_2$ 结构是标准模型规范群的几何起源。
+扭转场的几何解释为时空的扭曲提供了物理内涵。
 
 \subsection{与规范理论的关联}
 
-核分解产生规范对称性：
+扭转克利福德代数自然包含规范对称性：
 \begin{equation}
-    \ker(\rho^\tau) \to U(1) \times SU(2) \times SU(3)
+    \Spin^\tau(3,1) \supset SU(2) \times U(1) \subset SO(6)
 \end{equation}
 
-通过以下对应：
-\begin{itemize}
-    \item 一个 $Z_2$ 因子 $\to$ $U(1)$（超荷）
-    \item 两个 $Z_2$ 因子 $\to$ $SU(2)$（弱同位旋）
-    \item 三个 $Z_2$ 因子 $\to$ $SU(3)$（色）
-\end{itemize}
+这将在第\ref{sec:gauge}章详细展开。
 
 \subsection{总结}
 
-数学框架包括：
+本章介绍了UFT的数学基础：
 \begin{enumerate}
-    \item 克利福德代数 $\Cl(3,1)$ 用于旋量几何
-    \item 随尺度变化的动态谱维 $\ds(\ell)$
-    \item 时空微观结构的分形测度
-    \item 包含扭转的扭转自旋群 $\Spin^\tau(3,1)$
-    \item 核分解 $Z_2^5 \to$ 规范对称性
+    \item \textbf{克利福德代数}：$\Cl(3,1)$ 描述4维时空，$Cl(1,9)$ 描述10维内空间
+    \item \textbf{对偶关系}：两种代数通过扭转场界面相互对偶
+    \item \textbf{谱维}：有效维度随能量尺度从10流动到4
+    \item \textbf{分形结构}：小尺度时空具有分形几何
+    \item \textbf{扭转}：通过扭转克利福德代数引入，携带物理意义
 \end{enumerate}
 
-这为在以下章节中构建统一场论提供了基础。
-
-\subsection{10维内空间代数 $\Cl(1,9)$}
-
-虽然 $\Cl(3,1)$ 描述了可观测的4维互反空间，但我们理论的基本代数结构是描述谱内空间的10维克利福德代数 $\Cl(1,9)$。
-
-\begin{definition}[10维克利福德代数]
-克利福德代数 $\Cl(1,9)$ 由 $\{\Gamma^0, \Gamma^1, \ldots, \Gamma^9\}$ 生成，关系为：
-\begin{equation}
-    \{\Gamma^A, \Gamma^B\} = 2\eta^{AB} \mathbf{1}
-\end{equation}
-其中 $\eta^{AB} = \diag(-1, 1, 1, 1, 1, 1, 1, 1, 1, 1)$ 是10维闵可夫斯基度规。
-\end{definition}
-
-该代数的维度为 $2^{10} = 1024$，可以由 $32 \times 32$ 矩阵表示，对应于10维旋量。
-
-\subsubsection{通过束投影的互反-内对偶}
-
-$\Cl(3,1)$ 和 $\Cl(1,9)$ 之间的关系不是张量积分解，而是具有扭转耦合的束投影：
-
-\begin{equation}
-    \pi_{\tau_0}: \Cl(1,9) \xrightarrow{\tau_0} \Cl(3,1)
-\end{equation}
-
-这个投影是能量依赖的：
-\begin{itemize}
-    \item 在 $E \ll E_c$：投影有效地将 $\Cl(1,9)$ 映射到 $\Cl(3,1)$（4维区域）
-    \item 在 $E \gg E_c$：完整的 $\Cl(1,9)$ 结构显现（10维区域）
-\end{itemize}
-
-\begin{insight}[不是4+6分解]
-关键的是，4维互反空间不是10维内空间的子空间，通过简单分解（$10 \neq 4 + 6$）。相反，它们处于\textbf{互反对偶}：相同的物理系统在低能呈现为4维（通过 $\Cl(3,1)$），在高能呈现为10维（通过 $\Cl(1,9)$），谱维 $d_s(E)$ 在这些极端之间插值。
-\end{insight}
-
-\subsubsection{来自 $\Cl(1,9)$ 的规范对称性}
-
-偶子代数 $\Cl^+(1,9)$ 包含自旋群 $\Spin(1,9)$，它通过束投影和对称性破缺产生标准模型规范群：
-\begin{equation}
-    \Spin(1,9) \xrightarrow{\text{束}} SO(1,3) \times SO(6) \xrightarrow{\text{破缺}} U(1) \times SU(2) \times SU(3)
-\end{equation}
-
-这种来自10维内空间代数的规范对称性的几何起源是我们统一方法的基础。
+这些数学工具为后续构建统一场论提供了坚实的基础。
