@@ -52,29 +52,130 @@ This creates several conceptual difficulties:
     \item Apparent superluminal propagation of collapse
 \end{enumerate}
 
-\subsubsection{Geometric Resolution}
+\subsubsection{Measurement as Interference}
 
-In our theory, measurement corresponds to continuous topological evolution of the fiber bundle structure:
+\begin{insight}[Measurement = Interference]
+Measurement is not a distinct, non-unitary process. It is \textbf{interference} between the system's internal time and the apparatus's internal time. When these internal times become correlated (interfere constructively), the superposition effectively collapses from the perspective of either subsystem.
+\end{insight}
+
+In our theory, measurement corresponds to \textbf{interference in the internal space}:
 
 \begin{enumerate}
-    \item \textbf{Pre-measurement}: System and environment are described by separate fiber bundles $P_S$ and $P_E$
-    
-    \item \textbf{Measurement interaction}: The bundles couple through the fiber product:
+    \item \textbf{Pre-measurement}: System and apparatus have independent internal times:
     \begin{equation}
-        P_{SE} = P_S \times_M P_E = \{(p_S, p_E) \in P_S \times P_E : \pi(p_S) = \pi(p_E)\}
+        t_{int}^{(S)} \neq t_{int}^{(A)}
     \end{equation}
     
-    \item \textbf{Spectral dimension flow}: During measurement, the spectral dimension flows:
+    \item \textbf{Measurement interaction}: The internal times begin to interfere:
     \begin{equation}
-        d_s: 2 \xrightarrow{\text{measurement}} 4
+        t_{int}^{(S)} + t_{int}^{(A)} \to \text{interference pattern}
     \end{equation}
-    corresponding to the transition from quantum superposition to classical definite state
+    This is analogous to two waves interfering—when they overlap, they create a combined pattern.
     
-    \item \textbf{Topological decomposition}: The reducible representation decomposes:
+    \item \textbf{Constructive interference (correlation)}: The interference creates regions where:
     \begin{equation}
-        \Psi_{reducible} \to \Psi_{irreducible}
+        t_{int}^{(S)} \approx t_{int}^{(A)} \quad \text{(shared internal time)}
     \end{equation}
+    This is entanglement—the system and apparatus now share internal time coordinates.
+    
+    \item \textbf{Destructive interference (decoherence)}: For the observer (apparatus), the interference pattern contains the system's state information, but phase relationships are lost:
+    \begin{equation}
+        \rho_S = \Tr_A(|\Psi_{SA}\rangle\langle\Psi_{SA}|) = \sum_i |c_i|^2 |\phi_i\rangle\langle\phi_i|
+    \end{equation}
+    This appears as "collapse" but is actually the result of interference averaging.
 \end{enumerate}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+% System wave
+\draw[thick, blue, domain=0:3, samples=50] plot (\x, {0.5*sin(3*\x r)});
+\node[blue] at (1.5, 1) {$t_{int}^{(S)}$};
+
+% Apparatus wave
+\draw[thick, red, domain=4:7, samples=50] plot (\x, {0.5*sin(3*\x r)});
+\node[red] at (5.5, 1) {$t_{int}^{(A)}$};
+
+% Interference region
+\draw[thick, purple, domain=8:11, samples=100] plot (\x, {0.5*sin(3*\x r) + 0.5*sin(3*(\x-0.5) r)});
+\node[purple] at (9.5, 1.5) {Interference};
+\node[purple] at (9.5, -1.5) {(Measurement)};
+
+% Arrows
+\draw[->, thick] (3.2, 0) -- (3.8, 0);
+\draw[->, thick] (7.2, 0) -- (7.8, 0);
+
+% Labels
+\node[below] at (1.5, -0.8) {System};
+\node[below] at (5.5, -0.8) {Apparatus};
+\node[below] at (9.5, -0.8) {Entangled};
+\end{tikzpicture}
+\caption{Measurement as interference between system and apparatus internal times. The interference creates correlations (entanglement) that appear as wavefunction collapse.}
+\label{fig:measurement_interference}
+\end{figure}
+
+\subsubsection{Mathematical Formulation}
+
+The interference between system and apparatus can be formulated precisely:
+
+\begin{definition}[Internal Time Interference]
+Given system state $|\psi\rangle_S = \sum_i c_i |\phi_i\rangle$ and apparatus states $|a_i\rangle$ (pointer states), the measurement interaction creates interference:
+\begin{equation}
+    |\Psi_{\text{total}}\rangle = \sum_i c_i |\phi_i\rangle_S \otimes |a_i\rangle_A
+\end{equation}
+where each term represents a \textbf{constructive interference channel} between $t_{int}^{(S)}$ and $t_{int}^{(A)}$.
+\end{definition}
+
+\begin{theorem}[Measurement as Interference]
+The probability of outcome $|a_k\rangle$ is given by the interference intensity:
+\begin{equation}
+    P(k) = |\langle a_k | \Psi_{\text{total}} \rangle|^2 = |c_k|^2 = \left| \int_{\mathcal{I}_{\text{shared}}} \psi_S(t_{int}) \cdot \phi_A^{(k)}(t_{int}) \, dt_{int} \right|^2
+\end{equation}
+where the integral is over the shared internal space.
+\end{theorem}
+
+\begin{proof}
+The interference amplitude between system state $|\phi_k\rangle$ and apparatus state $|a_k\rangle$ is:
+\begin{equation}
+    \mathcal{A}_k = \langle a_k | \Psi_{\text{total}} \rangle = c_k
+\end{equation}
+The probability is the modulus squared of this interference amplitude:
+\begin{equation}
+    P(k) = |\mathcal{A}_k|^2 = |c_k|^2
+\end{equation}
+This is exactly the Born rule, but derived from interference rather than postulated.
+\end{proof}
+
+\begin{insight}[Why This Resolves the Measurement Problem]
+Traditional QM treats measurement as special because:
+\begin{itemize}
+    \item It appears non-unitary ("collapse")
+    \item It seems instantaneous
+    \item It creates definite outcomes from superpositions
+\end{itemize}
+
+In UFT, measurement is simply interference:
+\begin{itemize}
+    \item It IS unitary (total evolution preserves norm)
+    \item It is continuous (interference builds up over interaction time)
+    \item Definite outcomes arise from constructive/destructive interference patterns
+\end{itemize}
+\end{insight}
+
+\subsubsection{Interference and Decoherence}
+
+Decoherence—the loss of quantum coherence—is also an interference phenomenon:
+
+\begin{equation}
+    \rho_S = \sum_{i,j} c_i c_j^* |\phi_i\rangle\langle\phi_j| \xrightarrow{\text{decoherence}} \sum_i |c_i|^2 |\phi_i\rangle\langle\phi_i|
+\end{equation}
+
+The off-diagonal terms $c_i c_j^*$ ($i \neq j$) decay because the internal times interfere destructively:
+\begin{equation}
+    \langle t_{int}^{(i)} | t_{int}^{(j)} \rangle \to 0 \quad \text{for} \quad i \neq j
+\end{equation}
+
+This is analogous to how interference fringes wash out when waves become incoherent.
 
 \begin{theorem}[Unitary Evolution Preservation]
 The total evolution of system plus environment remains strictly unitary:
