@@ -31,7 +31,9 @@ Think of it like squeezing a balloon filled with water. When you squeeze one sid
 
 The number ten comes from mathematics—specifically from something called **Clifford algebra**, which is like advanced geometry. It turns out that if you want a consistent geometric framework that can describe both space-time and the forces of nature, ten dimensions is the magic number.
 
-This isn't as crazy as it sounds. String theory, another popular approach to unifying physics, also uses ten dimensions. The difference is that in UFT, the extra six dimensions aren't "curled up" or hidden—they're active, dynamic, and exchanging energy with our four-dimensional world.
+**Important clarification**: The 10D inner space is not "4D plus 6 extra dimensions." Rather, **4D reciprocal space and 10D internal space are dual to each other**—they are two different spaces related by a deep geometric symmetry. At low energies, we experience the 4D reciprocal space; at high energies, the 10D internal space becomes accessible. The spectral dimension flows smoothly between these two extremes as energy changes.
+
+This is different from string theory, where the extra six dimensions are "curled up" or hidden within our familiar 4D space. In UFT, the two spaces are truly distinct but coupled through the torsion field, exchanging energy and information.
 
 ---
 
@@ -136,7 +138,7 @@ If UFT survives these tests, it would represent a profound leap in our understan
 
 If it fails, it will still have been valuable—providing a concrete, testable alternative that pushes the boundaries of theoretical physics.
 
-Either way, the quest to understand the ultimate nature of reality continues. UFT offers one possible path forward—a path where geometry reigns supreme and the universe reveals itself through the elegant mathematics of dual spaces.
+Either way, the quest to understand the ultimate nature of reality continues. UFT offers one possible path forward—a path where geometry reigns supreme and the universe reveals itself through the elegant mathematics of dual spaces (4D reciprocal space and 10D internal space as fundamentally distinct but coupled realms).
 
 ---
 
