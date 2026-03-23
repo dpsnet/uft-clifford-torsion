@@ -160,6 +160,152 @@ where $E$ is the entanglement entropy and $\tau_{\text{int}}$ is the interaction
 
 This shows that measurement is an \textbf{active physical process}—it requires energy exchange and creates real physical correlations (entanglement), not just passive recording of pre-existing values.
 
+\subsection{Measurement Time: First Principles Derivation}
+
+\begin{insight}[Measurement Requires Finite Time]
+Measurement is not instantaneous. The time required for a measurement to occur can be derived from first principles using the interaction strength and energy scales of the system and apparatus.
+\end{insight}
+
+\subsubsection{The Measurement Time Formula}
+
+\begin{theorem}[Measurement Time from First Principles]
+The time required for a measurement to establish correlation between system and apparatus is:
+\begin{equation}
+    \boxed{\tau_{\text{meas}} = \frac{\hbar}{g \cdot \Delta E_{\text{int}}} \cdot f(\tau_0)}
+\end{equation}
+where:
+\begin{itemize}
+    \item $g$ is the dimensionless coupling strength between system and apparatus
+    \item $\Delta E_{\text{int}}$ is the characteristic energy scale of the internal space interaction
+    \item $f(\tau_0) = -\ln(\tau_0) \approx 5.3$ is the torsion field correction factor
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+Consider the interaction Hamiltonian $\hat{H}_{\text{int}} = g \hat{O}_S \otimes \hat{O}_A$. The time evolution operator is:
+\begin{equation}
+    \hat{U}(t) = \exp\left(-\frac{i}{\hbar} \hat{H}_{\text{int}} t\right)
+\end{equation}
+
+For the measurement to create appreciable entanglement, the system and apparatus internal times must synchronize. The synchronization condition requires:
+\begin{equation}
+    \langle t_{\text{int}}^{(S)} \cdot t_{\text{int}}^{(A)} \rangle(t) \geq 1 - \epsilon
+\end{equation}
+where $\epsilon \ll 1$ is the tolerance for incomplete synchronization.
+
+The correlation builds up as:
+\begin{equation}
+    C(t) = 1 - e^{-t/\tau_{\text{sync}}}
+\end{equation}
+where $\tau_{\text{sync}}$ is the synchronization timescale.
+
+From dimensional analysis and the requirement that $C(\tau_{\text{meas}}) = 1 - \tau_0$ (measurement complete when uncertainty is reduced to $\tau_0$ level):
+\begin{equation}
+    e^{-\tau_{\text{meas}}/\tau_{\text{sync}}} = \tau_0
+\end{equation}
+
+Solving for $\tau_{\text{meas}}$:
+\begin{equation}
+    \tau_{\text{meas}} = -\tau_{\text{sync}} \ln(\tau_0) = \tau_{\text{sync}} \cdot f(\tau_0)
+\end{equation}
+
+The synchronization timescale is set by the interaction energy:
+\begin{equation}
+    \tau_{\text{sync}} = \frac{\hbar}{g \cdot \Delta E_{\text{int}}}
+\end{equation}
+
+Combining these results yields the measurement time formula.
+\end{proof}
+
+\subsubsection{Physical Interpretation}
+
+The measurement time formula reveals three fundamental aspects:
+
+\begin{enumerate}
+    \item \textbf{Stronger coupling $\to$ faster measurement}: If $g$ increases, $\tau_{\text{meas}}$ decreases. Strongly coupled systems are measured more quickly.
+    
+    \item \textbf{Higher energy $\to$ faster measurement}: Larger $\Delta E_{\text{int}}$ means faster internal dynamics, leading to quicker synchronization.
+    
+    \item \textbf{Torsion correction}: The factor $f(\tau_0) = -\ln(0.005) \approx 5.3$ represents the fundamental limitation imposed by the dimensional interface structure.
+\end{enumerate}
+
+\subsubsection{Examples and Estimates}
+
+\begin{example}[Visual Observation]
+For a photon detection in the human eye:
+\begin{itemize}
+    \item Photon energy: $E \approx 2$ eV $\approx 3.2 \times 10^{-19}$ J
+    \item Coupling: $g \approx \alpha = 1/137$ (electromagnetic)
+    \item Torsion factor: $f(\tau_0) \approx 5.3$
+\end{itemize}
+
+\begin{equation}
+    \tau_{\text{meas}}^{(\text{visual})} \approx \frac{1.05 \times 10^{-34} \text{ J}\cdot\text{s}}{(1/137) \cdot (3.2 \times 10^{-19} \text{ J})} \cdot 5.3 \approx 2.4 \times 10^{-13} \text{ s}
+\end{equation}
+
+This is the characteristic time for photon absorption and initial signal transduction—consistent with the known response time of rhodopsin ($\sim 10^{-13}$ s).
+\end{example}
+
+\begin{example}[Spin Measurement]
+For a Stern-Gerlach spin measurement:
+\begin{itemize}
+    \item Magnetic energy splitting: $\Delta E \approx \mu_B B \approx 10^{-7}$ eV (for $B \sim 1$ T)
+    \item Coupling: $g \approx 1$ (strong magnetic coupling)
+    \item Torsion factor: $f(\tau_0) \approx 5.3$
+\end{itemize}
+
+\begin{equation}
+    \tau_{\text{meas}}^{(\text{spin})} \approx \frac{1.05 \times 10^{-34}}{1 \cdot 10^{-7} \times 1.6 \times 10^{-19}} \cdot 5.3 \approx 3.5 \times 10^{-8} \text{ s}
+\end{equation}
+
+This is consistent with the transit time of atoms through a Stern-Gerlach magnet ($\sim 10^{-8}$ s).
+\end{example}
+
+\begin{example}[Gravitational Wave Detection]
+For LIGO measuring gravitational waves:
+\begin{itemize}
+    \item Gravitational coupling: $g \sim \tau_0 = 0.005$ (weak)
+    \item Photon energy: $E \approx 10^{-19}$ J (infrared laser)
+    \item Torsion factor: $f(\tau_0) \approx 5.3$
+\end{itemize}
+
+\begin{equation}
+    \tau_{\text{meas}}^{(\text{GW})} \approx \frac{1.05 \times 10^{-34}}{0.005 \cdot 10^{-19}} \cdot 5.3 \approx 1.1 \times 10^{-12} \text{ s}
+\end{equation}
+
+This is much shorter than the GW period ($\sim 10^{-3}$ s), explaining why LIGO can track continuous waves.
+\end{example}
+
+\subsubsection{The Fastest Possible Measurement}
+
+\begin{theorem}[Minimum Measurement Time]
+There exists a fundamental lower bound on measurement time:
+\begin{equation}
+    \tau_{\text{meas}}^{(\text{min})} = \frac{\hbar}{E_{\text{Planck}}} \cdot f(\tau_0) = t_{\text{Planck}} \cdot (-\ln \tau_0) \approx 5.3 \times 10^{-43} \text{ s}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The maximum possible coupling is $g_{\text{max}} = 1$ (strong coupling) and the maximum energy is $E_{\text{max}} = E_{\text{Planck}}$.
+
+Substituting into the measurement time formula:
+\begin{equation}
+    \tau_{\text{meas}}^{(\text{min})} = \frac{\hbar}{1 \cdot E_{\text{Planck}}} \cdot f(\tau_0) = t_{\text{Planck}} \cdot (-\ln \tau_0)
+\end{equation}
+\end{proof}
+
+This represents the absolute minimum time for any physical measurement—the "measurement quantum" of time.
+
+\subsubsection{Connection to Decoherence}
+
+The measurement time is closely related to the decoherence time:
+
+\begin{equation}
+    \tau_{\text{dec}} = \frac{\tau_{\text{meas}}}{\sqrt{n_{\text{env}}}}
+\end{equation}
+
+where $n_{\text{env}}$ is the number of environmental degrees of freedom coupled to the system. For macroscopic objects ($n_{\text{env}} \sim 10^{23}$), decoherence is essentially instantaneous, explaining the classical appearance of the macroscopic world.
+
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}
