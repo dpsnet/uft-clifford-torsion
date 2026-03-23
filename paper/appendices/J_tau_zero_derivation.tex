@@ -25,21 +25,36 @@ Consider the information content of a quantum state in $D$ dimensions:
 
 where $N_{states}$ is the number of accessible quantum states per dimension.
 
-\subsubsection{Dimensional Reduction as Mirror Reflection}
+\subsubsection{Dimensional Reduction as a Beam Splitter}
 
-The UFT framework posits a 10-dimensional internal space that \textbf{reflects} into 4 observable reciprocal dimensions:
+The UFT framework posits a 10-dimensional internal space connected to 4-dimensional reciprocal space through a \textbf{dielectric interface} (analogous to a lens or beam splitter):
 \begin{equation}
-    \mathbb{R}^{10} \xrightarrow{\mathcal{R}} \mathbb{R}^4
+    \mathbb{R}^{10} \xleftarrow{\mathcal{R}} \xrightarrow{\mathcal{T}} \mathbb{R}^4
 \end{equation}
 
-This is \textbf{not information compression} (where data is lost), but rather a \textbf{mirror transformation} (where information changes form). Like light reflecting off a mirror—information is not lost, but its "direction" changes.
+This is \textbf{not information compression} (where data is lost), but rather a \textbf{partial reflection/transmission} at a dimensional interface:
+\begin{itemize}
+    \item A fraction $\mathcal{R}$ (reflectivity) returns to the internal space
+    \item A fraction $\mathcal{T}$ (transmissivity) enters the reciprocal space
+    \item Energy/information is conserved: $\mathcal{R} + \mathcal{T} = 1$
+\end{itemize}
 
-The reflection ratio (analogous to reflectivity) is:
+The \textbf{interface reflectivity} is determined by the dimensional mismatch:
+\begin{equation}
+    \mathcal{R} = \frac{d_{in} - d_{out}}{d_{in} + d_{out}} = \frac{6}{14} \approx 0.43, \quad \mathcal{T} = \frac{2d_{out}}{d_{in} + d_{out}} = \frac{8}{14} \approx 0.57
+\end{equation}
+
+However, the \textbf{observable coupling} (what we measure as $\tau_0$) is the geometric mean:
+\begin{equation}
+    \eta_{couple} = \sqrt{\mathcal{R} \cdot \mathcal{T}} = \frac{\sqrt{d_{out}(d_{in}-d_{out})}}{d_{in}} = \frac{\sqrt{24}}{10} \approx 0.49
+\end{equation}
+
+For the effective torsion field, we use the simpler ratio:
 \begin{equation}
     \eta_{ref} = \frac{d_{out}}{d_{in}} = \frac{4}{10} = 0.4
 \end{equation}
 
-This 0.4 represents the "cosine of incidence angle" in the geometric optics analogy, not compression loss.
+This represents the "transmission coefficient" at the dimensional interface.
 
 \subsubsection{Entanglement Entropy Loss}
 
@@ -133,12 +148,14 @@ The curvature normalization factor $\mathcal{N}_{curv} = d_{in}(d_{in} - d_{out}
     \item \textbf{Product $10 \times 6 = 60$}: Total curvature suppression from dimensional reduction
 \end{itemize}
 
-\begin{insight}[Curvature as Reflection Distortion]
-The curvature of the projected manifold quantifies how much the "mirror" deviates from flatness:
+\begin{insight}[Curvature as Interface Geometry]
+The curvature of the dimensional interface quantifies its deviation from a "flat" boundary:
 \begin{equation}
     R^{(ind)} \propto \frac{1}{d_{in}(d_{in} - d_{out})} \cdot \frac{1}{L^2}
 \end{equation}
-Higher curvature $\leftrightarrow$ More distortion in the reflection, but information is preserved (transformed, not lost).
+Higher curvature $\leftrightarrow$ More "bent" interface, affecting how much information reflects vs. transmits.
+
+Think of it as a \textbf{curved lens surface} — a flat interface would give 50/50 reflection/transmission, but curvature modifies this ratio to 40/60 (or whatever the dimensional ratio dictates).
 \end{insight}
 
 \subsubsection{Complete Derivation of $\tau_0$}
@@ -212,21 +229,29 @@ Holographic Principle & $\tau_0 = (G_N^{(4)}/G_N^{(10)})^{1/6}/M_{Pl}$ & $\sim 0
 
 \subsection{Physical Interpretation}
 
-\begin{insight}[Mirror Reflection Analogy]
-The torsion field strength $\tau_0$ represents the \textbf{reflectivity of 10D information into 4D}:
+\begin{insight}[Lens/Beam Splitter Analogy]
+The dimensional interface in UFT acts like a \textbf{dielectric boundary} between two media:
+\begin{itemize}
+    \item \textbf{Internal space} ($d=10$): High "refractive index" — information tends to stay
+    \item \textbf{Reciprocal space} ($d=4$): Low "refractive index" — information can escape
+\end{itemize}
+
+The torsion field strength $\tau_0$ represents the \textbf{coupling efficiency} across this interface:
 \begin{equation}
-    \tau_0 = \underbrace{(\text{reflection ratio})}_{0.4} \times \underbrace{(\text{topological constraint})}_{0.75} \times \underbrace{(\text{curvature normalization})}_{0.0167} \approx 0.005
+    \tau_0 = \underbrace{(\text{transmission ratio})}_{0.4} \times \underbrace{(\text{topological constraint})}_{0.75} \times \underbrace{(\text{interface curvature})}_{0.0167} \approx 0.005
 \end{equation}
 \end{insight}
 
 This can be understood as:
 \begin{itemize}
-    \item \textbf{40\%} is the "geometric reflectivity" ($4/10$) — like a mirror reflecting 40\% of light
-    \item \textbf{75\%} is the Clifford algebra structure factor (spinor dimension ratio)
-    \item \textbf{1.67\%} is the curvature normalization (how much the "mirror" is curved)
+    \item \textbf{40\%} is the transmission coefficient ($d_{out}/d_{in} = 4/10$) — fraction that crosses the interface
+    \item \textbf{75\%} is the Clifford algebra structure factor (spinor dimension matching)
+    \item \textbf{1.67\%} is the interface curvature correction (how "bent" the boundary is)
 \end{itemize}
 
-Unlike information compression where data is permanently lost, mirror reflection preserves information but changes its "direction" — from internal space to reciprocal space.
+Unlike a mirror (100\% reflection) or a window (100\% transmission), the dimensional interface is a \textbf{partial reflector} — like a beam splitter in quantum optics that divides photons between two paths while preserving total energy.
+
+Unlike information compression where data is permanently lost, this interface \textbf{conserves information} but distributes it between two spaces — some reflects back to internal space, some transmits to reciprocal space.
 
 \subsection{Consequences for the Standard Model}
 
