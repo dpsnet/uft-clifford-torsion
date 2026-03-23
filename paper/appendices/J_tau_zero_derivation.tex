@@ -25,22 +25,21 @@ Consider the information content of a quantum state in $D$ dimensions:
 
 where $N_{states}$ is the number of accessible quantum states per dimension.
 
-\subsubsection{Dimensional Reduction as Information Compression}
+\subsubsection{Dimensional Reduction as Mirror Reflection}
 
-The UFT framework posits a 10-dimensional spacetime that projects to 4 observable dimensions:
+The UFT framework posits a 10-dimensional internal space that \textbf{reflects} into 4 observable reciprocal dimensions:
 \begin{equation}
-    \mathbb{R}^{10} \xrightarrow{\mathcal{P}} \mathbb{R}^4
+    \mathbb{R}^{10} \xrightarrow{\mathcal{R}} \mathbb{R}^4
 \end{equation}
 
-This projection represents an \textbf{information compression}:
+This is \textbf{not information compression} (where data is lost), but rather a \textbf{mirror transformation} (where information changes form). Like light reflecting off a mirror—information is not lost, but its "direction" changes.
+
+The reflection ratio (analogous to reflectivity) is:
 \begin{equation}
-    I_{10} = 10 \cdot \log_2(N) \quad \rightarrow \quad I_4 = 4 \cdot \log_2(N)
+    \eta_{ref} = \frac{d_{out}}{d_{in}} = \frac{4}{10} = 0.4
 \end{equation}
 
-The naive compression ratio is:
-\begin{equation}
-    \eta_{naive} = \frac{I_4}{I_{10}} = \frac{4}{10} = 0.4
-\end{equation}
+This 0.4 represents the "cosine of incidence angle" in the geometric optics analogy, not compression loss.
 
 \subsubsection{Entanglement Entropy Loss}
 
@@ -65,14 +64,14 @@ Here:
 
 \subsubsection{The Final Formula}
 
-The effective torsion field strength is the product of geometric compression and entropy loss:
+The effective torsion field strength is the product of geometric reflection and curvature normalization:
 \begin{equation}
-    \boxed{\tau_0 = \eta_{naive} \times f_{loss} = \frac{4}{10} \times \frac{12}{90} \times \frac{1}{4\pi} \approx 0.00424}
+    \boxed{\tau_0 = \eta_{ref} \times f_{curv} = \frac{4}{10} \times \frac{3}{4} \times \frac{1}{d_{in}(d_{in}-d_{out})} = 0.005}
 \end{equation}
 
-Using a more precise treatment of the Clifford algebra structure:
+Using the exact curvature normalization from projection manifold geometry:
 \begin{equation}
-    \tau_0 = \frac{4}{10} \times \frac{1}{8\pi} \times \left(\frac{2}{3}\right)^2 \approx 0.0050
+    \tau_0 = \frac{4}{10} \times \frac{3}{4} \times \frac{1}{10 \times 6} = \frac{12}{2400} = 0.005
 \end{equation}
 
 \textbf{Result:} $\tau_0 \approx 0.005$
@@ -134,12 +133,12 @@ The curvature normalization factor $\mathcal{N}_{curv} = d_{in}(d_{in} - d_{out}
     \item \textbf{Product $10 \times 6 = 60$}: Total curvature suppression from dimensional reduction
 \end{itemize}
 
-\begin{insight}[Curvature as Information Loss]
-The curvature of the projected manifold is directly related to information loss:
+\begin{insight}[Curvature as Reflection Distortion]
+The curvature of the projected manifold quantifies how much the "mirror" deviates from flatness:
 \begin{equation}
-    R^{(ind)} \propto \frac{I_{lost}}{I_{total}} \cdot \frac{1}{L^2}
+    R^{(ind)} \propto \frac{1}{d_{in}(d_{in} - d_{out})} \cdot \frac{1}{L^2}
 \end{equation}
-Higher curvature $\leftrightarrow$ More information lost in projection.
+Higher curvature $\leftrightarrow$ More distortion in the reflection, but information is preserved (transformed, not lost).
 \end{insight}
 
 \subsubsection{Complete Derivation of $\tau_0$}
@@ -182,6 +181,7 @@ The formula $\tau_0 = \frac{3 d_{out}}{4 d_{in}(d_{in}-d_{out})}$ is uniquely de
     \item \textbf{Dimensional analysis}: $[\tau_0] = \text{dimensionless}$ (required for torsion field)
     \item \textbf{Symmetry}: Must be symmetric under $d_{out} \leftrightarrow d_{in} - d_{out}$ (duality)
     \item \textbf{Clifford algebra}: Factor of $3/4$ from $Cl(1,3)$ Majorana representation
+    \item \textbf{Mirror analogy}: Reflection ratio $d_{out}/d_{in}$ not compression
     \item \textbf{Experimental match}: Predicts $\tau_0 = 0.005$ within 2\% of fitted value
 \end{enumerate}
 
@@ -212,19 +212,21 @@ Holographic Principle & $\tau_0 = (G_N^{(4)}/G_N^{(10)})^{1/6}/M_{Pl}$ & $\sim 0
 
 \subsection{Physical Interpretation}
 
-\begin{insight}[Information Fidelity]
-The torsion field strength $\tau_0$ represents the \textbf{fidelity of 10D information projected into 4D}:
+\begin{insight}[Mirror Reflection Analogy]
+The torsion field strength $\tau_0$ represents the \textbf{reflectivity of 10D information into 4D}:
 \begin{equation}
-    \tau_0 = \underbrace{(\text{projection fidelity})}_{0.4} \times \underbrace{(\text{topological constraint})}_{0.2} \times \underbrace{(\text{entropy loss})}_{0.06} \approx 0.005
+    \tau_0 = \underbrace{(\text{reflection ratio})}_{0.4} \times \underbrace{(\text{topological constraint})}_{0.75} \times \underbrace{(\text{curvature normalization})}_{0.0167} \approx 0.005
 \end{equation}
 \end{insight}
 
 This can be understood as:
 \begin{itemize}
-    \item \textbf{40\%} of information survives dimensional projection ($4/10$)
-    \item \textbf{20\%} survives topological constraints (Clifford algebra structure)
-    \item \textbf{6\%} survives entanglement entropy loss (phase space suppression)
+    \item \textbf{40\%} is the "geometric reflectivity" ($4/10$) — like a mirror reflecting 40\% of light
+    \item \textbf{75\%} is the Clifford algebra structure factor (spinor dimension ratio)
+    \item \textbf{1.67\%} is the curvature normalization (how much the "mirror" is curved)
 \end{itemize}
+
+Unlike information compression where data is permanently lost, mirror reflection preserves information but changes its "direction" — from internal space to reciprocal space.
 
 \subsection{Consequences for the Standard Model}
 
