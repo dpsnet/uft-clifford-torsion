@@ -8,10 +8,10 @@
 
 \begin{table}[htbp]
 \centering
-\caption{标准模型与UFT中的自由参数}
+\caption{标准模型与CTUFT中的自由参数}
 \begin{tabular}{@{}lcc@{}}
 \hline \hline
-\textbf{参数类别} & \textbf{标准模型} & \textbf{UFT} \\
+\textbf{参数类别} & \textbf{标准模型} & \textbf{CTUFT} \\
 \hline
 规范耦合 & 3 & 0（推导） \\
 希格斯参数 & 2 & 0（推导） \\
@@ -29,7 +29,7 @@ QCD真空角 & 1 & 0（推导） \\
 
 \subsection{费米子质量谱}
 
-标准模型将费米子质量作为输入。在UFT中，它们从扭转-质量关系涌现：
+标准模型将费米子质量作为输入。在CTUFT中，它们从扭转-质量关系涌现：
 
 \begin{equation}
     m_n = m_0 \cdot \exp\left(\frac{n}{\tau_0}\right) \cdot f_n(E)
@@ -40,7 +40,7 @@ QCD真空角 & 1 & 0（推导） \\
 \caption{费米子质量预测（$\chi^2 = 2.13$，$p = 0.91$）}
 \begin{tabular}{@{}lcccc@{}}
 \hline \hline
-\textbf{费米子} & \textbf{代} & \textbf{UFT (MeV)} & \textbf{PDG (MeV)} & \textbf{偏差} \\
+\textbf{费米子} & \textbf{代} & \textbf{CTUFT (MeV)} & \textbf{PDG (MeV)} & \textbf{偏差} \\
 \hline
 $u$（上） & 1 & $2.2 \pm 0.5$ & $2.16 \pm 0.13$ & 1.9\% \\
 $d$（下） & 1 & $4.8 \pm 0.8$ & $4.67 \pm 0.13$ & 2.8\% \\
@@ -76,7 +76,7 @@ $\tau$（陶子） & 3 & $1777$ & $1776.9$ & 0.006\% \\
 
 % 夸克质量 - 理论
 \addplot[color=blue, mark=square, thick] coordinates {(1,2.2) (2,95) (3,4180)};
-\addlegendentry{夸克 (UFT)}
+\addlegendentry{夸克 (CTUFT)}
 
 % 夸克质量 - 实验
 \addplot[color=blue, mark=square*, dashed] coordinates {(1,2.16) (2,93.4) (3,4180)};
@@ -84,7 +84,7 @@ $\tau$（陶子） & 3 & $1777$ & $1776.9$ & 0.006\% \\
 
 % 轻子质量 - 理论
 \addplot[color=red, mark=triangle, thick] coordinates {(1,0.511) (2,105.7) (3,1777)};
-\addlegendentry{轻子 (UFT)}
+\addlegendentry{轻子 (CTUFT)}
 
 % 轻子质量 - 实验
 \addplot[color=red, mark=triangle*, dashed] coordinates {(1,0.511) (2,105.66) (3,1776.9)};
@@ -92,13 +92,13 @@ $\tau$（陶子） & 3 & $1777$ & $1776.9$ & 0.006\% \\
 
 \end{semilogyaxis}
 \end{tikzpicture}
-\caption{三代费米子质量层级。实线显示UFT预测；虚线显示实验PDG值。指数层级由$\tau_0 = 0.005$产生。}
+\caption{三代费米子质量层级。实线显示CTUFT预测；虚线显示实验PDG值。指数层级由$\tau_0 = 0.005$产生。}
 \label{fig:mass_hierarchy}
 \end{figure}
 
 \subsection{CKM矩阵元}
 
-SM中的CKM矩阵需要四个参数（三个角 + 一个相位）。在UFT中，所有元素都从$\tau_0$推导：
+SM中的CKM矩阵需要四个参数（三个角 + 一个相位）。在CTUFT中，所有元素都从$\tau_0$推导：
 
 \begin{equation}
     \theta_C = \arctan\left(\frac{\tau_0}{\sqrt{2}}\right) = 13.06° \quad \text{（实验：} 13.04° \pm 0.05°\text{）}
@@ -109,7 +109,7 @@ SM中的CKM矩阵需要四个参数（三个角 + 一个相位）。在UFT中，
 \caption{CKM矩阵元比较}
 \begin{tabular}{@{}lccc@{}}
 \hline \hline
-\textbf{元素} & \textbf{UFT} & \textbf{PDG} & \textbf{偏差} \\
+\textbf{元素} & \textbf{CTUFT} & \textbf{PDG} & \textbf{偏差} \\
 \hline
 $|V_{ud}|$ & 0.9744 & $0.97373 \pm 0.00031$ & 0.07\% \\
 $|V_{us}|$ & 0.2250 & $0.2243 \pm 0.0008$ & 0.3\% \\
@@ -158,11 +158,11 @@ $\delta_{CP}$ (相位) & $68.9°$ & $66.8° \pm 1.4°$ & 3.1\% \\
 \addplot[color=blue, thick, domain={2:16}, samples=50] {59 - 2*ln(10^(x-2)/ln(10))};
 \addlegendentry{$\alpha_1^{-1}$ (SM)}
 
-% UFT修正（虚线）
+% CTUFT修正（虚线）
 \addplot[color=red, dashed, thick, domain={14:16}, samples=20] {25 - 7*ln(10^(x-2)/ln(10)) - 2*(x-14)};
 \addplot[color=green, dashed, thick, domain={14:16}, samples=20] {30 - 4*ln(10^(x-2)/ln(10)) - 1.5*(x-14)};
 \addplot[color=blue, dashed, thick, domain={14:16}, samples=20] {59 - 2*ln(10^(x-2)/ln(10)) - 0.5*(x-14)};
-\addlegendentry{UFT修正}
+\addlegendentry{CTUFT修正}
 
 % 统一点
 \addplot[mark=*, color=black, thick] coordinates {(16, 26)};
@@ -171,7 +171,7 @@ $\delta_{CP}$ (相位) & $68.9°$ & $66.8° \pm 1.4°$ & 3.1\% \\
 
 \end{semilogyaxis}
 \end{tikzpicture}
-\caption{规范耦合统一比较。实线显示SM跑动；虚线显示UFT扭转修正。所有耦合在1\%内在$E_c \approx 2 \times 10^{21}$ GeV统一。}
+\caption{规范耦合统一比较。实线显示SM跑动；虚线显示CTUFT扭转修正。所有耦合在1\%内在$E_c \approx 2 \times 10^{21}$ GeV统一。}
 \label{fig:gauge_unification}
 \end{figure}
 
@@ -180,7 +180,7 @@ $\delta_{CP}$ (相位) & $68.9°$ & $66.8° \pm 1.4°$ & 3.1\% \\
 \caption{在$E_c = 2 \times 10^{21}$ GeV的规范耦合统一}
 \begin{tabular}{@{}lccc@{}}
 \hline \hline
-\textbf{参数} & \textbf{UFT} & \textbf{SM+GUT} & \textbf{偏差} \\
+\textbf{参数} & \textbf{CTUFT} & \textbf{SM+GUT} & \textbf{偏差} \\
 \hline
 $\alpha_{GUT}$ & 0.033 & 0.024 (SUSY) & - \\
 统一能标$E_c$ (GeV) & $2 \times 10^{21}$ & $10^{16}$ (SUSY) & 不同模型 \\
@@ -195,10 +195,10 @@ $\alpha_s(M_Z)$ & 0.118 & $0.118 \pm 0.002$ & 0.0\% \\
 
 \begin{table}[htbp]
 \centering
-\caption{来自UFT的宇宙学参数}
+\caption{来自CTUFT的宇宙学参数}
 \begin{tabular}{@{}lccc@{}}
 \hline \hline
-\textbf{参数} & \textbf{UFT预测} & \textbf{Planck/$\Lambda$CDM} & \textbf{匹配} \\
+\textbf{参数} & \textbf{CTUFT预测} & \textbf{Planck/$\Lambda$CDM} & \textbf{匹配} \\
 \hline
 暗能量密度$\Omega_\Lambda$ & 0.685 & $0.6847 \pm 0.0073$ & ✓ \\
 哈勃常数$H_0$ (km/s/Mpc) & 68.2 & $67.4 \pm 0.5$ & ✓ \\
@@ -213,10 +213,10 @@ $\alpha_s(M_Z)$ & 0.118 & $0.118 \pm 0.002$ & 0.0\% \\
 
 \subsection{总结：预测能力}
 
-\begin{insight}[UFT vs. SM比较]
+\begin{insight}[CTUFT vs. SM比较]
 \begin{itemize}
     \item \textbf{标准模型}：19+个自由参数，全部拟合数据
-    \item \textbf{UFT}：0个自由参数，全部从$\tau_0 = 0.005$推导
+    \item \textbf{CTUFT}：0个自由参数，全部从$\tau_0 = 0.005$推导
 \end{itemize}
 
 \textbf{已验证的预测}：
@@ -230,4 +230,4 @@ $\alpha_s(M_Z)$ & 0.118 & $0.118 \pm 0.002$ & 0.0\% \\
 \textbf{总计}：从单一参数$\tau_0$得到30+个预测。
 \end{insight}
 
-UFT实现了从19+个自由参数到\textbf{零个}的减少，同时在所有物理领域保持或改善与实验数据的一致性。
+CTUFT实现了从19+个自由参数到\textbf{零个}的减少，同时在所有物理领域保持或改善与实验数据的一致性。
