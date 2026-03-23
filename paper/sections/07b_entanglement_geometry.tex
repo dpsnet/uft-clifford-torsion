@@ -279,19 +279,112 @@ This geometric picture naturally explains Bell's theorem violations:
 
 The $d_s = 2$ structure means the entangled pair forms a \textbf{single coherent quantum system} spanning two spatial locations, not two independent systems with mysterious correlations.
 
-\subsubsection{Generalization to Multi-Particle Entanglement}
+\subsubsection{The $2 \times 2$ Structure of Entangled Pairs}
 
-For an $N$-particle entangled state (GHZ state):
+Each particle in an entangled pair carries its own spacetime coordinates, but with a crucial constraint:
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    particle/.style={circle, draw, thick, minimum size=1.2cm, fill=white},
+    label/.style={font=\small},
+    dim/.style={rectangle, draw, thick, rounded corners, minimum width=1.5cm, minimum height=0.8cm}
+]
+
+% Particle A
+\node[particle, fill=blue!20] (A) at (-3,0) {$A$};
+\node[above] at (A.north) {\textbf{Particle A}};
+
+% Particle B
+\node[particle, fill=red!20] (B) at (3,0) {$B$};
+\node[above] at (B.north) {\textbf{Particle B}};
+
+% Particle A dimensions
+\node[dim, fill=blue!10] (Aspace) at (-3,-1.5) {$x_A$};
+\node[dim, fill=green!10] (Atime) at (-3,-2.5) {$t_{int}$};
+\draw[thick, ->] (A) -- (Aspace) node[midway, left] {\small Space-like};
+\draw[thick, ->] (A) -- (Atime) node[midway, right] {\small Time-like};
+
+% Particle B dimensions
+\node[dim, fill=red!10] (Bspace) at (3,-1.5) {$x_B$};
+\node[dim, fill=green!10] (Btime) at (3,-2.5) {$t_{int}$};
+\draw[thick, ->] (B) -- (Bspace) node[midway, right] {\small Space-like};
+\draw[thick, ->] (B) -- (Btime) node[midway, left] {\small Time-like};
+
+% Shared time label
+\node[fill=green!20, rounded corners] at (0,-2.5) {\textbf{Shared} $t_{int}$};
+\draw[thick, <->, green!50!black] (Atime) -- (Btime);
+
+% Different space label
+\node at (0,-1.5) {\textbf{Different} $x_A \neq x_B$};
+\draw[thick, <->, blue!50!red] (Aspace) -- (Bspace);
+
+% 2x2 matrix representation
+\node[right=3cm] at (B) {$\begin{pmatrix} x_A & t_{int} \\ x_B & t_{int} \end{pmatrix}$};
+
+% d_s = 2 label
+\node at (0,-3.5) {\large Effective $d_s = 2$ (2 space-like + 1 time-like, but time is shared)};
+
+\end{tikzpicture}
+\caption{The $2 \times 2$ structure of entangled pairs. Each particle has its own space-like coordinate, but they share the same time-like coordinate (internal time). This creates the $d_s = 2$ effective dimensionality of the entangled subsystem.}
+\label{fig:entanglement_2x2_structure}
+\end{figure}
+
+\begin{definition}[Entangled Pair Coordinates]
+An entangled pair $(A, B)$ is described by coordinates:
 \begin{equation}
-    |GHZ_N\rangle = \frac{1}{\sqrt{2}}(|0\rangle^{\otimes N} + |1\rangle^{\otimes N})
+    \begin{pmatrix}
+        x_A & t_{int} \\
+        x_B & t_{int}
+    \end{pmatrix}
+    \quad \text{or} \quad
+    \begin{cases}
+        \text{Particle A:} & (\vec{x}_A, t_{int}) \\
+        \text{Particle B:} & (\vec{x}_B, t_{int})
+    \end{cases}
+\end{equation}
+where:
+\begin{itemize}
+    \item $x_A \neq x_B$ (distinct space-like coordinates)
+    \item $t_{int}^A = t_{int}^B = t_{int}$ (shared time-like coordinate)
+\end{itemize}
+\end{definition}
+
+The total parameter space has:
+\begin{itemize}
+    \item \textbf{2 space-like dimensions}: $x_A$ and $x_B$ (or equivalently: center-of-mass $X$ and relative separation $\Delta x$)
+    \item \textbf{1 time-like dimension}: $t_{int}$ (shared)
+\end{itemize}
+
+But because the time coordinate is \textbf{shared}, the effective spectral dimension is:
+\begin{equation}
+    d_s^{(pair)} = 2 \quad \text{(not 3)}
 \end{equation}
 
-The effective spectral dimension scales as:
+This is the geometric origin of the "pair" structure—two particles that are distinct in space but united in time.
+
+\subsubsection{Relative and Center-of-Mass Coordinates}
+
+The $2 \times 2$ structure can be reparameterized into physically meaningful coordinates:
+
 \begin{equation}
-    d_s^{(N)} = 1 + (N-1) = N
+    \begin{cases}
+        \text{Center-of-mass (classical):} & X = \frac{x_A + x_B}{2} \\
+        \text{Relative separation (quantum):} & \Delta x = x_A - x_B \\
+        \text{Shared internal time:} & t_{int}
+    \end{cases}
 \end{equation}
 
-One time-like dimension (shared internal time) plus $(N-1)$ space-like dimensions (relative positions of $N$ particles).
+\begin{insight}[Classical vs Quantum Separation]
+In this parameterization:
+\begin{itemize}
+    \item The center-of-mass $X$ behaves classically (can be measured precisely)
+    \item The relative separation $\Delta x$ carries the quantum uncertainty
+    \item The shared time $t_{int}$ encodes the entanglement correlation
+\end{itemize}
+
+This explains why entangled particles can be arbitrarily far apart in space ($\Delta x$ can be large) while maintaining perfect correlation—their internal time $t_{int}$ remains synchronized regardless of spatial separation.
+\end{insight}
 
 \subsubsection{GHZ States}
 
