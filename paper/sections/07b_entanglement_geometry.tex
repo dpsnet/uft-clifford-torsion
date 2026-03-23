@@ -156,7 +156,142 @@ The 2 bits of classical communication correspond to the projection onto the Bell
 
 Geometrically, this is specifying which ``direction'' in the internal space the state occupies.
 
-\subsection{Multipartite Entanglement and Higher Dimensions}
+\subsection{Entanglement as $d_s = 2$ Information Pairs}
+
+\begin{insight}[Entanglement = $d_s = 2$ Information Crossing the Interface]
+When information crosses from the 10D internal space to the 4D reciprocal space, it does so in \textbf{pairs} with spectral dimension $d_s = 2$:
+\begin{itemize}
+    \item One dimension is \textbf{space-like} (spatial separation in 3D)
+    \item One dimension is \textbf{time-like} (correlation/entanglement)
+    \item Together they form a $d_s = 2$ subspace within the 4D reciprocal space
+\end{itemize}
+
+This pair of information appears in 3D space as \textbf{two dual points at the same time coordinate}—an entangled pair.
+\end{insight}
+
+\subsubsection{Mathematical Structure}
+
+Consider a Bell state emerging from the internal space:
+\begin{equation}
+    |\Psi\rangle_{internal} \xrightarrow{\text{interface crossing}} \frac{1}{\sqrt{2}}(|0_A 1_B\rangle - |1_A 0_B\rangle)_{reciprocal}
+\end{equation}
+
+In the reciprocal space, this pair occupies a $d_s = 2$ submanifold:
+\begin{itemize}
+    \item \textbf{Space-like dimension}: The spatial separation $\Delta x = |\vec{x}_A - \vec{x}_B|$ between particles A and B
+    \item \textbf{Time-like dimension}: The shared correlation/entanglement structure (simultaneity in the internal time $t_{int}$)
+\end{itemize}
+
+The spectral dimension of this submanifold is:
+\begin{equation}
+    d_s^{(pair)} = 2 \quad \text{(one space-like + one time-like)}
+\end{equation}
+
+\subsubsection{Physical Interpretation}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    internal/.style={rectangle, draw, thick, fill=blue!10, minimum width=4cm, minimum height=3cm},
+    reciprocal/.style={rectangle, draw, thick, fill=red!10, minimum width=6cm, minimum height=4cm},
+    particle/.style={circle, draw, thick, fill=white, minimum size=0.8cm},
+    arrow/.style={thick, ->, >=stealth}
+]
+
+% Internal space
+\node[internal] (Internal) at (-4,0) {};
+\node at (-4,1.2) {\textbf{Internal Space}};
+\node at (-4,0.5) {10D, $d_s = 10$};
+\node at (-4,0) {$|\Psi\rangle_{10D}$};
+\node at (-4,-0.6) {Information source};
+\node at (-4,-1.1) {(high-dimensional)};
+
+% Interface
+\draw[thick, dashed] (-1.5,2) -- (-1.5,-2);
+\node[rotate=90] at (-1.2,0) {Dimensional Interface};
+
+% Reciprocal space
+\node[reciprocal] (Reciprocal) at (3,0) {};
+\node at (3,1.7) {\textbf{Reciprocal Space (4D)}};
+\node at (3,1.2) {Observed as $d_s = 2$ pair};
+
+% Particle A
+\node[particle, fill=blue!30] (A) at (1.5,0.5) {A};
+\node[below] at (A.south) {$\vec{x}_A$};
+
+% Particle B
+\node[particle, fill=red!30] (B) at (4.5,0.5) {B};
+\node[below] at (B.south) {$\vec{x}_B$};
+
+% Time coordinate
+\draw[thick, ->] (1.5,-0.8) -- (4.5,-0.8) node[midway, below] {Space-like separation $\Delta x$};
+
+% Shared time
+\node at (3,-1.5) {Same $t$ (Time-like correlation)};
+\draw[thick, dashed, <->] (A) to[bend left=40] node[above] {Entangled} (B);
+
+% Dimensions label
+\node[right] at (6,1) {$d_s = 2$ submanifold:};
+\node[right] at (6,0.4) {1 space-like + 1 time-like};
+
+% Arrow
+\draw[arrow, thick] (Internal.east) -- (Reciprocal.west) node[midway, above] {Interface crossing};
+
+\end{tikzpicture}
+\caption{Entanglement as $d_s = 2$ information pairs. Information from the 10D internal space crosses the interface as pairs with one space-like and one time-like dimension, appearing as two entangled particles at the same time coordinate but separated in space.}
+\label{fig:entanglement_ds2_pair}
+\end{figure}
+
+\begin{theorem}[Entangled Pairs Occupy $d_s = 2$ Submanifolds]
+Any maximally entangled pair of particles in the reciprocal space occupies a 2-dimensional submanifold with:
+\begin{itemize}
+    \item One dimension parameterizing spatial separation (space-like)
+    \item One dimension parameterizing correlation strength (time-like)
+\end{itemize}
+The effective spectral dimension of this entangled subsystem is $d_s = 2$.
+\end{theorem}
+
+\begin{proof}
+Consider two particles A and B sharing an internal time coordinate $t_{int}$:
+\begin{equation}
+    t_{int}^A = t_{int}^B = t_{int}^{(shared)}
+\end{equation}
+
+In the reciprocal space, they have distinct spatial coordinates $\vec{x}_A \neq \vec{x}_B$ but the same reciprocal time coordinate $t_{rec}$ (they exist "simultaneously" in the observed frame).
+
+The configuration space of this pair is parameterized by:
+\begin{itemize}
+    \item Spatial separation: $\Delta x = |\vec{x}_A - \vec{x}_B|$ (space-like)
+    \item Correlation parameter: $C_{AB} = \langle \hat{O}_A \otimes \hat{O}_B \rangle$ (time-like, evolving under $t_{rec}$)
+\end{itemize}
+
+These two parameters span a 2-dimensional manifold embedded in the 4D reciprocal space. The effective spectral dimension, measuring the "number of active dimensions" participating in the entanglement, is therefore $d_s = 2$.
+\end{proof}
+
+\subsubsection{Connection to Bell's Theorem}
+
+This geometric picture naturally explains Bell's theorem violations:
+\begin{itemize}
+    \item The two particles are not truly "separate" in the internal space—they share $t_{int}$
+    \item The correlation is not mediated by any signal in reciprocal space (no FTL communication)
+    \item The correlation is "pre-established" in the internal space before the particles separate
+\end{itemize}
+
+The $d_s = 2$ structure means the entangled pair forms a \textbf{single coherent quantum system} spanning two spatial locations, not two independent systems with mysterious correlations.
+
+\subsubsection{Generalization to Multi-Particle Entanglement}
+
+For an $N$-particle entangled state (GHZ state):
+\begin{equation}
+    |GHZ_N\rangle = \frac{1}{\sqrt{2}}(|0\rangle^{\otimes N} + |1\rangle^{\otimes N})
+\end{equation}
+
+The effective spectral dimension scales as:
+\begin{equation}
+    d_s^{(N)} = 1 + (N-1) = N
+\end{equation}
+
+One time-like dimension (shared internal time) plus $(N-1)$ space-like dimensions (relative positions of $N$ particles).
 
 \subsubsection{GHZ States}
 
