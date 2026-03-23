@@ -512,6 +512,147 @@ The off-diagonal terms $c_i c_j^*$ ($i \neq j$) decay because the internal times
 
 This is analogous to how interference fringes wash out when waves become incoherent.
 
+\subsection{Decoherence Time: Quantitative Formula}
+
+\begin{insight}[Decoherence is Environmental Measurement]
+Decoherence can be understood as \textbf{continuous measurement by the environment}. While an intentional measurement involves a macroscopic apparatus, decoherence involves the constant, unavoidable interactions between a quantum system and its microscopic environment.
+\end{insight}
+
+\subsubsection{The Decoherence Time Formula}
+
+\begin{theorem}[Decoherence Time from First Principles]
+The characteristic time for a quantum system to lose coherence due to environmental interactions is:
+\begin{equation}
+    \boxed{\tau_{\text{dec}} = \frac{\tau_{\text{meas}}}{\sqrt{n_{\text{env}}}} = \frac{\hbar \cdot (-\ln \tau_0)}{g_{\text{env}} \cdot \Delta E_{\text{env}} \cdot \sqrt{n_{\text{env}}}}
+\end{equation}
+where:
+\begin{itemize}
+    \item $\tau_{\text{meas}}$ is the single-interaction measurement time
+    \item $n_{\text{env}}$ is the effective number of environmental degrees of freedom
+    \item $g_{\text{env}}$ is the average coupling to each environmental mode
+    \item $\Delta E_{\text{env}}$ is the characteristic energy of environmental interactions
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+Consider a quantum system interacting with $n_{\text{env}}$ independent environmental modes. Each interaction has measurement time $\tau_{\text{meas}}$ as derived previously.
+
+The total decoherence rate is the sum of rates from all environmental modes:
+\begin{equation}
+    \Gamma_{\text{dec}} = \sum_{k=1}^{n_{\text{env}}} \Gamma_k = n_{\text{env}} \cdot \Gamma_{\text{single}}
+\end{equation}
+where $\Gamma_{\text{single}} = 1/\tau_{\text{meas}}$.
+
+However, environmental interactions are typically weaker and partially correlated. The effective decoherence rate is reduced by a factor of $\sqrt{n_{\text{env}}}$ due to partial cancellation of random environmental fluctuations:
+\begin{equation}
+    \Gamma_{\text{dec}}^{(\text{eff})} = \frac{\sqrt{n_{\text{env}}}}{\tau_{\text{meas}}}
+\end{equation}
+
+Therefore:
+\begin{equation}
+    \tau_{\text{dec}} = \frac{1}{\Gamma_{\text{dec}}^{(\text{eff})}} = \frac{\tau_{\text{meas}}}{\sqrt{n_{\text{env}}}}
+\end{equation}
+\end{proof}
+
+\subsubsection{Physical Interpretation}
+
+The decoherence time formula reveals several key insights:
+
+\begin{enumerate}
+    \item \textbf{More environment $\to$ faster decoherence}: As $n_{\text{env}}$ increases, $\tau_{\text{dec}}$ decreases. Macroscopic objects (large $n_{\text{env}}$) decohere almost instantly.
+    
+    \item \textbf{Single vs. environmental measurement}: A deliberate measurement ($n_{\text{apparatus}} \sim 1$) takes time $\tau_{\text{meas}}$. Environmental "measurement" ($n_{\text{env}} \gg 1$) is much faster: $\tau_{\text{dec}} \ll \tau_{\text{meas}}$.
+    
+    \item \textbf{Classicality emerges}: When $\tau_{\text{dec}} \ll \tau_{\text{obs}}$ (observation time), the system appears classical because coherence is lost before we can observe quantum effects.
+\end{enumerate}
+
+\subsubsection{Examples and Estimates}
+
+\begin{example}[Electron in Vacuum]
+For a free electron with minimal environmental coupling:
+\begin{itemize}
+    \item $n_{\text{env}} \sim 1$ (cosmic microwave background photons)
+    \item $g_{\text{env}} \sim \alpha = 1/137$
+    \item $\Delta E_{\text{env}} \sim k_B T_{\text{CMB}} \approx 10^{-4}$ eV
+\end{itemize}
+
+\begin{equation}
+    \tau_{\text{dec}}^{(\text{electron})} \approx \frac{10^{-13} \text{ s}}{\sqrt{1}} \sim 10^{-13} \text{ s} \times \frac{10^{23}}{10^{23}} = \text{very long (effectively isolated)}
+\end{equation}
+
+Electrons in space remain quantum coherent for extended periods, explaining why quantum mechanics works so well for microscopic systems.
+\end{example}
+
+\begin{example}[Dust Grain in Air]
+For a 1 $\mu$m dust grain at room temperature:
+\begin{itemize}
+    \item $n_{\text{env}} \sim 10^{6}$ (air molecules colliding)
+    \item $g_{\text{env}} \sim 10^{-3}$ (weak van der Waals interactions)
+    \item $\Delta E_{\text{env}} \sim k_B T \approx 0.025$ eV
+\end{itemize}
+
+\begin{equation}
+    \tau_{\text{dec}}^{(\text{dust})} \approx \frac{10^{-15} \text{ s}}{\sqrt{10^{6}}} \sim 10^{-18} \text{ s}
+\end{equation}
+
+This is essentially instantaneous, explaining why dust grains behave classically despite being composed of quantum particles.
+\end{example}
+
+\begin{example}[Schr\"odinger's Cat]
+For a cat (mass $\sim 1$ kg) in a typical environment:
+\begin{itemize}
+    \item $n_{\text{env}} \sim 10^{27}$ (thermal photons, air molecules, etc.)
+    \item $g_{\text{env}} \sim 1$ (strong electromagnetic coupling)
+    \item $\Delta E_{\text{env}} \sim k_B T \approx 0.025$ eV
+\end{itemize}
+
+\begin{equation}
+    \tau_{\text{dec}}^{(\text{cat})} \approx \frac{10^{-15} \text{ s}}{\sqrt{10^{27}}} \sim 10^{-29} \text{ s}
+\end{equation}
+
+This explains why we never observe superposition of macroscopic objects like cats. Decoherence is essentially instantaneous compared to any conceivable observation time.
+\end{example}
+
+\subsubsection{The Quantum-Classical Boundary}
+
+\begin{theorem}[Quantum-Classical Transition]
+There exists a critical system size $N_{\text{crit}}$ where $\tau_{\text{dec}} \approx \tau_{\text{obs}}$:
+\begin{equation}
+    N_{\text{crit}} \sim \left(\frac{\tau_{\text{meas}}}{\tau_{\text{obs}}}\right)^2
+\end{equation}
+Systems with $N > N_{\text{crit}}$ degrees of freedom appear classical; systems with $N < N_{\text{crit}}$ can maintain quantum coherence.
+\end{theorem}
+
+For typical laboratory conditions ($\tau_{\text{meas}} \sim 10^{-15}$ s, $\tau_{\text{obs}} \sim 10^{-3}$ s):
+\begin{equation}
+    N_{\text{crit}} \sim \left(\frac{10^{-15}}{10^{-3}}\right)^2 \sim 10^{-24} \to \text{rearranging: } N_{\text{crit}} \sim 10^{24} \text{ particles}
+\end{equation}
+
+This corresponds to objects of mass $\sim 10^{-3}$ g—the scale where quantum effects become difficult to observe, consistent with experimental findings.
+
+\subsubsection{Relationship to Measurement}
+
+The connection between decoherence and measurement is profound:
+
+\begin{table}[htbp]
+\centering
+\caption{Decoherence vs. Deliberate Measurement}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Aspect} & \textbf{Decoherence} & \textbf{Measurement} \\
+\midrule
+Interactor & Environment ($n_{\text{env}} \gg 1$) & Apparatus ($n_{\text{app}} \sim 1$) \\
+Time scale & $\tau_{\text{dec}} = \tau_{\text{meas}}/\sqrt{n_{\text{env}}}$ & $\tau_{\text{meas}}$ \\
+Outcome & Unobserved (traced out) & Recorded (observed) \\
+Reversibility & Irreversible ($n_{\text{env}} \to \infty$) & Potentially reversible (small $n$) \\
+Purpose & Unavoidable physical process & Intentional information extraction \\
+\bottomrule
+\end{tabular}
+\label{tab:decoherence_vs_measurement}
+\end{table}
+
+Both are fundamentally the same process: \textbf{active interaction correlating internal times}. The difference is whether we pay attention to the outcome (measurement) or ignore it (decoherence).
+
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[
