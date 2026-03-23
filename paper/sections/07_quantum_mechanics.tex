@@ -85,6 +85,51 @@ In our theory, measurement corresponds to \textbf{interference in the internal s
     This appears as "collapse" but is actually the result of interference averaging.
 \end{enumerate}
 
+\subsubsection{Measurement as Active Interaction}
+
+\begin{insight}[Measurement = Active Energy Exchange]
+Measurement is not passive observation—it is an \textbf{active interaction} where the system and apparatus exchange energy and information. The apparatus actively "probes" the system, and the system responds by adjusting its internal time structure.
+\end{insight}
+
+The active nature of measurement becomes clear when we consider the interaction Hamiltonian:
+
+\begin{equation}
+    \hat{H}_{\text{int}} = g \sum_i |\phi_i\rangle\langle\phi_i| \otimes \hat{O}_A^{(i)}
+\end{equation}
+
+where $g$ is the coupling strength and $\hat{O}_A^{(i)}$ are apparatus observables. This Hamiltonian describes an \textbf{active coupling}:
+
+\begin{enumerate}
+    \item \textbf{System branches} $|\phi_i\rangle$ couple to distinct apparatus states
+    \item \textbf{Energy is exchanged} between system and apparatus
+    \item \textbf{Internal times synchronize} through this active interaction
+\end{enumerate}
+
+\begin{definition}[Active Measurement Interaction]
+A measurement is an active interaction characterized by:
+\begin{itemize}
+    \item \textbf{Coupling}: $\hat{H}_{\text{int}} \neq 0$ creates correlation between $t_{int}^{(S)}$ and $t_{int}^{(A)}$
+    \item \textbf{Energy exchange}: $\Delta E_S = -\Delta E_A$ (conservation)
+    \item \textbf{Time correlation}: $\frac{d}{dt}\langle t_{int}^{(S)} \cdot t_{int}^{(A)} \rangle \neq 0$
+\end{itemize}
+\end{definition}
+
+The key difference from passive observation:
+\begin{itemize}
+    \item \textbf{Passive}: System evolves independently, apparatus merely records
+    \item \textbf{Active}: System and apparatus co-evolve, each affecting the other's internal time
+\end{itemize}
+
+\begin{theorem}[Active Interaction Creates Entanglement]
+Any active interaction of the form $\hat{H}_{\text{int}} = g \hat{O}_S \otimes \hat{O}_A$ creates entanglement proportional to the interaction strength and duration:
+\begin{equation}
+    E(\rho_{SA}) \propto g^2 \cdot \tau_{\text{int}} \cdot \text{Var}(\hat{O}_S) \cdot \text{Var}(\hat{O}_A)
+\end{equation}
+where $E$ is the entanglement entropy and $\tau_{\text{int}}$ is the interaction time.
+\end{theorem}
+
+This shows that measurement is an \textbf{active physical process}—it requires energy exchange and creates real physical correlations (entanglement), not just passive recording of pre-existing values.
+
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}
@@ -112,6 +157,43 @@ In our theory, measurement corresponds to \textbf{interference in the internal s
 \end{tikzpicture}
 \caption{Measurement as interference between system and apparatus internal times. The interference creates correlations (entanglement) that appear as wavefunction collapse.}
 \label{fig:measurement_interference}
+\end{figure}
+
+\begin{insight}[Interference and Active Interaction: Two Aspects]
+Measurement involves both aspects:
+\begin{itemize}
+    \item \textbf{Interference}: The \textit{result} of measurement—how internal times combine to create patterns
+    \item \textbf{Active interaction}: The \textit{process} of measurement—how energy and information are dynamically exchanged
+\end{itemize}
+They are complementary descriptions: interference describes the static pattern, while active interaction describes the dynamics that creates it.
+\end{insight}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    box/.style={rectangle, draw, thick, minimum width=2cm, minimum height=1cm},
+    arrow/.style={thick, ->, >=stealth}
+]
+
+% System
+\node[box, fill=blue!20] (S) at (0,0) {System};
+\node[below] at (S.south) {$E_S$, $t_{int}^{(S)}$};
+
+% Apparatus
+\node[box, fill=red!20] (A) at (6,0) {Apparatus};
+\node[below] at (A.south) {$E_A$, $t_{int}^{(A)}$};
+
+% Active interaction arrows
+\draw[arrow, blue!70] (S.east) to[bend left=30] node[above] {$\hat{H}_{int}$ active} (A.west);
+\draw[arrow, red!70] (A.west) to[bend left=30] node[below] {Energy exchange} (S.east);
+
+% Labels
+\node at (3, 2) {\textbf{Active Interaction}};
+\node at (3, -2) {Coupling $g$, Duration $\tau_{int}$};
+
+\end{tikzpicture}
+\caption{Measurement as active interaction. System and apparatus exchange energy and information through the interaction Hamiltonian $\hat{H}_{int}$, actively correlating their internal times.}
+\label{fig:active_interaction}
 \end{figure}
 
 \subsubsection{Mathematical Formulation}
@@ -176,6 +258,66 @@ The off-diagonal terms $c_i c_j^*$ ($i \neq j$) decay because the internal times
 \end{equation}
 
 This is analogous to how interference fringes wash out when waves become incoherent.
+
+\subsection{Unified Framework: Dynamics and Pattern}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    box/.style={rectangle, draw, thick, rounded corners, minimum width=3cm, minimum height=1cm},
+    arrow/.style={thick, ->, >=stealth}
+]
+
+% Top: Process (Dynamics)
+\node[box, fill=blue!15] (Process) at (0,3) {\textbf{Active Interaction}};
+\node[below] at (Process.south) {Dynamics: Energy exchange};
+
+% Bottom: Result (Pattern)
+\node[box, fill=red!15] (Result) at (0,0) {\textbf{Interference Pattern}};
+\node[below] at (Result.south) {Static: Correlation structure};
+
+% Arrow connecting
+\draw[arrow] (Process) -- (Result) node[midway, right] {$\tau_{int}$ evolution};
+
+% Side labels
+\node[right=2cm] at (Process) {$\hat{H}_{int}$ creates};
+\node[right=2cm] at (Result) {Measurement result};
+
+% Left description
+\node[left=2.5cm, align=center] at ($(Process)!0.5!(Result)$) {Time evolution\\$U = e^{-iHt/\hbar}$};
+
+\end{tikzpicture}
+\caption{Unified framework: Active interaction (dynamics) creates interference pattern (result). The measurement process is the time evolution under $\hat{H}_{int}$, while the measurement outcome is the resulting interference pattern of internal times.}
+\label{fig:unified_measurement}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\caption{Two Aspects of Measurement}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Aspect} & \textbf{Active Interaction} & \textbf{Interference Pattern} \\
+\midrule
+Nature & Dynamic process & Static result \\
+Description & Time evolution & Spatial/temporal pattern \\
+Mathematics & $\hat{H}_{int}$, $U(t)$ & $|\Psi_{total}\rangle$, interference \\
+Physics & Energy exchange & Correlation/entanglement \\
+Analogy & Waves interacting & Interference fringes \\
+Duration & $\tau_{int}$ (interaction time) & Instantaneous snapshot \\
+\bottomrule
+\end{tabular}
+\label{tab:measurement_aspects}
+\end{table}
+
+\begin{insight}[Complementarity of Descriptions]
+Just as wave-particle duality describes quantum objects, the active-interaction/interference duality describes measurement:
+\begin{itemize}
+    \item When we focus on \textbf{process}, measurement is active interaction (energy exchange)
+    \item When we focus on \textbf{result}, measurement is interference pattern (correlation)
+    \item Both are correct and necessary for a complete description
+\end{itemize}
+The unified picture: \textbf{Active interaction creates the interference pattern that we interpret as measurement}.
+\end{insight}
 
 \begin{theorem}[Unitary Evolution Preservation]
 The total evolution of system plus environment remains strictly unitary:
