@@ -1,0 +1,180 @@
+{
+  "theory_params": {
+    "alpha": 0.01,
+    "m_tau": 0.001,
+    "lambda_nl": 1e-06,
+    "kappa_nl": 1e-12,
+    "g_tau": 1.0,
+    "tau_0": 0.0001,
+    "M_pl": 2.435e+18
+  },
+  "events_analyzed": 3,
+  "overall_status": "consistent",
+  "event_results": [
+    {
+      "event": "GW150914",
+      "theory_params": {
+        "alpha": 0.01,
+        "m_tau": 0.001,
+        "lambda_nl": 1e-06,
+        "kappa_nl": 1e-12,
+        "g_tau": 1.0,
+        "tau_0": 0.0001,
+        "M_pl": 2.435e+18
+      },
+      "event_info": {
+        "gps_time": 1126259462.4,
+        "mass1": 36,
+        "mass2": 29,
+        "distance": 410,
+        "snr_reported": 24
+      },
+      "analysis": {
+        "h_plus": {
+          "max_amplitude": 9.311953567518518e-17,
+          "rms_amplitude": 1.6052580781603626e-17
+        },
+        "h_cross": {
+          "max_amplitude": 9.311953567518518e-17,
+          "rms_amplitude": 1.6052580781603626e-17
+        },
+        "h_x": {
+          "max_amplitude": 9.31195356751852e-22,
+          "rms_amplitude": 1.605258078160363e-22
+        },
+        "h_y": {
+          "max_amplitude": 9.31195356751852e-22,
+          "rms_amplitude": 1.605258078160363e-22
+        },
+        "h_b": {
+          "max_amplitude": 9.311953567518519e-27,
+          "rms_amplitude": 1.6052580781603627e-27
+        },
+        "h_l": {
+          "max_amplitude": 9.311953567518519e-27,
+          "rms_amplitude": 1.6052580781603627e-27
+        },
+        "polarization_ratios": {
+          "vector_to_tensor": 1.0000000000000003e-05,
+          "scalar_to_tensor": 1e-10
+        },
+        "snr_prediction": {
+          "reported_snr": 24.0,
+          "predicted_total_snr": 24.000000000300002,
+          "predicted_increase_fraction": 1.2500075049122946e-11
+        },
+        "constraint_status": "satisfied"
+      }
+    },
+    {
+      "event": "GW170817",
+      "theory_params": {
+        "alpha": 0.01,
+        "m_tau": 0.001,
+        "lambda_nl": 1e-06,
+        "kappa_nl": 1e-12,
+        "g_tau": 1.0,
+        "tau_0": 0.0001,
+        "M_pl": 2.435e+18
+      },
+      "event_info": {
+        "gps_time": 1187008882.4,
+        "mass1": 1.46,
+        "mass2": 1.27,
+        "distance": 40,
+        "snr_reported": 32.4
+      },
+      "analysis": {
+        "h_plus": {
+          "max_amplitude": 6.822619603875594e-17,
+          "rms_amplitude": 1.2069795991575331e-17
+        },
+        "h_cross": {
+          "max_amplitude": 6.822619603875594e-17,
+          "rms_amplitude": 1.2069795991575331e-17
+        },
+        "h_x": {
+          "max_amplitude": 6.822619603875595e-22,
+          "rms_amplitude": 1.2069795991575333e-22
+        },
+        "h_y": {
+          "max_amplitude": 6.822619603875595e-22,
+          "rms_amplitude": 1.2069795991575333e-22
+        },
+        "h_b": {
+          "max_amplitude": 6.822619603875595e-27,
+          "rms_amplitude": 1.2069795991575333e-27
+        },
+        "h_l": {
+          "max_amplitude": 6.822619603875595e-27,
+          "rms_amplitude": 1.2069795991575333e-27
+        },
+        "polarization_ratios": {
+          "vector_to_tensor": 1e-05,
+          "scalar_to_tensor": 1.0000000000000002e-10
+        },
+        "snr_prediction": {
+          "reported_snr": 32.4,
+          "predicted_total_snr": 32.400000000405,
+          "predicted_increase_fraction": 1.2500069566540108e-11
+        },
+        "constraint_status": "satisfied"
+      }
+    },
+    {
+      "event": "GW190521",
+      "theory_params": {
+        "alpha": 0.01,
+        "m_tau": 0.001,
+        "lambda_nl": 1e-06,
+        "kappa_nl": 1e-12,
+        "g_tau": 1.0,
+        "tau_0": 0.0001,
+        "M_pl": 2.435e+18
+      },
+      "event_info": {
+        "gps_time": 1242442967.4,
+        "mass1": 85,
+        "mass2": 66,
+        "distance": 5300,
+        "snr_reported": 14.7
+      },
+      "analysis": {
+        "h_plus": {
+          "max_amplitude": 1.4510065461682855e-17,
+          "rms_amplitude": 2.3186929582774793e-18
+        },
+        "h_cross": {
+          "max_amplitude": 1.4510065461682855e-17,
+          "rms_amplitude": 2.3186929582774793e-18
+        },
+        "h_x": {
+          "max_amplitude": 1.4510065461682857e-22,
+          "rms_amplitude": 2.3186929582774794e-23
+        },
+        "h_y": {
+          "max_amplitude": 1.4510065461682857e-22,
+          "rms_amplitude": 2.3186929582774794e-23
+        },
+        "h_b": {
+          "max_amplitude": 1.4510065461682855e-27,
+          "rms_amplitude": 2.318692958277479e-28
+        },
+        "h_l": {
+          "max_amplitude": 1.4510065461682855e-27,
+          "rms_amplitude": 2.318692958277479e-28
+        },
+        "polarization_ratios": {
+          "vector_to_tensor": 1e-05,
+          "scalar_to_tensor": 1e-10
+        },
+        "snr_prediction": {
+          "reported_snr": 14.7,
+          "predicted_total_snr": 14.70000000018375,
+          "predicted_increase_fraction": 1.2499993481717056e-11
+        },
+        "constraint_status": "satisfied"
+      }
+    }
+  ]
+}
