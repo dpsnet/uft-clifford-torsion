@@ -1,0 +1,176 @@
+# OpenClaw 配置文件
+# 详细配置说明: https://docs.openclaw.ai
+
+# ============================================
+# 网关配置
+# ============================================
+gateway:
+  # 监听地址
+  host: 0.0.0.0
+  
+  # 监听端口
+  port: 8080
+  
+  # CORS 配置
+  cors:
+    enabled: true
+    origins:
+      - "http://localhost:3000"
+      - "http://127.0.0.1:3000"
+    credentials: true
+
+# ============================================
+# Web UI 配置
+# ============================================
+web:
+  host: 0.0.0.0
+  port: 3000
+  
+  # 是否启用 UI
+  enabled: true
+  
+  # 认证配置
+  auth:
+    enabled: false
+    # jwt_secret: ${JWT_SECRET}
+
+# ============================================
+# 日志配置
+# ============================================
+logging:
+  # 日志级别: debug, info, warn, error
+  level: info
+  
+  # 日志格式: json, text
+  format: json
+  
+  # 是否输出到文件
+  to_file: false
+  # log_file: /var/log/openclaw.log
+
+# ============================================
+# 心跳配置
+# ============================================
+heartbeat:
+  enabled: true
+  
+  # 心跳间隔（毫秒）
+  interval: 30000
+  
+  # 超时时间（毫秒）
+  timeout: 10000
+
+# ============================================
+# 模型配置
+# ============================================
+models:
+  # 默认模型
+  default: kimi-coding/k2p5
+  
+  # 可用模型列表
+  available:
+    - kimi-coding/k2p5
+    - openai/gpt-4
+    - openai/gpt-4-turbo
+    - openai/gpt-3.5-turbo
+    - anthropic/claude-3-opus
+    - anthropic/claude-3-sonnet
+    - anthropic/claude-3-haiku
+    - google/gemini-pro
+  
+  # 模型参数默认值
+  defaults:
+    temperature: 0.7
+    max_tokens: 4096
+    top_p: 1.0
+
+# ============================================
+# 通道配置
+# ============================================
+channels:
+  # Telegram
+  telegram:
+    enabled: false
+    # token: ${TELEGRAM_BOT_TOKEN}
+    webhook_url: null
+  
+  # Discord
+  discord:
+    enabled: false
+    # token: ${DISCORD_BOT_TOKEN}
+    # client_id: ${DISCORD_CLIENT_ID}
+  
+  # Slack
+  slack:
+    enabled: false
+    # token: ${SLACK_BOT_TOKEN}
+    # signing_secret: ${SLACK_SIGNING_SECRET}
+  
+  # WebSocket (内置)
+  websocket:
+    enabled: true
+    port: 8081
+
+# ============================================
+# 工具配置
+# ============================================
+tools:
+  # 文件系统访问
+  filesystem:
+    enabled: true
+    allowed_paths:
+      - /root/.openclaw/workspace
+    read_only: false
+  
+  # Web 搜索
+  web_search:
+    enabled: true
+    provider: brave
+    # api_key: ${BRAVE_API_KEY}
+  
+  # 代码执行
+  code_execution:
+    enabled: true
+    timeout: 30000
+    allowed_languages:
+      - python
+      - bash
+      - javascript
+
+# ============================================
+# 记忆配置
+# ============================================
+memory:
+  # 记忆存储类型: file, sqlite, postgres
+  storage: file
+  
+  # 记忆目录
+  path: /root/.openclaw/memory
+  
+  # 最大记忆条目数
+  max_entries: 10000
+
+# ============================================
+# 代理配置
+# ============================================
+proxy:
+  enabled: false
+  # http_proxy: ${HTTP_PROXY}
+  # https_proxy: ${HTTPS_PROXY}
+  # no_proxy: localhost,127.0.0.1
+
+# ============================================
+# 安全配置
+# ============================================
+security:
+  # API 速率限制
+  rate_limit:
+    enabled: true
+    requests: 100
+    window: 60000
+  
+  # 请求体大小限制（MB）
+  max_body_size: 50
+  
+  # 允许的 IP 列表（留空表示允许所有）
+  allowed_ips: []

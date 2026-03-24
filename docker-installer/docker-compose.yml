@@ -1,0 +1,124 @@
+# OpenClaw Docker Compose 配置
+# 一键启动 OpenClaw AI 网关
+
+version: '3.8'
+
+services:
+  # OpenClaw 主服务
+  openclaw:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: ${BUILD_TARGET:-production}
+    container_name: openclaw
+    restart: unless-stopped
+    
+    # 端口映射
+    ports:
+      - "${WEB_UI_PORT:-3000}:3000"
+      - "${GATEWAY_PORT:-8080}:8080"
+    
+    # 环境变量
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - OPENCLAW_PROFILE=${OPENCLAW_PROFILE:-default}
+      - OPENCLAW_WORKSPACE=/root/.openclaw/workspace
+      - OPENCLAW_CONFIG=/root/.openclaw/config
+      
+      # AI 模型 API 密钥
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - KIMI_API_KEY=${KIMI_API_KEY:-}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY:-}
+      - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY:-}
+      
+      # IM 通道配置
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-}
+      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN:-}
+      - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN:-}
+      - SLACK_SIGNING_SECRET=${SLACK_SIGNING_SECRET:-}
+      
+      # 其他配置
+      - OPENCLAW_LOG_LEVEL=${LOG_LEVEL:-info}
+      - OPENCLAW_HEARTBEAT_INTERVAL=${HEARTBEAT_INTERVAL:-30000}
+    
+    # 数据卷映射
+    volumes:
+      # 工作空间持久化
+      - openclaw_workspace:/root/.openclaw/workspace
+      # 记忆存储持久化
+      - openclaw_memory:/root/.openclaw/memory
+      # 配置文件
+      - ./config:/root/.openclaw/config:ro
+      # 本地时区
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    
+    # 资源限制
+    deploy:
+      resources:
+        limits:
+          cpus: '${CPU_LIMIT:-2}'
+          memory: ${MEMORY_LIMIT:-4G}
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+    
+    # 健康检查
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    # 网络配置
+    networks:
+      - openclaw-network
+
+  # 可选：PostgreSQL 数据库（用于高级功能）
+  postgres:
+    image: postgres:16-alpine
+    container_name: openclaw-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=${DB_USER:-openclaw}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-openclaw}
+      - POSTGRES_DB=${DB_NAME:-openclaw}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - openclaw-network
+    profiles:
+      - with-db
+
+  # 可选：Redis 缓存
+  redis:
+    image: redis:7-alpine
+    container_name: openclaw-redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    networks:
+      - openclaw-network
+    profiles:
+      - with-cache
+
+# 数据卷定义
+volumes:
+  openclaw_workspace:
+    driver: local
+  openclaw_memory:
+    driver: local
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+# 网络定义
+networks:
+  openclaw-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
