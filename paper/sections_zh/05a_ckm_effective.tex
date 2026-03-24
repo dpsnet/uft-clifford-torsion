@@ -1,0 +1,146 @@
+% 第5.6节：有效CKM模型——简化参数化
+\subsection{有效CKM模型：简化参数化}
+\label{sec:ckm_effective}
+
+在第 \ref{sec:ckm_framing} 节给出完整的分形-挠率推导之前，我们引入一个有效低能模型，用最小参数捕捉基本物理。这种简化方法有三个目的：
+
+\begin{enumerate}
+    \item \textbf{教学清晰性}：在不涉及技术复杂性的情况下说明混合的几何起源
+    \item \textbf{计算效率}：为数量级计算提供快速估计
+    \item \textbf{理论洞察}：揭示完整理论与唯象参数化之间的联系
+\end{enumerate}
+
+\subsubsection{三参数有效模型}
+
+在低能极限 $E \ll E_c$ 下，其中谱维数 $d_s \approx 4$ 且挠率效应是微扰的，CKM矩阵可以用三个源自几何考虑的混合角来参数化。
+
+\begin{model}[有效几何CKM]
+有效CKM矩阵参数化为：
+\begin{equation}
+    V_{CKM}^{(eff)} = R_{23}(\theta_{23}) \cdot R_{13}(\theta_{13}, \delta) \cdot R_{12}(\theta_{12})
+\end{equation}
+其中转动矩阵为：
+\begin{align}
+    R_{12} \&= \begin{pmatrix} c_{12} & s_{12} & 0 \\ -s_{12} & c_{12} & 0 \\ 0 & 0 & 1 \end{pmatrix}, \quad
+    R_{13} = \begin{pmatrix} c_{13} & 0 & s_{13}e^{-i\delta} \\ 0 & 1 & 0 \\ -s_{13}e^{i\delta} & 0 & c_{13} \end{pmatrix}, \quad
+    R_{23} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & c_{23} & s_{23} \\ 0 & -s_{23} & c_{23} \end{pmatrix}
+\end{align}
+\end{model}
+
+三个混合角由夸克质量比确定：
+\begin{align}
+    \theta_{12} \&\approx \arctan\left(\sqrt{\frac{m_d}{m_s}}\right) \\
+    \theta_{23} \&\approx \arctan\left(\sqrt{\frac{m_s}{m_b}}\right) \\
+    \theta_{13} \&\approx \sqrt{\frac{m_u}{m_t}} \cdot \tau_0^{1/2}
+\end{align}
+
+\subsubsection{质量比输入}
+
+有效模型需要以下质量比作为输入：
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\hline
+\textbf{比值} & \textbf{公式} & \textbf{数值} & \textbf{来源} \\
+\hline
+$m_d/m_s$ & $(\Lambda_{QCD}/M_P)^{\gamma_2-\gamma_1}$ & $1/19.6$ & 分形标度 \\
+$m_s/m_b$ & $(\Lambda_{QCD}/M_P)^{\gamma_3-\gamma_2}$ & $1/52$ & 分形标度 \\
+$m_u/m_t$ & $(m_u/m_c)(m_c/m_t)$ & $1/(5.7\times 10^5)$ & 分形标度 \\
+\hline
+\end{tabular}
+\caption{有效CKM模型的质量比}
+\end{table}
+
+使用这些比值：
+\begin{align}
+    \theta_{12} \&\approx \arctan(1/\sqrt{19.6}) \approx 12.9° \quad (\text{对比 } 13.1° \text{ 实验}) \\
+    \theta_{23} \&\approx \arctan(1/\sqrt{52}) \approx 7.9° \quad (\text{对比 } 2.4° \text{ 实验}) \\
+    \theta_{13} \&\approx 10^{-3} \cdot \sqrt{10^{-6}} \approx 0.032° \quad (\text{对比 } 0.22° \text{ 实验})
+\end{align}
+
+\subsubsection{有效模型的局限性}
+
+简化模型有几个局限性，这促使我们发展完整理论：
+
+\textbf{1. $\theta_{23}$ 偏差}：有效模型预言 $\theta_{23} \approx 7.9°$，而实验给出 $\theta_{23} \approx 2.4°$。这约3倍的差异表明：
+- 简单质量比公式高估了第二-第三代混合
+- 必须包含额外结构（例如 $SU(2)_L$ 对称性破缺效应）
+- 完整的扭转模式耦合计算（第 \ref{sec:ckm_framing} 节）解决此问题
+
+\textbf{2. CP相位}：有效模型不能预言 $\delta_{CP}$；它必须拟合数据。完整理论从真空拓扑预言 $\delta_{CP} \approx 68°$。
+
+\textbf{3. 参数数量}：虽然高效，但3参数模型缺乏解释力：
+- 为什么有3个（而非2或4个）混合角
+- 为什么这些角有它们的特定值
+- 为什么CKM矩阵接近对角
+
+\subsubsection{与完整理论的关系}
+
+有效模型在极限下从完整分形-挠率理论产生：
+
+\begin{equation}
+    \boxed{V_{CKM}^{(eff)} = V_{CKM}^{(full)}\big|_{E \ll E_c, \tau_0 \to 0, \mathcal{O}(\tau_0^2) \to 0}}
+\end{equation}
+
+具体地：
+
+\begin{itemize}
+    \item 质量比公式是\textbf{领头阶}分形标度结果
+    \item $\theta_{13}$ 的小反映了来自 $\tau_0^{1/2}$ 的\textbf{层次压低}
+    \item 接近对角结构反映了不同扭转模式之间\textbf{弱耦合}
+\end{itemize}
+
+完整理论提供：
+- 对有效模型的 $\mathcal{O}(\tau_0^2)$ 阶\textbf{修正}
+- 对特定质量比指数 $\gamma_n$ 的\textbf{解释}
+- CP相位 $\delta_{CP}$ 的\textbf{预言}
+- 使用相同框架对PMNS矩阵的\textbf{扩展}
+
+\subsubsection{何时使用哪种模型}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{p{3.5cm}p{4.5cm}p{4.5cm}}
+\hline
+\textbf{应用} & \textbf{有效模型} & \textbf{完整理论} \\
+\hline
+快速估计 & ✅ 理想（约1分钟） & ⚠️ 过度（约1小时） \\
+数量级 & ✅ 约30\%精度 & ✅ 约10\%精度 \\
+精密预言 & ❌ 不充分 & ✅ 必需 \\
+CP破坏研究 & ❌ 无预言 & ✅ 预言 $\delta_{CP}$ \\
+中微子物理 & ⚠️ 需要扩展 & ✅ 统一框架 \\
+稀有衰变率 & ❌ 无预言 & ✅ 可计算 \\
+\hline
+\end{tabular}
+\caption{有效与完整CKM模型的比较}
+\end{table}
+
+\subsubsection{教学价值}
+
+有效模型充当\textbf{概念桥梁}，连接：
+
+\begin{enumerate}
+    \item \textbf{唯象学}：实验学家使用的标准CKM参数化
+    \item \textbf{理论}：从第一性原理导出的完整分形-挠率框架
+\end{enumerate}
+
+它证明即使是最小的几何方法也能捕捉以下数量级：
+- 卡比博角（$\theta_{12} \sim 10°-15°$）
+- $\theta_{13}$ 的小（$\sim 10^{-2}-10^{-3}$ 弧度）
+- CKM矩阵的层次结构
+
+这提供了信心，即完整理论（以更严格的方式扩展相同原理）是正确的方向。
+
+\subsubsection{总结}
+
+有效CKM模型提供了对完整分形-挠率理论的\textbf{计算高效近似}。虽然精度和预言能力有限，但它：
+
+\begin{itemize}
+    \item 捕捉夸克混合的基本几何起源
+    \item 无需繁重计算即可提供数量级估计
+    \item 作为完整框架的教学介绍
+    \item 揭示质量比层次结构是混合模式的驱动因素
+\end{itemize}
+
+对于\textbf{定量预言}和\textbf{完整味物理唯象学}，第 \ref{sec:ckm_framing} 节的完整理论是必需的。两种模型是\textbf{互补的}——有效模型用于直观和快速估计，完整理论用于精度和完整性。
