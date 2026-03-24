@@ -81,3 +81,13 @@ temp/
 # Video clipper (unrelated project)
 dance_clipper/
 dance_clipper*.tar.gz
+
+# PID files
+*.pid
+*.pid.lock
+sim_pid.txt
+tnn_fixed_training.pid
+
+# Experiment logs
+experiment_log.txt
+research_notes/experiment_log.txt
