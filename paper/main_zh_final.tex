@@ -1,0 +1,171 @@
+\documentclass[12pt,a4paper]{revtex4-2}
+
+% 中文支持
+\usepackage{ctex}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+
+% 基础包
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% 数学包
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+
+% 图形包
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+% 表格
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+% 其他
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{doi}
+\usepackage{natbib}
+
+% 页面设置
+\usepackage{geometry}
+\geometry{a4paper,margin=2.5cm}
+
+% 目录格式修复
+\usepackage{titletoc}
+\titlecontents{section}[0pt]{\vspace{0.5em}\bfseries}{\thesection\hspace{1em}}{}{\titlerule*[0.5pc]{.}\contentspage}
+\titlecontents{subsection}[2em]{\vspace{0.3em}}{\thesubsection\hspace{0.8em}}{}{\titlerule*[0.5pc]{.}\contentspage}
+
+% 定义颜色
+\definecolor{darkblue}{RGB}{0,0,139}
+\definecolor{darkgreen}{RGB}{0,100,0}
+\definecolor{darkred}{RGB}{139,0,0}
+
+% hyperref设置
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    citecolor=darkgreen,
+    urlcolor=darkred,
+    pdftitle={固定4维拓扑-动态谱维多扭转分形克利福德代数统一场论},
+    pdfauthor={研究团队},
+    pdfsubject={理论物理},
+    pdfkeywords={统一场论, 克利福德代数, 扭转, 谱维, 量子引力}
+}
+
+% 定理环境
+\theoremstyle{definition}
+\newtheorem{definition}{定义}[section]
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}{引理}[section]
+\newtheorem{corollary}{推论}[section]
+\newtheorem{proposition}{命题}[section]
+\newtheorem{axiom}{公理}[section]
+\newtheorem{insight}{洞见}[section]
+\newtheorem{test}{检验}[section]
+\newtheorem{conjecture}{猜想}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{注}[section]
+
+% 自定义命令
+\newcommand{\Cl}{\mathrm{Cl}}  % Clifford代数
+\newcommand{\Spin}{\mathrm{Spin}}  % Spin群
+\newcommand{\SU}{\mathrm{SU}}  % 特殊酉群
+\newcommand{\U}{\mathrm{U}}  % 酉群
+\newcommand{\diff}{\mathrm{d}}  % 微分符号
+\newcommand{\Tr}{\mathrm{Tr}}  % 迹
+\newcommand{\diag}{\mathrm{diag}}  % 对角
+\newcommand{\const}{\mathrm{const}}  % 常数
+
+% 谱维度
+\newcommand{\ds}{d_s}
+\newcommand{\dt}{d_t}
+
+% 扭转场
+\newcommand{\torsion}{\tau}
+\newcommand{\torsionfield}{\mathcal{T}}
+
+% 论文信息
+\title{%
+固定4维拓扑—动态谱维—多扭转分形克利福德代数统一场论\\[0.5em]
+\small Fixed 4D Topology-Dynamic Spectral Dimension Multiple Twisting Fractal Clifford Algebra Unified Field Theory (CTUFT)%
+}
+
+\author{研究团队}
+\email{research@uft-theory.org}
+\affiliation{理论物理高级研究所}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+本文提出了一个基于固定4维拓扑维度和动态谱维度的统一场论，使用分形克利福德代数和多扭转机制作为规范对称性的几何起源。该理论将引力、电磁力、弱核力和强核力自然地纳入单一的几何框架中。
+
+关键创新包括：(1) 互反空间-内空间对偶，其中可观测的时空由高维谱空间补充；(2) 动态谱维度$d_s$，从普朗克尺度的10维流动到宏观尺度的4维；(3) 分形-扭转等价，为所有基本相互作用提供几何基础；(4) 量子力学的几何解释，通过连续拓扑演化消除测量问题。
+
+核心预测包括：六种引力波偏振模式（广义相对论中为两种），其相对幅度由信息论参数$\tau_0 \approx 0.005$控制；通过扭转饱和分形核心（取代奇点）解决黑洞信息悖论；几何暗能量解决宇宙学常数问题；以及量子黑洞遗迹作为暗物质候选者。
+
+我们从扭转自旋覆盖映射的核分解$Z_2^5$推导出标准模型规范群$U(1) \times SU(2) \times SU(3)$，并从几何原理计算费米子质量和混合角。\textbf{单一参数$\tau_0$使用信息论从第一性原理推导，使理论具有零个自由参数。}
+
+该理论为LISA（激光干涉仪空间天线）做出了具体的、可证伪的预测，特别是对中等质量黑洞合并产生的六种引力波偏振模式的探测，信噪比SNR$\sim$1000。此外，CTUFT通过原初黑洞霍金辐射做出了五项可证伪预测：(1) CTA伽马射线谱增强；(2) PBH质量谱峰在$M \sim 10^{15}$ g；(3) AMS-02正电子谱修正；(4) LISA PBH并合探测；(5) 多信使一致性检验。
+
+\textbf{关键词}：统一场论、克利福德代数、谱维、扭转、量子引力、引力波、原初黑洞、可证伪预测
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% 包含各章节 - 中文版
+\input{sections_zh/01_introduction}
+\input{sections_zh/02_mathematical_foundations}
+\input{sections_zh/03_core_framework}
+\input{sections_zh/03c_four_forces_unified}
+\input{sections_zh/03b_multiple_twisting}
+\input{sections_zh/04_gravity}
+\input{sections_zh/04b_spectral_topology}
+\input{sections_zh/04c_gr_integration}
+\input{sections_zh/05_gauge_theory}
+\input{sections_zh/05a_ckm_effective}
+\input{sections_zh/05b_ckm_framing}
+\input{sections_zh/05c_methodology}
+\input{sections_zh/05d_qft_lagrangian_complete}
+\input{sections_zh/06_temporal_geometry}
+\input{sections_zh/07_quantum_mechanics}
+\input{sections_zh/07b_entanglement_geometry}
+\input{sections_zh/07c_multiparticle_qft}
+\input{sections_zh/07d_yukawa_couplings}
+\input{sections_zh/07e_fermion_masses_complete}
+\input{sections_zh/07f_rg_flow_geometric}
+\input{sections_zh/07g_beyond_sm}
+\input{sections_zh/07h_experimental_tests}
+\input{sections_zh/08_black_holes}
+\input{sections_zh/08b_bh_physics_complete}
+\input{sections_zh/09_cosmology}
+\input{sections_zh/09b_dark_sector}
+\input{sections_zh/09c_cosmology_complete}
+\input{sections_zh/10_experimental}
+\input{sections_zh/10b_sm_comparison}
+\input{sections_zh/11_connections}
+\input{sections_zh/11b_theory_comparison}
+\input{sections_zh/12_conclusions}
+
+\begin{acknowledgments}
+我们感谢开放科学社区的支持和反馈。
+本研究在先进的AI系统辅助下进行数学推导和数值计算。
+\end{acknowledgments}
+
+\bibliography{references}
+
+\end{document}
