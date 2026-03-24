@@ -35,32 +35,33 @@
 
 10维旋量表示是32维的（马约拉纳-外尔）。
 
-\subsection{维度约化：10D → 4D}
+\subsection{维度约化：通过扭转膜的10D $\rightarrow$ 4D}
 
-\subsubsection{卡鲁扎-克莱因拟设}
+\subsubsection{膜-扭转机制}
 
-我们将10维坐标分解为 $x^M = (x^\mu, y^a)$，其中：
+在CTUFT中，10维内空间和4维互反空间是完全隔离的，仅通过产生扭转的\textbf{膜}连接：
 \begin{itemize}
-    \item $x^\mu$：4维互反空间（$\mu = 0,1,2,3$）
-    \item $y^a$：6维紧致化方向（$a = 4,\ldots,9$）
+    \item $x^\mu$：4维互反空间（$\mu = 0,1,2,3$）——我们的物理时空
+    \item 10维内空间存在于膜的``另一边''
 \end{itemize}
 
-度规拟设为：
+膜作为一层膜，扭转将10维谱维流动转化为在4维拓扑空间内流动的能量。从4维视角，我们无法感知10维侧的拓扑结构；只能将其观测为10维谱流形。
+
+4维中的有效度规接收来自膜-扭转耦合的贡献：
 \begin{equation}
-    ds_{10}^2 = e^{-\Phi}g_{\mu\nu}dx^\mu dx^\nu + g_{ab}(dy^a + A^a_\mu dx^\mu)(dy^b + A^b_\nu dx^\nu)
+    ds_{4}^2 = g_{\mu\nu}dx^\mu dx^\nu + \text{（扭转修正）}
 \end{equation}
 
 其中：
 \begin{itemize}
     \item $g_{\mu\nu}$ 是4维度规
-    \item $g_{ab}$ 是内部度规
-    \item $A^a_\mu$ 是规范场（卡鲁扎-克莱因矢量）
-    \item $\Phi$ 是伸缩子
+    \item 扭转介导几何信息跨膜传输
+    \item 谱维流动 $d_s(\ell)$ 将10维信息以能量形式带入4维
 \end{itemize}
 
 \subsubsection{规范对称性的涌现}
 
-紧致化子流形的等距变换成为4维中的规范对称性：
+10维内空间的对称性通过膜-扭转映射在4维中显现为规范对称性：
 \begin{equation}
     \text{Isom}(M_{\text{int}}) = U(1) \times SU(2) \times SU(3)
 \end{equation}
