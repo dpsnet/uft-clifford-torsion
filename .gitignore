@@ -47,9 +47,9 @@ data/
 *.csv
 *.tsv
 
-# Large model checkpoints (>10MB)
-research_notes/code/ultra_scale_checkpoints/
-research_notes/code/large_scale_checkpoints/checkpoint_epoch*_20260319_*.pt
+# Large model checkpoints (>10MB) - use Git LFS instead
+# research_notes/code/ultra_scale_checkpoints/
+# research_notes/code/large_scale_checkpoints/checkpoint_epoch*_20260319_*.pt
 
 # Research notes data (large files)
 research_notes/data/

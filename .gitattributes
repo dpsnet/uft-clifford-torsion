@@ -1,1 +1,7 @@
 *.pt filter=lfs diff=lfs merge=lfs -text
+research_notes/code/ultra_scale_checkpoints/*.pt filter=lfs diff=lfs merge=lfs -text
+research_notes/code/large_scale_checkpoints/*.pt filter=lfs diff=lfs merge=lfs -text
+research_notes/code/**/checkpoint_*.pt filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
+*.h5 filter=lfs diff=lfs merge=lfs -text
+*.hdf5 filter=lfs diff=lfs merge=lfs -text

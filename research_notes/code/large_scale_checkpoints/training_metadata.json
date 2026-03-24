@@ -1,0 +1,49 @@
+{
+  "checkpoints": [
+    {
+      "epoch": 10,
+      "path": "./large_scale_checkpoints/checkpoint_epoch10_20260319_172139.pt",
+      "timestamp": "20260319_172139",
+      "accuracy": 0.6953125,
+      "layers": 2
+    },
+    {
+      "epoch": 20,
+      "path": "./large_scale_checkpoints/checkpoint_epoch20_20260319_172140.pt",
+      "timestamp": "20260319_172140",
+      "accuracy": 0.78125,
+      "layers": 5
+    },
+    {
+      "epoch": 30,
+      "path": "./large_scale_checkpoints/checkpoint_epoch30_20260319_172142.pt",
+      "timestamp": "20260319_172142",
+      "accuracy": 0.671875,
+      "layers": 7
+    },
+    {
+      "epoch": 40,
+      "path": "./large_scale_checkpoints/checkpoint_epoch40_20260319_172145.pt",
+      "timestamp": "20260319_172145",
+      "accuracy": 0.8671875,
+      "layers": 10
+    },
+    {
+      "epoch": 40,
+      "path": "./large_scale_checkpoints/checkpoint_epoch40_20260319_172145.pt",
+      "timestamp": "20260319_172145",
+      "accuracy": 0.8671875,
+      "layers": 10
+    },
+    {
+      "epoch": 40,
+      "path": "./large_scale_checkpoints/checkpoint_epoch40_20260319_172145.pt",
+      "timestamp": "20260319_172145",
+      "accuracy": 0.8671875,
+      "layers": 10
+    }
+  ],
+  "best_accuracy": 0.8671875,
+  "total_epochs": 40,
+  "growth_count": 8
+}
