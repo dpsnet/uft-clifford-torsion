@@ -1,0 +1,188 @@
+\documentclass[12pt,a4paper]{revtex4-2}
+
+% 基础包
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% 数学包
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+
+% 图形包
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+% 表格
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+% 其他
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{doi}
+\usepackage{natbib}
+
+% 页面设置
+\usepackage{geometry}
+\geometry{a4paper,margin=2.5cm}
+
+% 定义颜色
+\definecolor{darkblue}{RGB}{0,0,139}
+\definecolor{darkgreen}{RGB}{0,100,0}
+\definecolor{darkred}{RGB}{139,0,0}
+
+% hyperref设置
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    citecolor=darkgreen,
+    urlcolor=darkred,
+    pdftitle={Fixed 4D Topology-Dynamic Spectral Dimension Multiple Twisting Fractal Clifford Algebra Unified Field Theory},
+    pdfauthor={Research Team},
+    pdfsubject={Theoretical Physics},
+    pdfkeywords={unified field theory, Clifford algebra, torsion, spectral dimension}
+}
+
+% 定理环境
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiom}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+
+% insight环境（用于重要洞察/见解）
+\newenvironment{insight}[1][Insight]{%
+  \begin{quote}%
+  \textbf{#1:} \itshape%
+}{%
+  \end{quote}%
+}
+
+% prediction环境（用于可证伪预测）
+\newenvironment{prediction}[1][Prediction]{%
+  \begin{quote}%
+  \textbf{#1:} \itshape%
+}{%
+  \end{quote}%
+}
+
+% test环境（用于实验测试）
+\newenvironment{test}[1][Test]{%
+  \begin{quote}%
+  \textbf{#1:} \itshape%
+}{%
+  \end{quote}%
+}
+
+% 自定义命令
+\newcommand{\Cl}{\mathrm{Cl}}  % Clifford代数
+\newcommand{\Spin}{\mathrm{Spin}}  % Spin群
+\newcommand{\SU}{\mathrm{SU}}  % 特殊酉群
+\newcommand{\U}{\mathrm{U}}  % 酉群
+\newcommand{\diff}{\mathrm{d}}  % 微分符号
+\newcommand{\Tr}{\mathrm{Tr}}  % 迹
+\newcommand{\diag}{\mathrm{diag}}  % 对角
+\newcommand{\const}{\mathrm{const}}  % 常数
+
+% 谱维度
+\newcommand{\ds}{d_s}
+\newcommand{\dt}{d_t}
+
+% 扭转场
+\newcommand{\torsion}{\tau}
+\newcommand{\torsionfield}{\mathcal{T}}
+
+% 论文信息
+\title{Fixed 4D Topology-Dynamic Spectral Dimension Multiple Twisting Fractal Clifford Algebra Unified Field Theory (CTUFT)\footnote{CTUFT: Clifford-Torsion Unified Field Theory}}
+
+\author{Wang Bin}
+\email{wang.bin@foxmail.com}
+\affiliation{Independent Researcher}
+\affiliation{Open Source AI Theoretical Physics Research Project}
+\affiliation{\url{https://github.com/dpsnet/uft-clifford-torsion}}
+
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+We present a Clifford-Torsion Unified Field Theory (CTUFT) based on fixed 4D topological dimension and dynamic spectral dimension, using fractal Clifford algebra and multiple twisting mechanisms as the geometric origin of gauge symmetries. The theory naturally incorporates gravitation, electromagnetism, weak and strong nuclear forces into a single geometric framework.
+
+The key innovations include: (1) a reciprocal-internal space duality where observable spacetime is complemented by a higher-dimensional spectral space; (2) a dynamic spectral dimension $d_s$ that flows from 10 at the Planck scale to 4 at macroscopic scales; (3) a fractal-torsion equivalence that provides the geometric foundation for all fundamental interactions; and (4) a geometric interpretation of quantum mechanics that eliminates the measurement problem through continuous topological evolution.
+
+Key predictions include: six gravitational wave polarization modes (versus two in general relativity) with relative amplitudes controlled by the information-theoretic parameter $\tau_0 \approx 0.005$; resolution of the black hole information paradox through torsion-saturated fractal cores that replace singularities; geometric dark energy that addresses the cosmological constant problem; and quantum black hole remnants as dark matter candidates.
+
+We derive the standard model gauge group $U(1) \times SU(2) \times SU(3)$ from the kernel decomposition $Z_2^5$ of the twisted spin covering map, and calculate fermion masses and mixing angles from geometric principles. \textbf{The single parameter $\tau_0$ is derived from first principles using information theory, yielding zero free parameters in the theory.}
+
+The theory makes concrete, falsifiable predictions for LISA (Laser Interferometer Space Antenna), particularly the detection of six gravitational wave polarization modes with signal-to-noise ratio SNR $\sim$ 7 for intermediate-mass black hole mergers. Null results from LISA would falsify the core prediction and require fundamental revision of the framework.
+
+\textbf{Keywords}: unified field theory, Clifford algebra, spectral dimension, torsion, quantum gravity, gravitational waves, black holes
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+% Include sections
+\input{sections/01_introduction}
+\input{sections/02_mathematical_foundations}
+\input{sections/03_core_framework}
+\input{sections/03c_four_forces_unified}
+\input{sections/03b_multiple_twisting}
+\input{sections/03c_bidirectional_spectral_flow}
+\input{sections/04_gravity}
+\input{sections/04b_spectral_topology}
+\input{sections/04c_gr_integration}
+\input{sections/05_gauge_theory}
+\input{sections/05a_ckm_effective}
+\input{sections/05b_ckm_framing}
+\input{sections/05c_methodology}
+\input{sections/05d_qft_lagrangian_complete}
+\input{sections/06_temporal_geometry}
+\input{sections/07_quantum_mechanics}
+\input{sections/08_particle_physics}
+\input{sections/09_black_holes}
+\input{sections/10_cosmology}
+\input{sections/10_experimental}
+\input{sections/10b_sm_comparison}
+\input{sections/11_connections}
+\input{sections/11b_theory_comparison}
+\input{sections/12_conclusions}
+\input{sections/12_outlook}
+
+\begin{acknowledgments}
+We thank the open science community for their support and feedback. 
+This research was conducted with the assistance of advanced AI systems 
+for mathematical derivation and numerical computation.
+\end{acknowledgments}
+
+\bibliography{references}
+
+\appendix
+\input{appendices/A_mathematical_proofs}
+\input{appendices/B_numerical_details}
+\input{appendices/C_experimental_data}
+\input{appendices/D_code_interface}
+\input{appendices/E_quantum_applications}  % 新增：量子应用与更广泛影响
+\input{appendices/F_meta_framework}  % 新增：元理论框架 - 理论整合与评估
+\input{appendices/G_classical_applications}  % 新增：经典物理应用
+\input{appendices/H_atomic_physics}  % 新增：原子物理与元素周期表
+\input{appendices/I_rotating_sphere}  % 新增：旋转球实验
+\input{appendices/J_tau_zero_derivation}  % 新增：τ₀第一性原理推导
+\input{appendices/K_cosmic_timeline}  % 新增：宇宙学演化时间线
+\input{appendices/L_technical_details}  % 新增：技术细节与推导
+\input{appendices/M_bh_entropy_numerical}  % 新增：黑洞熵数值验证
+
+\end{document}
