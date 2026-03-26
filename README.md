@@ -5,7 +5,8 @@
 [![Paper](https://img.shields.io/badge/Paper-PDF-green)](./paper/main.pdf)
 [![LaTeX](https://img.shields.io/badge/LaTeX-Source-blue)](./paper/)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](./LICENSE)
-[![DOI](https://zenodo.org/badge/1178499391.svg)](https://doi.org/10.5281/zenodo.19240318)
+[![DOI](https://zenodo.org/badge/1178499391.svg)](https://doi.org/10.5281/zenodo.19240317)
+
 
 ---
 
