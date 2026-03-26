@@ -1,7 +1,7 @@
 # 统一场理论 (UFT) - Clifford代数与扭转理论
 
 **Fixed 4D Topology-Dynamic Spectral Dimension Multiple Twisting Fractal Clifford Algebra Unified Field Theory**
-
+[![DOI](https://zenodo.org/badge/1178499391.svg)](https://doi.org/10.5281/zenodo.19240318)
 [![Paper](https://img.shields.io/badge/Paper-PDF-green)](./paper/main.pdf)
 [![LaTeX](https://img.shields.io/badge/LaTeX-Source-blue)](./paper/)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](./LICENSE)
