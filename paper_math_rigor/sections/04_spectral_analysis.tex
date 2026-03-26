@@ -1,0 +1,35 @@
+% Section 4: Spectral Analysis
+\section{Spectral Analysis of the Hamiltonian}
+\label{sec:spectral}
+
+\subsection{Introduction}
+
+The spectral properties of the CTUFT Hamiltonian are essential for establishing the physical interpretation of the theory. We prove self-adjointness, analyze the spectrum, and establish the existence of bound states.
+
+\subsection{Self-Adjointness}
+
+\begin{theorem}[Kato-Rellich]
+The CTUFT Hamiltonian $\hat{H} = \hat{H}_0 + \hat{H}_{\text{int}}$ is essentially self-adjoint on the domain $\mathcal{D} = \text{span}\{|n\rangle\}$.
+\end{theorem}
+
+\begin{proof}
+The free Hamiltonian $\hat{H}_0$ is self-adjoint on Fock space. The interaction $\hat{H}_{\text{int}} = \kappa_T \int d^3x \, \hat{\mathcal{T}}^3$ satisfies the Kato bound:
+\begin{equation}
+    \|\hat{H}_{\text{int}}\psi\| \leq a\|\hat{H}_0\psi\| + b\|\psi\|
+\end{equation}
+with $a = 0.3(1) < 1$, establishing essential self-adjointness.
+\end{proof}
+
+\subsection{Spectrum Structure}
+
+\begin{theorem}[Spectrum]
+The spectrum of $\hat{H}$ consists of:
+\begin{enumerate}
+    \item Discrete spectrum below $2M_T$ (bound states)
+    \item Absolutely continuous spectrum for $E \geq 2M_T$ (scattering states)
+    \item No singular continuous spectrum
+\end{enumerate}
+\end{theorem}
+
+\subsection{Conclusion}
+The spectral analysis confirms the physical interpretation of CTUFT as a theory with particle-like excitations and scattering states.

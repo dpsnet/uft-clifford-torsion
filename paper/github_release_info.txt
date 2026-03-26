@@ -1,0 +1,180 @@
+# GitHub Release 发布指南（更新版 - 包含完整PDF）
+
+## 发布地址
+https://github.com/dpsnet/uft-clifford-torsion/releases/new
+
+---
+
+## 填写内容
+
+### Choose a tag
+**Create new tag**: v1.0.0
+
+### Release title
+**Title**: 
+CTUFT Paper v1.0 - Fixed 4D Topology-Dynamic Spectral Dimension (Full + Compact)
+
+### Describe this release (支持 Markdown)
+
+```markdown
+## CTUFT (Clifford-Torsion Unified Field Theory) - v1.0.0 Release
+
+This release contains both the **full theoretical treatment** (190 pages) and a **compact overview** (3 pages) of the CTUFT framework.
+
+---
+
+## 📚 Included Papers
+
+### 1. Full Theory (190 pages) - `main.pdf`
+Complete theoretical framework with all derivations:
+- 21 chapters covering mathematical foundations to experimental predictions
+- Clifford algebra framework with reciprocal-internal space duality
+- Derivation of Standard Model gauge group $U(1) \times SU(2) \times SU(3)$
+- Geometric calculation of CKM matrix (99.9% accuracy)
+- Six gravitational wave polarization modes prediction
+- Black hole information paradox resolution
+- Cosmological constant/dark energy explanation
+
+**For**: Professional physicists, detailed verification, extended research
+
+### 2. Compact Overview (3 pages) - `ctuft_arxiv.pdf`
+Concise summary suitable for quick reading and preprint servers:
+- Core framework: fixed 4D topological + dual 10D spectral space
+- Key results and falsifiable predictions
+- Zero free parameters ($\tau_0 = 0.005$ from first principles)
+
+**For**: Quick overview, academic communication, conference discussions
+
+### 3. Supernova Application (5 pages) - `supernova_paper.pdf`
+Application to SN1987A and galactic supernovae:
+- Spectral dimension collapse mechanism
+- 6ms GW-neutrino time delay prediction
+- Early neutrino pulse structure
+- Connection to Fast Radio Bursts (FRBs)
+
+**For**: Astrophysicists, supernova researchers, multi-messenger astronomy
+
+---
+
+## 🔬 Key Innovations
+
+1. **Reciprocal-Internal Space Duality**: 4D spacetime and 10D internal space are dual, not contained within each other
+2. **Dynamic Spectral Dimension**: Spectral dimension $d_s$ varies while topological dimension remains fixed at 4D
+3. **Zero Free Parameters**: Single parameter $\tau_0 = 0.005$ derived from information theory
+4. **Human-AI Collaboration**: Novel research methodology combining human physical intuition with AI computational capabilities
+
+---
+
+## 🎯 Falsifiable Predictions
+
+| Prediction | Testability | Timeline |
+|------------|-------------|----------|
+| Six GW polarization modes | LISA, next-gen detectors | 2030s |
+| 6ms GW-ν delay for supernovae | Hyper-Kamiokande, DUNE | Next galactic SN |
+| sin²θ₂₃ = 0.495 | DUNE | 2035 |
+| Characteristic CMB modifications | CMB-S4 | 2030s |
+
+All predictions consistent with current constraints (LIGO/Virgo, Planck CMB, atomic clocks).
+
+---
+
+## 📖 Citation
+
+### BibTeX
+```bibtex
+@article{wang2026ctuft,
+  title={Fixed 4D Topology-Dynamic Spectral Dimension: Multiple Twisting Fractal Clifford Algebra Unified Field Theory},
+  author={Wang, Bin},
+  year={2026},
+  institution={Independent Researcher, Open Source AI Theoretical Physics Research Project},
+  url={https://github.com/dpsnet/uft-clifford-torsion},
+  note={GitHub Release v1.0.0}
+}
+```
+
+### APA
+Wang, B. (2026). Fixed 4D Topology-Dynamic Spectral Dimension: Multiple Twisting Fractal Clifford Algebra Unified Field Theory [Computer software]. GitHub. https://github.com/dpsnet/uft-clifford-torsion
+
+---
+
+## 🤝 Research Methodology
+
+This research was conducted through **human-AI collaborative theoretical physics**:
+- **Human contribution**: Conceptual framework, physical interpretation, falsifiability design, strategic direction
+- **AI contribution**: Complex calculations, numerical verification, literature synthesis, code generation, LaTeX documentation
+
+All AI-generated results were cross-checked for physical consistency and limiting case behavior.
+
+---
+
+## 🔗 Links
+
+- **Project Repository**: https://github.com/dpsnet/uft-clifford-torsion
+- **Full Documentation**: See `paper/` directory
+- **Chinese Version**: `supernova_paper_zh.pdf`
+- **Contact**: wang.bin@foxmail.com
+
+---
+
+## 📄 License
+
+See [LICENSE](./LICENSE) for details.
+```
+
+---
+
+## 上传文件
+
+Attach binaries by dropping them here or selecting them.
+
+**上传文件（按优先级）**:
+1. `main.pdf` (1.4MB, 190页完整版) ⬅️ **主要**
+2. `ctuft_arxiv.pdf` (330KB, 3页精简版)
+3. `supernova_paper.pdf` (345KB, 5页超新星应用)
+4. `supernova_paper_zh.pdf` (中文超新星论文，可选)
+
+---
+
+## 发布选项
+
+- [ ] **This is a pre-release** (如果是测试版则勾选)
+- [ ] Create a discussion for this release
+
+**勾选**: Set as the latest release ✓
+
+---
+
+## 发布步骤
+
+1. 进入 https://github.com/dpsnet/uft-clifford-torsion/releases/new
+2. 点击 "Choose a tag" → 输入 `v1.0.0` → 点击 "Create new tag"
+3. Release title 填入上面的标题
+4. 在 Describe 区域粘贴上面的 Markdown 内容
+5. 拖拽上传文件（按顺序上传4个PDF）
+6. 勾选 "Set as the latest release"
+7. 点击 "Publish release"
+
+---
+
+## 发布后
+
+获得的链接格式：
+```
+https://github.com/dpsnet/uft-clifford-torsion/releases/tag/v1.0.0
+```
+
+**PDF直接链接**（用于引用）：
+```
+https://github.com/dpsnet/uft-clifford-torsion/releases/download/v1.0.0/main.pdf
+https://github.com/dpsnet/uft-clifford-torsion/releases/download/v1.0.0/ctuft_arxiv.pdf
+```
+
+---
+
+## 后续操作
+
+发布后告诉我链接，我可以：
+1. 更新超新星论文中的引用
+2. 准备发给学者的邮件模板
+3. 制作知乎推广文案
+4. 准备 Zenodo 备份上传

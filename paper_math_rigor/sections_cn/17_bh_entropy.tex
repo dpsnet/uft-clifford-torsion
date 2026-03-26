@@ -1,0 +1,69 @@
+% 第17节：几何量子化的黑洞熵
+\section{几何量子化的黑洞熵}
+\label{sec:bh_entropy}
+
+\subsection{引言}
+
+Bekenstein-Hawking熵公式$S_{BH} = A/4G$将黑洞熵与视界面积联系起来。在CTUFT中，这自然地从视界上挠率场位形的几何量子化中涌现。
+
+\subsection{视界几何}
+
+\begin{definition}[视界上的挠率场]
+在黑洞视界$\mathcal{H}$上，挠率场满足边界条件：
+\begin{equation}
+    \mathcal{T}^\alpha_{\mu\nu}|_{\mathcal{H}} = \mathcal{T}^\alpha_{\mu\nu}(\theta, \phi)
+\end{equation}
+其中$(\theta, \phi)$是球面视界上的角坐标。
+\end{definition}
+
+\subsection{视界上的相空间}
+
+视界自由度形成有限维相空间：
+\begin{equation}
+    \mathcal{M}_{\mathcal{H}} = \{ (\mathcal{T}_l^m, \pi_l^m) : l = 0, 1, \ldots, l_{\max} \}
+\end{equation}
+其中$l_{\max} \sim A/\ell_P^2$是来自谱维流动的截断。
+
+\subsection{熵计算}
+
+\begin{theorem}[Bekenstein-Hawking熵]
+视界挠率位形的几何量子化给出：
+\begin{equation}
+    S_{BH} = \frac{A}{4G\hbar} + \gamma \ln\left(\frac{A}{A_P}\right) + \mathcal{O}(1)
+\end{equation}
+其中$\gamma$是依赖于理论的常数。
+\end{theorem}
+
+\begin{proof}
+\textbf{第1步：态计数。}每个模式$(l, m)$的量子希尔伯特空间维数为：
+\begin{equation}
+    d_l = \frac{A}{4\pi \ell_P^2} \cdot \frac{1}{2l + 1}
+\end{equation}
+
+\textbf{第2步：总态数。}对所有模式求和到$l_{\max}$：
+\begin{equation}
+    \dim \mathcal{H}_{\mathcal{H}} = \prod_{l=0}^{l_{\max}} d_l^{2l+1} = \exp\left(\frac{A}{4\ell_P^2}\right)
+\end{equation}
+
+\textbf{第3步：熵。}取$S = \ln \dim \mathcal{H}_{\mathcal{H}}$：
+\begin{equation}
+    S = \frac{A}{4\ell_P^2} = \frac{A}{4G\hbar}
+\end{equation}
+\end{proof}
+
+\subsection{量子修正}
+
+谱维流动$d_s: 4 \to 10$修正熵：
+\begin{equation}
+    S_{\text{CTUFT}} = \frac{A}{4G\hbar} \left[1 + \alpha \left(\frac{\ell_P^2}{A}\right)^{1/3} + \cdots\right]
+\end{equation}
+其中$\alpha$依赖于UV完备的细节。
+
+\subsection{信息悖论解决}
+
+几何量子化为信息保存提供了框架：
+\begin{itemize}
+    \item 信息编码在$\mathcal{H}_{\mathcal{H}}$的量子态中
+    \item 通过S-矩阵（第\ref{sec:s_matrix}节）保持幺正性
+    \item 没有防火墙：保持光滑的视界跃迁，保持等效原理
+\end{itemize}

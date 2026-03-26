@@ -1,0 +1,54 @@
+[
+  {
+    "config": {
+      "name": "baseline",
+      "torsion_coef": 0.0001,
+      "torsion_min_energy": 0.0,
+      "torsion_target": null,
+      "entropy_reg": 0.0,
+      "description": "\u539f\u59cb\u914d\u7f6e"
+    },
+    "final_loss": 6.91802453994751,
+    "final_torsion": 1.9824311206475593e-23,
+    "final_spectral": 6.19355583190918
+  },
+  {
+    "config": {
+      "name": "strong_reg",
+      "torsion_coef": 0.001,
+      "torsion_min_energy": 0.0,
+      "torsion_target": null,
+      "entropy_reg": 0.0,
+      "description": "10\u500d\u5f3a\u6b63\u5219\u5316"
+    },
+    "final_loss": 6.91498327255249,
+    "final_torsion": 7.224420528473274e-07,
+    "final_spectral": 6.207585334777832
+  },
+  {
+    "config": {
+      "name": "min_energy_5",
+      "torsion_coef": 0.001,
+      "torsion_min_energy": 5.0,
+      "torsion_target": null,
+      "entropy_reg": 0.0,
+      "description": "\u5f3a\u6b63\u5219+\u6700\u5c0f\u80fd\u91cf5"
+    },
+    "final_loss": 6.928711414337158,
+    "final_torsion": 4.9800004959106445,
+    "final_spectral": 6.207770824432373
+  },
+  {
+    "config": {
+      "name": "entropy_bonus",
+      "torsion_coef": 0.001,
+      "torsion_min_energy": 0.0,
+      "torsion_target": null,
+      "entropy_reg": 0.01,
+      "description": "\u5f3a\u6b63\u5219+\u71b5\u5956\u52b1"
+    },
+    "final_loss": 6.839540481567383,
+    "final_torsion": 3.434788311551529e-07,
+    "final_spectral": 6.199820041656494
+  }
+]

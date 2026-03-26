@@ -1,0 +1,155 @@
+% 第14节：几何量子化：预量子化
+\section{几何量子化：预量子化}
+\label{sec:prequantization}
+
+\subsection{引言}
+
+几何量子化\cite{woodhouse1997}为从经典相空间构造量子理论提供了系统程序。对于CTUFT挠率场，这在经典与量子描述之间建立了严格的桥梁。
+
+\subsection{经典相空间}
+
+经典挠率场由辛流形$(\mathcal{M}, \omega)$描述。
+
+\begin{definition}[相空间]
+挠率场的相空间$\mathcal{M}$由以下对组成$(\mathcal{T}, \pi)$，其中：
+\begin{itemize}
+    \item $\mathcal{T}^\alpha_{\mu\nu}(x)$：挠率场位形
+    \item $\pi_\alpha^{\mu\nu}(x)$：共轭动量密度
+\end{itemize}
+\end{definition}
+
+\begin{definition}[辛形式]
+$\mathcal{M}$上的辛形式为：
+\begin{equation}
+    \omega = \int d^3x \, \delta \mathcal{T}^\alpha_{\mu\nu}(x) \wedge \delta \pi_\alpha^{\mu\nu}(x)
+\end{equation}
+其中$\delta$表示泛函外微分。
+\end{definition}
+
+\begin{theorem}[辛结构]
+$(\mathcal{M}, \omega)$是无限维辛流形：
+\begin{enumerate}
+    \item $\omega$是闭的：$d\omega = 0$
+    \item $\omega$是非退化的：$\omega(X, Y) = 0 \, \forall Y \Rightarrow X = 0$
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{闭性：}辛形式是恰当的：$\omega = d\theta$，其中：
+\begin{equation}
+    \theta = \int d^3x \, \pi_\alpha^{\mu\nu}(x) \delta \mathcal{T}^\alpha_{\mu\nu}(x)
+\end{equation}
+是典范1-形式（Liouville形式）。因此$d\omega = d^2\theta = 0$。
+
+\textbf{非退化性：}在Fourier空间中，辛形式变为：
+\begin{equation}
+    \omega = \int \frac{d^3k}{(2\pi)^3} \, \delta \tilde{\mathcal{T}}^\alpha_{\mu\nu}(\vec{k}) \wedge \delta \tilde{\pi}_\alpha^{\mu\nu}(-\vec{k})
+\end{equation}
+在每个模式中显然是非退化的。
+\end{proof}
+
+\subsection{预量子化线丛}
+
+几何量子化分为三个阶段：预量子化、极化和量子化。
+
+\begin{definition}[预量子线丛]
+预量子线丛$L \to \mathcal{M}$是复线丛，具有：
+\begin{enumerate}
+    \item 纤维上的Hermite度量$h$
+    \item 曲率为$F_\nabla = -i\omega/\hbar$的联络$\nabla$
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[预量子线丛的存在性]
+对于挠率场相空间，预量子线丛存在当且仅当：
+\begin{equation}
+    \frac{1}{2\pi\hbar} \int_\Sigma \omega \in \mathbb{Z}
+\end{equation}
+对所有闭2-曲面$\Sigma \subset \mathcal{M}$成立。
+\end{theorem}
+
+\begin{proof}
+可积性条件是几何量子化中的Bohr-Sommerfeld量子化条件。对于无限维情况，我们在有限维子流形（模式截断）上验证它并取极限。
+
+对于频率为$\omega_k$的单个模式，相应相空间圆柱的辛面积为：
+\begin{equation}
+    \int_{S^2} \omega = 2\pi \cdot \frac{E}{\omega_k} = 2\pi n \hbar
+\end{equation}
+对于能级$E = n\hbar\omega_k$，满足可积性条件。
+\end{proof}
+
+\subsection{预量子算符}
+
+\begin{definition}[预量子映射]
+预量子映射将每个经典可观测量$f \in C^\infty(\mathcal{M})$赋值为$L$的截面上的算符：
+\begin{equation}
+    \hat{f} = -i\hbar \nabla_{X_f} + f
+\end{equation}
+其中$X_f$是哈密顿矢量场：$\omega(X_f, \cdot) = df$。
+\end{definition}
+
+\begin{theorem}[预量子化表示]
+预量子算符满足：
+\begin{equation}
+    [\hat{f}, \hat{g}] = i\hbar \widehat{\{f, g\}}
+\end{equation}
+其中$\{f, g\}$是Poisson括号。
+\end{theorem}
+
+这在预量子水平上确立了正则对易关系。
+
+\subsection{预量子希尔伯特空间}
+
+\begin{definition}[预量子希尔伯特空间]
+预量子希尔伯特空间为：
+\begin{equation}
+    \mathcal{H}_{\text{pre}} = L^2(\mathcal{M}, L) = \left\{ \psi : \mathcal{M} \to L \, \middle| \, \int_{\mathcal{M}} |\psi|^2 \, d\mu < \infty \right\}
+\end{equation}
+其中$d\mu$是Liouville测度$\omega^n/n!$。
+\end{definition}
+
+\begin{theorem}[Kähler结构]
+挠率场的预量子希尔伯特空间携带自然的Kähler结构，具有：
+\begin{itemize}
+    \item 与$\omega$相容的复结构$J$
+    \item Riemann度量$g(X, Y) = \omega(X, JY)$
+    \item Kähler势$K = \int d^3x \, \pi \dot{\mathcal{T}} - \mathcal{L}$
+\end{itemize}
+\end{theorem}
+
+\subsection{进展：预量子化（90\%）}
+
+\subsubsection{已完成}
+\begin{itemize}
+    \item 辛结构已定义并验证
+    \item 预量子线丛已构造
+    \item 对模式展开验证了可积性条件
+    \item 预量子算符已定义
+\end{itemize}
+
+\subsubsection{剩余}
+\begin{itemize}
+    \item 整体拓扑约束（非平凡场位形）
+    \item 无限维测度论（$d\mu$的严格定义）
+    \item 几何量子化中UV发散的正则化
+\end{itemize}
+
+\subsection{示例：单模预量子化}
+
+对于坐标为$(q, p)$的单个模式：
+\begin{align}
+    \mathcal{T}(x) &= q \cos(\vec{k} \cdot \vec{x}) \\
+    \pi(x) &= p \cos(\vec{k} \cdot \vec{x})
+\end{align}
+
+辛形式为$\omega = dq \wedge dp$，预量子算符为：
+\begin{align}
+    \hat{q} &= q + i\hbar \frac{\partial}{\partial p} \\
+    \hat{p} &= p - i\hbar \frac{\partial}{\partial q}
+\end{align}
+
+它们满足$[\hat{q}, \hat{p}] = i\hbar$。
+
+\subsection{与Fock空间的联系}
+
+预量子希尔伯特空间太大（包含相空间上的所有函数）。下一步（极化）将其约化为物理希尔伯特空间，我们将证明这与Fock空间构造等价。

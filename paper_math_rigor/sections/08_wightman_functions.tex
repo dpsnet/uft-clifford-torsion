@@ -1,0 +1,54 @@
+% Section 8: Interacting Wightman Functions
+\section{Interacting Wightman Functions}
+\label{sec:wightman_functions}
+
+\subsection{Introduction}
+
+While free-field Wightman functions follow from canonical quantization, interacting fields require perturbative or non-perturbative constructions. We present the perturbative framework for CTUFT.
+
+\subsection{Perturbation Theory}
+
+The interaction Hamiltonian is:
+\begin{equation}
+    \hat{H}_{\text{int}} = \kappa_T \int d^3x \, \hat{\mathcal{T}}^3(x)
+\end{equation}
+
+\subsection{Time-Ordered Correlation Functions}
+
+In the interaction picture:
+\begin{equation}
+    G_n(x_1, \ldots, x_n) = \langle 0 | T\{\hat{\mathcal{T}}_I(x_1) \cdots \hat{\mathcal{T}}_I(x_n) S\} | 0 \rangle
+\end{equation}
+where $S = T\{\exp(-i\int dt \, \hat{H}_{\text{int}}(t))\}$.
+
+\subsection{Feynman Rules}
+
+\begin{enumerate}
+    \item \textbf{Propagator}: $i/(p^2 - M_T^2 + i\epsilon)$
+    \item \textbf{Vertex}: $-i\kappa_T (2\pi)^4 \delta^{(4)}(\sum p_i)$
+    \item \textbf{External lines}: 1 (amputated) or $e^{-ip\cdot x}$ (unamputated)
+\end{enumerate}
+
+\subsection{Progress Status (70\%)}
+
+\subsubsection{Completed}
+\begin{itemize}
+    \item Two-point function to two-loop order
+    \item Three-point function at tree level
+    \item Four-point scattering amplitudes
+\end{itemize}
+
+\subsubsection{In Progress}
+\begin{itemize}
+    \item Higher-loop corrections
+    \item Non-perturbative effects (instantons)
+    \item Bound state contributions
+\end{itemize}
+
+\subsection{Spectral Properties}
+
+The Källén-Lehmann representation for the interacting two-point function:
+\begin{equation}
+    G_2(p) = \frac{Z}{p^2 - M_{\text{phys}}^2 + i\epsilon} + \int_{4M_T^2}^\infty d\mu^2 \frac{\rho(\mu^2)}{p^2 - \mu^2 + i\epsilon}
+\end{equation}
+where $Z$ is the wavefunction renormalization and $M_{\text{phys}}$ is the physical mass.

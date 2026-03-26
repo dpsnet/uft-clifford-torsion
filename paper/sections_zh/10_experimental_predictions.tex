@@ -1,201 +1,241 @@
-% 第10章：实验验证与可证伪预测
-\section{实验验证与可证伪预测}
-\label{sec:experimental}
+% CTUFT章节：实验预言与可证伪性
+% 阶段D成果整合：原初黑洞与可证伪预言
+\chapter{实验预言与可证伪性}
+\label{ch:experimental}
 
-\begin{insight}[本章概要]
-本章介绍克利福德-扭转统一场论（CTUFT）的具体、可实验检验的预言。我们聚焦于原初黑洞（PBH）霍金辐射作为检验理论谱维流动 $d_s \to 10$ 的探针。五项具体的可证伪预测被导出，涵盖从CTA可探测的伽马射线谱修正（2025+）到LISA可观测的引力波信号（2030s）。这些预测将CTUFT从一个纯理论框架转变为具有实验可检验性的物理理论。
-\end{insight}
+\begin{abstract}
+本章介绍Clifford-扭转统一场论（CTUFT）的具体、实验上可检验的预言。我们关注原初黑洞（PBH）霍金辐射作为理论谱维流动 $d_s \to 10$ 的探针。推导出五个具体的可证伪预言，范围从CTA（2025+）可探测的伽马射线谱修正到LISA（2030年代）可观测的引力波信号。这些预言确立CTUFT为物理上可检验的框架，而非纯粹的理论构造。
+\end{abstract}
 
-\subsection{引言：从理论到实验}
-\label{subsec:exp-intro}
+\section{引言：从理论到实验}
+\label{sec:exp-intro}
 
-任何物理理论的最终检验在于其实验预言。尽管CTUFT在数学上相当复杂，但它对可观测现象做出了具体、可证伪的陈述。本节将第\ref{ch:mathematical}--\ref{ch:black-holes}章发展的理论框架与实验物理联系起来。
+任何物理理论的最终检验在于其实验预言。尽管数学上复杂，CTUFT对可观测现象做出了具体、可证伪的陈述。本章架起理论框架（第\ref{ch:mathematical}--\ref{ch:black-holes}章）与实验物理之间的桥梁。
 
-\subsubsection{作为可观测量的谱维}
+\subsection{作为可观测量的谱维}
+\label{subsec:spectral-observable}
 
 CTUFT的核心新特征——谱维流动 $d_s = 4 \to 10$——不仅仅是数学构造，而是具有可观测后果的物理现象：
 
 \begin{equation}
 d_s(E) = 4 + \frac{6}{1 + (E/E_c)^2}
-\label{eq:spectral-flow-exp-zh}
+\label{eq:spectral-flow-exp}
 \end{equation}
 
 其中 $E_c \sim \tau_0 \times m_P c^2$ 是由单一自由参数 $\tau_0 = 0.005$ 设定的特征能量尺度。
 
-\textbf{关键洞见}：高能极限 $d_s \to 10$ 修正了量子场论中的态密度，导致黑洞辐射谱的高能尾增强。
+\textbf{关键洞见}：高能极限 $d_s \to 10$ 修正了量子场论中的态密度，导致黑洞辐射谱中增强的高能尾部。
 
-\subsubsection{作为探针的原初黑洞}
+\subsection{作为探针的原初黑洞}
+\label{subsec:pbh-probes}
 
 早期宇宙中形成的原初黑洞（PBHs）为检验CTUFT提供了理想实验室：
 
 \begin{itemize}
-    \item \textbf{蒸发时标}：质量 $M \sim 10^{15}$ g的PBH正在今天蒸发，发出可观测辐射
-    \item \textbf{霍金温度}：$M \sim 10^{15}$ g时 $T_H \sim 10$ MeV，产生伽马射线和正电子
-    \item \textbf{与$\tau_0$的关联}：蒸发PBH的特征质量尺度与基本参数$\tau_0$相联系
+    \item \textbf{蒸发时间尺度}：质量 $M \sim 10^{15}$ g 的PBH正在今天蒸发，发射可观测辐射
+    \item \textbf{霍金温度}：$M \sim 10^{15}$ g 时 $T_H \sim 10$ MeV，产生伽马射线和正电子
+    \item \textbf{与}$\tau_0$\textbf{的关联}：蒸发PBH的特征质量尺度与基本参数 $\tau_0$ 相关联
 \end{itemize}
 
-\subsection{CTUFT修正的霍金辐射}
-\label{sec:modified-hawking-zh}
+\section{CTUFT修正的霍金辐射}
+\label{sec:modified-hawking}
 
-\subsubsection{标准与CTUFT辐射谱对比}
+\subsection{标准与CTUFT辐射谱比较}
+\label{subsec:spectrum-comparison}
 
 \textbf{标准霍金辐射}：
 \begin{equation}
 n_{std}(E) = \frac{1}{e^{E/T_H} - 1}
-\label{eq:standard-hawking-zh}
+\label{eq:standard-hawking}
 \end{equation}
 
-\textbf{CTUFT修正谱}（包含谱维流动效应）：
+\textbf{CTUFT修正谱}（包含谱维流动）：
 \begin{equation}
 n_{CTUFT}(E) = n_{std}(E) \times \mathcal{F}(E)
-\label{eq:ctuft-hawking-zh}
+\label{eq:ctuft-hawking}
 \end{equation}
 
 其中\textbf{CTUFT修正因子}为：
 \begin{equation}
 \mathcal{F}(E) = \left(\frac{E}{E_c}\right)^{\alpha(E)}, \quad \alpha(E) = \frac{d_s(E)}{2} - 2
-\label{eq:correction-factor-zh}
+\label{eq:correction-factor}
 \end{equation}
 
-\subsubsection{物理解释}
+\subsection{物理解释}
+\label{subsec:physical-interpretation}
 
-修正因子 $\mathcal{F}(E)$ 来源于：
+修正因子 $\mathcal{F}(E)$ 源于：
 \begin{enumerate}
     \item \textbf{态密度}：在 $d_s$ 维中，$\rho(E) \sim E^{d_s/2 - 1}$
-    \item \textbf{相空间}：更高的 $d_s$ 增加了高能处的可用态
-    \item \textbf{有效温度}：谱流动有效地修正了辐射温度
+    \item \textbf{相空间}：更高的 $d_s$ 增加高能时的可用态
+    \item \textbf{有效温度}：谱流有效地修正辐射温度
 \end{enumerate}
 
-\subsection{五项可证伪预测}
-\label{sec:falsifiable-predictions-zh}
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+    \begin{semilogyaxis}[
+        width=12cm,
+        height=8cm,
+        xlabel={$E/T_H$},
+        ylabel={$E^3 \cdot n(E)$ (任意单位)},
+        xmin=0, xmax=15,
+        ymin=1e-4, ymax=10,
+        grid=major,
+        legend pos=north east,
+        title={霍金辐射：标准 vs. CTUFT}
+    ]
+    % 标准霍金（指数截断）
+    \addplot[blue, thick, domain=0:15, samples=100] 
+        {x^3/(exp(x)-1)};
+    \addlegendentry{标准霍金}
+    
+    % CTUFT修正（增强尾部）
+    \addplot[red, thick, dashed, domain=0:15, samples=100] 
+        {x^3/(exp(x)-1) * (1 + 0.5*(x/5)^4)};
+    \addlegendentry{CTUFT修正}
+    
+    % 标记转变区域
+    \draw[dotted, thick] (axis cs:5,1e-4) -- (axis cs:5,10);
+    \node at (axis cs:5,0.001) [right] {$E \sim 5T_H$};
+    \end{semilogyaxis}
+\end{tikzpicture}
+\caption{标准霍金辐射（蓝色）与CTUFT修正谱（红色虚线）的比较。关键差异是 $E \gtrsim 5T_H$ 处由于谱维流动 $d_s \to 10$ 而增强的高能尾部。}
+\label{fig:hawking-comparison}
+\end{figure}
 
-\subsubsection{预测1：伽马射线谱增强}
-\label{subsec:prediction-gamma-zh}
+\section{五个可证伪预言}
+\label{sec:falsifiable-predictions}
 
-\textbf{观测}：切伦科夫望远镜阵列（CTA，2025+年运行）
+\subsection{预言1：伽马射线谱增强}
+\label{subsec:prediction-gamma}
 
-\textbf{预测}：
+\textbf{观测}：切伦科夫望远镜阵列（CTA，2025+运行）
+
+\textbf{预言}： 
 \begin{itemize}
     \item 能量范围：$E \gtrsim 5 \times T_H \sim 50$ MeV（对于 $M \sim 10^{15}$ g PBH）
-    \item 信号：与标准霍金谱相比增强的伽马射线尾
-    \item 幅度：$E \sim 10 \times T_H$ 处增强2--5倍
+    \item 信号：与标准霍金谱相比增强的伽马射线尾部
+    \item 幅度：在 $E \sim 10 \times T_H$ 处增强2--5倍
 \end{itemize}
 
-\textbf{当前约束}：Fermi-LAT CGB限制 $f_{PBH} < 10^{-8}$
+\textbf{当前限制}：Fermi-LAT CGB限制 $f_{PBH} < 10^{-8}$
 
-\textbf{CTA改进}：对 $f_{PBH} \sim 10^{-10}$ 的灵敏度（100倍提升）
+\textbf{CTA改进}：对 $f_{PBH} \sim 10^{-10}$ 的灵敏度（100倍改进）
 
-\textbf{证伪判据}：如果CTA未观测到超出或谱形与CTUFT预测不符
+\textbf{证伪标准}：如果CTA未观测到超出或与CTUFT预言不一致的谱
 
-\subsubsection{预测2：PBH质量谱峰}
-\label{subsec:prediction-mass-zh}
+\subsection{预言2：PBH质量谱峰值}
+\label{subsec:prediction-mass}
 
 \textbf{观测}：微引力透镜巡天（Subaru HSC、OGLE、下一代）
 
-\textbf{预测}：
+\textbf{预言}：
 \begin{itemize}
     \item 特征质量：$M_{peak} \sim 10^{15}$ g
-    \item 起源：通过蒸发时标与 $\tau_0 = 0.005$ 相联系
-    \item 谱形：窄峰而非宽分布
+    \item 起源：通过蒸发时间尺度与 $\tau_0 = 0.005$ 关联
+    \item 谱形状：窄峰而非宽分布
 \end{itemize}
 
 \textbf{物理关联}：
 \begin{equation}
-t_{evap} = \frac{5120\pi G^2 M^3}{\hbar c^4} \approx 13.8 \text{ Gyr（对于 } M \sim 10^{15} \text{ g）}
-\label{eq:evaporation-time-zh}
+t_{evap} = \frac{5120\pi G^2 M^3}{\hbar c^4} \approx 13.8 \text{ Gyr 对于 } M \sim 10^{15} \text{ g}
+\label{eq:evaporation-time}
 \end{equation}
 
-\textbf{证伪判据}：如果微透镜巡天在 $M \sim 10^{15}$ g处未发现峰，或峰位与$\tau_0$导出的预测不符
+\textbf{证伪标准}：如果微引力透镜巡天在 $M \sim 10^{15}$ g 处未发现峰值，或峰值位置与$\tau_0$导出的预言不一致
 
-\subsubsection{预测3：正电子谱修正}
-\label{subsec:prediction-positron-zh}
+\subsection{预言3：正电子谱修正}
+\label{subsec:prediction-positron}
 
 \textbf{观测}：AMS-02、DAMPE（空间宇宙线探测器）
 
-\textbf{预测}：
+\textbf{预言}：
 \begin{itemize}
     \item 能量范围：$E \gtrsim 10$ GeV
-    \item 信号：来自PBH蒸发的过量正电子
-    \item 谱形：被 $d_s \to 10$ 增强所修正
+    \item 信号：来自PBH蒸发的正电子超出
+    \item 谱形状：被 $d_s \to 10$ 增强修正
 \end{itemize}
 
-\textbf{当前状态}：AMS-02在 $E \gtrsim 10$ GeV观测到正电子超出（可能与暗物质或天体物理有关）
+\textbf{当前状态}：AMS-02观测到正电子超出（可能是暗物质或天体物理的）
 
-\textbf{CTUFT检验}：高能谱形可以区分PBH起源
+\textbf{CTUFT检验}：高能谱形状可区分PBH起源
 
-\textbf{证伪判据}：如果高分辨率数据排除CTUFT谱形
+\textbf{证伪标准}：如果高分辨率数据排除CTUFT谱形状
 
-\subsubsection{预测4：PBH并合率}
-\label{subsec:prediction-merger-zh}
+\subsection{预言4：PBH并合率}
+\label{subsec:prediction-merger}
 
-\textbf{观测}：LISA空间引力波探测器（2030s年代发射）
+\textbf{观测}：LISA空间引力波探测器（2030年代发射）
 
-\textbf{预测}：
+\textbf{预言}：
 \begin{itemize}
     \item 质量范围：$10^{-12} - 10^{-7}$ M$_\odot$（LISA敏感）
     \item 并合率：依赖于PBH丰度 $f_{PBH}$
-    \item 可探测性：暗物质的 $f_{PBH} \gtrsim 10^{-3}$ 部分
+    \item 可探测性：$f_{PBH} \gtrsim 10^{-3}$ 的暗物质
 \end{itemize}
 
-\textbf{LISA灵敏度}：特征应变 $h_c \sim 10^{-23}$ 在 $f \sim 1$ mHz
+\textbf{LISA灵敏度}：$f \sim 1$ mHz处特征应变 $h_c \sim 10^{-23}$
 
-\textbf{证伪判据}：如果PBH构成暗物质的 $f \gtrsim 10^{-3}$ 但未探测到并合信号
+\textbf{证伪标准}：如果PBH构成 $f \gtrsim 10^{-3}$ 的暗物质但未探测到并合
 
-\subsubsection{预测5：多信使一致性}
-\label{subsec:prediction-multi-zh}
+\subsection{预言5：多信使一致性}
+\label{subsec:prediction-multi}
 
-\textbf{观测}：伽马射线、中微子、引力波数据的联合分析
+\textbf{观测}：伽马射线、中微子和引力波数据联合
 
-\textbf{预测}：
+\textbf{预言}： 
 \begin{itemize}
-    \item 相同PBH群体在所有波段产生信号
-    \item 独立测量的PBH丰度 $f_{PBH}$ 一致
-    \item 所有通道都有CTUFT修正谱
+    \item 相同的PBH群体在所有波段产生信号
+    \item 独立测量一致的丰度 $f_{PBH}$
+    \item 所有通道中CTUFT修正的谱
 \end{itemize}
 
 \textbf{关键检验}：以下之间的交叉关联：
 \begin{itemize}
     \item CTA伽马射线超出
     \item IceCube-Gen2中微子事件
-    \item LISA引力波暴
+    \item LISA引力波爆发
 \end{itemize}
 
-\textbf{证伪判据}：如果不同信使给出不一致的PBH性质
+\textbf{证伪标准}：如果不同信使给出不一致的PBH性质
 
 \begin{table}[htbp]
 \centering
-\caption{CTUFT可证伪预测总结}
-\label{tab:predictions-zh}
+\caption{CTUFT可证伪预言总结}
+\label{tab:predictions}
 \begin{tabular}{@{}llll@{}}
 \toprule
-\textbf{预测} & \textbf{可观测量} & \textbf{实验} & \textbf{时间} \\
+\textbf{预言} & \textbf{可观测} & \textbf{实验} & \textbf{时间线} \\
 \midrule
-伽马射线超出 & $E > 5T_H$ 尾 & CTA & 2025+ \\
-质量谱峰 & $M \sim 10^{15}$ g & Subaru HSC & 2025+ \\
+伽马射线超出 & $E > 5T_H$ 尾部 & CTA & 2025+ \\
+质量谱峰值 & $M \sim 10^{15}$ g & Subaru HSC & 2025+ \\
 正电子超出 & $E > 10$ GeV & AMS-02/DAMPE & 2024+ \\
-PBH并合 & $10^{-12}-10^{-7}$ M$_\odot$ & LISA & 2030s \\
-多信使 & 跨波段关联 & 联合 & 2030s \\
+PBH并合 & $10^{-12}-10^{-7}$ M$_\odot$ & LISA & 2030年代 \\
+多信使 & 跨波段关联 & 联合 & 2030年代 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{当前观测约束}
-\label{sec:current-constraints-zh}
+\section{当前观测限制}
+\label{sec:current-constraints}
 
-\subsubsection{宇宙伽马射线背景（CGB）}
+\subsection{宇宙伽马射线背景（CGB）}
+\label{subsec:cgb-constraints}
 
-Fermi-LAT对各项同性伽马射线背景的测量约束了PBH丰度：
+Fermi-LAT对宇宙伽马射线背景的测量限制了PBH丰度：
 
 \begin{equation}
 f_{PBH} \lesssim 10^{-8} \quad \text{对于} \quad M \sim 10^{15} \text{ g}
-\label{eq:cgb-constraint-zh}
+\label{eq:cgb-constraint}
 \end{equation}
 
-\textbf{CTUFT含义}：如果此质量尺度的PBH存在，其辐射必须与CTUFT谱一致。
+\textbf{CTUFT含义}：如果PBH在此质量尺度存在，其辐射必须与CTUFT谱一致。
 
-\subsubsection{微引力透镜约束}
+\subsection{微引力透镜限制}
+\label{subsec:microlensing-constraints}
 
-当前微引力透镜巡天的限制：
+当前来自微引力透镜巡天的限制：
 
 \begin{itemize}
     \item \textbf{Subaru HSC}：$f_{PBH} < 0.01$ 对于 $10^{11} - 10^{17}$ g
@@ -203,74 +243,136 @@ f_{PBH} \lesssim 10^{-8} \quad \text{对于} \quad M \sim 10^{15} \text{ g}
     \item \textbf{OGLE}：$f_{PBH} < 0.1$ 对于 $10^{-6} - 10^{-3}$ M$_\odot$
 \end{itemize}
 
-\subsubsection{正电子约束}
+\subsection{正电子限制}
+\label{subsec:positron-constraints}
 
-AMS-02对正电子分数的测量在 $E \gtrsim 10$ GeV显示超出。虽然通常归因于脉冲星或暗物质，CTUFT提供了可通过谱形检验的可测试替代解释。
+AMS-02对正电子分数的测量显示 $E \gtrsim 10$ GeV 处的超出。虽然通常归因于脉冲星或暗物质，CTUFT通过PBH蒸发提供了一个可检验的替代解释。
 
-\subsection{未来展望}
-\label{sec:future-prospects-zh}
+\section{未来前景}
+\label{sec:future-prospects}
 
-\subsubsection{近期（2024-2030）}
+\subsection{近期（2024-2030）}
+\label{subsec:near-term}
 
 \begin{itemize}
     \item \textbf{AMS-02最终数据}：精密正电子谱
-    \item \textbf{CTA首次运行}：伽马射线超出搜寻
-    \item \textbf{Subaru HSC完成}：质量谱约束
+    \item \textbf{CTA首次观测}：伽马射线超出搜寻
+    \item \textbf{Subaru HSC完成}：质量谱限制
 \end{itemize}
 
-\subsubsection{中期（2030s）}
+\subsection{中期（2030年代）}
+\label{subsec:medium-term}
 
 \begin{itemize}
     \item \textbf{LISA运行}：引力波探测
     \item \textbf{IceCube-Gen2}：高能中微子天文学
-    \item \textbf{爱因斯坦望远镜}：地基引力波
+    \item \textbf{爱因斯坦望远镜}：地面引力波
 \end{itemize}
 
-\subsubsection{多信使时代（2040+）}
+\subsection{多信使时代（2040+）}
+\label{subsec:multi-messenger}
 
-伽马射线、中微子和引力波数据的联合分析将为CTUFT预测提供决定性检验。
+伽马射线、中微子和引力波数据的联合分析将为CTUFT预言提供决定性检验。
 
-\subsection{与其他理论的比较}
-\label{sec:comparison-theories-zh}
+\section{双向谱维流：两种宇宙学情景}
+\label{sec:two-scenarios}
+
+CTUFT的双向谱维流框架允许对早期宇宙演化的两种可能解释。两者在数学上都与谱维公式一致，但对应不同的物理图景。
+
+\subsection{情景A：涌现}
+\label{subsec:scenario-emergence}
+
+在此解释中，四维互反空间在暴胀时期确实``涌现''出来：
+\begin{itemize}
+    \item 早期宇宙（$f_{in} \approx 1$）：$d_s^{(out)} \approx 0$ —— 互反空间尚未作为独立实体存在
+    \item 暴胀期间：$f_{in}$ 减小，四维拓扑结构从内空间``结晶''出来
+    \item 今天（$f_{in} = 0$）：$d_s^{(out)} = 4$ —— 完全形成的四维时空
+\end{itemize}
+
+此情景将维度转变视为拓扑结构被创造的真实相变。
+
+\subsection{情景B：解耦}
+\label{subsec:scenario-decoupling}
+
+在此解释中，四维互反空间在拓扑上始终存在：
+\begin{itemize}
+    \item 早期宇宙（$f_{in} \approx 1$）：四维空间存在，但与内空间强耦合而被``屏蔽''——其自由度无法独立访问
+    \item 暴胀期间：耦合减弱（$f_{in} \to 0$），允许四维空间``解耦''并变得可观测
+    \item 今天（$f_{in} = 0$）：完全独立实现，$d_s^{(out)} = 4$
+\end{itemize}
+
+此情景将转变视为预存结构的解耦而非创造。
+
+\subsection{区分预言}
+\label{subsec:distinguishing-predictions}
+
+虽然两种情景都与CTUFT的数学框架一致，它们对早期宇宙可观测量做出不同预言：
+
+\begin{table}[htbp]
+\centering
+\caption{观测特征：涌现 vs. 解耦}
+\label{tab:scenario-comparison}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{可观测量} & \textbf{涌现（A）} & \textbf{解耦（B）} \\
+\midrule
+原初引力波峰 & $f \sim 10^{10}$ Hz处尖锐特征 & 平滑连续谱 \\
+非高斯性 $f_{NL}$ & 大局域型（$|f_{NL}| \gg 1$） & 均衡型主导 \\
+拓扑缺陷 & 可能出现畴壁 & 仅纹理 \\
+精细结构常数变化 & 与$C$值强相关 & 平滑空间变化 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{物理推理}：
+\begin{itemize}
+    \item \textbf{情景A}涉及尖锐的相边界（``涌现''点），可在原初功率谱和非高斯统计中产生特征信号
+    \item \textbf{情景B}描述平滑的解耦过程，导致可观测量更渐进的变化
+\end{itemize}
+
+\textbf{实验前景}：未来CMB偏振实验（CMB-S4、LiteBIRD）和引力波观测站（LISA、爱因斯坦望远镜）可能通过精密测量原初功率谱和双谱来区分这两种情景。
+
+\section{与其他理论的比较}
+\label{sec:comparison-theories}
 
 \begin{table}[htbp]
 \centering
 \caption{实验预言：理论比较}
-\label{tab:theory-comparison-zh}
+\label{tab:theory-comparison}
 \begin{tabular}{@{}lcccc@{}}
 \toprule
-\textbf{特征} & \textbf{标准} & \textbf{弦论} & \textbf{圈量子} & \textbf{CTUFT} \\
+\textbf{特征} & \textbf{标准} & \textbf{弦论} & \textbf{圈量子引力} & \textbf{CTUFT} \\
 \midrule
-伽马射线尾 & 截止 & 模型依赖 & 面积量子化 & $d_s \to 10$ 增强 \\
-质量谱 & 任意 & 暴涨依赖 & 无预言 & $\tau_0$决定峰 \\
+伽马射线尾部 & 截断 & 模型依赖 & 量子化面积 & $d_s \to 10$ 增强 \\
+质量谱 & 任意 & 暴胀依赖 & 无预言 & $\tau_0$决定峰值 \\
 自由参数 & 0 & 多个 & 1 ($\gamma$) & 0 \\
 可证伪性 & 低 & 通常低 & 可调 & \textbf{高} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{结论}
-\label{sec:exp-conclusion-zh}
+\section{结论}
+\label{sec:exp-conclusion}
 
-CTUFT做出了五项具体的、实验可检验的预言，将其与标准霍金辐射和其他量子引力方法区分开来：
+CTUFT做出五个具体的、实验上可检验的预言，将其与标准霍金辐射和其他量子引力方法区分开来：
 
 \begin{enumerate}
     \item \textbf{伽马射线增强}：CTA可探测（2025+）
-    \item \textbf{质量谱峰}：微引力透镜可检验
-    \item \textbf{正电子超出}：可区分的谱形
-    \item \textbf{引力波}：LISA可探测的PBH并合
+    \item \textbf{质量谱峰值}：微引力透镜可检验
+    \item \textbf{正电子超出}：可区分的谱形状
+    \item \textbf{引力波}：LISA的PBH并合
     \item \textbf{多信使一致性}：跨波段关联
 \end{enumerate}
 
-理论的单参数$\tau_0 = 0.005$决定了可观测PBH的特征质量尺度，在基础物理与观测天文学之间建立了直接联系。
+理论的单一参数 $\tau_0 = 0.005$ 决定了可观测PBH的特征质量尺度，在基础物理与观测天文学之间建立了直接联系。
 
-\textbf{关键信息}：CTUFT不仅仅是一个理论框架，而是一个将在未来10--15年内被观测验证或证伪的\textbf{物理可检验理论}。
+\textbf{关键信息}：CTUFT不仅仅是理论框架，而是将在未来10--15年内被观测证实或证伪的\textbf{物理上可检验的理论}。
 
 \begin{thebibliography}{99}
-\bibitem{hawking1975} Hawking, S.W. (1975). ``黑洞粒子产生''. \textit{Commun. Math. Phys.} 43, 199.
-\bibitem{page1976} Page, D.N. (1976). ``黑洞粒子发射率''. \textit{Phys. Rev. D} 13, 198.
-\bibitem{carr2021} Carr, B., \u0026 Kuhnel, F. (2021). ``原初黑洞''. \textit{arXiv:2110.02821}.
-\bibitem{green2020} Green, A.M. (2020). ``原初黑洞''. \textit{arXiv:2011.05356}.
-\bibitem{cta2019} 切伦科夫望远镜阵列合作组 (2019). ``CTA科学''. \textit{arXiv:1912.06227}.
-\bibitem{lisa2017} LISA合作组 (2017). ``激光干涉空间天线''. \textit{arXiv:1702.00786}.
+\bibitem{hawking1975} Hawking, S.W. (1975). ``Particle Creation by Black Holes.'' \textit{Commun. Math. Phys.} 43, 199.
+\bibitem{page1976} Page, D.N. (1976). ``Particle Emission Rates from a Black Hole.'' \textit{Phys. Rev. D} 13, 198.
+\bibitem{carr2021} Carr, B., \u0026 Kuhnel, F. (2021). ``Primordial Black Holes.'' \textit{arXiv:2110.02821}.
+\bibitem{green2020} Green, A.M. (2020). ``Primordial Black Holes.'' \textit{arXiv:2011.05356}.
+\bibitem{cta2019} Cherenkov Telescope Array Consortium (2019). ``Science with CTA.'' \textit{arXiv:1912.06227}.
+\bibitem{lisa2017} LISA Consortium (2017). ``Laser Interferometer Space Antenna.'' \textit{arXiv:1702.00786}.
 \end{thebibliography}

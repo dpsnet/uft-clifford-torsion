@@ -1,0 +1,86 @@
+% 第1节：引言
+\section{引言}
+\label{sec:intro}
+
+\subsection{研究动机}
+
+配套工作\cite{wang2026ctuft}中提出的克利福德-挠率统一场论（CTUFT）提供了一个全面的现象学框架，统一了引力、量子力学和标准模型规范相互作用。虽然主理论展示了与实验数据的显著一致性并作出了可证伪的具体预测，但完整的数学基础对于确立其作为严格物理理论的地位至关重要。
+
+本文通过系统应用现代公理化量子场论（AQFT）来解决CTUFT的数学严格化问题。我们的目标有三重：
+
+\begin{enumerate}
+    \item \textbf{公理化验证}：确立CTUFT满足Wightman和Haag-Kastler公理，确保其是良定义的量子场论。
+    
+    \item \textbf{S-矩阵幺正性}：证明S-矩阵的幺正性，并为关键散射过程提供数值验证。
+    
+    \item \textbf{构造性场论}：发展相互作用的Wightman函数并确立其性质。
+    
+    \item \textbf{代数结构}：将Tomita-Takesaki模理论应用于黑洞物理的热力学方面。
+    
+    \item \textbf{几何量子化}：通过挠率场相空间的几何量子化，为经典和量子描述之间提供严格的桥梁。
+\end{enumerate}
+
+\subsection{理论框架}
+
+CTUFT建立在4维倒易时空与10维内部空间是\textit{对偶的}而非相互包含的基本原理之上。其数学结构包括：
+
+\begin{itemize}
+    \item 在4维时空$M$上的主$\Spin^\tau(3,1)$丛$P \to M$
+    \item 作为空间之间联络的挠率场$\mathcal{T}^\alpha_{\mu\nu}$
+    \item 从10（普朗克尺度）到4（宏观尺度）流动的动力学谱维$d_s$
+    \item 从信息论导出的单一参数$\tau_0 = 0.005$
+\end{itemize}
+
+\subsection{与主理论的关系}
+
+本数学处理补充主CTUFT论文\cite{wang2026ctuft}：
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{方面} & \textbf{主论文} & \textbf{本工作} \\
+\hline
+现象学 & 广泛 & 最小化 \\
+数学严格性 & 定性 & 定量 \\
+公理化 & 隐式 & 显式证明 \\
+S-矩阵 & 仅结果 & 完整推导 \\
+重整化 & 描述性 & 严格处理 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{结果概述}
+
+我们的主要结果包括：
+
+\begin{theorem}[Wightman公理]
+CTUFT的挠率场理论满足全部五个Wightman公理：相对论协变性、谱条件、局域性、真空存在性和循环性。
+\end{theorem}
+
+\begin{theorem}[Haag-Kastler结构]
+由挠率场生成的冯·诺依曼代数局域网满足保序性、局域性、庞加莱协变性、谱条件和原初因果性。
+\end{theorem}
+
+\begin{theorem}[S-矩阵幺正性]
+CTUFT全部七个基本散射过程的S-矩阵元满足幺正性，与精确守恒的偏差小于$10^{-2}$。
+\end{theorem}
+
+\begin{theorem}[几何量子化]
+挠率场相空间的几何量子化产生一个与Fock空间构造自然同构的希尔伯特空间。
+\end{theorem}
+
+\subsection{符号与约定}
+
+我们使用以下约定：
+\begin{itemize}
+    \item 度规符号：$\eta_{\mu\nu} = \diag(-1, +1, +1, +1)$
+    \item 克利福德代数：$\{\gamma^\mu, \gamma^\nu\} = 2\eta^{\mu\nu}$
+    \item 谱维：$d_s(\ell) = 4 + 6/(1 + (\ell_P/\ell)^2)$
+    \item 挠率耦合：$\kappa_T = \tau_0 \cdot M_P^{-1}$，其中$\tau_0 = 0.005$
+\end{itemize}
+
+除显式恢复有助于清晰度的情况外，全文使用自然单位$\hbar = c = 1$。
+
+\subsection{论文结构}
+
+第一部分通过Wightman和Haag-Kastler公理建立公理化框架。第二部分发展散射理论，包括严格的S-矩阵构造和数值验证。第三部分处理相互作用场和重整化。第四部分应用代数方法，包括Tomita-Takesaki理论。第五部分介绍几何量子化及其在黑洞熵中的应用。第六部分讨论一致性检验和开放问题。

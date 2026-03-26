@@ -1,0 +1,51 @@
+% Appendix C: Numerical Methods
+\section{Numerical Methods}
+\label{app:numerical}
+
+\subsection{Integration Techniques}
+
+\subsubsection{Adaptive Gaussian Quadrature}
+
+For S-matrix element integration:
+\begin{equation}
+    I = \int_{-1}^1 dx \int_{-1}^1 dy \frac{f(x,y)}{\sqrt{s} - M_T^2 + i\epsilon}
+\end{equation}
+
+We use adaptive Gauss-Kronrod quadrature with error control:
+\begin{itemize}
+    \item 15-point Gauss-Kronrod rule
+    \item Relative error tolerance: $10^{-8}$
+    \item Adaptive subdivision for singularities
+\end{itemize}
+
+\subsection{Matrix Operations}
+
+S-matrix diagonalization uses LAPACK routines:
+\begin{itemize}
+    \item QR algorithm for eigenvalues
+    \item Condition number monitoring
+    \item Singular value decomposition for unitarity checks
+\end{itemize}
+
+\subsection{Monte Carlo Validation}
+
+Cross-checks using Monte Carlo integration:
+\begin{itemize}
+    \item VEGAS algorithm for multi-dimensional integrals
+    \item $10^6$ sample points per integral
+    \item Statistical error $\sim 10^{-4}$
+\end{itemize}
+
+\subsection{Code Repository}
+
+Numerical codes available at:
+\begin{verbatim}
+https://github.com/dpsnet/uft-clifford-torsion/tree/main/numerics
+\end{verbatim}
+
+Key files:
+\begin{itemize}
+    \item `s_matrix_unitarity.py`: Unitarity verification
+    \item `feynman_diagrams.py`: Amplitude calculations
+    \item `renormalization_flow.py`: RG evolution
+\end{itemize}

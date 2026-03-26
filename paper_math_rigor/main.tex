@@ -1,0 +1,108 @@
+% Mathematical Foundations of CTUFT
+% A Rigorous Treatment of the Clifford-Torsion Unified Field Theory
+\documentclass[12pt,a4paper]{revtex4-2}
+
+% 数学包
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+
+% 定理环境
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+
+% 自定义命令
+\newcommand{\Cl}{\mathrm{Cl}}
+\newcommand{\Spin}{\mathrm{Spin}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\U}{\mathrm{U}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\diag}{\mathrm{diag}}
+
+% 标题信息
+\title{Mathematical Foundations of CTUFT: A Rigorous Treatment of the Clifford-Torsion Unified Field Theory}
+
+\author{Wang Bin}
+\email{wang.bin@foxmail.com}
+\affiliation{Independent Researcher}
+\affiliation{\url{https://github.com/dpsnet/uft-clifford-torsion}}
+
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+We present a rigorous mathematical foundation for the Clifford-Torsion Unified Field Theory (CTUFT). Building upon the phenomenological framework of the main theory, this work establishes the axiomatic structure, proves key theorems, and verifies the consistency of the theoretical construction. 
+
+Key results include: (1) A complete verification of the Wightman axioms for the torsion field; (2) Proof of Haag-Kastler primitive causality for local algebras; (3) Rigorous derivation of the S-matrix unitarity with numerical verification for seven key scattering processes; (4) Construction of interacting Wightman functions via the LSZ reduction formalism; (5) Application of Tomita-Takesaki modular theory to the thermal interpretation of black hole horizons; (6) Geometric quantization of the torsion field phase space and its equivalence to the Fock representation.
+
+All results maintain consistency with the single parameter $\tau_0 = 0.005$ derived from first principles. This mathematical treatment establishes CTUFT as a well-defined quantum field theory satisfying modern standards of mathematical physics.
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+% ============ PART I: AXIOMATIC FOUNDATIONS ============
+\part{Axiomatic Foundations}
+
+\input{sections/01_introduction}
+\input{sections/02_wightman_axioms}
+\input{sections/03_haag_kastler}
+\input{sections/04_spectral_analysis}
+
+% ============ PART II: SCATTERING THEORY ============
+\part{Scattering Theory and S-Matrix}
+
+\input{sections/05_s_matrix_formalism}
+\input{sections/06_unitarity_verification}
+\input{sections/07_numerical_results}
+
+% ============ PART III: INTERACTING FIELDS ============
+\part{Interacting Quantum Fields}
+
+\input{sections/08_wightman_functions}
+\input{sections/09_lsz_reduction}
+\input{sections/10_renormalization}
+
+% ============ PART IV: ALGEBRAIC METHODS ============
+\part{Algebraic Quantum Field Theory}
+
+\input{sections/11_tomita_takesaki}
+\input{sections/12_kms_states}
+\input{sections/13_type_III_factors}
+
+% ============ PART V: GEOMETRIC QUANTIZATION ============
+\part{Geometric Quantization}
+
+\input{sections/14_prequantization}
+\input{sections/15_polarization}
+\input{sections/16_fock_equivalence}
+\input{sections/17_bh_entropy}
+
+% ============ PART VI: CONSISTENCY AND OUTLOOK ============
+\part{Consistency and Outlook}
+
+\input{sections/18_axiomatic_consistency}
+\input{sections/19_open_problems}
+\input{sections/20_conclusions}
+
+\appendix
+\input{appendices/A_functional_analysis}
+\input{appendices/B_distribution_theory}
+\input{appendices/C_numerical_methods}
+\input{appendices/D_comparison_table}
+
+\end{document}

@@ -1,0 +1,34 @@
+% Appendix A: Functional Analysis
+\section{Functional Analysis Background}
+\label{app:functional_analysis}
+
+\subsection{Hilbert Spaces}
+
+A Hilbert space $\mathcal{H}$ is a complete inner product space. For CTUFT, the relevant spaces are:
+\begin{itemize}
+    \item Fock space: $\mathcal{F}_s(L^2(\mathbb{R}^3))$
+    \item One-particle space: $L^2(\mathbb{R}^3, d^3p/2E_p)$
+\end{itemize}
+
+\subsection{Operator Theory}
+
+\begin{definition}[Self-Adjoint Operator]
+An operator $A$ is self-adjoint if $A = A^\dagger$, i.e., $D(A) = D(A^\dagger)$ and $A\psi = A^\dagger\psi$ for all $\psi \in D(A)$.
+\end{definition}
+
+\subsection{Spectral Theorem}
+
+\begin{theorem}[Spectral Theorem]
+For a self-adjoint operator $A$, there exists a unique spectral measure $E$ such that:
+\begin{equation}
+    A = \int_{\sigma(A)} \lambda \, dE(\lambda)
+\end{equation}
+\end{theorem}
+
+\subsection{Distribution Theory}
+
+Operator-valued distributions in QFT satisfy:
+\begin{equation}
+    \mathcal{T}(f) = \int d^4x \, \mathcal{T}(x) f(x)
+\end{equation}
+where $f \in \mathcal{S}(\mathbb{R}^4)$ is a test function.

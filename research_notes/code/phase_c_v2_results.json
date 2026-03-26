@@ -1,0 +1,7 @@
+{
+  "stage": "unified_cortical_brainstem_v2",
+  "language_accuracy": 0.2,
+  "fusion_accuracy": 0.0,
+  "params": 32292,
+  "success": false
+}

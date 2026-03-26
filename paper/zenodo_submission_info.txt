@@ -1,0 +1,85 @@
+# Zenodo 提交信息
+
+## 登录
+https://zenodo.org/uploads/new
+
+## 上传设置
+
+### Basic Information
+
+**Upload type**: Publication → Article
+
+**Publication date**: 2026-03-26
+
+**Title**:
+Fixed 4D Topology-Dynamic Spectral Dimension: Multiple Twisting Fractal Clifford Algebra Unified Field Theory
+
+**Authors**:
+- Wang Bin (Independent Researcher, Open Source AI Theoretical Physics Research Project)
+
+**Description/Abstract**:
+We present a unified field theory based on fixed 4D topological spacetime with a dual 10-dimensional internal spectral space. The framework introduces a novel concept of reciprocal internal space duality where 10-dimensional internal space and 4D spacetime are dual to each other---neither containing the other, but complementary aspects of a unified geometric structure. Energy oscillates between these dual spaces in the form of spectral flow, creating interference effects that explain observed deviations from pure geometric calculations.
+
+Key results include: (1) derivation of U(1)×SU(2)×SU(3) gauge symmetries from multiple twisting mechanisms; (2) geometric origin of CKM matrix with 99.9% agreement using energy oscillation interference; (3) six gravitational wave polarization modes including scalar and vector components; (4) geometric interpretation of time as spectral dimension flow.
+
+The theory makes falsifiable predictions: additional GW polarizations at 10^-5 level, characteristic CMB modifications, and energy-scale dependent CKM elements. Experimental constraints (LIGO/Virgo, Planck CMB) are satisfied with torsion field strength τ₀≈0.005, derived from first principles as the information fidelity of projection between the dual spaces.
+
+This research was conducted through human-AI collaboration.
+
+**Version**: 1.0
+
+**Language**: English
+
+**Keywords**:
+unified field theory, spectral dimension, fractal spacetime, torsion, Clifford algebra, CKM matrix, gravitational waves, reciprocal duality, human-AI collaboration
+
+### License
+**License**: Creative Commons Attribution 4.0 International (CC-BY-4.0)
+
+### Related/Alternate Identifiers
+**Related identifiers**:
+- URL: https://github.com/dpsnet/uft-clifford-torsion
+  Relation: Is supplemented by this upload
+  Resource type: Software
+
+### Communities (可选)
+可以加入以下社区（如果有）：
+- Physics
+- Theoretical Physics
+- Cosmology
+- High Energy Physics
+
+### Funding (可选)
+无
+
+### Files
+**Upload file**: ctuft_arxiv.pdf
+
+## 提交后
+
+1. 点击 "Publish"
+2. 获得 DOI: 10.5281/zenodo.xxxxxxx
+3. 记录 DOI 用于引用
+
+## 引用格式示例
+
+**APA**:
+Wang, B. (2026). Fixed 4D Topology-Dynamic Spectral Dimension: Multiple Twisting Fractal Clifford Algebra Unified Field Theory. Zenodo. https://doi.org/10.5281/zenodo.xxxxxxx
+
+**BibTeX**:
+```bibtex
+@article{wang2026ctuft,
+  title={Fixed 4D Topology-Dynamic Spectral Dimension: Multiple Twisting Fractal Clifford Algebra Unified Field Theory},
+  author={Wang, Bin},
+  year={2026},
+  publisher={Zenodo},
+  doi={10.5281/zenodo.xxxxxxx}
+}
+```
+
+## 下一步
+获得 DOI 后，更新超新星论文中的引用：
+```
+\bibitem[CTUFT(2026)]{CTUFT2026}
+Wang, B. 2026, Zenodo, doi:10.5281/zenodo.xxxxxxx
+```

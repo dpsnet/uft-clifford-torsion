@@ -1,0 +1,54 @@
+% 第8节：相互作用Wightman函数
+\section{相互作用Wightman函数}
+\label{sec:wightman_functions}
+
+\subsection{引言}
+
+自由场Wightman函数正则量子化得到，而相互作用场需要微扰或非微扰构造。我们给出CTUFT的微扰框架。
+
+\subsection{微扰论}
+
+相互作用哈密顿量为：
+\begin{equation}
+    \hat{H}_{\text{int}} = \kappa_T \int d^3x \, \hat{\mathcal{T}}^3(x)
+\end{equation}
+
+\subsection{时间编序关联函数}
+
+在相互作用绘景中：
+\begin{equation}
+    G_n(x_1, \ldots, x_n) = \langle 0 | T\{\hat{\mathcal{T}}_I(x_1) \cdots \hat{\mathcal{T}}_I(x_n) S\} | 0 \rangle
+\end{equation}
+其中$S = T\{\exp(-i\int dt \, \hat{H}_{\text{int}}(t))\}$。
+
+\subsection{费曼规则}
+
+\begin{enumerate}
+    \item \textbf{传播子}：$i/(p^2 - M_T^2 + i\epsilon)$
+    \item \textbf{顶点}：$-i\kappa_T (2\pi)^4 \delta^{(4)}(\sum p_i)$
+    \item \textbf{外线}：1（截肢的）或$e^{-ip\cdot x}$（未截肢的）
+\end{enumerate}
+
+\subsection{进展状态（70\%）}
+
+\subsubsection{已完成}
+\begin{itemize}
+    \item 两点函数到两圈阶
+    \item 三点函数在树图阶
+    \item 四点散射振幅
+\end{itemize}
+
+\subsubsection{进行中}
+\begin{itemize}
+    \item 高圈修正
+    \item 非微扰效应（瞬子）
+    \item 束缚态贡献
+\end{itemize}
+
+\subsection{谱性质}
+
+相互作用两点函数的Källén-Lehmann表示：
+\begin{equation}
+    G_2(p) = \frac{Z}{p^2 - M_{\text{phys}}^2 + i\epsilon} + \int_{4M_T^2}^\infty d\mu^2 \frac{\rho(\mu^2)}{p^2 - \mu^2 + i\epsilon}
+\end{equation}
+其中$Z$是波函数重整化，$M_{\text{phys}}$是物理质量。

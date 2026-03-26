@@ -1,0 +1,61 @@
+% Section 9: LSZ Reduction
+\section{LSZ Reduction Formalism}
+\label{sec:lsz}
+
+\subsection{Introduction}
+
+The LSZ reduction formalism provides a systematic method to express S-matrix elements in terms of correlation functions (Wightman functions). This is essential for perturbative calculations in CTUFT.
+
+\subsection{Reduction Formula Derivation}
+
+\subsubsection{Single Particle Reduction}
+
+For an incoming particle with momentum $p$:
+\begin{equation}
+    |p, \text{in}\rangle = i \lim_{t \to -\infty} \int d^3x \, e^{-ip \cdot x} \overleftrightarrow{\partial_0} \hat{\mathcal{T}}(x) |0\rangle
+\end{equation}
+
+where $f \overleftrightarrow{\partial_0} g = f \partial_0 g - (\partial_0 f) g$.
+
+\subsubsection{Reduction of S-Matrix Elements}
+
+\begin{theorem}[LSZ Reduction]
+The connected S-matrix element for $2 \to 2$ scattering is:
+\begin{multline}
+    \langle p_3, p_4; \text{out} | p_1, p_2; \text{in} \rangle_C = \\
+    i^4 \int \prod_{j=1}^4 d^4x_j \, e^{i(p_3 \cdot x_1 + p_4 \cdot x_2 - p_1 \cdot x_3 - p_2 \cdot x_4)} \\
+    \times (\Box_1 + M_T^2)(\Box_2 + M_T^2)(\Box_3 + M_T^2)(\Box_4 + M_T^2) \\
+    \times \langle 0 | T\{\mathcal{T}(x_1)\mathcal{T}(x_2)\mathcal{T}(x_3)\mathcal{T}(x_4)\} | 0 \rangle_C
+\end{multline}
+\end{theorem}
+
+\subsection{Retarded and Advanced Functions}
+
+The reduction formula involves the causal (Feynman) propagator. Related functions include:
+
+\begin{itemize}
+    \item \textbf{Retarded}: $G_R(x) = \theta(x^0) \langle [\mathcal{T}(x), \mathcal{T}(0)] \rangle$
+    \item \textbf{Advanced}: $G_A(x) = -\theta(-x^0) \langle [\mathcal{T}(x), \mathcal{T}(0)] \rangle$
+    \item \textbf{Causal (Feynman)}: $G_F(x) = \langle T\{\mathcal{T}(x)\mathcal{T}(0)\} \rangle$
+\end{itemize}
+
+\subsection{Spectral Representation}
+
+\begin{theorem}[Källén-Lehmann Spectral Representation]
+The two-point function has the representation:
+\begin{equation}
+    G_F(p) = \int_0^\infty d\mu^2 \, \frac{\rho(\mu^2)}{p^2 - \mu^2 + i\epsilon}
+\end{equation}
+where $\rho(\mu^2)$ is the spectral density with:
+\begin{equation}
+    \rho(\mu^2) = (2\pi)^3 \sum_n \delta^{(4)}(p - p_n) |\langle n | \mathcal{T}(0) | 0 \rangle|^2
+\end{equation}
+\end{theorem}
+
+\subsection{Application to Unitarity}
+
+The LSZ formula enables the numerical unitarity checks in Section \ref{sec:unitarity}. The optical theorem:
+\begin{equation}
+    2 \, \text{Im} \mathcal{T}(p_1, p_2 \to p_1, p_2) = \sum_f |\mathcal{T}(p_1, p_2 \to f)|^2
+\end{equation}
+follows from the spectral properties of the correlation functions.

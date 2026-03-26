@@ -1,0 +1,51 @@
+% 附录C：数值方法
+\section{数值方法}
+\label{app:numerical}
+
+\subsection{积分技术}
+
+\subsubsection{自适应Gauss求积}
+
+对于S-矩阵元积分：
+\begin{equation}
+    I = \int_{-1}^1 dx \int_{-1}^1 dy \frac{f(x,y)}{\sqrt{s} - M_T^2 + i\epsilon}
+\end{equation}
+
+我们使用带误差控制的自适应Gauss-Kronrod求积：
+\begin{itemize}
+    \item 15点Gauss-Kronrod规则
+    \item 相对误差容限：$10^{-8}$
+    \item 对奇异性自适应细分
+\end{itemize}
+
+\subsection{矩阵运算}
+
+S-矩阵对角化使用LAPACK例程：
+\begin{itemize}
+    \item 特征值的QR算法
+    \item 条件数监控
+    \item 幺正性检验的奇异值分解
+\end{itemize}
+
+\subsection{Monte Carlo验证}
+
+使用Monte Carlo积分的交叉检验：
+\begin{itemize}
+    \item 多维积分的VEGAS算法
+    \item 每个积分$10^6$个样本点
+    \item 统计误差$\sim 10^{-4}$
+\end{itemize}
+
+\subsection{代码仓库}
+
+数值代码可在以下位置获取：
+\begin{verbatim}
+https://github.com/dpsnet/uft-clifford-torsion/tree/main/numerics
+\end{verbatim}
+
+关键文件：
+\begin{itemize}
+    \item \texttt{s\_matrix\_unitarity.py}：幺正性验证
+    \item \texttt{feynman\_diagrams.py}：振幅计算
+    \item \texttt{renormalization\_flow.py}：RG演化
+\end{itemize}

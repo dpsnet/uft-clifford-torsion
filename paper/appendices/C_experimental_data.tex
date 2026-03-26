@@ -1,0 +1,84 @@
+% Appendix C: Experimental Data Interface
+\chapter{Experimental Data Interface}
+\label{app:experimental}
+
+\section{LISA Data Analysis Pipeline}
+
+For comparison with LISA data, we provide the following interface specifications:
+
+\subsection{Polarization Mode Separation}
+
+LISA's three-arm configuration allows partial separation of polarization modes. The response function for each mode is:
+
+\begin{equation}
+    R_A(f, \theta, \phi) = \sum_{i=1}^3 D_{ij}^{(A)}(\theta, \phi) \gamma_{ij}(f)
+\end{equation}
+
+where $D_{ij}^{(A)}$ is the detector tensor for polarization $A$ and $\gamma_{ij}$ is the arm length transfer function.
+
+\subsection{Signal-to-Noise Ratio Calculation}
+
+For a binary black hole merger:
+
+\begin{equation}
+    \text{SNR}^2 = 4 \int_{f_{min}}^{f_{max}} \frac{|\tilde{h}(f)|^2}{S_n(f)} df
+\end{equation}
+
+where $S_n(f)$ is the LISA noise power spectral density.
+
+\subsection{Expected Detection Rates}
+
+Based on population synthesis models, we expect LISA to detect:
+
+\begin{itemize}
+    \item $\sim$ 10--100 intermediate-mass black hole mergers per year with SNR $>$ 7
+    \item $\sim$ 1--10 events where 6-polarization analysis is possible
+\end{itemize}
+
+\section{Atomic Clock Constraints}
+
+The torsion-induced frequency shift for atomic clocks is:
+
+\begin{equation}
+    \frac{\Delta \nu}{\nu} = g_\tau \tau_0 \left(\frac{E_{transition}}{M_P c^2}\right)^{d_s - 4}
+\end{equation}
+
+For current optical lattice clocks ($^{87}$Sr, $^{171}$Yb):
+\begin{itemize}
+    \item Transition energy: $E \sim 1$ eV
+    \item Constraint: $\tau_0 \lesssim 10^{-6}$
+\end{itemize}
+
+\section{Pulsar Timing Array Sensitivity}
+
+For PTA detection of the stochastic gravitational wave background:
+
+\begin{equation}
+    h_c^2(f) = \frac{3H_0^2}{4\pi^2} \frac{\Omega_{GW}(f)}{f^2}
+\end{equation}
+
+Our theory predicts:
+\begin{equation}
+    \Omega_{GW}^{(CTUFT)}(f) = \Omega_{GW}^{(GR)}(f) \cdot (1 + \tau_0^2 \cdot g(f))
+\end{equation}
+
+where $g(f)$ is a frequency-dependent correction factor.
+
+\section{Parameter Estimation}
+
+For Bayesian parameter estimation from LISA data, the likelihood function is:
+
+\begin{equation}
+    \ln \mathcal{L}(\tau_0 | d) = -\frac{1}{2} \sum_{i,j} [d_i - h_i(\tau_0)] (C^{-1})_{ij} [d_j - h_j(\tau_0)]
+\end{equation}
+
+where $d_i$ is the data and $C_{ij}$ is the noise covariance matrix.
+
+\section{Data Release Policy}
+
+Theoretical predictions and analysis codes will be released under the MIT License to facilitate:
+\begin{itemize}
+    \item Independent verification
+    \item Community-driven data analysis
+    \item Cross-checks with other theoretical frameworks
+\end{itemize}

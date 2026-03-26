@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "date": "2026-03-14",
+    "version": "1.0",
+    "theory": "Unified Field Theory - Torsion Modified BBN"
+  },
+  "standard_bbn": {
+    "parameters": {
+      "tau_0": 0,
+      "alpha_W_mod": 0.0,
+      "eta": 6.1e-10
+    },
+    "freeze_out": {
+      "temperature_MeV": 0.8,
+      "neutron_fraction": 0.1656653211337718
+    },
+    "abundances": {
+      "Y_p": 0.0,
+      "D_H": 9.099999999999999e-05,
+      "He3_H": 1e-05,
+      "Li7_H": -1.403121520040228e-09
+    }
+  },
+  "torsion_bbn": {
+    "parameters": {
+      "tau_0": 1e-06,
+      "alpha_W_mod": 0.1,
+      "eta": 6.1e-10
+    },
+    "freeze_out": {
+      "temperature_MeV": 0.8,
+      "neutron_fraction": 0.1656653211337718
+    },
+    "abundances": {
+      "Y_p": 0.0,
+      "D_H": 9.099999999999999e-05,
+      "He3_H": 1e-05,
+      "Li7_H": -1.403121520040228e-09
+    }
+  }
+}

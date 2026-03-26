@@ -1,0 +1,61 @@
+% 第9节：LSZ约化形式
+\section{LSZ约化形式}
+\label{sec:lsz}
+
+\subsection{引言}
+
+LSZ约化形式提供了一种系统的方法，用关联函数（Wightman函数）表示S-矩阵元。这对CTUFT中的微扰计算至关重要。
+
+\subsection{约化公式推导}
+
+\subsubsection{单粒子约化}
+
+对于动量为$p$的入射粒子：
+\begin{equation}
+    |p, \text{in}\rangle = i \lim_{t \to -\infty} \int d^3x \, e^{-ip \cdot x} \overleftrightarrow{\partial_0} \hat{\mathcal{T}}(x) |0\rangle
+\end{equation}
+
+其中$f \overleftrightarrow{\partial_0} g = f \partial_0 g - (\partial_0 f) g$。
+
+\subsubsection{S-矩阵元的约化}
+
+\begin{theorem}[LSZ约化]
+$2 \to 2$散射的连接S-矩阵元为：
+\begin{multline}
+    \langle p_3, p_4; \text{out} | p_1, p_2; \text{in} \rangle_C = \\
+    i^4 \int \prod_{j=1}^4 d^4x_j \, e^{i(p_3 \cdot x_1 + p_4 \cdot x_2 - p_1 \cdot x_3 - p_2 \cdot x_4)} \\
+    \times (\Box_1 + M_T^2)(\Box_2 + M_T^2)(\Box_3 + M_T^2)(\Box_4 + M_T^2) \\
+    \times \langle 0 | T\{\mathcal{T}(x_1)\mathcal{T}(x_2)\mathcal{T}(x_3)\mathcal{T}(x_4)\} | 0 \rangle_C
+\end{multline}
+\end{theorem}
+
+\subsection{推迟和超前函数}
+
+约化公式涉及因果（Feynman）传播子。相关函数包括：
+
+\begin{itemize}
+    \item \textbf{推迟}：$G_R(x) = \theta(x^0) \langle [\mathcal{T}(x), \mathcal{T}(0)] \rangle$
+    \item \textbf{超前}：$G_A(x) = -\theta(-x^0) \langle [\mathcal{T}(x), \mathcal{T}(0)] \rangle$
+    \item \textbf{因果（Feynman）}：$G_F(x) = \langle T\{\mathcal{T}(x)\mathcal{T}(0)\} \rangle$
+\end{itemize}
+
+\subsection{谱表示}
+
+\begin{theorem}[Källén-Lehmann谱表示]
+两点函数有如下表示：
+\begin{equation}
+    G_F(p) = \int_0^\infty d\mu^2 \, \frac{\rho(\mu^2)}{p^2 - \mu^2 + i\epsilon}
+\end{equation}
+其中$\rho(\mu^2)$是谱密度，满足：
+\begin{equation}
+    \rho(\mu^2) = (2\pi)^3 \sum_n \delta^{(4)}(p - p_n) |\langle n | \mathcal{T}(0) | 0 \rangle|^2
+\end{equation}
+\end{theorem}
+
+\subsection{在幺正性中的应用}
+
+LSZ公式使得第\ref{sec:unitarity}节中的数值幺正性检验成为可能。光学定理：
+\begin{equation}
+    2 \, \text{Im} \mathcal{T}(p_1, p_2 \to p_1, p_2) = \sum_f |\mathcal{T}(p_1, p_2 \to f)|^2
+\end{equation}
+由关联函数的谱性质导出。

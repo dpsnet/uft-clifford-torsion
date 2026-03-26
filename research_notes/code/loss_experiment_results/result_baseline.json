@@ -1,0 +1,50 @@
+{
+  "config": {
+    "name": "baseline",
+    "torsion_coef": 0.0001,
+    "torsion_min_energy": 0.0,
+    "torsion_target": null,
+    "spectral_reg": 0.0,
+    "entropy_reg": 0.0,
+    "description": "\u539f\u59cb\u914d\u7f6e - \u57fa\u51c6\u7ebf"
+  },
+  "eval": {
+    "loss": 6.5990824699401855,
+    "perplexity": 734.4210205078125,
+    "accuracy": 0.003968254197388887,
+    "torsion_energy": 0.0,
+    "spectral_dim": 6.143003463745117,
+    "repetition_rate": 0.375,
+    "generated_sample": [
+      545,
+      768,
+      69,
+      947,
+      363,
+      5,
+      956,
+      4,
+      943,
+      406,
+      17,
+      939,
+      486,
+      490,
+      545,
+      939,
+      549,
+      959,
+      951,
+      939
+    ]
+  },
+  "capacity": {
+    "seq_10": 0.001142266090027988,
+    "seq_20": 0.002405663253739476,
+    "seq_50": 0.008524210192263126,
+    "seq_100": 0.008379578590393066,
+    "pattern_5": 0.002648948924615979,
+    "pattern_10": 0.0016942201182246208,
+    "pattern_20": 0.0012821812415495515
+  }
+}

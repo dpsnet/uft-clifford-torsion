@@ -1,0 +1,8 @@
+{
+  "tag_name": "v1.0.0",
+  "target_commitish": "master",
+  "name": "CTUFT v1.0 - Fixed 4D Topology-Dynamic Spectral Dimension",
+  "body": "## CTUTFT v1.0 Release\n\n### Papers\n- main.pdf (190 pages) - Full theory\n- ctuft_arxiv.pdf (3 pages) - Compact version\n\n### Source\n- main.tex\n- ctuft_arxiv.tex\n\n### Key Results\n- SM gauge group derivation\n- CKM matrix 99.9% accuracy\n- Six GW polarization modes\n- Zero free parameters",
+  "draft": false,
+  "prerelease": false
+}

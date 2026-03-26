@@ -1,0 +1,317 @@
+# TNN-Transformer 125M 训练配置文件
+# 基于扭转神经网络的大语言模型训练配置
+
+# =============================================================================
+# 模型配置
+# =============================================================================
+model:
+  name: "TNN-Transformer-125M"
+  vocab_size: 50257          # GPT-2词表大小
+  max_position_embeddings: 1024
+  hidden_size: 768           # 隐藏层维度
+  num_hidden_layers: 12      # 层数
+  num_attention_heads: 12    # 注意力头数
+  intermediate_size: 3072    # MLP中间层维度 (4 * hidden_size)
+  
+  # TNN特有参数
+  internal_dim: 256          # 内部空间维度 (互反-内部耦合)
+  torsion_order: 3           # 扭转阶数 (1,2,3阶扭转)
+  torsion_strength: 0.1      # 扭转强度初始化
+  
+  # 谱维自适应参数
+  spectral_dim_min: 2.0      # 最小谱维
+  spectral_dim_max: 10.0     # 最大谱维
+  adaptation_rate: 0.01      # 谱维适应率
+  
+  # 正则化参数
+  hidden_dropout_prob: 0.1
+  attention_dropout_prob: 0.1
+  layer_norm_eps: 1.0e-12
+  
+  # 初始化参数
+  init_std: 0.02
+  
+  # 参数统计
+  total_parameters: 125_000_000  # 目标约125M参数
+
+# =============================================================================
+# 训练配置
+# =============================================================================
+training:
+  # 训练设置
+  num_epochs: 3              # C4数据集通常3个epoch足够
+  max_steps: 100000          # 最大训练步数
+  warmup_steps: 2000         # 预热步数
+  eval_steps: 1000           # 评估间隔
+  save_steps: 5000           # 保存间隔
+  logging_steps: 100         # 日志间隔
+  
+  # 优化器配置
+  optimizer:
+    type: "adamw"
+    learning_rate: 6.0e-4    # 峰值学习率 (GPT-2 124M使用此值)
+    weight_decay: 0.01
+    beta1: 0.9
+    beta2: 0.95               # GPT-2使用0.999，但0.95更稳定
+    eps: 1.0e-8
+    max_grad_norm: 1.0        # 梯度裁剪
+  
+  # 学习率调度
+  lr_scheduler:
+    type: "cosine_with_min_lr"
+    min_lr_ratio: 0.1         # 最小学习率 = max_lr * 0.1
+    warmup_ratio: 0.01        # 预热比例
+  
+  # 混合精度训练
+  fp16: true
+  bf16: false
+  gradient_checkpointing: true  # 节省显存
+  
+  # 数据并行
+  data_parallel:
+    enabled: true
+    world_size: 4             # 4卡训练
+    local_rank: 0
+
+# =============================================================================
+# 数据配置
+# =============================================================================
+data:
+  # 主要训练数据集: C4 (Colossal Clean Crawled Corpus)
+  train_dataset:
+    name: "c4"
+    subset: "en"
+    max_samples: 100_000_000  # 使用1亿条样本
+    text_column: "text"
+    preprocessing:
+      max_length: 1024
+      truncation: true
+      padding: "max_length"
+  
+  # 验证数据集
+  eval_dataset:
+    name: "c4"
+    subset: "en"
+    split: "validation"
+    max_samples: 1_000_000    # 100万条验证样本
+  
+  # 下游任务评估数据集
+  downstream_eval:
+    - name: "wikitext-103"
+      metric: "perplexity"
+    - name: "lambada"
+      metric: "accuracy"
+    - name: "hellaswag"
+      metric: "accuracy"
+  
+  # DataLoader配置
+  dataloader:
+    batch_size: 16            # 每GPU批次大小
+    num_workers: 4
+    pin_memory: true
+    prefetch_factor: 2
+    persistent_workers: true
+
+# =============================================================================
+# 实验配置
+# =============================================================================
+experiment:
+  name: "tnn_transformer_125m_pretrain"
+  run_id: null              # 自动生成
+  seed: 42
+  
+  # 对比基线
+  baselines:
+    - name: "gpt2-124m"
+      description: "OpenAI GPT-2 124M baseline"
+      reference_ppl: 18.34   # WikiText-103上的参考困惑度
+    - name: "transformer-125m"
+      description: "Standard Transformer 125M (from scratch)"
+      
+  # 消融实验
+  ablations:
+    - name: "no_torsion"
+      description: "禁用扭转场 (标准注意力)"
+      config_changes:
+        torsion_strength: 0.0
+    - name: "no_spectral_adaptation"
+      description: "禁用谱维自适应"
+      config_changes:
+        spectral_dim_min: 4.0
+        spectral_dim_max: 4.0
+    - name: "no_reciprocal_internal"
+      description: "禁用互反-内部耦合"
+      config_changes:
+        internal_dim: 0
+    - name: "high_torsion"
+      description: "高强度扭转"
+      config_changes:
+        torsion_strength: 0.3
+        torsion_order: 5
+
+# =============================================================================
+# 评估配置
+# =============================================================================
+evaluation:
+  # 评估指标
+  metrics:
+    - name: "perplexity"
+      description: "语言建模困惑度"
+      compute_on: ["wikitext-103", "c4-validation"]
+    - name: "spectral_dimension"
+      description: "平均谱维"
+      compute_on: ["all"]
+    - name: "torsion_energy"
+      description: "扭转场平均能量"
+      compute_on: ["all"]
+  
+  # 零样本下游任务
+  downstream_tasks:
+    - name: "lambada"
+      type: "cloze"
+      metric: "accuracy"
+    - name: "hellaswag"
+      type: "multiple_choice"
+      metric: "accuracy"
+    - name: "piqa"
+      type: "multiple_choice"
+      metric: "accuracy"
+    - name: "winogrande"
+      type: "cloze"
+      metric: "accuracy"
+  
+  # 生成质量评估
+  generation:
+    max_length: 100
+    temperature: 1.0
+    top_k: 40
+    top_p: 0.95
+    num_samples: 100
+    prompts_file: "evaluation_prompts.txt"
+
+# =============================================================================
+# 硬件资源配置
+# =============================================================================
+hardware:
+  # GPU配置
+  gpu:
+    type: "NVIDIA A100"       # 推荐GPU
+    count: 4                  # 4卡并行
+    memory_per_gpu: "40GB"
+    
+  # 备用配置 (V100)
+  alternatives:
+    - type: "NVIDIA V100"
+      count: 8
+      memory_per_gpu: "32GB"
+      batch_size_adjustment: 0.5
+    - type: "NVIDIA RTX 4090"
+      count: 4
+      memory_per_gpu: "24GB"
+      batch_size_adjustment: 0.4
+      gradient_accumulation: 2
+  
+  # 系统资源
+  cpu_cores: 32
+  memory: "256GB"
+  storage:
+    type: "SSD"
+    capacity: "2TB"
+
+# =============================================================================
+# 日志与检查点
+# =============================================================================
+logging:
+  output_dir: "./outputs/tnn_transformer_125m"
+  checkpoint_dir: "./checkpoints/tnn_transformer_125m"
+  log_dir: "./logs/tnn_transformer_125m"
+  
+  # Wandb配置
+  wandb:
+    enabled: true
+    project: "tnn-transformer"
+    entity: null              # 设置为你的wandb用户名
+    tags: ["tnn", "125m", "pretrain"]
+  
+  # TensorBoard
+  tensorboard:
+    enabled: true
+    log_dir: "./logs/tb_tnn_transformer_125m"
+  
+  # 保存策略
+  checkpointing:
+    save_total_limit: 3       # 最多保留3个检查点
+    save_best_only: true
+    metric_for_best: "eval_perplexity"
+    greater_is_better: false
+
+# =============================================================================
+# 计算效率配置
+# =============================================================================
+efficiency:
+  # 显存优化
+  memory_efficient_attention: true
+  flash_attention: true
+  gradient_checkpointing: true
+  
+  # 计算优化
+  torch_compile: true
+  compile_mode: "reduce-overhead"
+  
+  # 通信优化 (多卡)
+  distributed:
+    backend: "nccl"
+    bucket_cap_mb: 25
+    gradient_as_bucket_view: true
+
+# =============================================================================
+# 实验对比表 (用于报告生成)
+# =============================================================================
+comparison_table:
+  models:
+    - name: "TNN-Transformer-125M"
+      params: 125M
+      layers: 12
+      hidden: 768
+      heads: 12
+      torsion: true
+      spectral_adaptation: true
+      
+    - name: "GPT-2-124M"
+      params: 124M
+      layers: 12
+      hidden: 768
+      heads: 12
+      torsion: false
+      spectral_adaptation: false
+      
+    - name: "Standard Transformer-125M"
+      params: 125M
+      layers: 12
+      hidden: 768
+      heads: 12
+      torsion: false
+      spectral_adaptation: false
+
+# =============================================================================
+# 资源预算 (详细计算)
+# =============================================================================
+budget:
+  # 计算预算
+  compute:
+    estimated_hours: 168      # 7天训练
+    gpu_hours: 672            # 4卡 × 168小时
+    estimated_cost_usd: 2000  # A100 × 4 × 7天 (按需实例)
+  
+  # 存储预算
+  storage:
+    dataset_size_gb: 750      # C4数据集
+    checkpoints_size_gb: 20   # 3个检查点 × ~7GB
+    logs_size_gb: 5
+    total_storage_gb: 775
+  
+  # 网络预算
+  network:
+    dataset_download_gb: 750
+    checkpoint_upload_gb: 20
+    total_transfer_gb: 770

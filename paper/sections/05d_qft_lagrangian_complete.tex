@@ -5,7 +5,7 @@
 
 \subsection{Introduction}
 
-This section presents the rigorous derivation of the complete Standard Model (plus gravity) Lagrangian from the 10D internal space geometry. Starting from the Clifford algebra $Cl(1,9)$, we derive every term in the Lagrangian through dimensional reduction.
+This section presents the rigorous derivation of the complete Standard Model (plus gravity) Lagrangian from the 10D internal space geometry. Starting from the Clifford algebra $Cl(1,9)$, we derive every term in the Lagrangian through the bidirectional spectral flow framework.
 
 \subsection{The Master Lagrangian in 10D}
 
@@ -35,19 +35,19 @@ with metric signature $\eta = \text{diag}(-,+,+,+,+,+,+,+,+,+)$.
 
 The 10D spinor representation is 32-dimensional (Majorana-Weyl).
 
-\subsection{Dimensional Reduction: 10D $\rightarrow$ 4D via Torsion Brane}
+\subsection{Bidirectional Spectral Flow: Coupling 10D Internal Space and 4D Reciprocal Space}
 
-\subsubsection{The Brane-Torsion Mechanism}
+\subsubsection{The Torsion Field Coupling Mechanism}
 
-In CTUFT, the 10D internal space and 4D reciprocal space are completely isolated, connected only through a \textbf{brane} that induces torsion:
+In CTUFT, the 10D internal space and 4D reciprocal space exist in parallel, coupled through the \textbf{torsion field}:
 \begin{itemize}
     \item $x^\mu$: 4D reciprocal space ($\mu = 0,1,2,3$) — our physical spacetime
-    \item The 10D internal space exists on the ``other side'' of the brane
+    \item 10D internal space: Dual to the reciprocal space, coupling opens at high energy
 \end{itemize}
 
-The brane acts as a membrane where torsion transforms the 10D spectral dimension flow into energy flowing within the 4D topological space. From the 4D perspective, we cannot perceive the topological structure of the 10D side; we only observe it as a 10D spectral manifold.
+\textbf{The torsion field itself is the coupling interface}, not an independent "brane." It transforms the 10D spectral dimension flow into energy-information flowing within the 4D reciprocal space. From the 4D perspective, we cannot directly perceive the topological structure of the 10D internal space; we only observe it indirectly through the spectral dimension flow $d_s(E)$.
 
-The effective metric in 4D receives contributions from the brane-torsion coupling:
+The effective metric in 4D receives contributions from the torsion field coupling:
 \begin{equation}
     ds_{4}^2 = g_{\mu\nu}dx^\mu dx^\nu + \text{(torsion corrections)}
 \end{equation}
@@ -55,13 +55,27 @@ The effective metric in 4D receives contributions from the brane-torsion couplin
 where:
 \begin{itemize}
     \item $g_{\mu\nu}$ is the 4D metric
-    \item Torsion mediates the transfer of geometric information across the brane
-    \item The spectral dimension flow $d_s(\ell)$ carries 10D information into 4D as energy
+    \item The torsion field mediates the transfer of energy-information between the two spaces
+    \item The spectral dimension flow $d_s(E)$ carries 10D information into 4D as energy
 \end{itemize}
+
+\subsubsection{Bidirectional Spectral Flow Formulas}
+
+\textbf{Reciprocal space spectral dimension}:
+\begin{equation}
+    d_s^{(out)}(f_{in}) = 4(1 - f_{in})
+\end{equation}
+
+\textbf{Internal space spectral dimension}:
+\begin{equation}
+    d_s^{(in)}(f_{in}) = 4 + 6f_{in}
+\end{equation}
+
+where $f_{in} \in [0,1]$ is the internal space energy fraction.
 
 \subsubsection{Gauge Symmetry Emergence}
 
-The symmetries of the 10D internal space manifest as gauge symmetries in 4D through the brane-torsion mapping:
+The symmetries of the 10D internal space manifest as gauge symmetries in 4D through the torsion field coupling:
 \begin{equation}
     \text{Isom}(M_{\text{int}}) = U(1) \times SU(2) \times SU(3)
 \end{equation}
@@ -105,7 +119,7 @@ The gauge coupling is determined by the internal space geometry:
 
 \subsubsection{$SU(2)_L$: Weak Gauge Fields}
 
-The $SU(2)$ gauge fields arise from the isometry group of an $S^2$ factor:
+The $SU(2)$ gauge fields arise from the symmetries of the internal space:
 \begin{equation}
     \mathcal{L}_{SU(2)} = -\frac{1}{2g_2^2}\text{Tr}(W_{\mu\nu}W^{\mu\nu})
 \end{equation}
@@ -117,7 +131,7 @@ with:
 
 \subsubsection{$SU(3)_C$: Color Gauge Fields}
 
-The $SU(3)$ gauge fields arise from the isometry of a $CP^2$ or Calabi-Yau factor:
+The $SU(3)$ gauge fields arise from the geometric structure of the internal space:
 \begin{equation}
     \mathcal{L}_{SU(3)} = -\frac{1}{2g_3^2}\text{Tr}(G_{\mu\nu}G^{\mu\nu})
 \end{equation}
@@ -273,9 +287,9 @@ $m_f$ & $Y_f \cdot v$ & See table \\
 We have derived:
 \begin{enumerate}
     \item The 10D master Lagrangian from $Cl(1,9)$ geometry
-    \item Dimensional reduction to 4D via Kaluza-Klein mechanism
+    \item Effective 4D theory through the bidirectional spectral flow framework
     \item Gravity sector: Einstein-Hilbert + torsion corrections
-    \item Gauge sector: $U(1) \times SU(2) \times SU(3)$ from internal space isometries
+    \item Gauge sector: $U(1) \times SU(2) \times SU(3)$ from internal space symmetries
     \item Fermion sector: Chiral fermions from Majorana-Weyl condition
     \item Higgs sector: Internal space metric fluctuations
     \item Yukawa couplings: Geometric overlap integrals
@@ -283,4 +297,3 @@ We have derived:
 \end{enumerate}
 
 The Standard Model emerges as the low-energy ($E \ll E_c$) effective theory of the 10D CTUFT geometry, with all parameters calculable from the single constant $\tau_0 = 0.005$.
-

@@ -1,0 +1,48 @@
+# GitHub Release 手动上传指南
+
+## Release 页面
+https://github.com/dpsnet/uft-clifford-torsion/releases/tag/v1.0.0
+
+## 上传步骤
+
+### 1. 点击 Edit
+在 Release 页面右上角点击 **"Edit"** 按钮
+
+### 2. 上传文件
+滚动到底部 **"Attach binaries by dropping them here or selecting them"**
+
+选择以下3个文件（按顺序）：
+
+```
+/root/.openclaw/workspace/uft-clifford-torsion/paper/
+├── main.pdf          (1.4MB, 190页完整版)
+├── ctuft_arxiv.pdf   (324KB, 3页精简版)
+└── ctuft_arxiv.tex   (12KB, 精简版源码)
+```
+
+### 3. 点击 Update release
+上传完成后，点击页面底部的 **"Update release"**
+
+## 上传后验证
+
+Release 页面应显示3个附件：
+- [ ] main.pdf
+- [ ] ctuft_arxiv.pdf  
+- [ ] ctuft_arxiv.tex
+
+## 替代方案：命令行（如果手动上传失败）
+
+```bash
+cd /root/.openclaw/workspace/uft-clifford-torsion/paper
+
+# 使用 gh CLI（如果已安装）
+gh release upload v1.0.0 main.pdf ctuft_arxiv.pdf ctuft_arxiv.tex
+```
+
+## 文件说明
+
+| 文件 | 大小 | 用途 |
+|------|------|------|
+| main.pdf | 1.4MB | 190页完整论文（主要）|
+| ctuft_arxiv.pdf | 324KB | 3页精简版（快速阅读）|
+| ctuft_arxiv.tex | 12KB | 精简版LaTeX源码 |

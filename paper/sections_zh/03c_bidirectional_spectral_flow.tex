@@ -1,14 +1,14 @@
-% 第3章修订：双向谱维流框架
-% 基于2026-03-24的研究成果
+% 第3.3节：双向谱流框架
+% 基于2026-03-24完成的研究
 
-\subsection{双向谱维流}
+\subsection{双向谱流}
 \label{sec:bidirectional_spectral_flow}
 
-原CTUFT框架中的谱维流公式描述了有效维度随能量的连续变化。基于对数学自洽性和物理一致性的深入研究，我们在此引入**双向谱维流**框架，将谱维分解为外空间（互反空间）和内空间各自的贡献。
+CTUFT框架中的原始谱流公式描述了有效维数随能量的连续变化。基于对数学自洽性和物理相干性的深入研究，我们在此引入 \textbf{双向谱流} 框架，将谱维数分解为来自外部（倒易）空间和内部空间的单独贡献。
 
 \subsubsection{基本公式}
 
-定义 $f_{in} \in [0,1]$ 为内空间能量比例，双向谱维流公式为：
+定义 $f_{in} \in [0,1]$ 为内部空间能量分数。双向谱流公式为：
 
 \begin{equation}
 \boxed{d_s^{(out)}(f_{in}) = 4(1 - f_{in})}
@@ -22,31 +22,31 @@
 
 其中：
 \begin{itemize}
-    \item $d_s^{(out)}$：外空间（互反空间）谱维
-    \item $d_s^{(in)}$：内空间谱维  
-    \item $f_{in}$：内空间能量比例，与能量尺度通过 $f_{in}(E) = \frac{1}{1+(E/E_c)^2}$ 关联
+    \item $d_s^{(out)}$：外部空间（倒易空间）谱维数
+    \item $d_s^{(in)}$：内部空间谱维数  
+    \item $f_{in}$：内部空间能量分数，通过 $f_{in}(E) = \frac{1}{1+(E/E_c)^2}$ 与能量尺度相关联
 \end{itemize}
 
-\subsubsection{物理场景对应}
+\subsubsection{物理情景对应}
 
 \begin{table}[h]
 \centering
 \begin{tabular}{lcccc}
 \hline
-\textbf{场景} & $f_{in}$ & $d_s^{(out)}$ & $d_s^{(in)}$ & \textbf{归一化守恒} $C$ \\
+\textbf{情景} & $f_{in}$ & $d_s^{(out)}$ & $d_s^{(in)}$ & \textbf{归一化守恒} $C$ \\
 \hline
-今天宇宙 & 0 & 4 & 4 & 1.40 \\
+今日宇宙 & 0 & 4 & 4 & 1.40 \\
 过渡态 & 0.5 & 2 & 7 & 1.20 \\
 黑洞视界 & 1 & 0 & 10 & 1.00 \\
 \hline
 \end{tabular}
-\caption{双向谱维流在不同物理场景下的取值}
+\caption{不同物理情景中的双向谱流值}
 \label{tab:spectral_scenarios}
 \end{table}
 
 \subsubsection{归一化守恒律}
 
-双向谱维流满足如下归一化关系：
+双向谱流满足以下归一化关系：
 
 \begin{equation}
 C(f_{in}) = \frac{d_s^{(out)}}{4} + \frac{d_s^{(in)}}{10} = 1.4 - 0.4f_{in} \in [1.0, 1.4]
@@ -55,81 +55,81 @@ C(f_{in}) = \frac{d_s^{(out)}}{4} + \frac{d_s^{(in)}}{10} = 1.4 - 0.4f_{in} \in 
 
 守恒值 $C$ 在 $[1.0, 1.4]$ 范围内的变化具有深刻的物理意义：
 \begin{itemize}
-    \item $C = 1.4$（今天）：代表"高维开放"状态，内外空间能量均分
-    \item $C = 1.0$（黑洞视界/早期宇宙）：代表"低维凝聚"状态，能量完全内聚
-    \item 变化过程：可能对应宇宙学时间的演化
+    \item $C = 1.4$（今日）：代表能量在空间之间均分的"高维开放"态
+    \item $C = 1.0$（黑洞视界/早期宇宙）：代表能量完全内部化的"低维凝聚"态
+    \item 过渡过程：可能对应于宇宙学时间演化
 \end{itemize}
 
-\subsubsection{与原有公式的兼容性}
+\subsubsection{与原始公式的兼容性}
 
-在电弱尺度 $E_{EW} \sim 10^2$ GeV，对应 $f_{in} \approx 0.01$，有：
+在电弱尺度 $E_{EW} \sim 10^2$ GeV，对应于 $f_{in} \approx 0.01$，我们有：
 \begin{align}
 d_s^{(in)} &= 4 + 6 \times 0.01 = 4.06 \\
 d_s^{(out)} &= 4 \times 0.99 = 3.96
 \end{align}
 
-这与原公式 $d_s(E_{EW}) \approx 4.06$ 及论文中使用的参数完全一致。所有基于原公式的费米子质量预测、CKM矩阵计算均保持有效。
+这与原始公式 $d_s(E_{EW}) \approx 4.06$ 和论文中使用的参数完全一致。基于原始公式的所有费米子质量预言和CKM矩阵计算仍然有效。
 
-\subsection{谱维流的物理诠释}
+\subsection{谱流的物理解释}
 \label{sec:spectral_interpretation}
 
-双向谱维流框架揭示了CTUFT中三个关键现象的深层联系。
+双向谱流框架揭示了CTUFT中三个关键现象之间的深刻联系。
 
-\subsubsection{暴涨作为相变}
+\subsubsection{暴胀作为相变}
 
-暴涨不是传统意义上的"空间膨胀"，而是双空间相变——外空间的"诞生"：
+暴胀不是传统的"空间膨胀"，而是双空间相变——外部空间的"诞生"：
 
 \begin{itemize}
-    \item \textbf{早期}（$f_{in} \approx 1$）：$d_s^{(out)} \approx 0$，外空间"未诞生"，内空间主导
-    \item \textbf{暴涨期间}（$f_{in}$: $1 \to 0$）：外空间谱维从0"生成"到4
-    \item \textbf{今天}（$f_{in} = 0$）：$d_s^{(out)} = 4$，外空间稳定
+    \item \textbf{早期} ($f_{in} \approx 1$)：$d_s^{(out)} \approx 0$，外部空间"未诞生"，内部空间主导
+    \item \textbf{暴胀期间} ($f_{in}$：$1 \to 0$)：外部空间谱维数从0"生成"到4
+    \item \textbf{今日} ($f_{in} = 0$)：$d_s^{(out)} = 4$，外部空间稳定
 \end{itemize}
 
-这解释了为什么我们观测到4个宏观维度：它们是在暴涨期间"涌现"出来的，不是初始条件。
+这解释了我们为什么观测到4个宏观维度：它们是在暴胀期间"涌现"的，而不是初始条件。
 
 \subsubsection{黑洞作为时间晶体}
 
-在黑洞视界处（$f_{in} \to 1$）：
+在黑洞视界处 ($f_{in} \to 1$)：
 \begin{align}
 d_s^{(out)} &\to 0 \\
 d_s^{(in)} &\to 10 \\
 C &\to 1.0
 \end{align}
 
-这与早期宇宙（$t \to 0$）的状态完全相同。因此：
+这与早期宇宙状态 ($t \to 0$) 完全相同。因此：
 \begin{insight}
 黑洞视界 = 时间晶体 = 冻结的早期宇宙状态
 \end{insight}
 
-\textbf{信息悖论解决}：落入黑洞的信息没有毁灭，而是存储在内空间。信息可以"回来"，但由于维度差异（10维 $\to$ 4维），位置不确定：
+\textbf{信息悖论的解决}：落入黑洞的信息没有被破坏，而是存储在内部空间中。信息可以"返回"，但由于维数差异 (10D $\to$ 4D)，位置不确定：
 \begin{equation}
 \frac{\Delta x_{out}}{\Delta x_{in}} = \sqrt{\frac{d_s^{(in)}}{d_s^{(out)}}} \to \infty \quad (f_{in} \to 1)
 \end{equation}
 
 \subsubsection{暗能量作为平衡张力}
 
-今天宇宙（$f_{in} = 0$）处于内外空间的完美平衡：
+今日宇宙 ($f_{in} = 0$) 处于内部和外部空间之间的完美平衡：
 \begin{equation}
 d_s^{(out)} = d_s^{(in)} = 4
 \end{equation}
 
-这种平衡态自然产生负压强，驱动加速膨胀。暗能量的状态方程 $w \approx -1$ 不是巧合，而是平衡态的必然结果。
+这种平衡态自然产生负压，驱动加速膨胀。暗能量状态方程 $w \approx -1$ 不是巧合，而是平衡的必然结果。
 
-\textbf{巧合问题解决}：
+\textbf{巧合问题的解决}：
 \begin{equation}
 \Omega_\Lambda(t) = \Omega_\Lambda^0 \times \frac{C(t) - 1}{0.4}
 \end{equation}
 
-物质与暗能量密度相等的时刻（$\sim 10^{10}$年）恰好是结构形成完成、生命出现的时刻——这是演化的必然。
+物质和暗能量密度相等的时刻 ($\sim 10^{10}$ 年) 恰好与结构形成完成和生命出现的时刻重合——这是演化的必然性，而非巧合。
 
 \subsection{统一图景}
 
-双向谱维流框架将CTUFT中的三个核心现象统一为单一物理过程的不同表现：
+双向谱流框架将CTUFT中的三个核心现象统一为单一物理过程的不同表现：
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
-\node[draw, rounded corners, fill=blue!10, minimum width=4cm, minimum height=1cm] (center) at (0,0) {双向谱维流};
-\node[draw, rounded corners, fill=green!10, minimum width=3cm] (inflation) at (-4,2) {暴涨\\外空间诞生};
+\node[draw, rounded corners, fill=blue!10, minimum width=4cm, minimum height=1cm] (center) at (0,0) {双向谱流};
+\node[draw, rounded corners, fill=green!10, minimum width=3cm] (inflation) at (-4,2) {暴胀\\外部空间的诞生};
 \node[draw, rounded corners, fill=red!10, minimum width=3cm] (bh) at (0,-2.5) {黑洞\\时间晶体};
 \node[draw, rounded corners, fill=yellow!10, minimum width=3cm] (de) at (4,2) {暗能量\\平衡张力};
 
@@ -139,13 +139,13 @@ d_s^{(out)} = d_s^{(in)} = 4
 \end{tikzpicture}
 \end{center}
 
-三者共享同一数学结构，表明它们是同一深层物理——内外空间能量重分配——的不同表现。
+三者共享相同的数学结构，表明它们是同一深层物理——内部和外部空间之间的能量再分配——的不同表现。
 
-\subsection{与原公式的关系}
+\subsection{与原始公式的关系}
 
-原公式 $d_s(E) = 4 + \frac{6}{1+(E/E_c)^2}$ 可视为双向谱维流内空间分量的能量依赖形式：
+原始公式 $d_s(E) = 4 + \frac{6}{1+(E/E_c)^2}$ 可以看作是双向谱流内部空间分量的能量依赖形式：
 \begin{equation}
 d_s^{(in)}(E) = 4 + 6f_{in}(E) = 4 + \frac{6}{1+(E/E_c)^2}
 \end{equation}
 
-在费米子质量和CKM计算中使用的正是此量，因此所有原有预测保持不变。双向框架提供了更完整的物理图像，但不改变已验证的数值结果。
+这是用于费米子质量和CKM计算的量，因此所有原始预言保持不变。双向框架提供了更完整的物理图景，而不改变已验证的数值结果。

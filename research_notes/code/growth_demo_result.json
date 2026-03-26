@@ -1,0 +1,272 @@
+{
+  "start_time": "2026-03-19T16:57:15.133133",
+  "epochs": [
+    {
+      "epoch": 1,
+      "loss": 3.710580587387085,
+      "accuracy": 0.0,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 2,
+      "loss": 3.381225347518921,
+      "accuracy": 0.033333333830038704,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 3,
+      "loss": 3.1043597062428794,
+      "accuracy": 0.06666666766007741,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 4,
+      "loss": 2.8438777923583984,
+      "accuracy": 0.3000000019868215,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 5,
+      "loss": 2.5979650815327964,
+      "accuracy": 0.4333333224058151,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 6,
+      "loss": 2.3670097986857095,
+      "accuracy": 0.48333332935969037,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 7,
+      "loss": 2.152115066846212,
+      "accuracy": 0.5333333313465118,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 8,
+      "loss": 1.9546519915262859,
+      "accuracy": 0.5333333313465118,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 9,
+      "loss": 1.7758475542068481,
+      "accuracy": 0.5666666726271311,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 10,
+      "loss": 1.616361180941264,
+      "accuracy": 0.6166666646798452,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 11,
+      "loss": 1.4759829839070637,
+      "accuracy": 0.699999988079071,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 12,
+      "loss": 1.3536314368247986,
+      "accuracy": 0.6833333174387614,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 13,
+      "loss": 1.2475667397181194,
+      "accuracy": 0.6833333174387614,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 14,
+      "loss": 1.155756413936615,
+      "accuracy": 0.6833333174387614,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 15,
+      "loss": 1.0761940479278564,
+      "accuracy": 0.6833333174387614,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 16,
+      "loss": 1.0070913434028625,
+      "accuracy": 0.699999988079071,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 17,
+      "loss": 0.9469386537869772,
+      "accuracy": 0.699999988079071,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 18,
+      "loss": 0.8944724599520365,
+      "accuracy": 0.7166666587193807,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 19,
+      "loss": 0.8486028512318929,
+      "accuracy": 0.7333333293596903,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 20,
+      "loss": 0.8083479205767313,
+      "accuracy": 0.7333333293596903,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 21,
+      "loss": 0.772828221321106,
+      "accuracy": 0.75,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 22,
+      "loss": 0.7412611842155457,
+      "accuracy": 0.7666666706403097,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 23,
+      "loss": 0.7129771709442139,
+      "accuracy": 0.7666666706403097,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 24,
+      "loss": 0.6874143481254578,
+      "accuracy": 0.7666666706403097,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 25,
+      "loss": 0.664099931716919,
+      "accuracy": 0.7833333412806193,
+      "layers": 2,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 26,
+      "loss": 0.9524023334185282,
+      "accuracy": 0.38333334525426227,
+      "layers": 3,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 27,
+      "loss": 0.6679413119951884,
+      "accuracy": 0.8499999841054281,
+      "layers": 3,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 28,
+      "loss": 0.612794558207194,
+      "accuracy": 0.8166666626930237,
+      "layers": 3,
+      "stage": "Embryo"
+    },
+    {
+      "epoch": 29,
+      "loss": 1.0324040452639263,
+      "accuracy": 0.350000003973643,
+      "layers": 4,
+      "stage": "Infant"
+    },
+    {
+      "epoch": 30,
+      "loss": 0.642128586769104,
+      "accuracy": 0.899999996026357,
+      "layers": 4,
+      "stage": "Infant"
+    },
+    {
+      "epoch": 31,
+      "loss": 0.5769335528214773,
+      "accuracy": 0.850000003973643,
+      "layers": 4,
+      "stage": "Infant"
+    },
+    {
+      "epoch": 32,
+      "loss": 1.0622163613637288,
+      "accuracy": 0.35000000645716983,
+      "layers": 5,
+      "stage": "Infant"
+    },
+    {
+      "epoch": 33,
+      "loss": 0.6385342677434286,
+      "accuracy": 0.8333333333333334,
+      "layers": 5,
+      "stage": "Infant"
+    },
+    {
+      "epoch": 34,
+      "loss": 0.5505366424719492,
+      "accuracy": 0.8166666626930237,
+      "layers": 5,
+      "stage": "Infant"
+    }
+  ],
+  "growth_events": [
+    {
+      "epoch": 25,
+      "previous_layers": 2,
+      "new_layers": 3,
+      "new_stage": "Embryo"
+    },
+    {
+      "epoch": 28,
+      "previous_layers": 3,
+      "new_layers": 4,
+      "new_stage": "Infant"
+    },
+    {
+      "epoch": 31,
+      "previous_layers": 4,
+      "new_layers": 5,
+      "new_stage": "Infant"
+    },
+    {
+      "epoch": 34,
+      "previous_layers": 5,
+      "new_layers": 6,
+      "new_stage": "Child"
+    }
+  ],
+  "end_time": "2026-03-19T16:57:15.669169",
+  "final_layers": 6,
+  "final_stage": "Child"
+}

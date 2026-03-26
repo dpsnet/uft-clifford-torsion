@@ -1,0 +1,34 @@
+% 附录A：泛函分析背景
+\section{泛函分析背景}
+\label{app:functional_analysis}
+
+\subsection{希尔伯特空间}
+
+希尔伯特空间$\mathcal{H}$是完备的内积空间。对于CTUFT，相关的空间是：
+\begin{itemize}
+    \item Fock空间：$\mathcal{F}_s(L^2(\mathbb{R}^3))$
+    \item 单粒子空间：$L^2(\mathbb{R}^3, d^3p/2E_p)$
+\end{itemize}
+
+\subsection{算符理论}
+
+\begin{definition}[自伴算符]
+算符$A$是自伴的，如果$A = A^\dagger$，即$D(A) = D(A^\dagger)$且对所有$\psi \in D(A)$有$A\psi = A^\dagger\psi$。
+\end{definition}
+
+\subsection{谱定理}
+
+\begin{theorem}[谱定理]
+对于自伴算符$A$，存在唯一的谱测度$E$使得：
+\begin{equation}
+    A = \int_{\sigma(A)} \lambda \, dE(\lambda)
+\end{equation}
+\end{theorem}
+
+\subsection{分布理论}
+
+QFT中的算符值分布满足：
+\begin{equation}
+    \mathcal{T}(f) = \int d^4x \, \mathcal{T}(x) f(x)
+\end{equation}
+其中$f \in \mathcal{S}(\mathbb{R}^4)$是测试函数。

@@ -1,0 +1,78 @@
+% 第5节：CTUFT中的S-矩阵形式
+\section{CTUFT中的S-矩阵形式}
+\label{sec:s_matrix}
+
+\subsection{引言}
+
+S-矩阵（散射矩阵）描述了散射过程中从渐近初态到末态的变换。在CTUFT中，S-矩阵编码了挠率场介导的粒子相互作用的所有信息。
+
+\subsection{渐近态}
+
+\begin{definition}[渐近完备性]
+希尔伯特空间$\mathcal{H}$允许分解为渐近子空间：
+\begin{equation}
+    \mathcal{H} = \mathcal{H}_{\text{in}} = \mathcal{H}_{\text{out}}
+\end{equation}
+其中$\mathcal{H}_{\text{in}}$（相应地$\mathcal{H}_{\text{out}}$）由良好分离的入射（相应地出射）粒子态张成。
+\end{definition}
+
+\begin{theorem}[渐近态的存在性]
+对于具有质量$M_T > 0$的CTUFT挠率场，渐近态存在且完备。
+\end{theorem}
+
+\begin{proof}
+有质量挠率场满足Haag-Ruelle散射理论条件：
+\begin{enumerate}
+    \item 质量间隙：$M_T > 0$确保孤立的单粒子态
+    \item 局域性：在第\ref{sec:wightman}节中确立
+    \item 谱条件：多粒子态满足$E \geq M_T$
+\end{enumerate}
+根据Haag-Ruelle定理，渐近态可以从局域场构造。
+\end{proof}
+
+\subsection{S-矩阵的定义}
+
+\begin{definition}[S-矩阵]
+S-矩阵是连接入射和出射渐近态的幺正算符：
+\begin{equation}
+    S = \Omega_-^\dagger \Omega_+
+\end{equation}
+其中$\Omega_\pm$是Møller算符：
+\begin{equation}
+    \Omega_\pm = \lim_{t \to \mp\infty} e^{i\hat{H}t} e^{-i\hat{H}_0 t}
+\end{equation}
+\end{definition}
+
+\subsection{LSZ约化公式}
+
+Lehmann-Symanzik-Zimmermann（LSZ）约化公式将S-矩阵元与时间编序关联函数联系起来。
+
+\begin{theorem}[挠率场的LSZ约化]
+对于散射过程$\mathcal{T}(p_1) + \cdots + \mathcal{T}(p_n) \to \mathcal{T}(q_1) + \cdots + \mathcal{T}(q_m)$：
+\begin{multline}
+    \langle q_1, \ldots, q_m | S - \mathbb{I} | p_1, \ldots, p_n \rangle = \\
+    (i)^{n+m} \int \prod_{i=1}^n d^4x_i \, e^{-ip_i \cdot x_i} (\Box_{x_i} + M_T^2) \\
+    \times \int \prod_{j=1}^m d^4y_j \, e^{iq_j \cdot y_j} (\Box_{y_j} + M_T^2) \\
+    \times \langle 0 | T\{\mathcal{T}(y_1) \cdots \mathcal{T}(y_m) \mathcal{T}(x_1) \cdots \mathcal{T}(x_n)\} | 0 \rangle
+\end{multline}
+\end{theorem}
+
+\subsection{S-矩阵元}
+
+矩阵元分解为：
+\begin{equation}
+    S_{fi} = \delta_{fi} + i (2\pi)^4 \delta^{(4)}(P_f - P_i) \mathcal{T}_{fi}
+\end{equation}
+其中$\mathcal{T}_{fi}$是跃迁矩阵元。
+
+\subsection{交叉对称性}
+
+\begin{theorem}[交叉对称性]
+CTUFT S-矩阵元满足交叉对称性：动量为$p$的入射粒子等价于动量为$-p$的出射反粒子。
+\end{theorem}
+
+这来源于Wightman函数的解析性质和理论的CPT不变性。
+
+\subsection{结论}
+
+CTUFT的S-矩阵形式是良定义的，渐近完备性、LSZ约化和交叉对称性均已确立。第\ref{sec:unitarity}节中对幺正性的数值验证确认了该框架的一致性。

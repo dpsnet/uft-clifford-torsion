@@ -1,0 +1,128 @@
+% CTUFT数学严格化论文（中文版）
+% 克利福德-挠率统一场论的严格数学处理
+\documentclass[12pt,a4paper]{article}
+
+% 页面设置
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+
+% 中文支持
+\usepackage{ctex}
+
+% 数学包
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{mathrsfs}
+
+% 链接和PDF元数据
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    pdftitle={CTUFT数学基础：克利福德-挠率统一场论的严格数学处理},
+    pdfauthor={B. Wang}
+}
+
+% 定理环境（中文）
+\theoremstyle{definition}
+\newtheorem{definition}{定义}[section]
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}{引理}[section]
+\newtheorem{corollary}{推论}[section]
+\newtheorem{proposition}{命题}[section]
+\newtheorem{axiom}{公理}[section]
+\newtheorem{conjecture}{猜想}[section]
+\newtheorem{problem}{问题}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{注}[section]
+
+% 自定义命令
+\newcommand{\Cl}{\mathrm{Cl}}
+\newcommand{\Spin}{\mathrm{Spin}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\U}{\mathrm{U}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\diag}{\mathrm{diag}}
+
+% 标题信息
+\title{\textbf{CTUFT数学基础：} \\ 克利福德-挠率统一场论的严格数学处理}
+
+\author{B. Wang \\
+\small\texttt{wang.bin@foxmail.com} \\
+\small Independent Researcher \\
+\small\url{https://github.com/dpsnet/uft-clifford-torsion}}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent
+本文建立了克利福德-挠率统一场论（CTUFT）的严格数学基础。基于主理论的现象学框架，本工作建立了公理化结构，证明了关键定理，并验证了理论构造的一致性。
+
+主要结果包括：（1）挠率场的Wightman公理完整验证；（2）局部代数的Haag-Kastler原初因果性证明；（3）S-矩阵幺正性的严格推导及七个关键散射过程的数值验证；（4）通过LSZ约化形式构造相互作用Wightman函数；（5）Tomita-Takesaki模理论在黑洞视界热解释中的应用；（6）挠率场相空间的几何量子化及其与Fock表示的等价性。
+
+所有结果与第一性原理导出的单一参数$\tau_0 = 0.005$保持一致。这一数学处理确立了CTUFT作为满足现代数学物理标准的良定义量子场论。
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ============ 第一部分：公理化基础 ============
+\part{公理化基础}
+
+\input{sections_cn/01_introduction}
+\input{sections_cn/02_wightman_axioms}
+\input{sections_cn/03_haag_kastler}
+\input{sections_cn/04_spectral_analysis}
+
+% ============ 第二部分：散射理论与S-矩阵 ============
+\part{散射理论与S-矩阵}
+
+\input{sections_cn/05_s_matrix_formalism}
+\input{sections_cn/06_unitarity_verification}
+\input{sections_cn/07_numerical_results}
+
+% ============ 第三部分：相互作用量子场 ============
+\part{相互作用量子场}
+
+\input{sections_cn/08_wightman_functions}
+\input{sections_cn/09_lsz_reduction}
+\input{sections_cn/10_renormalization}
+
+% ============ 第四部分：代数量子场论 ============
+\part{代数量子场论}
+
+\input{sections_cn/11_tomita_takesaki}
+\input{sections_cn/12_kms_states}
+\input{sections_cn/13_type_III_factors}
+
+% ============ 第五部分：几何量子化 ============
+\part{几何量子化}
+
+\input{sections_cn/14_prequantization}
+\input{sections_cn/15_polarization}
+\input{sections_cn/16_fock_equivalence}
+\input{sections_cn/17_bh_entropy}
+
+% ============ 第六部分：一致性与展望 ============
+\part{一致性与展望}
+
+\input{sections_cn/18_axiomatic_consistency}
+\input{sections_cn/19_open_problems}
+\input{sections_cn/20_conclusions}
+
+\appendix
+\input{appendices_cn/A_functional_analysis}
+\input{appendices_cn/B_distribution_theory}
+\input{appendices_cn/C_numerical_methods}
+\input{appendices_cn/D_comparison_table}
+
+\end{document}

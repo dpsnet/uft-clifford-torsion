@@ -1,0 +1,10 @@
+{
+  "vocab_size": 154,
+  "max_position_embeddings": 512,
+  "hidden_size": 128,
+  "num_hidden_layers": 4,
+  "num_attention_heads": 4,
+  "intermediate_size": 512,
+  "internal_dim": 32,
+  "torsion_order": 2
+}

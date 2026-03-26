@@ -1,0 +1,202 @@
+% 第9章：宇宙学
+\section{宇宙学}
+\label{sec:cosmology}
+
+\subsection{扭转驱动暴涨}
+
+\subsubsection{早期宇宙}
+
+在极早期宇宙（$t < 10^{-43}$ s），谱维为 $d_s \approx 10$，时空具有高度分形结构。扭转场相应很强：
+
+\begin{equation}
+    \tau_{early} \sim \tau_0 \left(\frac{E}{M_P}\right)^{d_s - 4} \sim \tau_0
+\end{equation}
+
+\subsubsection{暴涨动力学}
+
+扭转场充当有效暴胀子，驱动指数膨胀：
+
+\begin{equation}
+    H^2 = \frac{8\pi G}{3}\left(\rho_{matter} + \rho_{torsion}\right)
+\end{equation}
+
+其中扭转能量密度为：
+\begin{equation}
+    \rho_{torsion} = \frac{1}{2}\tau^2 + \frac{1}{12}\tau^4
+\end{equation}
+
+\subsubsection{慢滚条件}
+
+为了成功的暴涨，慢滚参数为：
+\begin{align}
+    \epsilon \u0026= -\frac{\dot{H}}{H^2} = \frac{1}{16\pi G}\left(\frac{V'}{V}\right)^2 \ll 1 \\
+    \eta \u0026= \frac{1}{8\pi G}\frac{V''}{V} \ll 1
+\end{align}
+
+当 $\tau \sim \tau_0$ 时，扭转势自然地满足这些条件。
+
+\subsubsection{e-folding数}
+
+暴涨期间的e-folding数为：
+\begin{equation}
+    N = \int_{t_i}^{t_f} H dt \approx 60
+\end{equation}
+
+这自然地解释了平直性和视界问题。
+
+\subsection{早期宇宙中的谱维演化}
+
+\subsubsection{$d_s: 10 \to 4$的转变}
+
+随着宇宙膨胀和冷却，谱维从10流动到4：
+
+\begin{equation}
+    d_s(T) = 4 + \frac{6}{1 + (T/T_c)^2}
+\end{equation}
+
+其中 $T_c \sim 10^{16}$ GeV 是GUT能标。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig5_cosmology_timeline.png}
+\caption{谱维的宇宙学演化（上）和温度（下）。关键时期：普朗克时代（$d_s=10$）、GUT相变（$d_s=7$）、暴涨结束（$d_s=5$）和标准宇宙学（$d_s=4$）。}
+\label{fig:cosmology_timeline}
+\end{figure}
+
+\subsubsection{维度变化的时间线}
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+\textbf{时期} \u0026 \textbf{时间} \u0026 \textbf{$d_s$} \u0026 \textbf{物理} \\
+\midrule
+普朗克 \u0026 $t < 10^{-43}$ s \u0026 10 \u0026 量子引力 \\
+弦 \u0026 $10^{-43}$--$10^{-40}$ s \u0026 9--10 \u0026 弦激发 \\
+GUT \u0026 $10^{-40}$--$10^{-36}$ s \u0026 7--9 \u0026 对称性破缺 \\
+暴涨 \u0026 $10^{-36}$--$10^{-32}$ s \u0026 5--7 \u0026 快速膨胀 \\
+辐射 \u0026 $10^{-32}$--$10^{4}$ s \u0026 4 \u0026 标准宇宙学 \\
+物质 \u0026 $t > 10^{4}$ s \u0026 4 \u0026 结构形成 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection{对宇宙演化的影响}
+
+变化的维度影响：
+\begin{enumerate}
+    \item \textbf{膨胀率}：$H \propto d_s^{1/2}$
+    \item \textbf{粒子产生}：$\Gamma \propto T^{d_s}$
+    \item \textbf{熵密度}：$s \propto T^{d_s-1}$
+\end{enumerate}
+
+\subsection{几何暗能量}
+
+\subsubsection{宇宙学常数问题}
+
+标准量子场论预言的宇宙学常数为：
+\begin{equation}
+    \Lambda_{QFT} \sim M_P^4 \sim 10^{76} \text{ GeV}^4
+\end{equation}
+
+而观测给出：
+\begin{equation}
+    \Lambda_{obs} \sim 10^{-47} \text{ GeV}^4
+\end{equation}
+
+这123个数量级的差异就是宇宙学常数问题。
+
+\subsubsection{分形抑制机制}
+
+在我们的理论中，小尺度的分形结构抑制真空能量：
+
+\begin{equation}
+    \Lambda_{eff} = \Lambda_{bare} \cdot \left(\frac{\ell_P}{L}\right)^{d_s - 4}
+\end{equation}
+
+对于普朗克尺度处的 $d_s \approx 10$：
+\begin{equation}
+    \Lambda_{eff} \sim \Lambda_{bare} \cdot 10^{-123}
+\end{equation}
+
+\subsubsection{作为几何效应的暗能量}
+
+观测到的暗能量不是宇宙学常数，而是分形结构的几何效应：
+
+\begin{equation}
+    \rho_{DE} = \tau_0^2 \cdot f(z)
+\end{equation}
+
+其中 $f(z)$ 是红移的缓变函数。
+
+这给出有效的状态方程：
+\begin{equation}
+    w = \frac{p}{\rho} \approx -1 + \mathcal{O}(\tau_0^2)
+\end{equation}
+
+与观测一致。
+
+\subsection{原初引力波}
+
+\subsubsection{产生机制}
+
+暴涨产生具有谱的原初引力波：
+\begin{equation}
+    \Omega_{GW}(f) = \Omega_{GW}^{(0)} \left(\frac{f}{f_*}\right)^{n_T}
+\end{equation}
+
+其中张量谱指数为：
+\begin{equation}
+    n_T = -2\epsilon \approx -\frac{r}{8}
+\end{equation}
+
+\subsubsection{早期宇宙中的六种偏振模式}
+
+在高-$d_s$ 相期间，所有六种偏振模式都是活跃的：
+\begin{equation}
+    h_{total} = h_+ + h_\times + h_x + h_y + h_b + h_l
+\end{equation}
+
+额外的模式对随机引力波背景有贡献。
+
+\subsubsection{探测前景}
+
+未来探测器可以观测：
+\begin{itemize}
+    \item \textbf{CMB B模式}：原初张量扰动
+    \item \textbf{PTA}：来自超大质量黑洞的随机背景
+    \item \textbf{LISA}：GUT尺度的原初相变
+    \item \textbf{原子干涉仪}：高频原初信号
+\end{itemize}
+
+\subsection{结构形成}
+
+\subsubsection{功率谱}
+
+原初功率谱接收来自分形结构的修正：
+\begin{equation}
+    P(k) = P_{\Lambda CDM}(k) \cdot (1 + \alpha \tau_0^2 \ln(k/k_*))
+\end{equation}
+
+其中 $\alpha$ 是数值系数。
+
+\subsubsection{暗物质}
+
+量子黑洞遗迹对暗物质有贡献：
+\begin{equation}
+    \Omega_{rem} = \frac{n_{rem} M_{rem}}{\rho_c}
+\end{equation}
+
+丰度依赖于原初黑洞形成率。
+
+\subsection{总结}
+
+我们框架中的宇宙学特征：
+\begin{enumerate}
+    \item \textbf{扭转驱动暴涨}：无需精细调节的自然慢滚
+    \item \textbf{动态谱维}：$d_s: 10 \to 4$ 贯穿宇宙历史
+    \item \textbf{几何暗能量}：解决宇宙学常数问题
+    \item \textbf{原初引力波}：早期宇宙中的六种偏振模式
+    \item \textbf{遗迹暗物质}：蒸发的黑洞作为暗物质候选者
+\end{enumerate}
+
+这些预测可以用当前和未来的宇宙学观测来检验。

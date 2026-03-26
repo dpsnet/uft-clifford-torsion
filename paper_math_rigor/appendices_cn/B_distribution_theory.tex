@@ -1,0 +1,35 @@
+% 附录B：CTUFT中的分布理论
+\section{CTUFT中的分布理论}
+\label{app:distribution}
+
+\subsection{测试函数空间}
+
+\begin{definition}[Schwartz空间]
+Schwartz空间$\mathcal{S}(\mathbb{R}^4)$由具有快速衰减的光滑函数组成：
+\begin{equation}
+    \mathcal{S} = \{ f \in C^\infty : ||f||_{\alpha,\beta} = \sup_x |x^\alpha \partial^\beta f(x)| < \infty \}
+\end{equation}
+\end{definition}
+
+\subsection{算符值分布}
+
+挠率场$\mathcal{T}(x)$是算符值分布：
+\begin{equation}
+    \mathcal{T}(f) = \int d^4x \, \mathcal{T}(x) f(x) \in \mathcal{L}(\mathcal{H})
+\end{equation}
+
+\subsection{Wightman函数作为分布}
+
+两点函数$W(x,y) = \langle 0 | \mathcal{T}(x)\mathcal{T}(y) | 0 \rangle$是满足以下条件的缓增分布：
+\begin{itemize}
+    \item 平移不变性：$W(x,y) = W(x-y)$
+    \item 谱条件：Fourier变换支撑在$V_+$中
+    \item 正定性：$\int d^4x d^4y \bar{f}(x) W(x-y) f(y) \geq 0$
+\end{itemize}
+
+\subsection{正则化}
+
+$d = 4 - 2\epsilon$维中的维数正规化：
+\begin{equation}
+    \int \frac{d^d k}{(2\pi)^d} \frac{1}{(k^2 - M^2)^\alpha} = \frac{i}{(4\pi)^{d/2}} \frac{\Gamma(\alpha - d/2)}{\Gamma(\alpha)} (M^2)^{d/2 - \alpha}
+\end{equation}

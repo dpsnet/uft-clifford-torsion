@@ -5,7 +5,7 @@
 
 \subsection{引言}
 
-本节介绍从10维几何严格推导完整标准模型（加引力）拉格朗日量。从克利福德代数 $Cl(1,9)$ 出发，我们通过维度约化推导拉格朗日量中的每一项。
+本节介绍从10维几何严格推导完整标准模型（加引力）拉格朗日量。从克利福德代数 $Cl(1,9)$ 出发，我们通过谱维流动框架推导拉格朗日量中的每一项。
 
 \subsection{10D中的主拉格朗日量}
 
@@ -35,19 +35,19 @@
 
 10维旋量表示是32维的（马约拉纳-外尔）。
 
-\subsection{维度约化：通过扭转膜的10D $\rightarrow$ 4D}
+\subsection{双向谱维流：10D内空间与4D互反空间的耦合}
 
-\subsubsection{膜-扭转机制}
+\subsubsection{扭转场耦合机制}
 
-在CTUFT中，10维内空间和4维互反空间是完全隔离的，仅通过产生扭转的\textbf{膜}连接：
+在CTUFT中，10维内空间和4维互反空间是平行存在的，通过**扭转场**耦合：
 \begin{itemize}
     \item $x^\mu$：4维互反空间（$\mu = 0,1,2,3$）——我们的物理时空
-    \item 10维内空间存在于膜的``另一边''
+    \item 10维内空间：与互反空间对偶，高能时耦合开放
 \end{itemize}
 
-膜作为一层膜，扭转将10维谱维流动转化为在4维拓扑空间内流动的能量。从4维视角，我们无法感知10维侧的拓扑结构；只能将其观测为10维谱流形。
+**扭转场本身就是耦合界面**，不是独立的"膜"。它将10维谱维流动转化为在4维互反空间内流动的能量-信息。从4维视角，我们无法直接感知10维内空间的拓扑结构；只能通过谱维流动 $d_s(E)$ 间接观测。
 
-4维中的有效度规接收来自膜-扭转耦合的贡献：
+4维中的有效度规接收来自扭转场耦合的贡献：
 \begin{equation}
     ds_{4}^2 = g_{\mu\nu}dx^\mu dx^\nu + \text{（扭转修正）}
 \end{equation}
@@ -55,13 +55,27 @@
 其中：
 \begin{itemize}
     \item $g_{\mu\nu}$ 是4维度规
-    \item 扭转介导几何信息跨膜传输
-    \item 谱维流动 $d_s(\ell)$ 将10维信息以能量形式带入4维
+    \item 扭转场介导能量-信息在两个空间之间传输
+    \item 谱维流动 $d_s(E)$ 将10维信息以能量形式带入4维
 \end{itemize}
+
+\subsubsection{双向谱维流公式}
+
+\textbf{外空间（互反空间）谱维}：
+\begin{equation}
+    d_s^{(out)}(f_{in}) = 4(1 - f_{in})
+\end{equation}
+
+\textbf{内空间谱维}：
+\begin{equation}
+    d_s^{(in)}(f_{in}) = 4 + 6f_{in}
+\end{equation}
+
+其中 $f_{in} \in [0,1]$ 是内空间能量比例。
 
 \subsubsection{规范对称性的涌现}
 
-10维内空间的对称性通过膜-扭转映射在4维中显现为规范对称性：
+10维内空间的对称性通过扭转场耦合在4维中显现为规范对称性：
 \begin{equation}
     \text{Isom}(M_{\text{int}}) = U(1) \times SU(2) \times SU(3)
 \end{equation}
@@ -98,14 +112,14 @@ CTUFT修正表现为：
     \mathcal{L}_{U(1)} = -\frac{1}{4g_Y^2}F_{\mu\nu}F^{\mu\nu}, \quad F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
 \end{equation}
 
-规范耦合由紧致化几何确定：
+规范耦合由内空间几何确定：
 \begin{equation}
     g_Y = \sqrt{\frac{3}{5}}\tau_0 \cdot g_{\text{GUT}}
 \end{equation}
 
 \subsubsection{$SU(2)_L$：弱规范场}
 
-$SU(2)$ 规范场来自 $S^2$ 因子的等距群：
+$SU(2)$ 规范场来自内空间的对称性：
 \begin{equation}
     \mathcal{L}_{SU(2)} = -\frac{1}{2g_2^2}\text{Tr}(W_{\mu\nu}W^{\mu\nu})
 \end{equation}
@@ -117,7 +131,7 @@ $SU(2)$ 规范场来自 $S^2$ 因子的等距群：
 
 \subsubsection{$SU(3)_C$：色规范场}
 
-$SU(3)$ 规范场来自 $CP^2$ 或卡拉比-丘因子的等距：
+$SU(3)$ 规范场来自内空间的几何结构：
 \begin{equation}
     \mathcal{L}_{SU(3)} = -\frac{1}{2g_3^2}\text{Tr}(G_{\mu\nu}G^{\mu\nu})
 \end{equation}
@@ -155,16 +169,16 @@ $SU(3)$ 规范场来自 $CP^2$ 或卡拉比-丘因子的等距：
 
 \subsection{希格斯部分}
 
-\subsubsection{作为紧致化空间模式的希格斯场}
+\subsubsection{作为内空间模式的希格斯场}
 
-希格斯场对应于紧致化空间度规的涨落：
+希格斯场对应于内空间度规的涨落：
 \begin{equation}
     \phi(x) = \delta g_{ab}(x) \cdot \epsilon^{ab}
 \end{equation}
 
 \subsubsection{希格斯势}
 
-势能从紧致化空间的曲率产生：
+势能从内空间的曲率产生：
 \begin{equation}
     V(\phi) = -\mu^2|\phi|^2 + \lambda|\phi|^4
 \end{equation}
@@ -273,11 +287,11 @@ $m_f$ & $Y_f \cdot v$ & 见表格 \\
 我们导出了：
 \begin{enumerate}
     \item 来自 $Cl(1,9)$ 几何的10维主拉格朗日量
-    \item 通过卡鲁扎-克莱因机制的维度约化到4维
+    \item 通过双向谱维流框架的有效4维理论
     \item 引力部分：爱因斯坦-希尔伯特 + 挠率修正
-    \item 规范部分：来自紧致化空间等距的 $U(1) \times SU(2) \times SU(3)$
+    \item 规范部分：来自内空间对称性的 $U(1) \times SU(2) \times SU(3)$
     \item 费米子部分：来自马约拉纳-外尔条件的手征费米子
-    \item 希格斯部分：紧致化空间度规涨落
+    \item 希格斯部分：内空间度规涨落
     \item 汤川耦合：几何重叠积分
     \item 完整SM + 引力拉格朗日量，所有参数由 $\tau_0$ 确定
 \end{enumerate}

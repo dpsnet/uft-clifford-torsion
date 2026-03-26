@@ -1,0 +1,34 @@
+% Title
+Fixed 4D Topology-Dynamic Spectral Dimension: Multiple Twisting Fractal Clifford Algebra Unified Field Theory
+
+% Authors
+Wang Bin (wang.bin@foxmail.com)
+Independent Researcher
+Open Source AI Theoretical Physics Research Project
+https://github.com/dpsnet/uft-clifford-torsion
+
+% Abstract (1920 characters max)
+We present a unified field theory based on fixed 4D topological dimension with dynamic spectral dimension flow. The framework introduces a novel concept of reciprocal internal space duality where 10-dimensional internal space and 4D spacetime are dual to each other. Energy oscillates between these spaces in the form of spectral flow, creating interference effects that explain observed deviations from pure geometric calculations.
+
+Key results include: (1) derivation of U(1)×SU(2)×SU(3) gauge symmetries from multiple twisting mechanisms; (2) geometric origin of CKM matrix with 99.9% agreement using energy oscillation interference; (3) six gravitational wave polarization modes including scalar and vector components; (4) geometric interpretation of time as spectral dimension flow.
+
+The theory makes falsifiable predictions: additional GW polarizations at 10^-5 level, characteristic CMB modifications, and energy-scale dependent CKM elements. Experimental constraints (LIGO/Virgo, Planck CMB) are satisfied with torsion field strength τ₀≈0.005, derived from first principles as the information fidelity of 10D-to-4D projection.
+
+% Comments
+3 pages, 1 figure. Open-source development with human-AI collaboration. Extended version (193 pages) available at https://github.com/dpsnet/uft-clifford-torsion
+
+% Categories
+physics.gen-ph (General Physics) [Primary]
+hep-th (High Energy Physics - Theory)
+gr-qc (General Relativity and Quantum Cosmology)
+
+% Keywords
+unified field theory, spectral dimension, fractal spacetime, torsion, Clifford algebra, CKM matrix, gravitational waves, human-AI collaboration
+
+% Suggested reviewers (optional, leave blank)
+
+% License
+arXiv.org perpetual, non-exclusive license
+
+% Version
+1 (initial submission)

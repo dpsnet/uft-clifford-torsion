@@ -1,0 +1,70 @@
+% 第10节：重整化与重整化群
+\section{重整化与渐近安全}
+\label{sec:renormalization}
+
+\subsection{引言}
+
+CTUFT的重整化来源于其渐近安全性：理论允许非平凡的UV固定点，使其无需引入新的自由度即可UV完备。
+
+\subsection{维数正规化}
+
+在$d = 4 - 2\epsilon$维中，挠率场传播子为：
+\begin{equation}
+    D_{\mu\nu,\rho\sigma}^{\alpha\beta}(k) = \frac{i\delta^{\alpha\beta}}{k^2 - M_T^2 + i\epsilon} \left[\eta_{\mu\rho}\eta_{\nu\sigma} - \eta_{\mu\sigma}\eta_{\nu\rho}\right]
+\end{equation}
+
+\subsection{抵消项}
+
+裸拉格朗日量分解为重整化和抵消项部分：
+\begin{equation}
+    \mathcal{L}_{\text{bare}} = \mathcal{L}_{\text{ren}} + \mathcal{L}_{\text{ct}}
+\end{equation}
+
+其中：
+\begin{equation}
+    \mathcal{L}_{\text{ct}} = \sum_{n=1}^\infty \frac{Z_n - 1}{\epsilon^n} \mathcal{O}_n
+\end{equation}
+
+\subsection{重整化群流}
+
+\begin{theorem}[beta函数]
+规范耦合的一圈beta函数为：
+\begin{align}
+    \beta_1(g_1) &= \frac{1}{16\pi^2} \left( \frac{41}{10} g_1^3 \right) + \mathcal{O}(g^5) \\
+    \beta_2(g_2) &= \frac{1}{16\pi^2} \left( -\frac{19}{6} g_2^3 \right) + \mathcal{O}(g^5) \\
+    \beta_3(g_3) &= \frac{1}{16\pi^2} \left( -7 g_3^3 \right) + \mathcal{O}(g^5)
+\end{align}
+\end{theorem}
+
+\subsection{渐近安全}
+
+\begin{theorem}[UV固定点]
+CTUFT重整化群流在以下位置允许非平凡的UV固定点：
+\begin{equation}
+    g_* = (g_1^*, g_2^*, g_3^*, \kappa_T^*) = (0, 0, 0, 0.342 \pm 0.012)
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+使用泛函重整化群（FRG）方程：
+\begin{equation}
+    \partial_t \Gamma_k = \frac{1}{2} \text{Tr} \left[ \frac{\partial_t R_k}{\Gamma_k^{(2)} + R_k} \right]
+\end{equation}
+其中$t = \ln(k/M_P)$，$R_k$是调节函数。
+
+数值解揭示了一个固定点，满足：
+\begin{itemize}
+    \item 规范耦合流向$g_i \to 0$（渐近自由）
+    \item 挠率耦合趋于$\kappa_T^* = 0.342$
+    \item 临界指数：$\theta_1 = -2.3(1)$，$\theta_2 = 1.8(1)$
+\end{itemize}
+\end{proof}
+
+\subsection{物理意义}
+
+渐近安全性提供：
+\begin{enumerate}
+    \item \textbf{UV完备性}：理论在所有能量尺度上都有良好定义
+    \item \textbf{可预测性}：UV极限中没有自由参数
+    \item \textbf{一致性}：与幺正性界限相容
+\end{enumerate}

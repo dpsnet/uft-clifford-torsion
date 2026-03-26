@@ -1,0 +1,36 @@
+# viXra 提交信息
+
+## 网站
+https://vixra.org/submit
+
+## 提交步骤
+1. 注册账号（邮箱验证）
+2. 选择分类：Mathematical Physics 或 High Energy Physics
+3. 上传论文（ctuft_arxiv.tex 或 PDF）
+4. 填写元数据
+5. 立即发布（无审核等待）
+
+## 论文信息
+
+**Title:**
+Fixed 4D Topology-Dynamic Spectral Dimension: Multiple Twisting Fractal Clifford Algebra Unified Field Theory
+
+**Author:**
+Wang Bin
+
+**Abstract:**
+We present a unified field theory based on fixed 4D topological dimension with dynamic spectral dimension flow. The framework introduces a novel concept of reciprocal internal space duality where 10-dimensional internal space and 4D spacetime are dual to each other. Key results include: (1) derivation of U(1)×SU(2)×SU(3) gauge symmetries from multiple twisting mechanisms; (2) geometric origin of CKM matrix with 99.9% agreement; (3) six gravitational wave polarization modes; (4) geometric interpretation of time as spectral dimension flow. The theory makes falsifiable predictions and has zero free parameters.
+
+**Category:**
+Mathematical Physics (math-ph) 或 High Energy Physics (hep-th)
+
+**Comments:**
+3 pages. Open-source development with human-AI collaboration. Extended version available at https://github.com/dpsnet/uft-clifford-torsion
+
+## 发布后会获得
+- viXra ID: 如 viXra:2603.xxxx
+- 可立即被引用
+- 可在 Google Scholar 中被索引
+
+## 之后再申请 arXiv 背书
+用 viXra 论文作为已发表作品申请 arXiv 背书更容易被接受。

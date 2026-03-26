@@ -1,0 +1,43 @@
+% 第15节：几何量子化中的极化
+\section{几何量子化中的极化}
+\label{sec:polarization}
+
+\subsection{引言}
+
+极化通过选取一半的相空间坐标作为位形变量，将预量子希尔伯特空间约化为物理量子希尔伯特空间。
+
+\subsection{Kähler极化}
+
+\begin{definition}[Kähler极化]
+对于具有复结构$J$的挠率场相空间，Kähler极化为：
+\begin{equation}
+    \mathcal{P} = \text{span}\left\{ \frac{\partial}{\partial a_k^*} \right\}
+\end{equation}
+其中$a_k$是第\ref{sec:prequantization}节中定义的复坐标。
+\end{definition}
+
+\subsection{极化截面}
+
+满足极化条件的波函数：
+\begin{equation}
+    \nabla_X \psi = 0 \quad \forall X \in \bar{\mathcal{P}}
+\end{equation}
+具有以下形式：
+\begin{equation}
+    \psi[a, a^*] = f(a) \exp\left(-\frac{1}{2\hbar} \sum_k |a_k|^2\right)
+\end{equation}
+
+\subsection{内积}
+
+Bargmann-Fock内积：
+\begin{equation}
+    \langle \psi_1 | \psi_2 \rangle = \int \prod_k \frac{da_k \, da_k^*}{2\pi i} e^{-|a_k|^2/\hbar} \overline{f_1(a)} f_2(a)
+\end{equation}
+
+\subsection{与Fock空间的等价性}
+
+映射：
+\begin{equation}
+    f(a) \longleftrightarrow f(a^\dagger) |0\rangle
+\end{equation}
+确立了第\ref{sec:fock_equivalence}节中证明的幺正等价性。

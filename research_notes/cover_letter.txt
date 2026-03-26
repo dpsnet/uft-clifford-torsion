@@ -1,0 +1,50 @@
+Dear Editor of Physical Review D,
+
+We are pleased to submit our manuscript entitled "Unified Field Theory from Fractal Spacetime and Multiple Torsion Mechanism" for your consideration for publication in Physical Review D as a regular article.
+
+**Summary of the work:**
+
+This manuscript presents a comprehensive unified field theory framework that addresses the long-standing challenge of reconciling quantum mechanics with general relativity. Our approach is distinguished from existing theories by three key features:
+
+1. **Mathematical Rigor**: We establish a rigorous mathematical foundation based on fractal Clifford algebras and spectral dimension theory. The core theorems—including the decomposition of the covering map kernel ker(ρ^τ) ≅ Z₂⁵ and its correspondence to the Standard Model gauge group U(1)×SU(2)×SU(3)—are proven from first principles without heuristic arguments.
+
+2. **Experimental Accessibility**: The theory makes concrete, falsifiable predictions: six gravitational wave polarization modes (versus two in general relativity), characteristic corrections to the CMB power spectrum (n_s ≈ 0.965 ± 0.02, r ≈ 0.01–0.05), and modified atomic energy levels. These predictions are within reach of current and near-future experiments including LIGO/Virgo, CMB-S4, and next-generation atomic clocks.
+
+3. **Resolution of Scale Discrepancy**: Through a nonlinear self-interaction mechanism, the theory naturally reconciles the stringent atomic physics constraints (τ < 10⁻¹⁴) with cosmological predictions (τ ~ 0.01) without fine-tuning.
+
+**Novelty and Significance:**
+
+Unlike string theory, which suffers from the landscape problem and lacks clear experimental predictions, or loop quantum gravity, which does not incorporate the Standard Model gauge structure, our framework provides a geometric derivation of all four fundamental interactions from a unified spacetime structure. The theory is falsifiable: if next-generation gravitational wave detectors (Cosmic Explorer, Einstein Telescope, ~2035) fail to detect the predicted additional polarization modes at the sensitivity level corresponding to τ ~ 0.03, the core framework would be experimentally excluded.
+
+**Suitability for Physical Review D:**
+
+This work bridges fundamental theoretical physics with phenomenological consequences. The mathematical developments in Sections II–III (Clifford algebras, spectral dimension theory) and the phenomenological applications in Sections VI–VII (cosmology, gravitational waves, particle physics) align closely with the scope of Physical Review D.
+
+We confirm that this work is original and has not been published or submitted elsewhere. All authors have approved the manuscript and agree with its submission.
+
+We suggest the following experts as potential referees:
+- Prof. Carlo Rovelli (Loop Quantum Gravity, Marseille)
+- Prof. Juan Maldacena (Quantum Gravity, IAS)
+- Prof. Nima Arkani-Hamed (Phenomenology, IAS)
+
+Thank you for considering our submission. We look forward to your response.
+
+Sincerely,
+
+[Author Names]
+[Institutional Affiliations]
+[Contact Email]
+
+---
+
+**Submission Details:**
+- Manuscript type: Regular Article
+- Word count: ~18,000 words (main text)
+- Number of figures: 8
+- Number of tables: 3
+- Number of pages: 60 (main) + 30 (appendices)
+- Suggested section: High Energy Physics - Theory
+
+**Conflict of Interest Statement:** The authors declare no competing financial interests.
+
+**Data Availability:** All numerical codes and data used in this work are available at [GitHub repository link].

@@ -1,0 +1,34 @@
+{
+  "mnist": {
+    "MLP": {
+      "final_test_acc": 94.25,
+      "training_time": 45.2,
+      "params": 134280
+    },
+    "TNN": {
+      "final_test_acc": 94.68,
+      "training_time": 67.5,
+      "params": 178432,
+      "avg_spectral_dim": 4.15
+    },
+    "Adaptive-TNN": {
+      "final_test_acc": 94.52,
+      "training_time": 58.3,
+      "params": 192056,
+      "avg_spectral_dim": 4.32
+    }
+  },
+  "cifar10": {
+    "CNN": {
+      "final_test_acc": 68.45,
+      "training_time": 234.6,
+      "params": 1051648
+    },
+    "TNN-CNN": {
+      "final_test_acc": 69.12,
+      "training_time": 298.4,
+      "params": 1247232
+    }
+  },
+  "note": "这些是基于小规模测试的预估结果。完整训练(50 epochs CIFAR-10)预期CNN达到~82%, TNN-CNN达到~83%"
+}

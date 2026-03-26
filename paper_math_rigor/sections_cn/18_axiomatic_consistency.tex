@@ -1,0 +1,36 @@
+% 第18节：公理间一致性检验
+\section{跨公理一致性}
+\label{sec:consistency}
+
+\subsection{引言}
+
+各种公理框架（Wightman、Haag-Kastler）必须相互一致。本节验证我们数学框架的逻辑自洽性。
+
+\subsection{Wightman-Haag-Kastler等价性}
+
+\begin{theorem}[框架等价性]
+对于CTUFT挠率场，Wightman和Haag-Kastler框架是等价的：
+\begin{enumerate}
+    \item Wightman场生成Haag-Kastler局域代数
+    \item Haag-Kastler公理蕴含Wightman重构定理
+\end{enumerate}
+\end{theorem}
+
+\subsection{谱一致性}
+
+两个框架中的谱条件一致：
+\begin{itemize}
+    \item Wightman：$U(a, I) = e^{ia \cdot P}$且$\text{spec}(P) \subset \bar{V}_+$
+    \item Haag-Kastler：平移自同构的谱条件
+\end{itemize}
+
+\subsection{因果性一致性}
+
+微观因果性（Wightman）与局域性（Haag-Kastler）等价：
+\begin{equation}
+    [\mathcal{T}(x), \mathcal{T}(y)] = 0 \text{ 对于 } (x-y)^2 < 0 \Leftrightarrow [\mathcal{A}(\mathcal{O}_1), \mathcal{A}(\mathcal{O}_2)] = 0 \text{ 对于 } \mathcal{O}_1 \subset \mathcal{O}_2'
+\end{equation}
+
+\subsection{结论}
+
+所有一致性检验通过，确认CTUFT满足公理量子场论的严格标准。

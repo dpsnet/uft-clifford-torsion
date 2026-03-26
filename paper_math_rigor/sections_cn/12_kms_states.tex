@@ -1,0 +1,57 @@
+% 第12节：KMS态与热平衡
+\section{KMS态与热平衡}
+\label{sec:kms}
+
+\subsection{引言}
+
+Kubo-Martin-Schwinger（KMS）条件表征了量子统计力学中的热平衡态。在CTUFT中，KMS态为加速观测者的真空态提供了热解释。
+
+\subsection{KMS条件}
+
+\begin{definition}[KMS条件]
+von Neumann代数$\mathcal{A}$上的态$\omega$在逆温度$\beta$下满足KMS条件，如果对于所有$A, B \in \mathcal{A}$，存在在条带$0 < \text{Im}(z) < \beta$中解析的函数$F_{A,B}(z)$使得：
+\begin{align}
+    F_{A,B}(t) &= \omega(A \alpha_t(B)) \\
+    F_{A,B}(t + i\beta) &= \omega(\alpha_t(B) A)
+\end{align}
+其中$\alpha_t$是时间演化自同构。
+\end{definition}
+
+\subsection{真空作为KMS态}
+
+\begin{theorem}[真空的KMS性质]
+对于楔形区域$\mathcal{W}_R$，真空态在$\beta = 2\pi$下相对于模自同构群满足KMS条件。
+\end{theorem}
+
+\begin{proof}
+根据Bisognano-Wichmann定理（第\ref{sec:tomita_takesaki}节），模算符生成洛伦兹boost：
+\begin{equation}
+    \Delta^{it} = U(0, \Lambda_{2\pi t})
+\end{equation}
+
+KMS条件来源于Wightman函数在洛伦兹变换下的解析性质。对于$A, B \in \mathcal{A}(\mathcal{W}_R)$：
+\begin{equation}
+    \omega(A \Delta^{it} B \Delta^{-it}) = \omega(\Delta^{it} B \Delta^{-it} A)
+\end{equation}
+在$t = i$时，对应于$\beta = 2\pi$。
+\end{proof}
+
+\subsection{CTUFT中的Unruh效应}
+
+\begin{theorem}[Unruh温度]
+在CTUFT真空中，具有均匀加速度$a$的观测者检测到温度为以下值的热浴：
+\begin{equation}
+    T_U = \frac{\hbar a}{2\pi c}
+\end{equation}
+\end{theorem}
+
+这由Rindler楔形模参数满足KMS条件得出。
+
+\subsection{热力学一致性}
+
+KMS条件确保：
+\begin{enumerate}
+    \item \textbf{细致平衡}：跃迁速率满足$\Gamma_{i \to f}/\Gamma_{f \to i} = e^{-\beta(E_f - E_i)}$
+    \item \textbf{熵}：von Neumann熵$S = -\text{Tr}(\rho \ln \rho)$达到最大
+    \item \textbf{稳定性}：KMS态在小扰动下稳定
+\end{enumerate}

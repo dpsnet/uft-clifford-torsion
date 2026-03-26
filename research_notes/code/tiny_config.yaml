@@ -1,0 +1,225 @@
+# TNN-Transformer Tiny 训练配置
+# 1M参数微型模型 CPU训练配置
+
+# =============================================================================
+# 模型配置
+# =============================================================================
+model:
+  name: "TNN-Transformer-Tiny-1M"
+  vocab_size: 5000           # 使用较小词表
+  max_position_embeddings: 256
+  hidden_size: 128           # 隐藏层维度
+  num_hidden_layers: 4       # 4层
+  num_attention_heads: 4     # 4头注意力
+  intermediate_size: 256     # MLP中间层 (2 * hidden_size)
+  
+  # TNN特有参数
+  internal_dim: 16           # 内部空间维度
+  torsion_order: 2           # 扭转阶数
+  torsion_strength: 0.1      # 扭转强度
+  torsion_rank: 8            # 扭转场低秩维度
+  
+  # 谱维自适应参数
+  spectral_dim_min: 2.0      # 最小谱维
+  spectral_dim_max: 8.0      # 最大谱维
+  adaptation_rate: 0.02      # 谱维适应率
+  
+  # 正则化参数
+  hidden_dropout_prob: 0.05
+  attention_dropout_prob: 0.05
+  layer_norm_eps: 1.0e-12
+  
+  # 初始化参数
+  init_std: 0.02
+  
+  # 参数统计
+  total_parameters: 1_000_000  # 目标约1M参数
+
+# =============================================================================
+# 训练配置
+# =============================================================================
+training:
+  # 训练设置
+  max_steps: 10000           # 训练步数
+  warmup_steps: 500          # 预热步数
+  eval_steps: 100            # 评估间隔
+  save_steps: 1000           # 保存检查点间隔
+  logging_steps: 50          # 日志间隔
+  
+  # 优化器配置
+  optimizer:
+    type: "adamw"
+    learning_rate: 5.0e-4     # 峰值学习率
+    weight_decay: 0.01
+    beta1: 0.9
+    beta2: 0.95
+    eps: 1.0e-8
+    max_grad_norm: 1.0        # 梯度裁剪
+  
+  # 学习率调度
+  lr_scheduler:
+    type: "cosine_with_restarts"
+    min_lr_ratio: 0.1         # 最小学习率比例
+    warmup_ratio: 0.05        # 预热比例
+  
+  # CPU训练配置 (关键!)
+  fp16: false               # 关闭FP16混合精度
+  bf16: false               # 关闭BF16
+  gradient_checkpointing: false  # 关闭梯度检查点
+  
+  # 梯度累积
+  gradient_accumulation_steps: 4   # 梯度累积步数
+  effective_batch_size: 32         # 有效batch size = 8 * 4
+
+# =============================================================================
+# 数据配置
+# =============================================================================
+data:
+  # 数据集选择
+  dataset_name: "tinystories"   # tinystories 或 wikitext-2
+  
+  # TinyStories配置
+  tinystories:
+    max_samples: 500000       # 使用50万条样本
+    min_length: 50            # 最小文本长度
+    max_length: 512           # 最大文本长度
+  
+  # WikiText-2配置 (备选)
+  wikitext2:
+    split_ratio: 0.9          # 训练/验证分割比例
+  
+  # Tokenizer配置
+  tokenizer:
+    type: "bpe"               # 使用BPE tokenizer
+    vocab_size: 5000
+    min_frequency: 2
+    special_tokens:
+      - "<pad>"
+      - "<unk>"
+      - "<s>"
+      - "</s>"
+    pad_token: "<pad>"
+    unk_token: "<unk>"
+    bos_token: "<s>"
+    eos_token: "</s>"
+  
+  # DataLoader配置
+  dataloader:
+    batch_size: 8             # 每批次样本数 (CPU友好)
+    num_workers: 2            # 数据加载线程数
+    pin_memory: false         # CPU训练关闭pin_memory
+    prefetch_factor: 2
+    persistent_workers: false
+  
+  # 预处理配置
+  preprocessing:
+    max_length: 256
+    truncation: true
+    padding: "max_length"
+
+# =============================================================================
+# 评估配置
+# =============================================================================
+evaluation:
+  # 评估设置
+  eval_iters: 50             # 每次评估的迭代次数
+  eval_accumulation_steps: 1
+  
+  # 生成评估
+  generation:
+    max_length: 100
+    temperature: 1.0
+    top_k: 20
+    top_p: 0.95
+    num_samples: 10           # 生成样本数量
+    prompts:
+      - "Once upon a time"
+      - "In a small village"
+      - "The little girl"
+      - "A brave knight"
+  
+  # 跟踪指标
+  metrics:
+    - "loss"
+    - "perplexity"
+    - "spectral_dimension"
+    - "torsion_energy"
+    - "depth_scale"
+
+# =============================================================================
+# 输出配置
+# =============================================================================
+output:
+  output_dir: "./outputs/tnn_tiny_1m"
+  checkpoint_dir: "./checkpoints/tnn_tiny_1m"
+  log_dir: "./logs/tnn_tiny_1m"
+  
+  # 保存策略
+  save_total_limit: 5         # 最多保留5个检查点
+  save_best_only: false       # 保存所有检查点
+  
+  # 日志记录
+  log_format: "console"       # console 或 file
+  log_level: "INFO"
+  
+  # 报告生成
+  generate_report: true
+  report_interval: 1000       # 每1000步生成报告
+
+# =============================================================================
+# 系统配置
+# =============================================================================
+system:
+  # 设备配置
+  device: "cpu"               # 强制使用CPU
+  
+  # 内存优化
+  memory_efficient: true
+  
+  # 随机种子
+  seed: 42
+  
+  # 调试模式
+  debug: false
+
+# =============================================================================
+# 验证目标
+# =============================================================================
+validation_goals:
+  # 损失目标
+  target_loss: 3.0            # 目标损失值
+  target_perplexity: 20.0     # 目标困惑度
+  
+  # 谱维目标
+  spectral_dim_range: [2.5, 6.0]  # 期望谱维范围
+  spectral_dim_convergence: true  # 谱维应收敛
+  
+  # 扭转场目标
+  torsion_energy_stability: true   # 扭转场能量稳定
+  max_torsion_energy: 1.0          # 最大扭转场能量
+  
+  # 生成质量
+  min_readable_samples: 0.5        # 至少50%样本可读
+
+# =============================================================================
+# 训练监控
+# =============================================================================
+monitoring:
+  # 监控指标
+  track_spectral_dimension: true
+  track_torsion_energy: true
+  track_gradient_norm: true
+  track_learning_rate: true
+  
+  # 早停配置
+  early_stopping:
+    enabled: false            # 禁用早停 (保证训练步数)
+    patience: 10
+    min_delta: 0.001
+  
+  # 学习率调整
+  lr_reduction:
+    enabled: true
+    factor: 0.5
+    patience: 5
+    min_lr: 1.0e-6

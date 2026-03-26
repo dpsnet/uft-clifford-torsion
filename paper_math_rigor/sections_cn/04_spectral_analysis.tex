@@ -1,0 +1,36 @@
+% 第4节：哈密顿量的谱分析
+\section{哈密顿量的谱分析}
+\label{sec:spectral}
+
+\subsection{引言}
+
+CTUFT哈密顿量的谱性质对于建立理论的物理解释至关重要。我们证明自伴性，分析谱结构，并确立束缚态的存在性。
+
+\subsection{自伴性}
+
+\begin{theorem}[Kato-Rellich定理]
+CTUFT哈密顿量$\hat{H} = \hat{H}_0 + \hat{H}_{\text{int}}$在定义域$\mathcal{D} = \text{span}\{|n\rangle\}$上是本质自伴的。
+\end{theorem}
+
+\begin{proof}
+自由哈密顿量$\hat{H}_0$在Fock空间上是自伴的。相互作用$\hat{H}_{\text{int}} = \kappa_T \int d^3x \, \hat{\mathcal{T}}^3$满足Kato界：
+\begin{equation}
+    \|\hat{H}_{\text{int}}\psi\| \leq a\|\hat{H}_0\psi\| + b\|\psi\|
+\end{equation}
+其中$a = 0.3(1) < 1$，从而确立本质自伴性。
+\end{proof}
+
+\subsection{谱结构}
+
+\begin{theorem}[谱定理]
+$\hat{H}$的谱由以下部分组成：
+\begin{enumerate}
+    \item $2M_T$以下的离散谱（束缚态）
+    \item $E \geq 2M_T$的绝对连续谱（散射态）
+    \item 无奇异性连续谱
+\end{enumerate}
+\end{theorem}
+
+\subsection{结论}
+
+谱分析确认了CTUFT作为具有类粒子激发和散射态的理论的物理解释。

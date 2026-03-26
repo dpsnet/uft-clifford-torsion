@@ -1,0 +1,50 @@
+{
+  "config": {
+    "name": "strong_reg",
+    "torsion_coef": 0.001,
+    "torsion_min_energy": 0.0,
+    "torsion_target": null,
+    "spectral_reg": 0.0,
+    "entropy_reg": 0.0,
+    "description": "10\u500d\u5f3a\u6b63\u5219\u5316"
+  },
+  "eval": {
+    "loss": 6.606767654418945,
+    "perplexity": 740.0869140625,
+    "accuracy": 0.0,
+    "torsion_energy": 0.0,
+    "spectral_dim": 6.135952472686768,
+    "repetition_rate": 0.275,
+    "generated_sample": [
+      933,
+      970,
+      965,
+      666,
+      210,
+      352,
+      686,
+      938,
+      845,
+      879,
+      936,
+      939,
+      960,
+      943,
+      950,
+      939,
+      946,
+      947,
+      942,
+      952
+    ]
+  },
+  "capacity": {
+    "seq_10": 0.001249009044840932,
+    "seq_20": 0.002321668202057481,
+    "seq_50": 0.008780006319284439,
+    "seq_100": 0.010327661409974098,
+    "pattern_5": 0.0033459181431680918,
+    "pattern_10": 0.001991994446143508,
+    "pattern_20": 0.0011603205930441618
+  }
+}

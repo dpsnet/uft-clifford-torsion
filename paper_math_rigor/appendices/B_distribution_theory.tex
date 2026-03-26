@@ -1,0 +1,35 @@
+% Appendix B: Distribution Theory for QFT
+\section{Distribution Theory in CTUFT}
+\label{app:distribution}
+
+\subsection{Test Function Spaces}
+
+\begin{definition}[Schwartz Space]
+The Schwartz space $\mathcal{S}(\mathbb{R}^4)$ consists of smooth functions with rapid decay:
+\begin{equation}
+    \mathcal{S} = \{ f \in C^\infty : ||f||_{\alpha,\beta} = \sup_x |x^\alpha \partial^\beta f(x)| < \infty \}
+\end{equation}
+\end{definition}
+
+\subsection{Operator-Valued Distributions}
+
+The torsion field $\mathcal{T}(x)$ is an operator-valued distribution:
+\begin{equation}
+    \mathcal{T}(f) = \int d^4x \, \mathcal{T}(x) f(x) \in \mathcal{L}(\mathcal{H})
+\end{equation}
+
+\subsection{Wightman Functions as Distributions}
+
+The two-point function $W(x,y) = \langle 0 | \mathcal{T}(x)\mathcal{T}(y) | 0 \rangle$ is a tempered distribution satisfying:
+\begin{itemize}
+    \item Translation invariance: $W(x,y) = W(x-y)$
+    \item Spectral condition: Fourier transform supported in $V_+$
+    \item Positive definiteness: $\int d^4x d^4y \bar{f}(x) W(x-y) f(y) \geq 0$
+\end{itemize}
+
+\subsection{Regularization}
+
+Dimensional regularization in $d = 4 - 2\epsilon$:
+\begin{equation}
+    \int \frac{d^d k}{(2\pi)^d} \frac{1}{(k^2 - M^2)^\alpha} = \frac{i}{(4\pi)^{d/2}} \frac{\Gamma(\alpha - d/2)}{\Gamma(\alpha)} (M^2)^{d/2 - \alpha}
+\end{equation}

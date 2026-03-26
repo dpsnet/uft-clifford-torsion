@@ -1,0 +1,156 @@
+% 第16节：几何量子化与Fock表示的等价性
+\section{几何量子化与Fock表示的等价性}
+\label{sec:fock_equivalence}
+
+\subsection{引言}
+
+在构造了挠率场相空间的几何量子化之后，我们现在证明其与主CTUFT论文中使用的标准Fock空间构造的等价性。
+
+\subsection{Kähler极化}
+
+\begin{definition}[Kähler极化]
+Kähler极化$\mathcal{P}$是复化切丛$T^\mathbb{C}\mathcal{M}$的可积Lagrangian子丛，使得：
+\begin{enumerate}
+    \item $\mathcal{P}$是Lagrangian的：对所有$X, Y \in \mathcal{P}$，$\omega(X, Y) = 0$
+    \item $\mathcal{P} \cap \bar{\mathcal{P}} = \{0\}$（正定性）
+    \item $[\mathcal{P}, \mathcal{P}] \subset \mathcal{P}$（可积性）
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[相空间的Kähler结构]
+挠率场相空间$(\mathcal{M}, \omega)$具有由以下定义的自然Kähler结构，复结构为$J$：
+\begin{equation}
+    J \cdot \begin{pmatrix} \mathcal{T} \\ \pi \end{pmatrix} = \begin{pmatrix} \omega^{-1} \pi \\ -\omega \mathcal{T} \end{pmatrix}
+\end{equation}
+其中$\omega$是辛形式算符。
+\end{theorem}
+
+\subsection{量子希尔伯特空间}
+
+\begin{definition}[量子希尔伯特空间]
+几何量子化中的量子希尔伯特空间为：
+\begin{equation}
+    \mathcal{H}_{\text{geom}} = \left\{ \psi \in \mathcal{H}_{\text{pre}} : \nabla_X \psi = 0 \, \forall X \in \bar{\mathcal{P}} \right\}
+\end{equation}
+即沿反全纯方向协变常数的截面。
+\end{definition}
+
+\begin{theorem}[全纯表示]
+在Kähler极化中，$\mathcal{H}_{\text{geom}}$同构于关于$J$的$\mathcal{M}$上的全纯函数空间：
+\begin{equation}
+    \mathcal{H}_{\text{geom}} \cong \mathcal{O}(\mathcal{M}, J) \cap L^2(\mathcal{M}, e^{-K/\hbar} d\mu)
+\end{equation}
+其中$K$是Kähler势。
+\end{theorem}
+
+\subsection{产生和湮灭算符}
+
+\begin{definition}[复坐标]
+定义复坐标：
+\begin{equation}
+    a_k = \sqrt{\frac{\omega_k}{2\hbar}} \tilde{\mathcal{T}}_k + \frac{i}{\sqrt{2\hbar\omega_k}} \tilde{\pi}_k
+\end{equation}
+其中$\tilde{\mathcal{T}}_k$和$\tilde{\pi}_k$是傅立叶模式振幅。
+\end{definition}
+
+\begin{theorem}[全纯波函数]
+$\mathcal{H}_{\text{geom}}$中的波函数具有形式：
+\begin{equation}
+    \psi[a] = f(a) \exp\left(-\frac{1}{2\hbar} \sum_k |a_k|^2\right)
+\end{equation}
+其中$f(a)$是关于复坐标$a_k$的全纯函数。
+\end{theorem}
+
+\subsection{主要等价性定理}
+
+\begin{theorem}[几何量子化等于Fock空间]
+存在幺正同构：
+\begin{equation}
+    U : \mathcal{H}_{\text{geom}} \to \mathcal{H}_{\text{Fock}}
+\end{equation}
+交织正则对易关系的几何和Fock表示。
+\end{theorem}
+
+\begin{proof}
+我们显式构造同构：
+
+\textbf{第一步：真空对应。}定义几何真空$\Omega_{\text{geom}}$为波函数：
+\begin{equation}
+    \Omega_{\text{geom}}[a] = \exp\left(-\frac{1}{2\hbar} \sum_k |a_k|^2\right)
+\end{equation}
+这被所有$\partial/\partial a_k^*$算符湮灭，对应于Fock真空$|0\rangle$。
+
+\textbf{第二步：激发态。}对于模式$k$中的单个激发：
+\begin{equation}
+    \psi_k[a] = a_k \cdot \Omega_{\text{geom}}[a]
+\end{equation}
+对应于Fock空间中的$a_k^\dagger |0\rangle$。
+
+\textbf{第三步：一般态。}由线性和完备性，$\mathcal{H}_{\text{geom}}$中的任何态具有形式：
+\begin{equation}
+    \psi[a] = P(a) \cdot \Omega_{\text{geom}}[a]
+\end{equation}
+其中$P(a)$是多项式。这映射到：
+\begin{equation}
+    |\psi\rangle = P(a^\dagger) |0\rangle \in \mathcal{H}_{\text{Fock}}
+\end{equation}
+
+\textbf{第四步：内积保持。}几何内积：
+\begin{equation}
+    \langle \psi_1 | \psi_2 \rangle_{\text{geom}} = \int \prod_k \frac{da_k \, da_k^*}{2\pi i} \, e^{-|a_k|^2/\hbar} \, \overline{P_1(a)} P_2(a)
+\end{equation}
+等于Fock空间内积：
+\begin{equation}
+    \langle \psi_1 | \psi_2 \rangle_{\text{Fock}} = \langle 0 | P_1(a) P_2(a^\dagger) |0\rangle
+\end{equation}
+由Bargmann-Fock同构。
+\end{proof}
+
+\subsection{算符对应}
+
+\begin{table}[h]
+\centering
+\caption{几何与Fock量子化之间的算符对应}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{算符} & \textbf{几何} & \textbf{Fock} \\
+\hline
+真空 & $\Omega_{\text{geom}}[a]$ & $|0\rangle$ \\
+产生 & $a_k$（乘法） & $a_k^\dagger$ \\
+湮灭 & $\hbar \frac{\partial}{\partial a_k}$ & $a_k$ \\
+粒子数 & $a_k \frac{\partial}{\partial a_k}$ & $a_k^\dagger a_k$ \\
+哈密顿量 & $\sum_k \omega_k a_k \frac{\partial}{\partial a_k}$ & $\sum_k \omega_k a_k^\dagger a_k$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{物理意义}
+
+等价性定理确立了：
+
+\begin{enumerate}
+    \item \textbf{唯一性}：量子理论由经典相空间唯一确定（至多幺正等价）。
+    
+    \item \textbf{一致性}：几何量子化复现了正则量子化的标准结果。
+    
+    \item \textbf{几何洞察}：量子态可解释为相空间上线丛的全纯截面。
+    
+    \item \textbf{半经典极限}：对应关系为研究经典极限$\hbar \to 0$提供了严格框架。
+\end{enumerate}
+
+\subsection{在黑洞熵中的应用}
+
+几何量子化框架为计算黑洞熵提供了自然设置：
+
+\begin{theorem}[几何熵]
+Bekenstein-Hawking熵可从视界上挠率场构型的量子希尔伯特空间维数计算：
+\begin{equation}
+    S_{\text{BH}} = \ln \dim \mathcal{H}_{\text{geom}}(\mathcal{T}|_{\mathcal{H}})
+\end{equation}
+\end{theorem}
+
+这种几何方法给出正确的面积定律，并包含来自谱维流动$d_s : 4 \to 10$的修正。
+
+\subsection{结论}
+
+我们建立了CTUFT挠率场的几何量子化与Fock空间量子化之间的幺正等价性。这为量子理论提供了严格基础，并开辟了使用几何方法计算量子修正的途径。

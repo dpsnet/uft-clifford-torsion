@@ -1,0 +1,220 @@
+% 第07c节：多粒子系统与几何量子场论
+% 多体量子力学的几何表述
+\section{多粒子系统与几何量子场论}
+\label{sec:multiparticle_qft}
+
+\subsection{引言：从一到多}
+
+从单粒子量子力学到多粒子系统和量子场论的过渡不仅仅是添加更多自由度的问题。在UFT框架中，它揭示深刻的几何结构：粒子统计、不可区分性以及整个标准模型从10维内空间几何的涌现。
+
+\subsection{多粒子希尔伯特空间}
+
+\subsubsection{张量积结构}
+
+对于$N$个可区分粒子，希尔伯特空间是张量积：
+\begin{equation}
+    \mathcal{H}_N = \mathcal{H}_1 \otimes \mathcal{H}_2 \otimes \cdots \otimes \mathcal{H}_N = \bigotimes_{i=1}^N \mathcal{H}_i
+\end{equation}
+
+每个单粒子空间$\mathcal{H}_i = L^2(P_i)$是丛$P_i \to M$的平方可积截面空间。
+
+\begin{definition}[多粒子态空间]
+$N$粒子态空间为：
+\begin{equation}
+    \mathcal{H}_N = L^2\left(\prod_{i=1}^N P_i\right) = L^2(P^{\otimes N})
+\end{equation}
+其中$P^{\otimes N}$表示$N$重纤维积丛。
+\end{definition}
+
+\subsubsection{多粒子系统的谱维}
+
+\begin{theorem}[谱维缩放]
+对于共享内时间的$N$个可区分粒子：
+\begin{equation}
+    d_s^{(N)} = 1 + (N-1) \cdot d_s^{(\text{空间})}
+\end{equation}
+其中$d_s^{(\text{空间})} \approx 3$是空间谱维。
+\end{theorem}
+
+\begin{proof}
+每个粒子贡献：
+\begin{itemize}
+    \item 1个时间维（在所有粒子间共享）
+    \item $d_s^{(\text{空间})}$个空间维（独立）
+\end{itemize}
+
+对于$N$个粒子：
+\begin{itemize}
+    \item 时间：1（共享）
+    \item 空间：$N \times d_s^{(\text{空间})}$
+\end{itemize}
+
+但我们必须计入纠缠粒子共享内时间，减少有效计数：
+\begin{equation}
+    d_s^{(N)} = 1 + N \cdot d_s^{(\text{空间})} - (N-1) = 1 + (N-1) \cdot d_s^{(\text{空间})}
+\end{equation}
+\end{proof}
+
+\begin{example}[两粒子系统]
+对于两个纠缠粒子：
+\begin{equation}
+    d_s^{(2)} = 1 + 1 \cdot 3 = 4 \quad \text{（或仅空间时为2）}
+\end{equation}
+
+这与我们之前对Bell对的结果一致，其中每个粒子有一个类空和一个类时坐标。
+\end{example}
+
+\subsection{全同粒子与交换对称性}
+
+\subsubsection{基本问题}
+
+为什么全同粒子不可区分？在UFT中，这不是公设而是内空间结构的几何后果。
+
+\begin{insight}[粒子作为内空间的激发]
+粒子不是"空间中的物体"，而是\textbf{10维内空间几何的激发模式}。两个电子是相同的，因为它们对应于内空间几何的相同模式。
+\end{insight}
+
+\subsubsection{来自克利福德代数的交换对称性}
+
+\begin{theorem}[来自旋量结构的玻色子-费米子统计]
+全同粒子的交换统计（玻色子或费米子）由$\Spin^\tau(3,1)$的旋量表示决定：
+\begin{equation}
+    \psi(x_2, x_1) = (-1)^{2s} \psi(x_1, x_2)
+\end{equation}
+其中$s$是粒子的自旋。
+\end{theorem}
+
+\begin{proof}
+两个全同粒子的交换对应于内空间纤维中的$2\pi$旋转：
+\begin{enumerate}
+    \item 对于整数自旋（玻色子），旋量表示是单值的：$2\pi$旋转返回相同态
+    \item 对于半整数自旋（费米子），旋量表示是双值的：$2\pi$旋转给出负号
+\end{enumerate}
+
+这是自旋-统计定理的几何起源。
+\end{proof}
+
+\subsubsection{对称和反对称子空间}
+
+\begin{definition}[对称子空间]
+对于玻色子（整数自旋）：
+\begin{equation}
+    \mathcal{H}_N^{(B)} = \Sym^N(\mathcal{H}_1) = \{\psi \in \mathcal{H}_N : \psi(x_{\sigma(1)}, \ldots, x_{\sigma(N)}) = \psi(x_1, \ldots, x_N) \; \forall \sigma \in S_N\}
+\end{equation}
+\end{definition}
+
+\begin{definition}[反对称子空间]
+对于费米子（半整数自旋）：
+\begin{equation}
+    \mathcal{H}_N^{(F)} = \bigwedge^N(\mathcal{H}_1) = \{\psi \in \mathcal{H}_N : \psi(x_{\sigma(1)}, \ldots, x_{\sigma(N)}) = \sgn(\sigma)\psi(x_1, \ldots, x_N)\}
+\end{equation}
+\end{definition}
+
+\subsection{Fock空间：二次量子化}
+
+\subsubsection{从粒子到场}
+
+量子场论描述粒子数可变的系统。适当的希尔伯特空间是Fock空间：
+
+\begin{definition}[Fock空间]
+\begin{equation}
+    \mathcal{F} = \bigoplus_{N=0}^\infty \mathcal{H}_N^{(S/A)} = \mathbb{C} \oplus \mathcal{H}_1 \oplus \mathcal{H}_2^{(S/A)} \oplus \cdots
+\end{equation}
+其中$S$表示对称（玻色子），$A$表示反对称（费米子）。
+\end{definition}
+
+真空态$|0\rangle$（无粒子）是第一个分量。
+
+\subsubsection{产生和湮灭算符}
+
+\begin{definition}[产生算符]
+对于单粒子态$|\phi\rangle \in \mathcal{H}_1$，产生算符$\hat{a}^\dagger_\phi$作用于$\mathcal{F}$：
+\begin{equation}
+    \hat{a}^\dagger_\phi |\psi_1, \ldots, \psi_N\rangle = |\phi, \psi_1, \ldots, \psi_N\rangle
+\end{equation}
+有适当的对称化/反对称化。
+\end{definition}
+
+\begin{definition}[湮灭算符]
+湮灭算符是厄米共轭：
+\begin{equation}
+    \hat{a}_\phi = (\hat{a}^\dagger_\phi)^\dagger
+\end{equation}
+\end{definition}
+
+\subsubsection{来自几何的对易关系}
+
+\begin{theorem}[正则对易关系]
+产生和湮灭算符满足：
+\begin{align}
+    [\hat{a}_\phi, \hat{a}^\dagger_\psi] \u0026= \langle \phi | \psi \rangle \quad \text{（玻色子）} \\
+    \{\hat{a}_\phi, \hat{a}^\dagger_\psi\} \u0026= \langle \phi | \psi \rangle \quad \text{（费米子）}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+对于玻色子，对称组合导致对易算符。对于费米子，反对称组合导致反对易算符。
+
+关键是几何解释：玻色激发对应于内空间的对称张量积，而费米激发对应于反对称楔积（内空间上的形式）。
+\end{proof}
+
+\subsection{场算符}
+
+\subsubsection{从模式展开到场}
+
+\begin{definition}[场算符]
+场算符定义为：
+\begin{equation}
+    \hat{\psi}(x) = \sum_n \hat{a}_n \phi_n(x)
+\end{equation}
+其中$\{\phi_n\}$是单粒子态的完备正交基。
+\end{definition}
+
+\begin{theorem}[场对易关系]
+场算符满足：
+\begin{align}
+    [\hat{\psi}(x), \hat{\psi}^\dagger(y)] \u0026= \delta^{(3)}(x - y) \quad \text{（玻色子）} \\
+    \{\hat{\psi}(x), \hat{\psi}^\dagger(y)\} \u0026= \delta^{(3)}(x - y) \quad \text{（费米子）}
+\end{align}
+\end{theorem}
+
+\subsection{通往标准模型拉格朗日量的路径}
+
+\subsubsection{自由场拉格朗日量}
+
+从几何结构，我们导出自由场拉格朗日量：
+
+\begin{insight}[来自内空间的Klein-Gordon]
+对于标量场（自旋0），拉格朗日量为：
+\begin{equation}
+    \mathcal{L}_{\text{KG}} = \frac{1}{2}(\partial_\mu \phi)(\partial^\mu \phi) - \frac{1}{2}m^2 \phi^2
+\end{equation}
+
+质量项$m^2 \phi^2$来自内空间纤维的曲率。
+\end{insight}
+
+\begin{insight}[来自克利福德结构的Dirac]
+对于旋量场（自旋1/2），拉格朗日量为：
+\begin{equation}
+    \mathcal{L}_{\text{Dirac}} = \bar{\psi}(i\gamma^\mu \partial_\mu - m)\psi
+\end{equation}
+
+克利福德代数结构$\{\gamma^\mu, \gamma^\nu\} = 2g^{\mu\nu}$是UFT基础几何的直接结果。
+\end{insight}
+
+\subsubsection{相互作用}
+
+规范相互作用从扭转丛的几何自然涌现。Yukawa耦合来自费米子波函数与扭转背景的叠加（如第07d节详细讨论）。
+
+\subsection{总结}
+
+UFT框架从几何第一性原理推导量子场论：
+\begin{enumerate}
+    \item 多粒子态空间：内空间的张量积
+    \item 统计：来自$\Spin^\tau(3,1)$的旋量结构
+    \item Fock空间：包含所有粒子数的直接和
+    \item 场算符：模式展开的二次量子化
+    \item 拉格朗日量：从克利福德和纤维丛几何
+\end{enumerate}
+
+这种方法无需特别的量子化程序——QFT从几何中自然涌现。
