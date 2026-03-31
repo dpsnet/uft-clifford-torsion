@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{revtex4-2}
+\documentclass[preprint,12pt,a4paper]{revtex4-2}
 
 % 基础包
 \usepackage[utf8]{inputenc}
@@ -51,6 +51,19 @@
     pdfkeywords={unified field theory, Clifford algebra, torsion, spectral dimension}
 }
 
+% 修复目录格式 - 添加点线和间距
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftbeforesecskip}{3pt}
+\setlength{\cftbeforesubsecskip}{2pt}
+
+% 修复目录中编号和标题之间的间距
+\setlength{\cftsecnumwidth}{4em}
+\setlength{\cftsubsecnumwidth}{4.5em}
+\setlength{\cftsubsubsecnumwidth}{5em}
+
 % 定理环境
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
@@ -81,6 +94,46 @@
 
 % test环境（用于实验测试）
 \newenvironment{test}[1][Test]{%
+  \begin{quote}%
+  \textbf{#1:} \itshape%
+}{%
+  \end{quote}%
+}
+
+% hypothesis环境（用于假设）
+\newenvironment{hypothesis}[1][Hypothesis]{%
+  \begin{quote}%
+  \textbf{#1:} \itshape%
+}{%
+  \end{quote}%
+}
+
+% model环境（用于模型）
+\newenvironment{model}[1][Model]{%
+  \begin{quote}%
+  \textbf{#1:} \itshape%
+}{%
+  \end{quote}%
+}
+
+% example环境（用于示例）
+\newenvironment{example}[1][Example]{%
+  \begin{quote}%
+  \textbf{#1:} \itshape%
+}{%
+  \end{quote}%
+}
+
+% keyinsight环境（用于关键洞察）
+\newenvironment{keyinsight}[1][Key Insight]{%
+  \begin{quote}%
+  \textbf{#1:} \itshape%
+}{%
+  \end{quote}%
+}
+
+% criterion环境（用于准则/标准）
+\newenvironment{criterion}[1][Criterion]{%
   \begin{quote}%
   \textbf{#1:} \itshape%
 }{%
@@ -118,7 +171,23 @@
 
 \begin{document}
 
-\begin{abstract}
+% 手动创建标题页
+\begin{titlepage}
+\centering
+\vspace*{3cm}
+{\LARGE\bfseries Fixed 4D Topology-Dynamic Spectral Dimension Multiple Twisting Fractal Clifford Algebra Unified Field Theory\\[0.5em]}
+{\large (CTUFT: Clifford-Torsion Unified Field Theory)\\[2cm]}
+{\large Wang Bin\\[0.5cm]}
+{\small wang.bin@foxmail.com\\[0.3cm]}
+{\small Independent Researcher\\[0.3cm]}
+{\small Open Source AI Theoretical Physics Research Project\\[0.3cm]}
+{\small \url{https://github.com/dpsnet/uft-clifford-torsion}\\[2cm]}
+{\large \today}
+\end{titlepage}
+
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+
 We present a Clifford-Torsion Unified Field Theory (CTUFT) based on fixed 4D topological dimension and dynamic spectral dimension, using fractal Clifford algebra and multiple twisting mechanisms as the geometric origin of gauge symmetries. The theory naturally incorporates gravitation, electromagnetism, weak and strong nuclear forces into a single geometric framework.
 
 The key innovations include: (1) a reciprocal-internal space duality where observable spacetime is complemented by a higher-dimensional spectral space; (2) a dynamic spectral dimension $d_s$ that flows from 10 at the Planck scale to 4 at macroscopic scales; (3) a fractal-torsion equivalence that provides the geometric foundation for all fundamental interactions; and (4) a geometric interpretation of quantum mechanics that eliminates the measurement problem through continuous topological evolution.
@@ -130,9 +199,6 @@ We derive the standard model gauge group $U(1) \times SU(2) \times SU(3)$ from t
 The theory makes concrete, falsifiable predictions for LISA (Laser Interferometer Space Antenna), particularly the detection of six gravitational wave polarization modes with signal-to-noise ratio SNR $\sim$ 7 for intermediate-mass black hole mergers. Null results from LISA would falsify the core prediction and require fundamental revision of the framework.
 
 \textbf{Keywords}: unified field theory, Clifford algebra, spectral dimension, torsion, quantum gravity, gravitational waves, black holes
-\end{abstract}
-
-\maketitle
 
 \tableofcontents
 \newpage
